@@ -48,8 +48,11 @@ def check_disk_space(path):
     return free_gb
 
 
-def extract_zip_files(source_dir, output_dir):
-    """Extract all ZIP files from source directory to output directory."""
+def extract_zip_files(source_dir, output_dir, file_extensions=None):
+    """
+    Extract all ZIP files from source directory to output directory.
+    If file_extensions is provided, only extract files with those extensions.
+    """
     # Get assets directory
     assets_dir = os.path.join(source_dir, ".assets", "output")
 
@@ -69,11 +72,14 @@ def extract_zip_files(source_dir, output_dir):
         print("\nNo ZIP files found in the specified directory.")
         return False
 
-    print(f"\nFound {len(zip_files)} ZIP files to extract.")
+    print(f"\nFound {len(zip_files)} ZIP files to process.")
+
+    if file_extensions:
+        print(f"Will only extract files with extensions: {', '.join(file_extensions)}")
 
     # Process each ZIP file
     for i, zip_file in enumerate(
-        tqdm(zip_files, desc="Extracting ZIP files", unit="file")
+        tqdm(zip_files, desc="Processing ZIP files", unit="file")
     ):
         zip_path = os.path.join(assets_dir, zip_file)
         target_folder = os.path.join(output_dir, os.path.splitext(zip_file)[0])
@@ -83,14 +89,22 @@ def extract_zip_files(source_dir, output_dir):
 
         try:
             with zipfile.ZipFile(zip_path, "r") as zip_ref:
-                zip_ref.extractall(target_folder)
+                if file_extensions:
+                    # Only extract files with specific extensions
+                    for item in zip_ref.infolist():
+                        file_ext = os.path.splitext(item.filename)[1].lower()
+                        if file_ext in file_extensions:
+                            zip_ref.extract(item, target_folder)
+                else:
+                    # Extract all files
+                    zip_ref.extractall(target_folder)
 
             # Wait a second between each extraction
             if i < len(zip_files) - 1:
                 time.sleep(1)
 
         except Exception as e:
-            print(f"\nError extracting {zip_file}: {str(e)}")
+            print(f"\nError processing {zip_file}: {str(e)}")
             continue
 
     return True
@@ -99,7 +113,7 @@ def extract_zip_files(source_dir, output_dir):
 def main():
     print_header()
     print("Welcome to the PCWStats File Extraction Utility.")
-    print("This utility will extract all ZIP files from your Project CW installation.")
+    print("This utility will extract files from your Project CW installation.")
     print()
 
     while True:
@@ -132,18 +146,46 @@ def main():
                 print("\nExiting. Please free up space and try again.")
                 return
 
+        # Ask if user wants to extract all files or specific file types
+        print(
+            "\nDo you want to extract all files from the archives or only specific file types?"
+        )
+        print("1. Extract all files")
+        print("2. Extract only specific file types")
+        extraction_choice = input("> ").strip()
+
+        file_extensions = None
+        if extraction_choice == "2":
+            print(
+                "\nPlease enter the file extensions you want to extract (comma-separated, include the dot)"
+            )
+            print("Example: .dds, .spec, .scene")
+            extensions_input = input("> ").strip()
+            file_extensions = [
+                ext.strip().lower() for ext in extensions_input.split(",")
+            ]
+
+            # Make sure all extensions have a dot prefix
+            file_extensions = [
+                ext if ext.startswith(".") else f".{ext}" for ext in file_extensions
+            ]
+
         print("\nReady to extract files:")
         print(f"  Source directory: {source_dir}")
         print(f"  Output directory: {output_dir}")
+        if file_extensions:
+            print(f"  File types to extract: {', '.join(file_extensions)}")
+        else:
+            print("  Extracting all file types")
         print("\nPress Enter to continue or type 'exit' to quit.")
 
         if input("> ").lower() == "exit":
             return
 
         print_header()
-        print("Extracting ZIP files. This may take a while...\n")
+        print("Extracting files. This may take a while...\n")
 
-        if extract_zip_files(source_dir, output_dir):
+        if extract_zip_files(source_dir, output_dir, file_extensions):
             print("\nExtraction completed successfully!")
             print(f"All files have been extracted to: {output_dir}")
 
