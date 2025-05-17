@@ -1,165 +1,130 @@
 import json
 from pathlib import Path
+from datetime import datetime
+
+
+def format_date_long(date_str):
+    """Convert date from YYYY-MM-DD to 'DD Month, YYYY'."""
+    try:
+        date_obj = datetime.strptime(date_str, "%Y-%m-%d")
+        return date_obj.strftime("%d %B, %Y")
+    except ValueError:
+        return date_str  # Return as-is if format is invalid
 
 
 def calculate_correct_version_numbers(changelog):
-    # Make a copy of updates in chronological order
-    updates_chronological = changelog["updates"][::-1]  # Reverse the list
-
+    updates_chronological = changelog["updates"][::-1]  # Oldest to newest
     cumulative_changes = 0
     corrected_updates = []
 
-    for update in updates_chronological:
-        # Calculate changes in this update
+    for idx, update in enumerate(updates_chronological):
         changes = (
             len(update.get("added", []))
             + len(update.get("changed", []))
             + len(update.get("removed", []))
         )
-
         cumulative_changes += changes
-
-        # Format version number with leading zeros
         correct_version = "0.0.{:04d}".format(cumulative_changes)
 
-        # Create corrected update entry
         corrected_update = update.copy()
         corrected_update["version"] = correct_version
+
+        update_number = idx + 1
+        pretty_date = format_date_long(update["date"])
+
+        corrected_update["title"] = f"PCWStats - Update Number #{update_number}"
+        corrected_update["description"] = (
+            f"Complete patch notes for update v{correct_version}, "
+            f"No. #{update_number}, issued on {pretty_date}."
+        )
+
         corrected_updates.append(corrected_update)
 
-    # Reverse back to original order (newest first)
-    corrected_updates = corrected_updates[::-1]
-
-    # Create corrected changelog
+    corrected_updates = corrected_updates[::-1]  # Newest first
     corrected_changelog = changelog.copy()
     corrected_changelog["updates"] = corrected_updates
-
     return corrected_changelog
 
 
 def verify_and_correct_changelog(file_path):
-    # Read the original file
     with open(file_path, "r") as f:
         changelog = json.load(f)
 
-    # Calculate correct versions
     corrected_changelog = calculate_correct_version_numbers(changelog)
 
-    # Check for issues
     version_issues = False
     author_issues = False
-    empty_field_issues = False
+    title_issues = False
+    description_issues = False
 
-    # Prepare lists to store issues
-    version_mismatches = []
-    author_mismatches = []
-    empty_fields = []
+    mismatches = []
 
-    for original, corrected in zip(
-        changelog["updates"], corrected_changelog["updates"]
+    for i, (original, corrected) in enumerate(
+        zip(changelog["updates"], corrected_changelog["updates"])
     ):
-        # Check version numbers
+        update_issues = {}
+        update_issues["date"] = original["date"]
+
         if original["version"] != corrected["version"]:
             version_issues = True
-            version_mismatches.append(
-                {
-                    "date": original["date"],
-                    "current": original["version"],
-                    "correct": corrected["version"],
-                }
-            )
+            update_issues["version"] = {
+                "current": original["version"],
+                "correct": corrected["version"],
+            }
 
-        # Check author field
         if original.get("author") != "PCWStats Team":
             author_issues = True
-            author_mismatches.append(
-                {
-                    "date": original["date"],
-                    "current": original.get("author", "MISSING"),
-                    "correct": "PCWStats Team",
-                }
-            )
+            update_issues["author"] = {
+                "current": original.get("author", "MISSING"),
+                "correct": "PCWStats Team",
+            }
 
-        # Check for empty title or description
-        if not original.get("title", "").strip():
-            empty_field_issues = True
-            empty_fields.append(
-                {
-                    "date": original["date"],
-                    "field": "title",
-                    "current": original.get("title", "MISSING"),
-                }
-            )
+        if original.get("title") != corrected["title"]:
+            title_issues = True
+            update_issues["title"] = {
+                "current": original.get("title", "MISSING"),
+                "correct": corrected["title"],
+            }
 
-        if not original.get("description", "").strip():
-            empty_field_issues = True
-            empty_fields.append(
-                {
-                    "date": original["date"],
-                    "field": "description",
-                    "current": original.get("description", "MISSING"),
-                }
-            )
+        if original.get("description") != corrected["description"]:
+            description_issues = True
+            update_issues["description"] = {
+                "current": original.get("description", "MISSING"),
+                "correct": corrected["description"],
+            }
 
-    # Print all found issues
-    if version_issues:
-        print("\nVERSION NUMBER ISSUES:")
-        for issue in version_mismatches:
-            print(f"Date: {issue['date']}")
-            print(f"  Current: {issue['current']}")
-            print(f"  Correct: {issue['correct']}")
+        if len(update_issues) > 1:
+            mismatches.append(update_issues)
 
-    if author_issues:
-        print("\nAUTHOR FIELD ISSUES:")
-        for issue in author_mismatches:
-            print(f"Date: {issue['date']}")
-            print(f"  Current: {issue['current']}")
-            print(f"  Should be: {issue['correct']}")
-
-    if empty_field_issues:
-        print("\nEMPTY FIELD ISSUES:")
-        for issue in empty_fields:
-            print(f"Date: {issue['date']}")
-            print(f"  Empty field: {issue['field']}")
-            print(f"  Current value: '{issue['current']}'")
-
-    if not any([version_issues, author_issues, empty_field_issues]):
-        print("All version numbers, author fields, and required fields are correct!")
+    if mismatches:
+        print("\nISSUES FOUND:")
+        for issue in mismatches:
+            print(f"\nDate: {issue['date']}")
+            for field, diff in issue.items():
+                if field == "date":
+                    continue
+                print(f"  {field.title()} mismatch:")
+                print(f"    Current: {diff['current']}")
+                print(f"    Correct: {diff['correct']}")
+    else:
+        print("All updates are properly formatted and correct!")
         return
 
-    # Ask for confirmation to update
-    response = input("\nDo you want to update the file with corrections? (y/n): ")
+    response = input(
+        "\nDo you want to automatically fix and overwrite the changelog? (y/n): "
+    )
     if response.lower() == "y":
-        # Apply all corrections
-        for i in range(len(changelog["updates"])):
-            corrected = corrected_changelog["updates"][i]
+        changelog["updates"] = corrected_changelog["updates"]
 
-            # Update version if needed
-            if version_issues:
-                changelog["updates"][i]["version"] = corrected["version"]
+        for update in changelog["updates"]:
+            update["author"] = "PCWStats Team"
 
-            # Update author if needed
-            if author_issues:
-                changelog["updates"][i]["author"] = "PCWStats Team"
-
-            # Can't automatically fix empty fields, just warn
-            if empty_field_issues:
-                current_update = changelog["updates"][i]
-                if not current_update.get("title", "").strip():
-                    print(
-                        f"Warning: Empty title field for {current_update['date']} - please fill manually"
-                    )
-                if not current_update.get("description", "").strip():
-                    print(
-                        f"Warning: Empty description field for {current_update['date']} - please fill manually"
-                    )
-
-        # Write corrected file
         with open(file_path, "w") as f:
             json.dump(changelog, f, indent=2)
-        print(f"Updated {file_path} with corrections")
+
+        print(f"✅ {file_path} has been updated and corrected.")
     else:
-        print("No changes were made.")
+        print("❌ No changes were made.")
 
 
 if __name__ == "__main__":
