@@ -24,3 +24,7 @@ hs_err_pid*
 replay_pid*
 /.idea
 .env
+credentials.json
+discord-bot/gsc_historical_data.json
+discord-bot/gsc_previous_data.json
+discord-bot/token.json
