@@ -18,12 +18,15 @@ def calculate_correct_version_numbers(changelog):
     corrected_updates = []
 
     for idx, update in enumerate(updates_chronological):
-        changes = (
-            len(update.get("added", []))
-            + len(update.get("changed", []))
-            + len(update.get("removed", []))
-        )
-        cumulative_changes += changes
+        # Count each type of change separately
+        additions = len(update.get("added", []))
+        changes = len(update.get("changed", []))
+        fixes = len(update.get("fixed", []))
+        removals = len(update.get("removed", []))
+
+        # Sum all changes for version number calculation
+        total_changes = additions + changes + fixes + removals
+        cumulative_changes += total_changes
         correct_version = "0.0.{:04d}".format(cumulative_changes)
 
         corrected_update = update.copy()
