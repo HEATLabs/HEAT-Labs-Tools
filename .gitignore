@@ -28,3 +28,7 @@ credentials.json
 discord-bot/gsc_historical_data.json
 discord-bot/gsc_previous_data.json
 discord-bot/token.json
+discord-bot/__pycache__/config.cpython-39.pyc
+discord-bot/__pycache__/data_processing.cpython-39.pyc
+discord-bot/__pycache__/discord_bot.cpython-39.pyc
+discord-bot/__pycache__/gsc_service.cpython-39.pyc
