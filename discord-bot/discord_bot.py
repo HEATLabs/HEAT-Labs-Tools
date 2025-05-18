@@ -3,6 +3,7 @@ import json
 import asyncio
 import logging
 import tempfile
+import asyncio
 from datetime import datetime, timedelta, timezone
 import matplotlib.pyplot as plt
 
@@ -95,11 +96,47 @@ async def send_daily_report():
         return
 
     try:
-        # Get GSC service
-        service = await get_gsc_service()
+        # Get GSC service - this may require authentication
+        try:
+            service = await get_gsc_service()
+            if service is None:
+                await updates_channel.send(
+                    embed=Embed(
+                        title="⚠️ GSC Authentication Required",
+                        description="Please use the `/auth` command with your Google OAuth code to authenticate.\n\n"
+                        "1. Visit the auth URL printed in the logs\n"
+                        "2. Approve the permissions\n"
+                        "3. Copy the code from the redirect URL\n"
+                        "4. Use `/auth <code>` in this channel",
+                        color=Color.orange(),
+                    )
+                )
+                return
+        except Exception as auth_error:
+            logger.error(f"GSC authentication error: {auth_error}")
+            await updates_channel.send(
+                embed=Embed(
+                    title="⚠️ GSC Authentication Error",
+                    description=f"Failed to authenticate with Google Search Console: {str(auth_error)}\n\n"
+                    "Please check the logs and try authenticating again with `/auth`.",
+                    color=Color.red(),
+                )
+            )
+            return
 
-        # Get data
+        # Get current data
         current_data = await fetch_search_analytics(service)
+        if not current_data:
+            await updates_channel.send(
+                embed=Embed(
+                    title="⚠️ GSC Data Error",
+                    description="No data available from Google Search Console.",
+                    color=Color.red(),
+                )
+            )
+            return
+
+        # Get previous data for comparison
         previous_data = await load_cached_data()
 
         # Send the report to Discord with charts
@@ -111,15 +148,31 @@ async def send_daily_report():
         # Save current data for next comparison
         await save_cached_data(current_data)
 
+        logger.info("Daily report completed successfully")
+
     except Exception as e:
-        logger.error(f"Error in daily report: {e}")
-        await updates_channel.send(
-            embed=Embed(
-                title="⚠️ GSC Report Error",
-                description=f"Failed to generate GSC report: {str(e)}",
-                color=Color.red(),
-            )
+        logger.error(f"Error in daily report: {e}", exc_info=True)
+        error_embed = Embed(
+            title="⚠️ GSC Report Error",
+            description=f"An error occurred while generating the daily report: {str(e)}",
+            color=Color.red(),
         )
+
+        # More specific troubleshooting for common issues
+        if "quota" in str(e).lower():
+            error_embed.add_field(
+                name="Possible Solution",
+                value="Google API quota may be exceeded. Try again later.",
+                inline=False,
+            )
+        elif "token" in str(e).lower() or "credentials" in str(e).lower():
+            error_embed.add_field(
+                name="Possible Solution",
+                value="Authentication may have expired. Try re-authenticating with `/auth`.",
+                inline=False,
+            )
+
+        await updates_channel.send(embed=error_embed)
 
 
 async def schedule_daily_report():
@@ -140,6 +193,31 @@ async def schedule_daily_report():
 
         # Send the report
         await send_daily_report()
+
+
+@tree.command(
+    name="auth",
+    description="Provide Google OAuth authorization code",
+    guild=discord.Object(id=GUILD_ID),
+)
+async def auth_command(interaction: discord.Interaction, code: str):
+    from gsc_service import AUTH_CODE
+
+    # Check if command is used in the correct channel
+    if interaction.channel_id != COMMANDS_CHANNEL_ID:
+        await interaction.response.send_message(
+            f"⚠️ This command can only be used in the designated commands channel.",
+            ephemeral=True,
+        )
+        return
+
+    # Set the auth code globally
+    global AUTH_CODE
+    AUTH_CODE = code.strip()
+
+    await interaction.response.send_message(
+        "✅ Authorization code received. Processing authentication...", ephemeral=True
+    )
 
 
 @tree.command(
@@ -472,8 +550,11 @@ async def on_ready():
     await tree.sync(guild=discord.Object(id=GUILD_ID))
     logger.info("Command tree synced")
 
-    # Send initial report immediately
-    await send_daily_report()
+    try:
+        # Send initial report immediately
+        await send_daily_report()
+    except Exception as e:
+        logger.error(f"Initial report failed: {e}")
 
     # Start the daily scheduler
     await client.loop.create_task(schedule_daily_report())

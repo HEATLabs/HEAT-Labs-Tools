@@ -18,32 +18,41 @@ from config import (
 
 logger = logging.getLogger("gsc_discord_bot.gsc_service")
 
+# Store the auth code as a global variable
+AUTH_CODE = None
+
 
 async def get_gsc_service():
     creds = None
 
     # Load token from file if it exists
     if os.path.exists(GSC_TOKEN_FILE):
-        with open(GSC_TOKEN_FILE, "r") as token:
-            creds = Credentials.from_authorized_user_info(json.load(token), GSC_SCOPES)
+        try:
+            with open(GSC_TOKEN_FILE, "r") as token:
+                creds = Credentials.from_authorized_user_info(
+                    json.load(token), GSC_SCOPES
+                )
+        except Exception as e:
+            logger.error(f"Error loading token file: {e}")
 
     # If credentials don't exist or are invalid, get new ones
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
+            try:
+                creds.refresh(Request())
+            except Exception as e:
+                logger.error(f"Error refreshing token: {e}")
+                creds = None
+
+        if not creds:
             # Create flow with explicit localhost redirect
             flow = InstalledAppFlow.from_client_secrets_file(
-                GSC_CREDENTIALS_FILE,
-                GSC_SCOPES,
-                redirect_uri='http://localhost'
+                GSC_CREDENTIALS_FILE, GSC_SCOPES, redirect_uri="http://localhost"
             )
 
             # Generate authorization URL
             auth_url, _ = flow.authorization_url(
-                prompt='consent',
-                access_type='offline',
-                include_granted_scopes='true'
+                prompt="consent", access_type="offline", include_granted_scopes="true"
             )
 
             # Print instructions for manual authentication
@@ -55,16 +64,19 @@ async def get_gsc_service():
             logger.info("## 3. Approve the permissions request")
             logger.info("## 4. When redirected to localhost, copy the ENTIRE URL")
             logger.info("##    (It will look like: http://localhost/?code=XYZ123...)")
-            logger.info("## 5. Paste just the code part (XYZ123...) below")
+            logger.info("## 5. Use the /auth command in Discord to provide the code")
             logger.info("########################################################")
 
-            # Get authorization code from user input
-            auth_code = input("Enter the authorization code: ").strip()
+            # Wait for the auth code to be set via Discord command
+            global AUTH_CODE
+            while AUTH_CODE is None:
+                await asyncio.sleep(1)
 
             # Exchange code for tokens
             try:
-                flow.fetch_token(code=auth_code)
+                flow.fetch_token(code=AUTH_CODE)
                 creds = flow.credentials
+                AUTH_CODE = None  # Reset for next use
             except Exception as e:
                 logger.error(f"Failed to exchange code for tokens: {str(e)}")
                 raise Exception("Authentication failed. Please try again.")
