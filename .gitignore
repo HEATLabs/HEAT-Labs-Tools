@@ -25,10 +25,10 @@ replay_pid*
 /.idea
 .env
 credentials.json
-discord-bot/gsc_historical_data.json
-discord-bot/gsc_previous_data.json
-discord-bot/token.json
-discord-bot/__pycache__/config.cpython-39.pyc
-discord-bot/__pycache__/data_processing.cpython-39.pyc
-discord-bot/__pycache__/discord_bot.cpython-39.pyc
-discord-bot/__pycache__/gsc_service.cpython-39.pyc
+discord-tools/gsc_historical_data.json
+discord-tools/gsc_previous_data.json
+discord-tools/token.json
+discord-tools/__pycache__/config.cpython-39.pyc
+discord-tools/__pycache__/data_processing.cpython-39.pyc
+discord-tools/__pycache__/discord_bot.cpython-39.pyc
+discord-tools/__pycache__/gsc_service.cpython-39.pyc
