@@ -2,7 +2,7 @@ import tempfile
 import matplotlib.pyplot as plt
 from datetime import datetime
 from discord import Embed, Color, File
-from config import COUNTRY_CODES
+from config import COUNTRY_CODES, GSC_SITE_URL
 
 
 def country_name_from_code(code):
