@@ -32,3 +32,4 @@ discord-tools/__pycache__/config.cpython-39.pyc
 discord-tools/__pycache__/data_processing.cpython-39.pyc
 discord-tools/__pycache__/discord_bot.cpython-39.pyc
 discord-tools/__pycache__/gsc_service.cpython-39.pyc
+development-tools/token.json
