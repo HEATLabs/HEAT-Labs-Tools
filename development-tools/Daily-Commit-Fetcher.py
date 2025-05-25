@@ -20,25 +20,22 @@ REPOS = [
     "Website-Configs",
     "Website-Images",
     "Database-Tools",
-    "Database-Files"
+    "Database-Files",
 ]
 
-def get_all_commits(repo, since_date):
+
+def get_all_commits(repo):
     url = f"{GITHUB_API_URL}/repos/{ORG_NAME}/{repo}/commits"
     headers = {
         "Authorization": f"token {GITHUB_TOKEN}",
-        "Accept": "application/vnd.github.v3+json"
+        "Accept": "application/vnd.github.v3+json",
     }
 
     all_commits = []
     page = 1
 
     while True:
-        params = {
-            "since": since_date.isoformat(),
-            "per_page": 100,
-            "page": page
-        }
+        params = {"per_page": 100, "page": page}
         response = requests.get(url, headers=headers, params=params)
         response.raise_for_status()
 
@@ -51,6 +48,7 @@ def get_all_commits(repo, since_date):
 
     return all_commits
 
+
 def gather_commits(commits_data):
     daily_commits = defaultdict(list)
 
@@ -60,8 +58,7 @@ def gather_commits(commits_data):
                 continue
 
             commit_date = datetime.strptime(
-                commit["commit"]["committer"]["date"],
-                "%Y-%m-%dT%H:%M:%SZ"
+                commit["commit"]["committer"]["date"], "%Y-%m-%dT%H:%M:%SZ"
             ).date()
 
             message = commit["commit"]["message"].split("\n")[0]
@@ -72,13 +69,13 @@ def gather_commits(commits_data):
     # Sort descending by date
     return dict(sorted(daily_commits.items(), reverse=True))
 
+
 def main():
-    since_date = datetime.now() - timedelta(days=30)
     all_commits = []
 
     for repo in REPOS:
         try:
-            commits = get_all_commits(repo, since_date)
+            commits = get_all_commits(repo)
             all_commits.append((repo, commits))
             print(f"Fetched {len(commits)} commits from {repo}")
         except Exception as e:
@@ -90,6 +87,7 @@ def main():
         json.dump(daily_log, f, indent=2, ensure_ascii=False)
 
     print("✅ Daily commit log saved to daily_commits.json")
+
 
 if __name__ == "__main__":
     main()
