@@ -38,6 +38,8 @@ def generate_html_content(html_files, input_dir):
     <meta name="language" content="English">
     <!-- Canonical URL -->
     <link rel="canonical" href="https://pcwstats.github.io/devsonly.html">
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="site-data/sitemap.xml">
     <!-- Theme Checker -->
     <script>
       // Immediately set theme class before rendering begins
