@@ -67,7 +67,7 @@ def validate_tank_agents(file_path: str) -> bool:
 
 
 def validate_stats_file(file_path: str) -> bool:
-    """Validate files with stats structure (consumables, perks, stock, upgrades)."""
+    """Validate files with stats structure (equipments, perks, stock, upgrades)."""
     try:
         with open(file_path, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -349,7 +349,7 @@ def validate_tanks_list(file_path: str) -> bool:
                 "image",
                 "stock",
                 "upgrades",
-                "consumables",
+                "equipments",
                 "perks",
                 "agents",
                 "details",
@@ -409,7 +409,7 @@ def validate_json_files(base_path: str):
                     if file == "agents.json":
                         valid = validate_tank_agents(file_path)
                     elif file in [
-                        "consumables.json",
+                        "equipments.json",
                         "perks.json",
                         "stock.json",
                         "upgrades.json",
