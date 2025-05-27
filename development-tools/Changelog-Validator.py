@@ -37,8 +37,8 @@ def calculate_correct_version_numbers(changelog):
 
         corrected_update["title"] = f"PCWStats - Update Number #{update_number}"
         corrected_update["description"] = (
-            f"Complete patch notes for update v{correct_version}, "
-            f"No. #{update_number}, issued on {pretty_date}."
+            f"Full patch notes for Update v{correct_version} "
+            f"(#{update_number}), detailing all changes made on {pretty_date}."
         )
 
         corrected_updates.append(corrected_update)
