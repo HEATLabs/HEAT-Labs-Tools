@@ -185,12 +185,12 @@ def display_url_stats(urls_data):
         if data.get("last_purged"):
             purged_count += 1
 
-    print(f"\n URL Statistics:")
+    print(f"\nURL Statistics:")
     print(f"   Total URLs: {len(urls_data)}")
     print(f"   Previously purged: {purged_count}")
     print(f"   Never purged: {len(urls_data) - purged_count}")
 
-    print(f"\n URLs by repository:")
+    print(f"\nURLs by repository:")
     for repo, count in sorted(repo_counts.items()):
         print(f"   {repo}: {count} URLs")
 
@@ -255,7 +255,7 @@ def main():
         return
 
     print(
-        f"\n Selected {len(urls_to_purge)} URLs from {repo_options[purge_choice]} for purging"
+        f"\nSelected {len(urls_to_purge)} URLs from {repo_options[purge_choice]} for purging"
     )
 
     # Confirm purge operation
@@ -272,7 +272,7 @@ def main():
     urls_list = list(urls_to_purge.keys())
     successfully_purged = []
 
-    print(f"\n Purging {len(urls_list)} URLs one by one...")
+    print(f"\nPurging {len(urls_list)} URLs one by one...")
 
     successfully_purged = purge_urls(urls_list)
 
@@ -280,12 +280,12 @@ def main():
     if successfully_purged:
         update_purge_timestamp(existing_urls_data, successfully_purged)
         save_data(JSON_FILENAME, existing_urls_data)
-        print(f"\n Successfully purged {len(successfully_purged)} URLs")
+        print(f"\nSuccessfully purged {len(successfully_purged)} URLs")
         print(f"Updated purge timestamps saved to {JSON_FILENAME}")
     else:
-        print("\n No URLs were successfully purged")
+        print("\nNo URLs were successfully purged")
 
-    print(f"\n Final statistics:")
+    print(f"\nFinal statistics:")
     print(f"   Total URLs in database: {len(existing_urls_data)}")
     print(f"   URLs purged this session: {len(successfully_purged)}")
 
