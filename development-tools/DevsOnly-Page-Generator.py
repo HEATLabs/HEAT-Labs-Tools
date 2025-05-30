@@ -60,43 +60,43 @@ def generate_html_content(html_files, input_dir):
       })();
     </script>
     <!-- Main stylesheets -->
-    <link rel="stylesheet" href="css/libraries/tailwind.css">
-    <link rel="stylesheet" href="css/libraries/font-awesome/all.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/misc.css">
-    <link rel="stylesheet" href="css/devsonly.css">
-    <link rel="stylesheet" href="css/modules/header.css">
-    <link rel="stylesheet" href="css/modules/footer.css">
-    <link rel="stylesheet" href="css/modules/sidebar.css">
-    <link rel="stylesheet" href="css/modules/cta.css">
-    <link rel="stylesheet" href="css/modules/no-scrollbar.css">
-    <link rel="stylesheet" href="css/modules/search.css">
-    <link rel="stylesheet" href="css/modules/global-hero.css">
-    <link rel="stylesheet" href="css/modules/warning.css">
-    <link rel="stylesheet" href="css/modules/banner.css">
+    <link rel="stylesheet" href="assets/css/libraries/tailwind.css">
+    <link rel="stylesheet" href="assets/css/libraries/font-awesome/all.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/misc.css">
+    <link rel="stylesheet" href="assets/css/pages/devsonly.css">
+    <link rel="stylesheet" href="assets/css/modules/header.css">
+    <link rel="stylesheet" href="assets/css/modules/footer.css">
+    <link rel="stylesheet" href="assets/css/modules/sidebar.css">
+    <link rel="stylesheet" href="assets/css/modules/cta.css">
+    <link rel="stylesheet" href="assets/css/modules/no-scrollbar.css">
+    <link rel="stylesheet" href="assets/css/modules/search.css">
+    <link rel="stylesheet" href="assets/css/modules/global-hero.css">
+    <link rel="stylesheet" href="assets/css/modules/warning.css">
+    <link rel="stylesheet" href="assets/css/modules/banner.css">
     <!-- Favicon for all browsers -->
-    <link rel="icon" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/favicons/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon.ico" type="image/x-icon">
     <!-- Apple Touch Icons (for iOS home screen bookmarks) -->
-    <link rel="apple-touch-icon" sizes="57x57" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/apple/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/apple/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/apple/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/apple/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/apple/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/apple/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/apple/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/apple/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/apple/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-180x180.png">
     <!-- Favicons for different devices -->
-    <link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/android/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/android/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon-16x16.png">
     <!-- Web Manifest -->
     <link rel="manifest" href="site-data/site.manifest">
     <!-- Windows-specific tiles (for pinned sites in Windows Start menu) -->
     <meta name="msapplication-TileColor" content="#141312">
-    <meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/microsoft/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/microsoft/ms-icon-144x144.png">
     <meta name="msapplication-config" content="site-data/browserconfig.xml">
     <!-- Safari-specific meta tags -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -109,7 +109,7 @@ def generate_html_content(html_files, input_dir):
     <!-- Open Graph Meta Tags (for social media sharing, mainly Facebook) -->
     <meta property="og:title" content="PCWStats - Devs Only">
     <meta property="og:description" content="PCWStats developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/social-share/PCWStats.png">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/social-share/PCWStats.png">
     <meta property="og:url" content="https://pcwstats.github.io/devsonly.html">
     <meta property="og:type" content="website">
     <meta property="og:image:width" content="1200">
@@ -122,10 +122,12 @@ def generate_html_content(html_files, input_dir):
     <meta name="twitter:creator" content="@PCWStats">
     <meta name="twitter:title" content="PCWStats - Devs Only">
     <meta name="twitter:description" content="PCWStats developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/PCWStats/Website-Images/refs/heads/main/social-share/PCWStats.png">
+    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/social-share/PCWStats.png">
     <meta name="twitter:image:alt" content="PCWStats - Your one-stop solution for comprehensive statistics insights and guides for Project CW">
   </head>
   <body>
+    <!-- JsDelivr-based Tracking Pixel -->
+    <img src="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@refs/heads/main/trackers/pcwstats-tracker-pixel-devsonly.png" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="pcwstats-tracking-pixel" data-page="devsonly">
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <!-- Sidebar -->
@@ -516,16 +518,16 @@ def generate_html_content(html_files, input_dir):
         </div>
       </footer>
     </div>
-    <script src="js/main.js"></script>
-    <script src="js/misc.js"></script>
-    <script src="js/modules/sidebar.js"></script>
-    <script src="js/modules/theme-loader.js"></script>
-    <script src="js/maps.js"></script>
-    <script src="js/modules/search.js"></script>
-    <script src="js/modules/warning.js"></script>
-    <script src="js/devsonly.js"></script>
-    <script src="js/modules/global-hero.js"></script>
-    <script src="js/modules/banner.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <script src="assets/js/modules/sidebar.js"></script>
+    <script src="assets/js/modules/theme-loader.js"></script>
+    <script src="assets/js/maps.js"></script>
+    <script src="assets/js/modules/search.js"></script>
+    <script src="assets/js/modules/warning.js"></script>
+    <script src="assets/js/pages/devsonly.js"></script>
+    <script src="assets/js/modules/global-hero.js"></script>
+    <script src="assets/js/modules/banner.js"></script>
   </body>
 </html>"""
 
