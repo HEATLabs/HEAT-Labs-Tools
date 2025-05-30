@@ -5,11 +5,9 @@ import re
 directories = [
     "../../pcwstats.github.io",  # current directory
     "../../pcwstats.github.io/tournaments",
-    "../../pcwstats.github.io/tank-guides",
     "../../pcwstats.github.io/news",
-    "../../pcwstats.github.io/map-guides",
-    "../../pcwstats.github.io/legal",
     "../../pcwstats.github.io/guides",
+    "../../pcwstats.github.io/legal",
     "../../pcwstats.github.io/guides/general-guides",
     "../../pcwstats.github.io/guides/map-guides",
     "../../pcwstats.github.io/guides/tank-guides",
