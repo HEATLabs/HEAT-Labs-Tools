@@ -7,10 +7,10 @@ from datetime import datetime
 
 # Configuration
 WEBSITE_DIR = "../../pcwstats.github.io"
-IMAGES_DIR = "../../Website-Images/trackers"
+IMAGES_DIR = "../../PCWStats-Views-API/trackers"
 BASE_PIXEL_NAME = "pcwstats-tracker-pixel.png"
 BASE_CDN_URL = (
-    "https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@refs/heads/main/trackers"
+    "https://pcwstats-pixel-api.vercel.app/api/track"
 )
 TRACKING_JSON_FILE = "../../Website-Configs/tracking-pixel.json"
 
@@ -52,7 +52,7 @@ def add_tracking_pixel_to_html(html_file_path, pixel_url, page_identifier):
             print(f"Tracking pixel already exists in {os.path.basename(html_file_path)}")
             return True
 
-        pixel_comment = '<!-- JsDelivr-based Tracking Pixel -->'
+        pixel_comment = '<!-- Custom Privacy-Focused Tracking Pixel -->'
         pixel_img = f'<img src="{pixel_url}" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="pcwstats-tracking-pixel" data-page="{page_identifier}">'
         pixel_block = f'{pixel_comment}\n    {pixel_img}'
 
