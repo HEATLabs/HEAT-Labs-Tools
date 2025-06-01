@@ -9,9 +9,7 @@ from datetime import datetime
 WEBSITE_DIR = "../../pcwstats.github.io"
 IMAGES_DIR = "../../PCWStats-Views-API/trackers"
 BASE_PIXEL_NAME = "pcwstats-tracker-pixel.png"
-BASE_CDN_URL = (
-    "https://pcwstats-pixel-api.vercel.app/api/track"
-)
+BASE_CDN_URL = "https://pcwstats-pixel-api.vercel.app/api/track"
 TRACKING_JSON_FILE = "../../Website-Configs/tracking-pixel.json"
 
 
@@ -49,12 +47,14 @@ def add_tracking_pixel_to_html(html_file_path, pixel_url, page_identifier):
             content = file.read()
 
         if "pcwstats-tracking-pixel" in content:
-            print(f"Tracking pixel already exists in {os.path.basename(html_file_path)}")
+            print(
+                f"Tracking pixel already exists in {os.path.basename(html_file_path)}"
+            )
             return True
 
-        pixel_comment = '<!-- Custom Privacy-Focused Tracking Pixel -->'
+        pixel_comment = "<!-- Custom Privacy-Focused Tracking Pixel -->"
         pixel_img = f'<img src="{pixel_url}" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="pcwstats-tracking-pixel" data-page="{page_identifier}">'
-        pixel_block = f'{pixel_comment}\n    {pixel_img}'
+        pixel_block = f"{pixel_comment}\n    {pixel_img}"
 
         body_open_pattern = r"(<body[^>]*>)(\s*)"
 
@@ -96,14 +96,35 @@ def get_html_title(html_file_path):
         return None
 
 
-def process_html_files():
-    tracking_data = {
+def load_existing_tracking_data():
+    try:
+        if os.path.exists(TRACKING_JSON_FILE):
+            with open(TRACKING_JSON_FILE, "r", encoding="utf-8") as f:
+                existing_data = json.load(f)
+                # Convert the list of pixels to a dictionary for easier lookup
+                existing_pixels = {
+                    p["html_file"]: p for p in existing_data.get("pixels", [])
+                }
+                return existing_data, existing_pixels
+    except Exception as e:
+        print(f"Warning: Could not load existing tracking data: {e}")
+
+    # Return default structure if file doesn't exist or can't be read
+    return {
         "generated_at": datetime.now().isoformat(),
         "base_cdn_url": BASE_CDN_URL,
-        "pixels": []
-    }
+        "pixels": [],
+    }, {}
+
+
+def process_html_files():
+    # Load existing data or create new structure
+    tracking_data, existing_pixels = load_existing_tracking_data()
+    tracking_data["generated_at"] = datetime.now().isoformat()  # Update generation time
+
     failed_files = []
     skipped_files = []
+    new_pixels_added = 0
 
     website_path = Path(WEBSITE_DIR)
     images_path = Path(IMAGES_DIR)
@@ -127,6 +148,14 @@ def process_html_files():
 
     for html_file in html_files:
         try:
+            relative_path = html_file.relative_to(website_path)
+            normalized_path = str(relative_path).replace(os.sep, "/")
+
+            # Skip if this file is already in our tracking data
+            if normalized_path in existing_pixels:
+                skipped_files.append(str(html_file))
+                continue
+
             page_identifier = get_page_identifier(html_file)
             html_title = get_html_title(html_file)
             page_name = get_page_name_from_title(html_title)
@@ -135,47 +164,52 @@ def process_html_files():
             pixel_path = images_path / pixel_filename
             pixel_url = f"{BASE_CDN_URL}/{pixel_filename}"
 
-            # Skip if pixel already exists in HTML
+            # Skip if pixel already exists in HTML (even if not in our JSON)
             with open(html_file, "r", encoding="utf-8") as file:
                 if "pcwstats-tracking-pixel" in file.read():
                     skipped_files.append(str(html_file))
                     continue
 
-            pixel_created = create_tracking_pixel(base_pixel_path, pixel_path, page_identifier)
+            pixel_created = create_tracking_pixel(
+                base_pixel_path, pixel_path, page_identifier
+            )
             html_updated = False
 
             if pixel_created:
-                html_updated = add_tracking_pixel_to_html(html_file, pixel_url, page_identifier)
+                html_updated = add_tracking_pixel_to_html(
+                    html_file, pixel_url, page_identifier
+                )
 
             if pixel_created and html_updated:
-                relative_path = html_file.relative_to(website_path)
-                normalized_path = str(relative_path).replace(os.sep, '/')
-
-                tracking_data["pixels"].append({
-                    "page_name": page_name,
-                    "page_identifier": page_identifier,
-                    "html_file": normalized_path,
-                    "pixel_filename": pixel_filename,
-                    "pixel_url": pixel_url,
-                    "html_title": html_title,
-                })
+                tracking_data["pixels"].append(
+                    {
+                        "page_name": page_name,
+                        "page_identifier": page_identifier,
+                        "html_file": normalized_path,
+                        "pixel_filename": pixel_filename,
+                        "pixel_url": pixel_url,
+                        "html_title": html_title,
+                    }
+                )
+                new_pixels_added += 1
             else:
                 failure_reason = []
                 if not pixel_created:
                     failure_reason.append("pixel creation failed")
                 if not html_updated:
                     failure_reason.append("HTML update failed")
-                failed_files.append({
-                    "file": str(html_file),
-                    "reason": ", ".join(failure_reason) or "unknown reason"
-                })
+                failed_files.append(
+                    {
+                        "file": str(html_file),
+                        "reason": ", ".join(failure_reason) or "unknown reason",
+                    }
+                )
 
         except Exception as e:
             print(f"Error processing {html_file}: {e}")
-            failed_files.append({
-                "file": str(html_file),
-                "reason": f"exception: {str(e)}"
-            })
+            failed_files.append(
+                {"file": str(html_file), "reason": f"exception: {str(e)}"}
+            )
 
     # Save tracking JSON
     json_path = Path(TRACKING_JSON_FILE)
@@ -190,7 +224,8 @@ def process_html_files():
     # Print comprehensive report
     print(f"\nProcessing complete!")
     print(f"Total HTML files found: {len(html_files)}")
-    print(f"Successfully processed: {len(tracking_data['pixels'])}")
+    print(f"Existing tracking entries: {len(existing_pixels)}")
+    print(f"New pixels added: {new_pixels_added}")
     print(f"Skipped (already had pixels): {len(skipped_files)}")
     print(f"Failed to process: {len(failed_files)}")
 
@@ -205,16 +240,20 @@ def process_html_files():
             print(f"  - {failure['file']} ({failure['reason']})")
 
     # Compare against all HTML files to find any completely missed files
-    processed_files = {p['html_file'] for p in tracking_data['pixels']}
-    all_html_files = {str(f.relative_to(website_path).as_posix())
-                      for f in website_path.rglob('*.html')}
-    missing_files = all_html_files - processed_files - {
-        str(Path(f['file']).relative_to(website_path).as_posix())
-        for f in failed_files
-    } - {
-                        str(Path(f).relative_to(website_path).as_posix())
-                        for f in skipped_files
-                    }
+    processed_files = {p["html_file"] for p in tracking_data["pixels"]}
+    all_html_files = {
+        str(f.relative_to(website_path).as_posix())
+        for f in website_path.rglob("*.html")
+    }
+    missing_files = (
+        all_html_files
+        - processed_files
+        - {
+            str(Path(f["file"]).relative_to(website_path).as_posix())
+            for f in failed_files
+        }
+        - {str(Path(f).relative_to(website_path).as_posix()) for f in skipped_files}
+    )
 
     if missing_files:
         print("\nFiles not processed at all (not in success, failed or skipped lists):")
