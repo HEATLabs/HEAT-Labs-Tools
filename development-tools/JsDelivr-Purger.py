@@ -94,7 +94,7 @@ def update_purge_timestamp(urls_data, purged_urls):
 
 
 # Purge URLs one by one
-def purge_urls(urls, delay=1):
+def purge_urls(urls, delay=0.2):
     successfully_purged = []
     for url in urls:
         if purge_single_url(url, delay):
