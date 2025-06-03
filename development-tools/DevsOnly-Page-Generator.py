@@ -252,7 +252,7 @@ def generate_html_content(html_files, input_dir):
                 <span class="beta-tag">BETA</span>
               </a>
             </div>
-            <div class="flex items-center space-x-6">
+            <div class="navbar-actions">
               <button id="openSearch" class="search-button">
                 <i class="fas fa-search"></i>
               </button>
