@@ -23,9 +23,17 @@ REPOS = [
     "Database-Files",
 ]
 
+EXTRA_REPOS = [
+    {"owner": "ThatSINEWAVE", "repo": "PCWStats-Views-API"},
+]
 
-def get_all_commits(repo):
-    url = f"{GITHUB_API_URL}/repos/{ORG_NAME}/{repo}/commits"
+
+def get_all_commits(repo, owner=None):
+    if owner:
+        url = f"{GITHUB_API_URL}/repos/{owner}/{repo}/commits"
+    else:
+        url = f"{GITHUB_API_URL}/repos/{ORG_NAME}/{repo}/commits"
+
     headers = {
         "Authorization": f"token {GITHUB_TOKEN}",
         "Accept": "application/vnd.github.v3+json",
@@ -52,7 +60,14 @@ def get_all_commits(repo):
 def gather_commits(commits_data):
     daily_commits = defaultdict(list)
 
-    for repo, repo_commits in commits_data:
+    for repo_data in commits_data:
+        if isinstance(repo_data, tuple) and len(repo_data) == 2:
+            repo, repo_commits = repo_data
+        else:
+            # Handle extra repos
+            repo = repo_data["repo"]
+            repo_commits = repo_data["commits"]
+
         for commit in repo_commits:
             if "commit" not in commit:
                 continue
@@ -80,6 +95,24 @@ def main():
             print(f"Fetched {len(commits)} commits from {repo}")
         except Exception as e:
             print(f"Error fetching commits from {repo}: {str(e)}")
+
+    # Get commits from extra repos
+    for repo_info in EXTRA_REPOS:
+        try:
+            commits = get_all_commits(repo_info["repo"], owner=repo_info["owner"])
+            all_commits.append(
+                {
+                    "repo": f"{repo_info['owner']}/{repo_info['repo']}",
+                    "commits": commits,
+                }
+            )
+            print(
+                f"Fetched {len(commits)} commits from {repo_info['owner']}/{repo_info['repo']}"
+            )
+        except Exception as e:
+            print(
+                f"Error fetching commits from {repo_info['owner']}/{repo_info['repo']}: {str(e)}"
+            )
 
     daily_log = gather_commits(all_commits)
 
