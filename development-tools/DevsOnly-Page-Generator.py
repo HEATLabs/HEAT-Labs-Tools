@@ -271,7 +271,7 @@ def generate_html_content(html_files, input_dir):
       </header>
       <!-- Hero Section -->
       <section class="hero">
-        <div class="hero-overlay"></div>
+        <div class="waves-container"></div>
         <div class="hero-content">
           <h1>Devs Only</h1>
           <p>Developer Page Tool</p>
@@ -526,6 +526,7 @@ def generate_html_content(html_files, input_dir):
     </div>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/misc.js"></script>
+    <script src="assets/js/modules/waves.js"></script>
     <script src="../assets/js/modules/sidebar.js"></script>
     <script src="../assets/js/modules/theme-loader.js"></script>
     <script src="../assets/js/modules/search.js"></script>
