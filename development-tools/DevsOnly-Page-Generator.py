@@ -37,9 +37,9 @@ def generate_html_content(html_files, input_dir):
     <meta name="googlebot" content="index, follow">
     <meta name="language" content="English">
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://pcwstats.github.io/devsonly.html">
+    <link rel="canonical" href="https://pcwstats.github.io/easter-eggs/devsonly.html">
     <!-- Sitemap -->
-    <link rel="sitemap" type="application/xml" href="site-data/sitemap.xml">
+    <link rel="sitemap" type="application/xml" href="../site-data/sitemap.xml">
     <!-- Theme Checker -->
     <script>
       // Immediately set theme class before rendering begins
@@ -60,20 +60,20 @@ def generate_html_content(html_files, input_dir):
       })();
     </script>
     <!-- Main stylesheets -->
-    <link rel="stylesheet" href="assets/css/libraries/tailwind.css">
-    <link rel="stylesheet" href="assets/css/libraries/font-awesome/all.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/misc.css">
-    <link rel="stylesheet" href="assets/css/pages/devsonly.css">
-    <link rel="stylesheet" href="assets/css/modules/header.css">
-    <link rel="stylesheet" href="assets/css/modules/footer.css">
-    <link rel="stylesheet" href="assets/css/modules/sidebar.css">
-    <link rel="stylesheet" href="assets/css/modules/cta.css">
-    <link rel="stylesheet" href="assets/css/modules/no-scrollbar.css">
-    <link rel="stylesheet" href="assets/css/modules/search.css">
-    <link rel="stylesheet" href="assets/css/modules/global-hero.css">
-    <link rel="stylesheet" href="assets/css/modules/warning.css">
-    <link rel="stylesheet" href="assets/css/modules/banner.css">
+    <link rel="stylesheet" href="../assets/css/libraries/tailwind.css">
+    <link rel="stylesheet" href="../assets/css/libraries/font-awesome/all.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/misc.css">
+    <link rel="stylesheet" href="../assets/css/pages/devsonly.css">
+    <link rel="stylesheet" href="../assets/css/modules/header.css">
+    <link rel="stylesheet" href="../assets/css/modules/footer.css">
+    <link rel="stylesheet" href="../assets/css/modules/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/modules/cta.css">
+    <link rel="stylesheet" href="../assets/css/modules/no-scrollbar.css">
+    <link rel="stylesheet" href="../assets/css/modules/search.css">
+    <link rel="stylesheet" href="../assets/css/modules/global-hero.css">
+    <link rel="stylesheet" href="../assets/css/modules/warning.css">
+    <link rel="stylesheet" href="../assets/css/modules/banner.css">
     <!-- Favicon for all browsers -->
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon.ico" type="image/x-icon">
@@ -93,11 +93,11 @@ def generate_html_content(html_files, input_dir):
     <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon-16x16.png">
     <!-- Web Manifest -->
-    <link rel="manifest" href="site-data/site.manifest">
+    <link rel="manifest" href="../site-data/site.manifest">
     <!-- Windows-specific tiles (for pinned sites in Windows Start menu) -->
     <meta name="msapplication-TileColor" content="#141312">
     <meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/microsoft/ms-icon-144x144.png">
-    <meta name="msapplication-config" content="site-data/browserconfig.xml">
+    <meta name="msapplication-config" content="../site-data/browserconfig.xml">
     <!-- Safari-specific meta tags -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -110,7 +110,7 @@ def generate_html_content(html_files, input_dir):
     <meta property="og:title" content="PCWStats - Devs Only">
     <meta property="og:description" content="PCWStats developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
     <meta property="og:image" content="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/social-share/PCWStats.png">
-    <meta property="og:url" content="https://pcwstats.github.io/devsonly.html">
+    <meta property="og:url" content="https://pcwstats.github.io/easter-eggs/devsonly.html">
     <meta property="og:type" content="website">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -142,91 +142,91 @@ def generate_html_content(html_files, input_dir):
       <nav class="flex-grow">
         <ul class="space-y-2">
           <li>
-            <a href="index.html" class="sidebar-link active">
+            <a href="../index.html" class="sidebar-link active">
               <i class="fas fa-wrench"></i>
               <span>Why Are You Here?</span>
             </a>
           </li>
           <li>
-            <a href="tanks.html" class="sidebar-link">
+            <a href="../tanks.html" class="sidebar-link">
               <i class="fas fa-shield-alt"></i>
               <span>Tank Statistics</span>
             </a>
           </li>
           <li>
-            <a href="players.html" class="sidebar-link wip">
+            <a href="../players.html" class="sidebar-link wip">
               <i class="fas fa-user"></i>
               <span>Player Statistics</span>
             </a>
           </li>
           <li>
-            <a href="maps.html" class="sidebar-link">
+            <a href="../maps.html" class="sidebar-link">
               <i class="fas fa-map"></i>
               <span>Map Knowledge</span>
             </a>
           </li>
           <li>
-            <a href="guides.html" class="sidebar-link">
+            <a href="../guides.html" class="sidebar-link">
               <i class="fas fa-book-open"></i>
               <span>Community Guides</span>
             </a>
           </li>
           <li>
-            <a href="strategy-planner.html" class="sidebar-link wip">
+            <a href="../strategy-planner.html" class="sidebar-link wip">
               <i class="fas fa-chess"></i>
               <span>Strategy Planner</span>
             </a>
           </li>
           <li>
-            <a href="builds.html" class="sidebar-link wip">
+            <a href="../builds.html" class="sidebar-link wip">
               <i class="fas fa-wrench"></i>
               <span>Common Builds</span>
             </a>
           </li>
           <li>
-            <a href="news.html" class="sidebar-link">
+            <a href="../news.html" class="sidebar-link">
               <i class="fas fa-newspaper"></i>
               <span>Game News</span>
             </a>
           </li>
           <li>
-            <a href="tankopedia.html" class="sidebar-link">
+            <a href="../tankopedia.html" class="sidebar-link">
               <i class="fas fa-database"></i>
               <span>Tankopedia</span>
             </a>
           </li>
           <li>
-            <a href="bug-hunting.html" class="sidebar-link">
+            <a href="../bug-hunting.html" class="sidebar-link">
               <i class="fas fa-bug"></i>
               <span>Bug Hunting</span>
             </a>
           </li>
           <li>
-            <a href="tournaments.html" class="sidebar-link">
+            <a href="../tournaments.html" class="sidebar-link">
               <i class="fas fa-trophy"></i>
               <span>Tournaments</span>
             </a>
           </li>
           <li>
-            <a href="blog.html" class="sidebar-link">
+            <a href="../blog.html" class="sidebar-link">
               <i class="fas fa-blog"></i>
               <span>Official Blog</span>
             </a>
           </li>
           <li>
-            <a href="legal.html" class="sidebar-link">
+            <a href="../legal.html" class="sidebar-link">
               <i class="fas fa-balance-scale"></i>
               <span>Project Policies</span>
             </a>
           </li>
           <li>
-            <a href="about-us.html" class="sidebar-link">
+            <a href="../resources/about-us.html" class="sidebar-link">
               <i class="fas fa-info-circle"></i>
               <span>About the Project</span>
             </a>
           </li>
           <li>
-            <a href="credits.html" class="sidebar-link">
+            <a href="../resources/credits.html" class="sidebar-link">
               <i class="fas fa-users"></i>
               <span>Community Credits</span>
             </a>
@@ -246,8 +246,8 @@ def generate_html_content(html_files, input_dir):
                 <span></span>
                 <span></span>
               </button>
-              <a href="index.html" class="brand-logo">
-                <img src="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/logo/logo.png" alt="PCWStats Logo" class="brand-logo-img">
+              <a href="../index.html" class="brand-logo">
+                <img src="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/logo/logo.webp" alt="PCWStats Logo" class="brand-logo-img">
                 <span>PCWStats</span>
                 <span class="beta-tag">BETA</span>
               </a>
@@ -259,6 +259,12 @@ def generate_html_content(html_files, input_dir):
               <div class="theme-toggle-mobile" id="themeToggleMobile">
                 <i class="fas fa-moon"></i>
               </div>
+              <a href="../resources/system-status.html" class="system-status">
+                <i class="fa-solid fa-server"></i>
+              </a>
+              <a href="../resources/website-statistics.html" class="system-status">
+                <i class="fa-solid fa-chart-column"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -328,7 +334,7 @@ def generate_html_content(html_files, input_dir):
                 <div class="dev-card">
                     <div class="dev-info">
                         <h3>{filename}</h3>
-                        <a href="{rel_path}" class="btn-accent btn-dev">
+                        <a href="../{rel_path}" class="btn-accent btn-dev">
                             <i class=""></i>Go to Page </a>
                     </div>
                 </div>"""
@@ -366,7 +372,7 @@ def generate_html_content(html_files, input_dir):
               <h2 class="mb-1">Go on then</h2>
               <p class="text-lg mb-1 mt-5">Since you're here, might as well make yourself useful. Fix a typo. Add a secret. Break something. We won't stop you.</p>
               <div class="flex justify-center mt-6">
-                <a href="contact-us.html" class="special-cta-button">
+                <a href="../resources/contact-us.html" class="special-cta-button">
                   <i class="fas fa-edit mr-2"></i> Improve This Page </a>
               </div>
             </div>
@@ -434,13 +440,13 @@ def generate_html_content(html_files, input_dir):
               <h3 class="text-lg font-semibold mb-2">Tools</h3>
               <ul class="footer-links text-gray-400">
                 <li>
-                  <a href="maps.html">Map Knowledge</a>
+                  <a href="../maps.html">Map Knowledge</a>
                 </li>
                 <li>
-                  <a href="tanks.html">Tank Statistics</a>
+                  <a href="../tanks.html">Tank Statistics</a>
                 </li>
                 <li>
-                  <a href="tankopedia.html">Tankopedia</a>
+                  <a href="../tankopedia.html">Tankopedia</a>
                 </li>
               </ul>
             </div>
@@ -448,10 +454,10 @@ def generate_html_content(html_files, input_dir):
               <h3 class="text-lg font-semibold mb-2">Community</h3>
               <ul class="footer-links text-gray-400">
                 <li>
-                  <a href="guides.html">Community Guides</a>
+                  <a href="../guides.html">Community Guides</a>
                 </li>
                 <li>
-                  <a href="builds.html">Common Builds</a>
+                  <a href="../builds.html">Common Builds</a>
                 </li>
                 <li>
                   <a href="#">devs</a>
@@ -462,13 +468,13 @@ def generate_html_content(html_files, input_dir):
               <h3 class="text-lg font-semibold mb-2">PCWStats</h3>
               <ul class="footer-links text-gray-400">
                 <li>
-                  <a href="about-us.html">About the Project</a>
+                  <a href="../resources/about-us.html">About the Project</a>
                 </li>
                 <li>
-                  <a href="blog.html">Official Blog</a>
+                  <a href="../blog.html">Official Blog</a>
                 </li>
                 <li>
-                  <a href="news.html">Game News</a>
+                  <a href="../news.html">Game News</a>
                 </li>
               </ul>
             </div>
@@ -476,13 +482,13 @@ def generate_html_content(html_files, input_dir):
               <h3 class="text-lg font-semibold mb-2">Credits</h3>
               <ul class="footer-links text-gray-400">
                 <li>
-                  <a href="credits.html">Community Credits</a>
+                  <a href="../resources/credits.html">Community Credits</a>
                 </li>
                 <li>
-                  <a href="support-us.html">Support the Project</a>
+                  <a href="../resources/support-us.html">Support the Project</a>
                 </li>
                 <li>
-                  <a href="contact-us.html">Contact Us</a>
+                  <a href="../resources/contact-us.html">Contact Us</a>
                 </li>
               </ul>
             </div>
@@ -490,13 +496,13 @@ def generate_html_content(html_files, input_dir):
               <h3 class="text-lg font-semibold mb-2">Legal</h3>
               <ul class="footer-links text-gray-400">
                 <li>
-                  <a href="legal/terms-of-service.html">Terms of Service</a>
+                  <a href="../legal/terms-of-service.html">Terms of Service</a>
                 </li>
                 <li>
-                  <a href="legal/project-license.html">Project License</a>
+                  <a href="../legal/project-license.html">Project License</a>
                 </li>
                 <li>
-                  <a href="legal/privacy-policy.html">Privacy Policy</a>
+                  <a href="../legal/privacy-policy.html">Privacy Policy</a>
                 </li>
               </ul>
             </div>
@@ -505,9 +511,9 @@ def generate_html_content(html_files, input_dir):
           <div class="text-center">
             <h3 class="text-lg font-semibold mb-1">Contact</h3>
             <p class="text-gray-400 mb-2">Have suggestions, found a bug or want to help?</p>
-            <a href="contact-us.html" class="btn-accent mt-4">
+            <a href="../resources/contact-us.html" class="btn-accent mt-4">
               <i class="fas fa-envelope mr-2"></i>Send Feedback </a>
-            <a href="get-involved.html" class="btn-accent mt-4">
+            <a href="../resources/get-involved.html" class="btn-accent mt-4">
               <i class="fas fa-users mr-2"></i>Get Involved </a>
           </div>
           <!-- Bottom Disclaimer -->
@@ -518,16 +524,15 @@ def generate_html_content(html_files, input_dir):
         </div>
       </footer>
     </div>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/misc.js"></script>
-    <script src="assets/js/modules/sidebar.js"></script>
-    <script src="assets/js/modules/theme-loader.js"></script>
-    <script src="assets/js/maps.js"></script>
-    <script src="assets/js/modules/search.js"></script>
-    <script src="assets/js/modules/warning.js"></script>
-    <script src="assets/js/pages/devsonly.js"></script>
-    <script src="assets/js/modules/global-hero.js"></script>
-    <script src="assets/js/modules/banner.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/misc.js"></script>
+    <script src="../assets/js/modules/sidebar.js"></script>
+    <script src="../assets/js/modules/theme-loader.js"></script>
+    <script src="../assets/js/modules/search.js"></script>
+    <script src="../assets/js/modules/warning.js"></script>
+    <script src="../assets/js/pages/devsonly.js"></script>
+    <script src="../assets/js/modules/global-hero.js"></script>
+    <script src="../assets/js/modules/banner.js"></script>
   </body>
 </html>"""
 
