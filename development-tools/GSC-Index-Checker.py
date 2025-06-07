@@ -163,9 +163,11 @@ class PCWStatsIndexingChecker:
         self, start_date: str = None, end_date: str = None
     ) -> Dict[str, Any]:
         if not start_date:
-            start_date = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
+            start_date = "2025-05-16"
         if not end_date:
             end_date = datetime.now().strftime("%Y-%m-%d")
+
+        print(f"Fetching data from {start_date} to {end_date} (all available data)")
 
         indexing_data = {
             "site_url": self.target_site,
@@ -182,21 +184,29 @@ class PCWStatsIndexingChecker:
 
         try:
             # Get search analytics data to find indexed pages
-            request = {
-                "startDate": start_date,
-                "endDate": end_date,
-                "dimensions": ["page"],
-                "rowLimit": 1000,
-                "startRow": 0,
-            }
+            all_pages = []
+            start_row = 0
+            row_limit = 1000  # Maximum allowed by API
 
-            response = (
-                self.service.searchanalytics()
-                .query(siteUrl=self.target_site, body=request)
-                .execute()
-            )
+            while True:
+                request = {
+                    "startDate": start_date,
+                    "endDate": end_date,
+                    "dimensions": ["page"],
+                    "rowLimit": row_limit,
+                    "startRow": start_row,
+                }
 
-            if "rows" in response:
+                response = (
+                    self.service.searchanalytics()
+                    .query(siteUrl=self.target_site, body=request)
+                    .execute()
+                )
+
+                if "rows" not in response or len(response["rows"]) == 0:
+                    break
+
+                # Process this batch of results
                 for row in response["rows"]:
                     page_url = row["keys"][0]
 
@@ -212,11 +222,25 @@ class PCWStatsIndexingChecker:
                             "crawl_time": None,
                             "robots_txt_state": "ALLOWED",
                             "user_agent": "DESKTOP",
+                            "clicks": row.get("clicks", 0),
+                            "impressions": row.get("impressions", 0),
+                            "ctr": row.get("ctr", 0),
+                            "position": row.get("position", 0),
                         }
-                        indexing_data["pages"].append(page_data)
-                        indexing_data["summary"]["indexed_pages"] += 1
+                        all_pages.append(page_data)
 
-            indexing_data["summary"]["total_pages"] = len(indexing_data["pages"])
+                # Check if we got fewer results than requested, meaning we're done
+                if len(response["rows"]) < row_limit:
+                    break
+
+                start_row += row_limit
+                print(f"Fetched {len(all_pages)} pages so far...")
+
+            indexing_data["pages"] = all_pages
+            indexing_data["summary"]["indexed_pages"] = len(all_pages)
+            indexing_data["summary"]["total_pages"] = len(all_pages)
+
+            print(f"Total pages found in all-time data: {len(all_pages)}")
 
             # Get sitemap data
             try:
@@ -293,6 +317,7 @@ class PCWStatsIndexingChecker:
         self,
         specific_urls: List[str] = None,
         output_file: str = "../../Website-Configs/gsc-index.json",
+        all_time: bool = True,
     ) -> None:
         print("Starting authentication...")
         if not self.authenticate():
@@ -310,7 +335,13 @@ class PCWStatsIndexingChecker:
         print(f"Processing PCWStats indexing data for: {self.target_site}")
 
         # Get general indexing data
-        site_data = self.get_pcwstats_indexing_status()
+        if all_time:
+            print("Fetching ALL-TIME data...")
+            site_data = self.get_pcwstats_indexing_status()
+        else:
+            print("Fetching last 30 days data...")
+            start_date = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
+            site_data = self.get_pcwstats_indexing_status(start_date=start_date)
 
         # If specific URLs provided, inspect them individually
         if specific_urls:
@@ -328,6 +359,7 @@ class PCWStatsIndexingChecker:
         all_data = {
             "generated_at": datetime.now().isoformat(),
             "site_url": self.target_site,
+            "data_type": "all_time" if all_time else "last_30_days",
             "data": site_data,
             "summary": {
                 "total_pages_found": site_data["summary"]["total_pages"],
@@ -342,6 +374,7 @@ class PCWStatsIndexingChecker:
                 json.dump(all_data, f, indent=2, ensure_ascii=False)
 
             print(f"\nPCWStats indexing status data saved to: {output_file}")
+            print(f"Data type: {'All-time' if all_time else 'Last 30 days'}")
             print(f"Total pages found: {all_data['summary']['total_pages_found']}")
             print(f"Indexed pages: {all_data['summary']['indexed_pages']}")
 
@@ -350,6 +383,10 @@ class PCWStatsIndexingChecker:
                 print(f"\nSample indexed URLs:")
                 for page in site_data["pages"][:5]:  # Show first 5
                     print(f"  - {page['url']}")
+                    if page.get("impressions", 0) > 0:
+                        print(
+                            f"    Impressions: {page['impressions']}, Clicks: {page['clicks']}"
+                        )
                 if len(site_data["pages"]) > 5:
                     print(f"  ... and {len(site_data['pages']) - 5} more")
 
@@ -393,6 +430,11 @@ def main():
         "--setup", action="store_true", help="Show OAuth setup instructions"
     )
     parser.add_argument("--urls", nargs="*", help="Specific PCWStats URLs to inspect")
+    parser.add_argument(
+        "--last-30-days",
+        action="store_true",
+        help="Get data for last 30 days only (default is all-time data)",
+    )
     args = parser.parse_args()
 
     if args.setup:
@@ -404,9 +446,13 @@ def main():
     # Use specific URLs if provided
     specific_urls = args.urls if args.urls else None
 
+    all_time = not args.last_30_days
+
     # Run the PCWStats check
     checker.run_pcwstats_check(
-        specific_urls=specific_urls, output_file="../../Website-Configs/gsc-index.json"
+        specific_urls=specific_urls,
+        output_file="../../Website-Configs/gsc-index.json",
+        all_time=all_time,
     )
 
 
