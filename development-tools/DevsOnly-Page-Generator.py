@@ -259,11 +259,14 @@ def generate_html_content(html_files, input_dir):
               <div class="theme-toggle-mobile" id="themeToggleMobile">
                 <i class="fas fa-moon"></i>
               </div>
-              <a href="../resources/system-status.html" class="system-status">
+              <a href="https://pcwstats.github.io/Website-Status" class="system-status">
                 <i class="fa-solid fa-server"></i>
               </a>
-              <a href="../resources/website-statistics.html" class="system-status">
+              <a href="https://pcwstats.github.io/Website-Statistics" class="system-status">
                 <i class="fa-solid fa-chart-column"></i>
+              </a>
+              <a href="https://pcwstats.github.io/Website-Changelog" class="system-status">
+                <i class="fa-solid fa-clipboard-list"></i>
               </a>
             </div>
           </div>
@@ -341,6 +344,30 @@ def generate_html_content(html_files, input_dir):
 
     # Add the rest of the template
     content += """
+             <!-- Page Card changelog -->
+             <div class="dev-card">
+                <div class="dev-info">
+                    <h3>changelog</h3>
+                    <a href="https://pcwstats.github.io/Website-Changelog" class="btn-accent btn-dev">
+                        <i class=""></i>Go to Page </a>
+                </div>
+             </div>
+             <!-- Page Card changelog -->
+             <div class="dev-card">
+                <div class="dev-info">
+                    <h3>website-statistics</h3>
+                    <a href="https://pcwstats.github.io/Website-Statistics" class="btn-accent btn-dev">
+                        <i class=""></i>Go to Page </a>
+                </div>
+             </div>
+             <!-- Page Card changelog -->
+             <div class="dev-card">
+                <div class="dev-info">
+                    <h3>system-status</h3>
+                    <a href="https://pcwstats.github.io/Website-Status/" class="btn-accent btn-dev">
+                        <i class=""></i>Go to Page </a>
+                </div>
+             </div>
           </div>
           <!-- Pagination -->
           <div class="pagination-container">
@@ -526,7 +553,7 @@ def generate_html_content(html_files, input_dir):
     </div>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/misc.js"></script>
-    <script src="assets/js/modules/waves.js"></script>
+    <script src="../assets/js/modules/waves.js"></script>
     <script src="../assets/js/modules/sidebar.js"></script>
     <script src="../assets/js/modules/theme-loader.js"></script>
     <script src="../assets/js/modules/search.js"></script>
