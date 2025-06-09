@@ -553,6 +553,7 @@ def generate_html_content(html_files, input_dir):
     </div>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/misc.js"></script>
+    <script src="../assets/js/modules/image-protection.js"></script>
     <script src="../assets/js/modules/waves.js"></script>
     <script src="../assets/js/modules/sidebar.js"></script>
     <script src="../assets/js/modules/theme-loader.js"></script>
