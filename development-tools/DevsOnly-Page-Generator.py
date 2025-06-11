@@ -249,7 +249,7 @@ def generate_html_content(html_files, input_dir):
               <a href="../index.html" class="brand-logo">
                 <img src="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/logo/logo.webp" alt="PCWStats Logo" class="brand-logo-img">
                 <span>PCWStats</span>
-                <span class="beta-tag">BETA</span>
+                <span class="beta-tag"></span>
               </a>
             </div>
             <div class="navbar-actions">
