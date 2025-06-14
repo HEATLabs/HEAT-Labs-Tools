@@ -21,6 +21,9 @@ REPOS = [
     "Website-Images",
     "Database-Tools",
     "Database-Files",
+    "Website-Changelog",
+    "Website-Statistics",
+    "Website-Status",
 ]
 
 EXTRA_REPOS = [
