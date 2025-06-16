@@ -190,7 +190,7 @@ def generate_html_content(html_files, input_dir):
             </a>
           </li>
           <li>
-            <a href="../tankopedia.html" class="sidebar-link">
+            <a href="../asset-gallery.html" class="sidebar-link">
               <i class="fas fa-database"></i>
               <span>Tankopedia</span>
             </a>
@@ -473,7 +473,7 @@ def generate_html_content(html_files, input_dir):
                   <a href="../tanks.html">Tank Statistics</a>
                 </li>
                 <li>
-                  <a href="../tankopedia.html">Tankopedia</a>
+                  <a href="../asset-gallery.html">Tankopedia</a>
                 </li>
               </ul>
             </div>
