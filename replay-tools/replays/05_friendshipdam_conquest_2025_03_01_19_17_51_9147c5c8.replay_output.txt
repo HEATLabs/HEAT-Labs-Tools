@@ -1,0 +1,11 @@
+Opened replays/05_friendshipdam_conquest_2025_03_01_19_17_51_9147c5c8.replay, size: 16588687 bytes
+Found JSON segment at 16118623-16118698
+
+--- JSON Segment 1 ---
+{
+  "__type__": "cw::BattleResultReplayEvent_ver1",
+  "m_endGameType": "Win"
+}
+
+Scanning for zlib-compressed data...
+No zlib-compressed chunks found.
