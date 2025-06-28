@@ -1,15 +1,11 @@
 import os
 import json
 import glob
+from tqdm import tqdm
 
 # CONFIGURATION
 REPLAYS_FOLDER = "replays"
 OUTPUT_FILENAME = "all_replays_output.txt"
-
-
-def print_and_write(file, message):
-    print(message)
-    file.write(message + "\n")
 
 
 def try_parse_json(data_bytes):
@@ -21,14 +17,14 @@ def try_parse_json(data_bytes):
 
 def process_replay_file(filename, out_file):
     if not os.path.exists(filename):
-        print_and_write(out_file, f"File not found: {filename}")
+        out_file.write(f"File not found: {filename}\n")
         return
 
     with open(filename, "rb") as f:
         raw = f.read()
 
-    print_and_write(out_file, f"\n\n=== Processing {filename} ===")
-    print_and_write(out_file, f"File size: {len(raw)} bytes")
+    out_file.write(f"\n\n=== Processing {filename} ===\n")
+    out_file.write(f"File size: {len(raw)} bytes\n")
 
     # JSON scanning
     json_segments = []
@@ -40,14 +36,14 @@ def process_replay_file(filename, out_file):
                     data, ok = try_parse_json(possible_json)
                     if ok:
                         json_segments.append((i, j, data))
-                        print_and_write(out_file, f"Found JSON segment at {i}-{j}")
+                        out_file.write(f"Found JSON segment at {i}-{j}\n")
                         break
 
     if not json_segments:
-        print_and_write(out_file, "No JSON segments found in this file.")
+        out_file.write("No JSON segments found in this file.\n")
     else:
         for index, (start, end, data) in enumerate(json_segments):
-            print_and_write(out_file, f"\n--- JSON Segment {index + 1} ---")
+            out_file.write(f"\n--- JSON Segment {index + 1} ---\n")
             formatted = json.dumps(data, indent=2)
             out_file.write(formatted + "\n")
 
@@ -59,13 +55,25 @@ def process_all_replays():
         print(f"No .REPLAY files found in {REPLAYS_FOLDER}")
         return
 
+    total_files = len(replay_files)
+
     with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
-        print_and_write(out, f"Processing {len(replay_files)} replay files...")
+        out.write(f"Processing {total_files} replay files...\n")
 
-        for replay_file in replay_files:
-            process_replay_file(replay_file, out)
+        with tqdm(
+            replay_files,
+            desc="Processing replays",
+            unit="file",
+            bar_format="{l_bar}{bar:20}{r_bar}",
+            colour="green",
+        ) as pbar:
+            for replay_file in pbar:
+                process_replay_file(replay_file, out)
+                pbar.set_postfix(file=os.path.basename(replay_file)[:15] + "...")
 
-    print(f"\nDone! All extracted data saved to {OUTPUT_FILENAME}")
+    print(f"\nSuccessfully processed {total_files} replay files")
+    print(f"Output saved to: {OUTPUT_FILENAME}")
 
 
-process_all_replays()
+if __name__ == "__main__":
+    process_all_replays()
