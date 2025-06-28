@@ -10,6 +10,8 @@ OUTPUT_FILENAME = "all_replays_output.json"
 
 # Player name pattern
 PLAYER_REGEX = re.compile(rb"\b[\w]{3,20}#[0-9]{3,6}\b")
+# World path pattern to extract map and mode
+WORLD_PATH_REGEX = re.compile(rb"/worlds/(\w+)_(\w+)\.world")
 
 
 def try_parse_json(data_bytes):
@@ -46,6 +48,18 @@ def extract_build_info(raw_data):
     return build_info
 
 
+def extract_map_and_mode(raw_data):
+    match = WORLD_PATH_REGEX.search(raw_data)
+    if match:
+        try:
+            map_name = match.group(1).decode("utf-8")
+            mode = match.group(2).decode("utf-8")
+            return {"map": map_name, "mode": mode}
+        except:
+            pass
+    return {"map": None, "mode": None}
+
+
 def extract_player_names(raw_data):
     matches = PLAYER_REGEX.findall(raw_data)
     names = sorted(set(s.decode("utf-8", errors="replace") for s in matches))
@@ -59,7 +73,7 @@ def initialize_output_file():
         )
 
 
-def update_output_file(filename, json_segments, build_info, player_names):
+def update_output_file(filename, json_segments, build_info, player_names, map_info):
     try:
         with open(OUTPUT_FILENAME, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -71,6 +85,7 @@ def update_output_file(filename, json_segments, build_info, player_names):
         "match_details": json_segments,
         "game_version": build_info,
         "players": player_names,
+        "map_info": map_info
     }
     data["processed_files"] = len(data["results"])
 
@@ -80,7 +95,7 @@ def update_output_file(filename, json_segments, build_info, player_names):
 
 def process_replay_file(filename):
     if not os.path.exists(filename):
-        update_output_file(filename, {"error": "File not found"}, {}, [])
+        update_output_file(filename, {"error": "File not found"}, {}, [], {})
         return []
 
     with open(filename, "rb") as f:
@@ -99,8 +114,9 @@ def process_replay_file(filename):
 
     build_info = extract_build_info(raw)
     player_names = extract_player_names(raw)
+    map_info = extract_map_and_mode(raw)
 
-    update_output_file(filename, json_segments, build_info, player_names)
+    update_output_file(filename, json_segments, build_info, player_names, map_info)
     return json_segments
 
 
