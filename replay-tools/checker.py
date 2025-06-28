@@ -14,7 +14,7 @@ def print_and_write(file, message):
 
 def try_parse_json(data_bytes):
     try:
-        return json.loads(data_bytes.decode('utf-8')), True
+        return json.loads(data_bytes.decode("utf-8")), True
     except Exception:
         return None, False
 
@@ -40,10 +40,10 @@ def extract_replay_data(filename):
         # Step 1
         json_segments = []
         for i in range(len(raw)):
-            if raw[i:i+1] == b'{':
-                for j in range(i+10, min(i+5000, len(raw))):
-                    if raw[j:j+1] == b'}':
-                        possible_json = raw[i:j+1]
+            if raw[i : i + 1] == b"{":
+                for j in range(i + 10, min(i + 5000, len(raw))):
+                    if raw[j : j + 1] == b"}":
+                        possible_json = raw[i : j + 1]
                         data, ok = try_parse_json(possible_json)
                         if ok:
                             json_segments.append((i, j, data))
@@ -62,7 +62,7 @@ def extract_replay_data(filename):
         print_and_write(out, "\nScanning for zlib-compressed data...")
         found = 0
         for i in range(len(raw)):
-            if raw[i:i+2] == b'x\x9c':
+            if raw[i : i + 2] == b"x\x9c":
                 for j in range(i + 100, min(i + 50000, len(raw))):
                     chunk = raw[i:j]
                     decompressed, ok = decompress_zlib(chunk)

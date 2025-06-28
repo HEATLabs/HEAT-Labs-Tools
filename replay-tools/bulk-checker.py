@@ -14,7 +14,7 @@ def print_and_write(file, message):
 
 def try_parse_json(data_bytes):
     try:
-        return json.loads(data_bytes.decode('utf-8')), True
+        return json.loads(data_bytes.decode("utf-8")), True
     except Exception:
         return None, False
 
@@ -33,10 +33,10 @@ def process_replay_file(filename, out_file):
     # JSON scanning
     json_segments = []
     for i in range(len(raw)):
-        if raw[i:i + 1] == b'{':
+        if raw[i : i + 1] == b"{":
             for j in range(i + 10, min(i + 5000, len(raw))):
-                if raw[j:j + 1] == b'}':
-                    possible_json = raw[i:j + 1]
+                if raw[j : j + 1] == b"}":
+                    possible_json = raw[i : j + 1]
                     data, ok = try_parse_json(possible_json)
                     if ok:
                         json_segments.append((i, j, data))
