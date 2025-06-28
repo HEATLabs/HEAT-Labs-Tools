@@ -15,6 +15,33 @@ def try_parse_json(data_bytes):
         return None, False
 
 
+def extract_build_info(raw_data):
+    build_info = {"build": None, "branch": None}
+
+    try:
+        data_str = raw_data.decode("utf-8", errors="ignore")
+    except:
+        return build_info
+
+    build_prefix = "build: '"
+    build_start = data_str.find(build_prefix)
+    if build_start != -1:
+        build_start += len(build_prefix)
+        build_end = data_str.find("'", build_start)
+        if build_end != -1:
+            build_info["build"] = data_str[build_start:build_end]
+
+    branch_prefix = "branch: '"
+    branch_start = data_str.find(branch_prefix)
+    if branch_start != -1:
+        branch_start += len(branch_prefix)
+        branch_end = data_str.find("'", branch_start)
+        if branch_end != -1:
+            build_info["branch"] = data_str[branch_start:branch_end]
+
+    return build_info
+
+
 def initialize_output_file():
     with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
         json.dump(
@@ -22,7 +49,7 @@ def initialize_output_file():
         )
 
 
-def update_output_file(filename, json_segments):
+def update_output_file(filename, json_segments, build_info):
     try:
         with open(OUTPUT_FILENAME, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -30,7 +57,10 @@ def update_output_file(filename, json_segments):
         data = {"total_files": 0, "processed_files": 0, "results": {}}
 
     basename = os.path.basename(filename)
-    data["results"][basename] = {"json_segments": json_segments}
+    data["results"][basename] = {
+        "match_details": json_segments,
+        "game_version": build_info,
+    }
     data["processed_files"] = len(data["results"])
 
     with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
@@ -39,7 +69,7 @@ def update_output_file(filename, json_segments):
 
 def process_replay_file(filename):
     if not os.path.exists(filename):
-        update_output_file(filename, {"error": "File not found"})
+        update_output_file(filename, {"error": "File not found"}, {})
         return []
 
     with open(filename, "rb") as f:
@@ -53,10 +83,11 @@ def process_replay_file(filename):
                     possible_json = raw[i : j + 1]
                     data, ok = try_parse_json(possible_json)
                     if ok:
-                        json_segments.append({"content": data})
+                        json_segments.append({"details": data})
                         break
 
-    update_output_file(filename, json_segments)
+    build_info = extract_build_info(raw)
+    update_output_file(filename, json_segments, build_info)
     return json_segments
 
 
@@ -73,7 +104,7 @@ def process_all_replays():
         data = json.load(f)
         data["total_files"] = len(replay_files)
         f.seek(0)
-        json.dump(data, f, indent=2)
+        json.dump(data, f, indent=4)
         f.truncate()
 
     with tqdm(
