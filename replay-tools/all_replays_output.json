@@ -1,0 +1,1938 @@
+{
+  "total_files": 141,
+  "processed_files": 141,
+  "results": {
+    "01_beirut_conquest_2025_02_22_21_42_23_dd31c18c.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_conquest_2025_02_23_21_06_18_fce12e27.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_conquest_2025_02_23_21_16_21_afc23050.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_conquest_2025_02_24_00_56_53_efe58897.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_conquest_2025_02_24_01_45_22_2c400fb1.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_conquest_2025_02_25_03_10_35_79fb283d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_conquest_2025_02_26_00_28_16_5ca00bc2.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_conquest_2025_02_27_05_31_57_2e3f6a82.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_conquest_2025_02_27_06_16_11_e04efa1c.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_conquest_2025_02_28_02_13_35_3d5a8c90.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_conquest_2025_03_02_15_28_57_5d5daa65.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_conquest_2025_03_02_16_42_58_84ae70bd.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_ct2_2025_02_23_16_12_39_e770721e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_domination_2025_02_21_20_45_17_185967a3.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_domination_2025_02_27_07_36_18_fefd46c2.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_killconfirm_02_2025_02_22_12_31_03_b4aef041.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_killconfirm_02_2025_02_22_12_41_13_72ff2481.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_killconfirm_2025_02_22_21_07_56_778d0c2e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "01_beirut_killconfirm_2025_02_23_22_07_05_67438ccf.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_22_20_02_18_8885a8dc.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_22_20_14_40_e7f626fd.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_24_02_10_20_7f3a4edb.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_24_03_21_45_5c2f6dd8.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_24_04_00_45_d399cafa.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_24_05_12_39_38fa1a0.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_25_23_59_42_12f9ecb7.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_26_00_18_53_a9da2960.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_27_08_48_19_96775884.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_27_13_06_39_f0c0029e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_27_13_43_52_8d8b936.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_27_14_46_55_89d5280a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_28_01_41_29_35f9f245.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_02_28_10_05_28_c8ca2f2.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_03_01_08_45_19_c80bbdcb.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_03_01_18_42_00_45661212.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_03_01_20_01_25_92f02fb6.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_03_01_21_33_55_d5e2d12.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_conquest_2025_03_02_16_28_03_799c563f.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_ct2_2025_02_21_20_14_20_ff40e24d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_ct2_2025_02_23_14_20_04_b0bd35a7.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_domination_2025_03_02_15_15_25_922c0402.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "02_vietnam_killconfirm_2025_03_02_16_13_42_fe0dd2e7.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_23_13_33_02_7bbe743.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_24_03_41_39_39a65eda.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_24_04_30_37_51fdf16d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_24_05_43_58_27173134.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_25_01_32_18_fdc8028.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_25_01_42_05_d64b0879.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_25_03_39_35_f58f3416.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_25_23_34_11_6df3759e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_26_05_57_47_592b9d97.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_27_12_23_05_c702305a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_27_12_33_35_a07592d8.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_27_13_20_38_f97ce276.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_27_14_32_35_9819349e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_03_01_05_04_00_94ea93ff.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_03_01_09_14_14_781b8d8b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_03_01_19_07_53_fc9f5de4.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_03_02_13_49_14_348a0748.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_03_02_14_07_07_b0403091.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_conquest_2025_03_02_14_48_18_c5a88e18.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "03_sunstroke_ct2_2025_02_22_14_56_58_cd668838.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_02_22_20_53_40_6c2a83be.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_02_23_21_44_24_d560112c.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_02_24_01_12_33_9e2eae38.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_02_24_02_47_05_e14a011b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_02_24_03_11_50_461166dc.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_02_25_02_37_26_e49320c1.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_02_25_23_49_20_152f4f6a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_02_27_08_37_01_c9be6def.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_02_27_12_52_17_83e53bce.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_02_27_13_58_41_eee1628.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_03_01_04_53_37_b458d390.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_03_01_08_19_43_8022e4a2.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_03_01_22_39_41_af71e20b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_03_02_14_19_34_6cb645fb.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_03_02_15_01_06_1c2cfba2.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "04_nordoko_conquest_2025_03_02_17_03_02_d6d44878.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_22_13_32_00_f398764c.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_23_20_34_09_52b28f0b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_25_02_21_49_689a53e9.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_25_03_19_52_d4df955b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_25_23_23_24_7f19c666.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_27_05_21_39_dd0d9720.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_27_07_24_38_51d77c8.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_27_08_14_40_5d592788.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_27_14_23_57_922c5f0e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_28_01_08_29_96f132c9.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_28_01_19_33_b40c4c2c.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_28_09_12_50_2277144b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_03_01_08_56_53_8175205c.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_03_01_09_25_26_85f9caa7.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_03_01_19_17_51_9147c5c8.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_03_01_21_19_32_58df9785.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_03_01_22_52_09_f2767358.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_conquest_2025_03_02_15_57_02_6dd6a170.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_domination_2025_02_27_04_46_40_429e189d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "05_friendshipdam_domination_2025_02_27_06_27_02_b676d71b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_23_13_11_34_bcd981d0.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_23_20_42_18_ca2dad6b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_23_21_28_09_fd5986d5.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_24_01_34_40_2e518291.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_24_05_30_09_b6e0a19a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_26_09_28_42_e08d805a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_27_05_52_20_f50242b5.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_27_09_40_24_fc61ac7.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_27_09_52_12_100b8832.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_27_13_51_13_c8dd3557.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_03_01_18_23_06_3e04f95e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_03_01_20_13_11_8339734b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_03_01_22_10_46_74eb79d8.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_03_01_22_25_51_6e4f0025.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_domination_2025_02_22_13_19_20_fc68869.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_domination_2025_02_23_20_55_58_2d222d6.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_domination_2025_02_24_00_34_33_14248b69.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_domination_2025_03_01_09_35_03_429e5cb4.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_domination_2025_03_01_20_53_01_7edbf37e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_killconfirm_2025_02_24_04_54_36_3c2b516c.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "06_aircraft_carrier_killconfirm_2025_03_02_15_43_59_676d3161.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_22_12_50_08_397b6848.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_22_20_40_10_5b092deb.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_23_13_20_51_d4a678f3.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_23_13_40_45_7c7d16ff.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_24_01_23_09_cf18240b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_24_02_24_02_94d68b0a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_26_05_48_31_bd5898fb.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_26_09_50_20_7795a82d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_27_03_43_39_f95f4a2e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_28_02_01_42_5aa7f5b7.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_28_09_37_27_5630a72a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_03_01_08_33_16_20f25629.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_03_01_19_43_35_e962754f.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_conquest_2025_03_01_20_30_52_f0d5ac80.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_domination_2025_03_01_21_43_57_97aef796.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_domination_2025_03_01_21_58_01_a4555f03.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_domination_2025_03_02_17_19_08_95e3518a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_killconfirm_2025_02_22_21_30_16_fbad0e9a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    },
+    "07_projectphoenix_killconfirm_2025_02_24_03_29_07_b50ebce2.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      }
+    }
+  }
+}
