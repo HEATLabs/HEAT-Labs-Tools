@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 # CONFIGURATION
 REPLAYS_FOLDER = "replays"
-OUTPUT_FILENAME = "all_replays_output.txt"
+OUTPUT_FILENAME = "all_replays_output.json"
 
 
 def try_parse_json(data_bytes):
@@ -15,18 +15,36 @@ def try_parse_json(data_bytes):
         return None, False
 
 
-def process_replay_file(filename, out_file):
+def initialize_output_file():
+    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
+        json.dump(
+            {"total_files": 0, "processed_files": 0, "results": {}}, out, indent=2
+        )
+
+
+def update_output_file(filename, json_segments):
+    try:
+        with open(OUTPUT_FILENAME, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        data = {"total_files": 0, "processed_files": 0, "results": {}}
+
+    basename = os.path.basename(filename)
+    data["results"][basename] = {"json_segments": json_segments}
+    data["processed_files"] = len(data["results"])
+
+    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
+        json.dump(data, out, indent=2)
+
+
+def process_replay_file(filename):
     if not os.path.exists(filename):
-        out_file.write(f"File not found: {filename}\n")
-        return
+        update_output_file(filename, {"error": "File not found"})
+        return []
 
     with open(filename, "rb") as f:
         raw = f.read()
 
-    out_file.write(f"\n\n=== Processing {filename} ===\n")
-    out_file.write(f"File size: {len(raw)} bytes\n")
-
-    # JSON scanning
     json_segments = []
     for i in range(len(raw)):
         if raw[i : i + 1] == b"{":
@@ -35,17 +53,11 @@ def process_replay_file(filename, out_file):
                     possible_json = raw[i : j + 1]
                     data, ok = try_parse_json(possible_json)
                     if ok:
-                        json_segments.append((i, j, data))
-                        out_file.write(f"Found JSON segment at {i}-{j}\n")
+                        json_segments.append({"content": data})
                         break
 
-    if not json_segments:
-        out_file.write("No JSON segments found in this file.\n")
-    else:
-        for index, (start, end, data) in enumerate(json_segments):
-            out_file.write(f"\n--- JSON Segment {index + 1} ---\n")
-            formatted = json.dumps(data, indent=2)
-            out_file.write(formatted + "\n")
+    update_output_file(filename, json_segments)
+    return json_segments
 
 
 def process_all_replays():
@@ -55,23 +67,27 @@ def process_all_replays():
         print(f"No .REPLAY files found in {REPLAYS_FOLDER}")
         return
 
-    total_files = len(replay_files)
+    initialize_output_file()
 
-    with open(OUTPUT_FILENAME, "w", encoding="utf-8") as out:
-        out.write(f"Processing {total_files} replay files...\n")
+    with open(OUTPUT_FILENAME, "r+", encoding="utf-8") as f:
+        data = json.load(f)
+        data["total_files"] = len(replay_files)
+        f.seek(0)
+        json.dump(data, f, indent=2)
+        f.truncate()
 
-        with tqdm(
-            replay_files,
-            desc="Processing replays",
-            unit="file",
-            bar_format="{l_bar}{bar:20}{r_bar}",
-            colour="green",
-        ) as pbar:
-            for replay_file in pbar:
-                process_replay_file(replay_file, out)
-                pbar.set_postfix(file=os.path.basename(replay_file)[:15] + "...")
+    with tqdm(
+        replay_files,
+        desc="Processing replays",
+        unit="file",
+        bar_format="{l_bar}{bar:20}{r_bar}",
+        colour="green",
+    ) as pbar:
+        for replay_file in pbar:
+            process_replay_file(replay_file)
+            pbar.set_postfix(file=os.path.basename(replay_file)[:15] + "...")
 
-    print(f"\nSuccessfully processed {total_files} replay files")
+    print(f"\nSuccessfully processed {len(replay_files)} replay files")
     print(f"Output saved to: {OUTPUT_FILENAME}")
 
 
