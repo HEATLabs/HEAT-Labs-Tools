@@ -20,6 +20,21 @@ def find_html_files(directory):
 def generate_html_content(html_files, input_dir):
     # HTML header and opening tags
     content = """<!DOCTYPE html>
+  <!--
+  Hey you... yeah, you with the scraper.
+
+  What are you doing? Parsing divs like it’s 2009?
+  This ain’t a secret government site, it’s fully open source.
+
+  Save yourself the trouble and:
+  Check us out on GitHub: https://github.com/PCWStats
+  Slide into our Discord: https://discord.gg/2nHHHBWNDw
+
+  Seriously, we *want* you to see the code. Talk to us, we’re cool.
+  Unless you're using regex to parse HTML... then we have *questions*.
+
+  Stay fabulous, dev friend.
+  -->
 <html lang="en">
   <head>
     <!-- Main meta tags -->
@@ -65,6 +80,7 @@ def generate_html_content(html_files, input_dir):
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/misc.css">
     <link rel="stylesheet" href="../assets/css/pages/devsonly.css">
+    <link rel="stylesheet" href="../assets/css/modules/settings.css">
     <link rel="stylesheet" href="../assets/css/modules/header.css">
     <link rel="stylesheet" href="../assets/css/modules/footer.css">
     <link rel="stylesheet" href="../assets/css/modules/sidebar.css">
@@ -74,6 +90,7 @@ def generate_html_content(html_files, input_dir):
     <link rel="stylesheet" href="../assets/css/modules/global-hero.css">
     <link rel="stylesheet" href="../assets/css/modules/warning.css">
     <link rel="stylesheet" href="../assets/css/modules/banner.css">
+    <link rel="stylesheet" href="../assets/css/modules/dev-scripts.css">
     <!-- Favicon for all browsers -->
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon.ico" type="image/x-icon">
@@ -178,9 +195,15 @@ def generate_html_content(html_files, input_dir):
             </a>
           </li>
           <li>
-            <a href="../builds.html" class="sidebar-link wip">
+            <a href="../builds.html" class="sidebar-link">
               <i class="fas fa-wrench"></i>
               <span>Common Builds</span>
+            </a>
+          </li>
+          <li>
+            <a href="../playground.html" class="sidebar-link">
+              <i class="fa-solid fa-gamepad"></i>
+              <span>Playground</span>
             </a>
           </li>
           <li>
@@ -192,7 +215,7 @@ def generate_html_content(html_files, input_dir):
           <li>
             <a href="../asset-gallery.html" class="sidebar-link">
               <i class="fas fa-database"></i>
-              <span>Tankopedia</span>
+              <span>Asset Gallery</span>
             </a>
           </li>
           <li>
@@ -246,19 +269,21 @@ def generate_html_content(html_files, input_dir):
                 <span></span>
                 <span></span>
               </button>
-              <a href="../index.html" class="brand-logo">
-                <img src="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/logo/logo.webp" alt="PCWStats Logo" class="brand-logo-img">
-                <span>PCWStats</span>
-                <span class="beta-tag"></span>
-              </a>
+              <div class="brand-logo-container">
+                <a href="../index.html" class="brand-logo">
+                  <img src="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/logo/logo.webp" alt="PCWStats Logo" class="brand-logo-img">
+                  <span>PCWStats</span>
+                </a>
+                <a href="../Website-Changelog" class="beta-tag">BETA</a>
+              </div>
             </div>
             <div class="navbar-actions">
               <button id="openSearch" class="search-button">
                 <i class="fas fa-search"></i>
               </button>
-              <div class="theme-toggle-mobile" id="themeToggleMobile">
-                <i class="fas fa-moon"></i>
-              </div>
+              <button id="openSettings" class="settings-button">
+                  <i class="fas fa-cog"></i>
+              </button>
               <a href="https://pcwstats.github.io/Website-Status" class="system-status">
                 <i class="fa-solid fa-server"></i>
               </a>
@@ -459,7 +484,7 @@ def generate_html_content(html_files, input_dir):
                   <a href="../tanks.html">Tank Statistics</a>
                 </li>
                 <li>
-                  <a href="../asset-gallery.html">Tankopedia</a>
+                  <a href="../asset-gallery.html">Asset Gallery</a>
                 </li>
               </ul>
             </div>
@@ -545,9 +570,11 @@ def generate_html_content(html_files, input_dir):
     <script src="../assets/js/modules/theme-loader.js"></script>
     <script src="../assets/js/modules/search.js"></script>
     <script src="../assets/js/modules/warning.js"></script>
+    <script src="../assets/js/modules/dev-scripts.js"></script>
     <script src="../assets/js/pages/devsonly.js"></script>
     <script src="../assets/js/modules/global-hero.js"></script>
     <script src="../assets/js/modules/banner.js"></script>
+    <script src="../assets/js/modules/settings.js"></script>
   </body>
 </html>"""
 
