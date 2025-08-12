@@ -24,6 +24,7 @@ REPOS = [
     "Website-Changelog",
     "Website-Statistics",
     "Website-Status",
+    "Project-CW-Configurator",
 ]
 
 EXTRA_REPOS = [
