@@ -27,7 +27,7 @@ def generate_html_content(html_files, input_dir):
   This ain’t a secret government site, it’s fully open source.
 
   Save yourself the trouble and:
-  Check us out on GitHub: https://github.com/PCWStats
+  Check us out on GitHub: https://github.com/HEATLabs
   Slide into our Discord: https://discord.gg/caEFCA9ScF
 
   Seriously, we *want* you to see the code. Talk to us, we’re cool.
@@ -42,17 +42,17 @@ def generate_html_content(html_files, input_dir):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Page title displayed in the browser tab -->
-    <title>Devs Only - PCWStats</title>
+    <title>Devs Only - HEATLabs</title>
     <!-- Primary Meta Tags -->
-    <meta name="title" content="PCWStats - Devs Only">
-    <meta name="description" content="PCWStats developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
-    <meta name="author" content="PCWStats Team">
-    <meta name="copyright" content="© 2025 PCWStats by SINEWAVE Development. All rights reserved.">
+    <meta name="title" content="HEAT Labs - Devs Only">
+    <meta name="description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
+    <meta name="author" content="HEAT Labs Team">
+    <meta name="copyright" content="© 2025 HEAT Labs by SINEWAVE Development. All rights reserved.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
     <meta name="language" content="English">
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://pcwstats.github.io/easter-eggs/devsonly.html">
+    <link rel="canonical" href="https://heatlabs.github.io/easter-eggs/devsonly.html">
     <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" href="../site-data/sitemap.xml">
     <!-- Theme Checker -->
@@ -92,59 +92,59 @@ def generate_html_content(html_files, input_dir):
     <link rel="stylesheet" href="../assets/css/modules/banner.css">
     <link rel="stylesheet" href="../assets/css/modules/dev-scripts.css">
     <!-- Favicon for all browsers -->
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/favicons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/favicons/favicon.ico" type="image/x-icon">
     <!-- Apple Touch Icons (for iOS home screen bookmarks) -->
-    <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/apple/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/apple/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/apple/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/apple/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/apple/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/apple/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/apple/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/apple/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/apple/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/apple/apple-icon-180x180.png">
     <!-- Favicons for different devices -->
-    <link rel="icon" type="image/png" sizes="192x192" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/android/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/android/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/favicons/favicon-16x16.png">
     <!-- Web Manifest -->
     <link rel="manifest" href="../site-data/site.manifest">
     <!-- Windows-specific tiles (for pinned sites in Windows Start menu) -->
     <meta name="msapplication-TileColor" content="#141312">
-    <meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/microsoft/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/microsoft/ms-icon-144x144.png">
     <meta name="msapplication-config" content="../site-data/browserconfig.xml">
     <!-- Safari-specific meta tags -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="PCWStats">
+    <meta name="apple-mobile-web-app-title" content="HEATLabs">
     <!-- Browser UI color -->
     <meta name="theme-color" content="#141312">
     <meta name="msapplication-navbutton-color" content="#141312">
     <meta name="apple-mobile-web-app-status-bar-style" content="#141312">
     <!-- Open Graph Meta Tags (for social media sharing, mainly Facebook) -->
-    <meta property="og:title" content="PCWStats - Devs Only">
-    <meta property="og:description" content="PCWStats developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
-    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/social-share/PCWStats.png">
-    <meta property="og:url" content="https://pcwstats.github.io/easter-eggs/devsonly.html">
+    <meta property="og:title" content="HEAT Labs - Devs Only">
+    <meta property="og:description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/social-share/heatlabs.png">
+    <meta property="og:url" content="https://heatlabs.github.io/easter-eggs/devsonly.html">
     <meta property="og:type" content="website">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="PCWStats">
+    <meta property="og:site_name" content="HEATLabs">
     <meta property="og:locale" content="en_US">
     <!-- Twitter Card Meta Tags (for better sharing on Twitter) -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@PCWStats">
-    <meta name="twitter:creator" content="@PCWStats">
-    <meta name="twitter:title" content="PCWStats - Devs Only">
-    <meta name="twitter:description" content="PCWStats developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
-    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/social-share/PCWStats.png">
-    <meta name="twitter:image:alt" content="PCWStats - Your one-stop solution for comprehensive statistics insights and guides for Project CW">
+    <meta name="twitter:site" content="@HEATLabs">
+    <meta name="twitter:creator" content="@HEATLabs">
+    <meta name="twitter:title" content="HEAT Labs - Devs Only">
+    <meta name="twitter:description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
+    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/social-share/heatlabs.png">
+    <meta name="twitter:image:alt" content="HEAT Labs - Your one-stop solution for comprehensive statistics insights and guides for Project CW">
   </head>
   <body>
     <!-- Custom Privacy-Focused Tracking Pixel -->
-    <img src="https://pcwstats-pixel-api.vercel.app/api/track/pcwstats-tracker-pixel-devsonly.png" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="pcwstats-tracking-pixel" data-page="devsonly">
+    <img src="https://heatlabs-pixel-api.vercel.app/api/track/heatlabs-tracker-pixel-devsonly.png" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="devsonly">
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <!-- Sidebar -->
@@ -271,8 +271,8 @@ def generate_html_content(html_files, input_dir):
               </button>
               <div class="brand-logo-container">
                 <a href="../index.html" class="brand-logo">
-                  <img src="https://cdn.jsdelivr.net/gh/PCWStats/Website-Images@main/logo/logo.webp" alt="PCWStats Logo" class="brand-logo-img">
-                  <span>PCWStats</span>
+                  <img src="https://cdn.jsdelivr.net/gh/HEATLabs/Website-Images@main/logo/logo.webp" alt="HEAT Labs Logo" class="brand-logo-img">
+                  <span>HEAT Labs</span>
                 </a>
                 <a href="../Website-Changelog" class="beta-tag">BETA</a>
               </div>
@@ -284,13 +284,13 @@ def generate_html_content(html_files, input_dir):
               <button id="openSettings" class="settings-button">
                   <i class="fas fa-cog"></i>
               </button>
-              <a href="https://pcwstats.github.io/Website-Status" class="system-status">
+              <a href="https://heatlabs.github.io/Website-Status" class="system-status">
                 <i class="fa-solid fa-server"></i>
               </a>
-              <a href="https://pcwstats.github.io/Website-Statistics" class="system-status">
+              <a href="https://heatlabs.github.io/Website-Statistics" class="system-status">
                 <i class="fa-solid fa-chart-column"></i>
               </a>
-              <a href="https://pcwstats.github.io/Website-Changelog" class="system-status">
+              <a href="https://heatlabs.github.io/Website-Changelog" class="system-status">
                 <i class="fa-solid fa-clipboard-list"></i>
               </a>
             </div>
@@ -359,7 +359,7 @@ def generate_html_content(html_files, input_dir):
              <div class="dev-card">
                 <div class="dev-info">
                     <h3>changelog</h3>
-                    <a href="https://pcwstats.github.io/Website-Changelog" class="btn-accent btn-dev">
+                    <a href="https://heatlabs.github.io/Website-Changelog" class="btn-accent btn-dev">
                         <i class=""></i>Go to Page </a>
                 </div>
              </div>
@@ -367,7 +367,7 @@ def generate_html_content(html_files, input_dir):
              <div class="dev-card">
                 <div class="dev-info">
                     <h3>website-statistics</h3>
-                    <a href="https://pcwstats.github.io/Website-Statistics" class="btn-accent btn-dev">
+                    <a href="https://heatlabs.github.io/Website-Statistics" class="btn-accent btn-dev">
                         <i class=""></i>Go to Page </a>
                 </div>
              </div>
@@ -375,7 +375,7 @@ def generate_html_content(html_files, input_dir):
              <div class="dev-card">
                 <div class="dev-info">
                     <h3>system-status</h3>
-                    <a href="https://pcwstats.github.io/Website-Status/" class="btn-accent btn-dev">
+                    <a href="https://heatlabs.github.io/Website-Status/" class="btn-accent btn-dev">
                         <i class=""></i>Go to Page </a>
                 </div>
              </div>
@@ -454,20 +454,20 @@ def generate_html_content(html_files, input_dir):
           <!-- Top Row -->
           <div class="footer-brand flex flex-col items-center text-center">
             <div>
-              <h3 class="text-2xl font-semibold">PCWStats</h3>
+              <h3 class="text-2xl font-semibold">HEAT Labs</h3>
               <p class="text-gray-400">Your go-to resource for Project CW statistics and gameplay information.</p>
             </div>
             <div class="flex space-x-4 text-xl">
               <a href="https://discord.com/invite/caEFCA9ScF" class="social-icon">
                 <i class="fab fa-discord"></i>
               </a>
-              <a href="https://x.com/PCWStats" class="social-icon">
+              <a href="https://x.com/HEATLabs" class="social-icon">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="https://github.com/PCWStats" class="social-icon">
+              <a href="https://github.com/HEATLabs" class="social-icon">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="https://www.youtube.com/@PCWStats" class="social-icon">
+              <a href="https://www.youtube.com/@HEATLabs" class="social-icon">
                 <i class="fab fa-youtube"></i>
               </a>
             </div>
@@ -503,7 +503,7 @@ def generate_html_content(html_files, input_dir):
               </ul>
             </div>
             <div>
-              <h3 class="text-lg font-semibold mb-2">PCWStats</h3>
+              <h3 class="text-lg font-semibold mb-2">HEAT Labs</h3>
               <ul class="footer-links text-gray-400">
                 <li>
                   <a href="../resources/about-us.html">About the Project</a>
@@ -556,8 +556,8 @@ def generate_html_content(html_files, input_dir):
           </div>
           <!-- Bottom Disclaimer -->
           <div class="text-center text-sm text-gray-500 space-y-1 border-t border-gray-700 pt-1">
-            <p> PCWStats is a community-made project and is not associated with, endorsed by, or affiliated with <a href="https://projectcw.dev" class="disclaimer-link">Project CW</a> or <a href="https://www.wargaming.net" class="disclaimer-link">Wargaming.net</a>.</p>
-            <p>&copy; 2025 PCWStats by SINEWAVE Development. All rights reserved.</p>
+            <p> HEAT Labs is a community-made project and is not associated with, endorsed by, or affiliated with <a href="https://projectcw.dev" class="disclaimer-link">Project CW</a> or <a href="https://www.wargaming.net" class="disclaimer-link">Wargaming.net</a>.</p>
+            <p>&copy; 2025 HEAT Labs by SINEWAVE Development. All rights reserved.</p>
           </div>
         </div>
       </footer>
@@ -583,7 +583,7 @@ def generate_html_content(html_files, input_dir):
 
 def main():
     """Main function to execute the script"""
-    print("PCWStats Devs Only HTML File Generator")
+    print("HEAT Labs Devs Only HTML File Generator")
     print("---------------------------\n")
     
     # Get current directory as base directory

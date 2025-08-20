@@ -15,7 +15,7 @@ def print_header():
     """Print a nice header for the application."""
     clear_screen()
     print("=" * 60)
-    print("          PCWStats - File Extraction Utility         ")
+    print("          HEAT Labs - File Extraction Utility         ")
     print("=" * 60)
     print()
 
@@ -112,7 +112,7 @@ def extract_zip_files(source_dir, output_dir, file_extensions=None):
 
 def main():
     print_header()
-    print("Welcome to the PCWStats File Extraction Utility.")
+    print("Welcome to the HEAT Labs File Extraction Utility.")
     print("This utility will extract files from your Project CW installation.")
     print()
 

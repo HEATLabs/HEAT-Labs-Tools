@@ -14,9 +14,9 @@ if not GITHUB_TOKEN:
 
 # Config
 GITHUB_API_URL = "https://api.github.com"
-ORG_NAME = "PCWStats"
+ORG_NAME = "HEATLabs"
 REPOS = [
-    "pcwstats.github.io",
+    "heatlabs.github.io",
     "Website-Configs",
     "Website-Images",
     "Database-Tools",
@@ -24,11 +24,11 @@ REPOS = [
     "Website-Changelog",
     "Website-Statistics",
     "Website-Status",
-    "Project-CW-Configurator",
+    "HEATLabs-Configurator",
 ]
 
 EXTRA_REPOS = [
-    {"owner": "ThatSINEWAVE", "repo": "PCWStats-Views-API"},
+    {"owner": "ThatSINEWAVE", "repo": "HEATLabs-Views-API"},
 ]
 
 

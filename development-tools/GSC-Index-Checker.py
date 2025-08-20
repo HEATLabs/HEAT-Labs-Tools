@@ -20,12 +20,12 @@ except ImportError:
 # Google Search Console API scope
 SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
 
-# Target website - PCWStats GitHub Pages
-TARGET_SITE = "https://pcwstats.github.io/"
+# Target website - HEATLabs GitHub Pages
+TARGET_SITE = "https://heatlabs.github.io/"
 
 
 # Initialize the indexing status checker with credentials
-class PCWStatsIndexingChecker:
+class HEATLabsIndexingChecker:
     def __init__(self, credentials_file: str = "../credentials.json"):
         self.credentials_file = credentials_file
         self.service = None
@@ -127,7 +127,7 @@ class PCWStatsIndexingChecker:
             print(f"Error getting new credentials: {e}")
             return False
 
-    # Verify that PCWStats Pages are in Search Console properties
+    # Verify that HEATLabs Pages are in Search Console properties
     def verify_pcwstats_property(self) -> bool:
         try:
             sites = self.service.sites().list().execute()
@@ -137,9 +137,9 @@ class PCWStatsIndexingChecker:
 
             # Check for exact match or variations
             pcwstats_variations = [
-                "https://pcwstats.github.io/",
-                "https://pcwstats.github.io",
-                "sc-domain:pcwstats.github.io",
+                "https://heatlabs.github.io/",
+                "https://heatlabs.github.io",
+                "sc-domain:heatlabs.github.io",
             ]
 
             for variation in pcwstats_variations:
@@ -150,7 +150,7 @@ class PCWStatsIndexingChecker:
 
             print("PCWStats GitHub Pages not found in verified properties!")
             print(
-                "Please verify https://pcwstats.github.io in Google Search Console first."
+                "Please verify https://heatlabs.github.io in Google Search Console first."
             )
             return False
 
@@ -211,7 +211,7 @@ class PCWStatsIndexingChecker:
                     page_url = row["keys"][0]
 
                     # Only include PCWStats URLs
-                    if page_url.startswith("https://pcwstats.github.io"):
+                    if page_url.startswith("https://heatlabs.github.io"):
                         page_data = {
                             "url": page_url,
                             "status": "indexed_and_served",
@@ -266,15 +266,15 @@ class PCWStatsIndexingChecker:
                 indexing_data["sitemaps"] = []
 
         except HttpError as e:
-            print(f"Error fetching data for PCWStats: {e}")
+            print(f"Error fetching data for HEAT Labs: {e}")
             indexing_data["error"] = str(e)
 
         return indexing_data
 
     # Inspect specific PCWStats URLs for detailed indexing information
     def inspect_pcwstats_url(self, inspect_url: str) -> Dict[str, Any]:
-        # Ensure the URL is a PCWStats URL
-        if not inspect_url.startswith("https://pcwstats.github.io"):
+        # Ensure the URL is a HEAT Labs URL
+        if not inspect_url.startswith("https://heatlabs.github.io"):
             return {
                 "url": inspect_url,
                 "error": "URL is not a PCWStats GitHub Pages URL",

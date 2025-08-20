@@ -3,18 +3,18 @@ import re
 
 # Directories to scan
 directories = [
-    "../../pcwstats.github.io",  # current directory
-    "../../pcwstats.github.io/tournaments",
-    "../../pcwstats.github.io/news",
-    "../../pcwstats.github.io/guides",
-    "../../pcwstats.github.io/legal",
-    "../../pcwstats.github.io/guides/general-guides",
-    "../../pcwstats.github.io/guides/map-guides",
-    "../../pcwstats.github.io/guides/tank-guides",
-    "../../pcwstats.github.io/bug-hunting",
-    "../../pcwstats.github.io/blog",
-    "../../pcwstats.github.io/announcements",
-    "../../pcwstats.github.io/placeholder-tables",
+    "../../heatlabs.github.io",  # current directory
+    "../../heatlabs.github.io/tournaments",
+    "../../heatlabs.github.io/news",
+    "../../heatlabs.github.io/guides",
+    "../../heatlabs.github.io/legal",
+    "../../heatlabs.github.io/guides/general-guides",
+    "../../heatlabs.github.io/guides/map-guides",
+    "../../heatlabs.github.io/guides/tank-guides",
+    "../../heatlabs.github.io/bug-hunting",
+    "../../heatlabs.github.io/blog",
+    "../../heatlabs.github.io/announcements",
+    "../../heatlabs.github.io/placeholder-tables",
 ]
 
 

@@ -95,7 +95,7 @@ def print_header():
     """Print a nice header for the application."""
     clear_screen()
     print("=" * 60)
-    print("          PCWStats - DDS to PNG Converter         ")
+    print("          HEAT Labs - DDS to PNG Converter         ")
     print("=" * 60)
     print()
 
@@ -200,7 +200,7 @@ def process_directory(main_input_dir):
 
 def main():
     print_header()
-    print("Welcome to the PCWStats DDS to PNG Converter.")
+    print("Welcome to the HEAT Labs DDS to PNG Converter.")
     print(
         "This utility will convert all DDS files to PNG format in your Project CW folders."
     )

@@ -6,17 +6,17 @@ import re
 from datetime import datetime
 
 # Configuration
-WEBSITE_DIR = "../../pcwstats.github.io"
-IMAGES_DIR = "../../PCWStats-Views-API/trackers"
-BASE_PIXEL_NAME = "pcwstats-tracker-pixel.png"
-BASE_CDN_URL = "https://pcwstats-pixel-api.vercel.app/api/track"
+WEBSITE_DIR = "../../heatlabs.github.io"
+IMAGES_DIR = "../../HEATLabs-Views-API/trackers"
+BASE_PIXEL_NAME = "heatlabs-tracker-pixel.png"
+BASE_CDN_URL = "https://heatlabs-pixel-api.vercel.app/api/track"
 TRACKING_JSON_FILE = "../../Website-Configs/tracking-pixel.json"
 
 
 def get_page_name_from_title(title):
     if not title:
         return "Unknown"
-    clean_title = title.replace(" - PCWStats", "").strip()
+    clean_title = title.replace(" - HEAT Labs", "").strip()
     return clean_title if clean_title else "Unknown"
 
 
@@ -46,14 +46,14 @@ def add_tracking_pixel_to_html(html_file_path, pixel_url, page_identifier):
         with open(html_file_path, "r", encoding="utf-8") as file:
             content = file.read()
 
-        if "pcwstats-tracking-pixel" in content:
+        if "heatlabs-tracking-pixel" in content:
             print(
                 f"Tracking pixel already exists in {os.path.basename(html_file_path)}"
             )
             return True
 
         pixel_comment = "<!-- Custom Privacy-Focused Tracking Pixel -->"
-        pixel_img = f'<img src="{pixel_url}" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="pcwstats-tracking-pixel" data-page="{page_identifier}">'
+        pixel_img = f'<img src="{pixel_url}" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="{page_identifier}">'
         pixel_block = f"{pixel_comment}\n    {pixel_img}"
 
         body_open_pattern = r"(<body[^>]*>)(\s*)"
@@ -160,13 +160,13 @@ def process_html_files():
             html_title = get_html_title(html_file)
             page_name = get_page_name_from_title(html_title)
 
-            pixel_filename = f"pcwstats-tracker-pixel-{page_identifier}.png"
+            pixel_filename = f"heatlabs-tracker-pixel-{page_identifier}.png"
             pixel_path = images_path / pixel_filename
             pixel_url = f"{BASE_CDN_URL}/{pixel_filename}"
 
             # Skip if pixel already exists in HTML (even if not in our JSON)
             with open(html_file, "r", encoding="utf-8") as file:
-                if "pcwstats-tracking-pixel" in file.read():
+                if "heatlabs-tracking-pixel" in file.read():
                     skipped_files.append(str(html_file))
                     continue
 
@@ -262,7 +262,7 @@ def process_html_files():
 
 
 def main():
-    print("PCWStats Tracking Pixel Generator")
+    print("HEAT Labs Tracking Pixel Generator")
     print("=" * 50)
 
     if not os.path.exists(WEBSITE_DIR):

@@ -49,7 +49,7 @@ def find_missing_pages(root_dir, json_file):
 
 if __name__ == "__main__":
     # Set directory and JSON file paths
-    root_directory = '../../pcwstats.github.io'
+    root_directory = '../../heatlabs.github.io'
     json_file_path = '../../Website-Configs/search-keywords.json'
 
     if not os.path.exists(root_directory):

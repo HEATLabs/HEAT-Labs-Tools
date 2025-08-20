@@ -35,7 +35,7 @@ def calculate_correct_version_numbers(changelog):
         update_number = idx + 1
         pretty_date = format_date_long(update["date"])
 
-        corrected_update["title"] = f"PCWStats - Update Number #{update_number}"
+        corrected_update["title"] = f"HEAT Labs - Update Number #{update_number}"
         corrected_update["description"] = (
             f"Full patch notes for Update v{correct_version} "
             f"(#{update_number}), detailing all changes made on {pretty_date}."
@@ -75,11 +75,11 @@ def verify_and_correct_changelog(file_path):
                 "correct": corrected["version"],
             }
 
-        if original.get("author") != "PCWStats Team":
+        if original.get("author") != "HEAT Labs Team":
             author_issues = True
             update_issues["author"] = {
                 "current": original.get("author", "MISSING"),
-                "correct": "PCWStats Team",
+                "correct": "HEAT Labs Team",
             }
 
         if original.get("title") != corrected["title"]:
@@ -120,7 +120,7 @@ def verify_and_correct_changelog(file_path):
         changelog["updates"] = corrected_changelog["updates"]
 
         for update in changelog["updates"]:
-            update["author"] = "PCWStats Team"
+            update["author"] = "HEAT Labs Team"
 
         with open(file_path, "w") as f:
             json.dump(changelog, f, indent=2)
