@@ -8,7 +8,7 @@ from datetime import datetime
 # Configuration
 WEBSITE_DIR = "../../heatlabs.github.io"
 IMAGES_DIR = "../../HEATLabs-Views-API/trackers"
-BASE_PIXEL_NAME = "heatlabs-tracker-pixel.png"
+BASE_PIXEL_NAME = "pcwstats-tracker-pixel.png"
 BASE_CDN_URL = "https://heatlabs-pixel-api.vercel.app/api/track"
 TRACKING_JSON_FILE = "../../Website-Configs/tracking-pixel.json"
 
@@ -160,13 +160,13 @@ def process_html_files():
             html_title = get_html_title(html_file)
             page_name = get_page_name_from_title(html_title)
 
-            pixel_filename = f"heatlabs-tracker-pixel-{page_identifier}.png"
+            pixel_filename = f"pcwstats-tracker-pixel-{page_identifier}.png"
             pixel_path = images_path / pixel_filename
             pixel_url = f"{BASE_CDN_URL}/{pixel_filename}"
 
             # Skip if pixel already exists in HTML (even if not in our JSON)
             with open(html_file, "r", encoding="utf-8") as file:
-                if "heatlabs-tracking-pixel" in file.read():
+                if "pcwstats-tracking-pixel" in file.read():
                     skipped_files.append(str(html_file))
                     continue
 
