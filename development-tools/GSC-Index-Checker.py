@@ -128,7 +128,7 @@ class HEATLabsIndexingChecker:
             return False
 
     # Verify that HEATLabs Pages are in Search Console properties
-    def verify_pcwstats_property(self) -> bool:
+    def verify_heatlabs_property(self) -> bool:
         try:
             sites = self.service.sites().list().execute()
             properties = [site["siteUrl"] for site in sites.get("siteEntry", [])]
@@ -136,19 +136,19 @@ class HEATLabsIndexingChecker:
             print(f"Found properties: {properties}")
 
             # Check for exact match or variations
-            pcwstats_variations = [
+            heatlabs_variations = [
                 "https://heatlabs.github.io/",
                 "https://heatlabs.github.io",
                 "sc-domain:heatlabs.github.io",
             ]
 
-            for variation in pcwstats_variations:
+            for variation in heatlabs_variations:
                 if variation in properties:
                     self.target_site = variation
-                    print(f"Found PCWStats property: {self.target_site}")
+                    print(f"Found HEAT Labs property: {self.target_site}")
                     return True
 
-            print("PCWStats GitHub Pages not found in verified properties!")
+            print("HEAT Labs GitHub Pages not found in verified properties!")
             print(
                 "Please verify https://heatlabs.github.io in Google Search Console first."
             )
@@ -158,8 +158,8 @@ class HEATLabsIndexingChecker:
             print(f"Error fetching properties: {e}")
             return False
 
-    # Get indexing status specifically for PCWStats Pages
-    def get_pcwstats_indexing_status(
+    # Get indexing status specifically for HEAT Labs Pages
+    def get_heatlabs_indexing_status(
         self, start_date: str = None, end_date: str = None
     ) -> Dict[str, Any]:
         if not start_date:
@@ -210,7 +210,7 @@ class HEATLabsIndexingChecker:
                 for row in response["rows"]:
                     page_url = row["keys"][0]
 
-                    # Only include PCWStats URLs
+                    # Only include HEAT Labs URLs
                     if page_url.startswith("https://heatlabs.github.io"):
                         page_data = {
                             "url": page_url,
@@ -271,13 +271,13 @@ class HEATLabsIndexingChecker:
 
         return indexing_data
 
-    # Inspect specific PCWStats URLs for detailed indexing information
-    def inspect_pcwstats_url(self, inspect_url: str) -> Dict[str, Any]:
+    # Inspect specific HEAT Labs URLs for detailed indexing information
+    def inspect_heatlabs_url(self, inspect_url: str) -> Dict[str, Any]:
         # Ensure the URL is a HEAT Labs URL
         if not inspect_url.startswith("https://heatlabs.github.io"):
             return {
                 "url": inspect_url,
-                "error": "URL is not a PCWStats GitHub Pages URL",
+                "error": "URL is not a HEAT Labs GitHub Pages URL",
                 "verdict": "INVALID_URL",
             }
 
@@ -312,8 +312,8 @@ class HEATLabsIndexingChecker:
             print(f"Error inspecting URL {inspect_url}: {e}")
             return {"url": inspect_url, "error": str(e), "verdict": "ERROR"}
 
-    # Run a comprehensive indexing status check for PCWStats
-    def run_pcwstats_check(
+    # Run a comprehensive indexing status check for HEAT Labs
+    def run_heatlabs_check(
         self,
         specific_urls: List[str] = None,
         output_file: str = "../../Website-Configs/gsc-index.json",
@@ -328,31 +328,31 @@ class HEATLabsIndexingChecker:
             print("Service not initialized properly. Authentication may have failed.")
             return
 
-        print("Verifying PCWStats property...")
-        if not self.verify_pcwstats_property():
+        print("Verifying HEAT Labs property...")
+        if not self.verify_heatlabs_property():
             return
 
-        print(f"Processing PCWStats indexing data for: {self.target_site}")
+        print(f"Processing HEAT Labs indexing data for: {self.target_site}")
 
         # Get general indexing data
         if all_time:
             print("Fetching ALL-TIME data...")
-            site_data = self.get_pcwstats_indexing_status()
+            site_data = self.get_heatlabs_indexing_status()
         else:
             print("Fetching last 30 days data...")
             start_date = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
-            site_data = self.get_pcwstats_indexing_status(start_date=start_date)
+            site_data = self.get_heatlabs_indexing_status(start_date=start_date)
 
         # If specific URLs provided, inspect them individually
         if specific_urls:
             inspected_urls = []
             for url in specific_urls:
-                if url.startswith("https://pcwstats.github.io"):
+                if url.startswith("https://heatlabs.github.io"):
                     print(f"  Inspecting: {url}")
-                    inspection = self.inspect_pcwstats_url(url)
+                    inspection = self.inspect_heatlabs_url(url)
                     inspected_urls.append(inspection)
                 else:
-                    print(f"  Skipping non-PCWStats URL: {url}")
+                    print(f"  Skipping non HEAT Labs URL: {url}")
 
             site_data["individual_inspections"] = inspected_urls
 
@@ -373,7 +373,7 @@ class HEATLabsIndexingChecker:
             with open(output_file, "w", encoding="utf-8") as f:
                 json.dump(all_data, f, indent=2, ensure_ascii=False)
 
-            print(f"\nPCWStats indexing status data saved to: {output_file}")
+            print(f"\nHEAT Labs indexing status data saved to: {output_file}")
             print(f"Data type: {'All-time' if all_time else 'Last 30 days'}")
             print(f"Total pages found: {all_data['summary']['total_pages_found']}")
             print(f"Indexed pages: {all_data['summary']['indexed_pages']}")
@@ -419,17 +419,17 @@ def setup_oauth_config():
     print("\nAlternatively, you can run with --manual flag for manual authorization.")
 
 
-# Main function to run the PCWStats indexing status checker
+# Main function to run the HEAT Labs indexing status checker
 def main():
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="Check PCWStats GitHub Pages indexing status in Google Search Console"
+        description="Check HEAT Labs GitHub Pages indexing status in Google Search Console"
     )
     parser.add_argument(
         "--setup", action="store_true", help="Show OAuth setup instructions"
     )
-    parser.add_argument("--urls", nargs="*", help="Specific PCWStats URLs to inspect")
+    parser.add_argument("--urls", nargs="*", help="Specific HEAT Labs URLs to inspect")
     parser.add_argument(
         "--last-30-days",
         action="store_true",
@@ -441,15 +441,15 @@ def main():
         setup_oauth_config()
         return
 
-    checker = PCWStatsIndexingChecker()
+    checker = HEATLabsIndexingChecker()
 
     # Use specific URLs if provided
     specific_urls = args.urls if args.urls else None
 
     all_time = not args.last_30_days
 
-    # Run the PCWStats check
-    checker.run_pcwstats_check(
+    # Run the HEAT Labs check
+    checker.run_heatlabs_check(
         specific_urls=specific_urls,
         output_file="../../Website-Configs/gsc-index.json",
         all_time=all_time,
