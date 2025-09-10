@@ -7,10 +7,13 @@ from collections import defaultdict
 from datetime import datetime
 
 # path to the directory
-TARGET_DIRECTORY = r"E:\GitHub\HEAT-Labs"
+TARGET_DIRECTORY = "../../"
 
 # path to the JSON file
 JSON_FILE_PATH = "../../Website-Configs/home-stats.json"
+
+# path to the TXT files directory
+TXT_OUTPUT_DIR = "statistics"
 
 # File extensions to analyze
 TEXT_EXTENSIONS = {
@@ -349,10 +352,14 @@ def format_statistics(
 
 
 # Save the statistics to a text file and return the file path.
-def save_statistics_to_file(stats_output):
+def save_statistics_to_file(stats_output, txt_output_dir=TXT_OUTPUT_DIR):
+    # Create directory if it doesn't exist
+    if not os.path.exists(txt_output_dir):
+        os.makedirs(txt_output_dir)
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"project_stats_{timestamp}.txt"
-    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+    file_path = os.path.join(txt_output_dir, filename)
 
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(stats_output)
@@ -411,27 +418,27 @@ def display_and_menu(
     total_size_gb,
     args_obj,
     json_path,
+    txt_output_dir,
 ):
     stats_output = format_statistics(
         stat_dict, files_count, lines_count, chars_count, folders_count, total_size_gb
     )
     print(stats_output)
 
-    # Update the JSON file with the new statistics
-    update_json_file(json_path, lines_count, files_count, folders_count, total_size_gb)
-
     while True:
         print("\nOptions:")
         print("1. Save statistics to a text file")
-        print("2. Quit")
+        print("2. Save statistics to JSON file")
+        print("3. Save to both text and JSON files")
+        print("4. Quit")
         if not args_obj.dir:  # Only offer to run again if not in command-line mode
-            print("3. Run again")
+            print("5. Run again")
 
-        choice = input("\nEnter your choice (1-3): ").strip()
+        choice = input("\nEnter your choice (1-5): ").strip()
 
         if choice == "1":
-            # Save the file immediately when option is chosen
-            file_path = save_statistics_to_file(stats_output)
+            # Save to text file
+            file_path = save_statistics_to_file(stats_output, txt_output_dir)
             print(f"\nStatistics saved to: {file_path}")
 
             # Now ask what to do next
@@ -446,10 +453,51 @@ def display_and_menu(
             elif next_choice == "2":
                 return True  # Run again
 
-        elif choice == "2" or choice.lower() == "q":
+        elif choice == "2":
+            # Save to JSON file
+            if update_json_file(
+                json_path, lines_count, files_count, folders_count, total_size_gb
+            ):
+                print(f"Statistics saved to JSON file: {json_path}")
+
+            # Now ask what to do next
+            print("\nOptions:")
+            print("1. Quit")
+            print("2. Run again")
+
+            next_choice = input("\nEnter your choice (1-2): ").strip()
+            if next_choice == "1" or next_choice.lower() == "q":
+                print("Exiting program.")
+                sys.exit(0)
+            elif next_choice == "2":
+                return True  # Run again
+
+        elif choice == "3":
+            # Save to both text and JSON files
+            file_path = save_statistics_to_file(stats_output, txt_output_dir)
+            print(f"\nStatistics saved to: {file_path}")
+
+            if update_json_file(
+                json_path, lines_count, files_count, folders_count, total_size_gb
+            ):
+                print(f"Statistics saved to JSON file: {json_path}")
+
+            # Now ask what to do next
+            print("\nOptions:")
+            print("1. Quit")
+            print("2. Run again")
+
+            next_choice = input("\nEnter your choice (1-2): ").strip()
+            if next_choice == "1" or next_choice.lower() == "q":
+                print("Exiting program.")
+                sys.exit(0)
+            elif next_choice == "2":
+                return True  # Run again
+
+        elif choice == "4" or choice.lower() == "q":
             print("Exiting program.")
             sys.exit(0)
-        elif choice == "3" and not args_obj.dir:
+        elif choice == "5" and not args_obj.dir:
             return True  # Run again
         else:
             print("Invalid choice. Please try again.")
@@ -472,6 +520,12 @@ def parse_arguments():
         dest="json",
         help="JSON file path to update (default: configured JSON path)",
     )
+    parser.add_argument(
+        "-txt",
+        "--txt-dir",
+        dest="txt_dir",
+        help="TXT output directory (default: configured TXT path)",
+    )
     return parser.parse_args()
 
 
@@ -482,6 +536,7 @@ if __name__ == "__main__":
         # Use command line arguments if provided, otherwise use configured paths
         target_directory = args.dir if args.dir else TARGET_DIRECTORY
         json_file_path = args.json if args.json else JSON_FILE_PATH
+        txt_output_dir = args.txt_dir if args.txt_dir else TXT_OUTPUT_DIR
 
         (
             directory_stats,
@@ -503,6 +558,7 @@ if __name__ == "__main__":
             directory_total_size_gb,
             args,
             json_file_path,
+            txt_output_dir,
         ):
             break
 
