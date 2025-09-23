@@ -21,6 +21,7 @@ REPOS = [
     "Website-Images",
     "Database-Tools",
     "Database-Files",
+    "Sound-Bank"
     "Website-Changelog",
     "Website-Statistics",
     "Website-Status",
