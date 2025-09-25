@@ -274,12 +274,18 @@ def bytes_to_gb(bytes_size):
 
 # Analyze files in the specified directory and return statistics.
 def analyze_directory(target_dir):
-    dir_stats = defaultdict(lambda: {"files": 0, "lines": 0, "chars": 0})
+    dir_stats = defaultdict(lambda: {"files": 0, "lines": 0, "chars": 0, "size": 0})
     dir_total_files = 0
     dir_total_lines = 0
     dir_total_chars = 0
     total_size_bytes = 0
     total_folders = 0
+
+    # Additional counters
+    binary_files_count = 0
+    binary_files_size = 0
+    all_files_count = 0
+    all_files_size = 0
 
     print(f"\nScanning files in {target_dir}...\n")
 
@@ -292,6 +298,7 @@ def analyze_directory(target_dir):
 
         for file in files:
             file_path = os.path.join(root, file)
+            all_files_count += 1
 
             # Skip this script itself
             if os.path.abspath(file_path) == os.path.abspath(__file__):
@@ -299,21 +306,41 @@ def analyze_directory(target_dir):
 
             # Get file size
             file_size = get_file_size(file_path)
+            all_files_size += file_size
             total_size_bytes += file_size
 
             category = get_file_extension_category(file_path)
+
             if not category:
-                continue  # Skip binary or undesired files
+                binary_files_count += 1
+                binary_files_size += file_size
+                continue
 
             lines, chars = count_lines_and_chars(file_path)
 
             dir_stats[category]["files"] += 1
             dir_stats[category]["lines"] += lines
             dir_stats[category]["chars"] += chars
+            dir_stats[category]["size"] += file_size
 
             dir_total_files += 1
             dir_total_lines += lines
             dir_total_chars += chars
+
+    # Print information
+    print(f"\n{'=' * 50}")
+    print("FILE ANALYSIS BREAKDOWN:")
+    print(f"{'=' * 50}")
+    print(
+        f"Text files:      {format_number(dir_total_files)} files, {bytes_to_gb(sum(cat_stats['size'] for cat_stats in dir_stats.values())):.2f} GB"
+    )
+    print(
+        f"Binary files:    {format_number(binary_files_count)} files, {bytes_to_gb(binary_files_size):.2f} GB"
+    )
+    print(
+        f"Total all files: {format_number(all_files_count)} files, {bytes_to_gb(all_files_size):.2f} GB"
+    )
+    print(f"{'=' * 50}")
 
     return (
         dir_stats,
@@ -322,12 +349,21 @@ def analyze_directory(target_dir):
         dir_total_chars,
         total_folders,
         total_size_bytes,
+        all_files_count,
+        all_files_size,
     )
 
 
 # Format the statistics as a string.
 def format_statistics(
-    stat_dict, files_count, lines_count, chars_count, folders_count, total_size_gb
+    stat_dict,
+    files_count,
+    lines_count,
+    chars_count,
+    folders_count,
+    total_size_gb,
+    all_files_count=None,
+    all_files_size_gb=None,
 ):
     output = ["=" * 80, f"PROJECT STATISTICS SUMMARY", "=" * 80]
 
@@ -419,9 +455,18 @@ def display_and_menu(
     args_obj,
     json_path,
     txt_output_dir,
+    all_files_count=None,
+    all_files_size=None,
 ):
     stats_output = format_statistics(
-        stat_dict, files_count, lines_count, chars_count, folders_count, total_size_gb
+        stat_dict,
+        files_count,
+        lines_count,
+        chars_count,
+        folders_count,
+        total_size_gb,
+        all_files_count,
+        bytes_to_gb(all_files_size) if all_files_size else None,
     )
     print(stats_output)
 
@@ -545,9 +590,11 @@ if __name__ == "__main__":
             directory_total_chars,
             directory_total_folders,
             directory_total_size_bytes,
+            all_files_count,
+            all_files_size,
         ) = analyze_directory(target_directory)
 
-        directory_total_size_gb = bytes_to_gb(directory_total_size_bytes)
+        directory_total_size_gb = bytes_to_gb(all_files_size)
 
         if not display_and_menu(
             directory_stats,
@@ -559,6 +606,8 @@ if __name__ == "__main__":
             args,
             json_file_path,
             txt_output_dir,
+            all_files_count,
+            all_files_size,
         ):
             break
 
