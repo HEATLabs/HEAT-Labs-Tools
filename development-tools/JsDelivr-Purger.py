@@ -18,6 +18,10 @@ REPO_MAPPING = {
     TARGET_DIR: "heatlabs.github.io",
     "../../Database-Files": "Database-Files",
     "../../Website-Configs": "Website-Configs",
+    "../../Website-Changelog": "Website-Changelog",
+    "../../Website-Status": "Website-Status",
+    "../../Website-Statistics": "Website-Statistics",
+    "../../Project-CW-Configurator": "Project-CW-Configurator",
 }
 
 
