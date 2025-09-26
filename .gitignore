@@ -33,3 +33,6 @@ discord-tools/__pycache__/data_processing.cpython-39.pyc
 discord-tools/__pycache__/discord_bot.cpython-39.pyc
 discord-tools/__pycache__/gsc_service.cpython-39.pyc
 development-tools/token.json
+development-tools/ffmpeg/ffmpeg.exe
+development-tools/ffmpeg/ffplay.exe
+development-tools/ffmpeg/ffprobe.exe
