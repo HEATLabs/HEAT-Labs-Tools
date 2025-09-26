@@ -52,7 +52,7 @@ def find_wav_files(root_directory):
     # Recursively search for all WAV files
     for root, dirs, files in os.walk(root_directory):
         for file in files:
-            if file.lower().endswith('.wav'):
+            if file.lower().endswith(".wav"):
                 full_path = os.path.join(root, file)
                 wav_files.append(full_path)
 
@@ -91,7 +91,9 @@ def convert_wav_to_mp3(wav_file, output_dir=None):
 
         # Verify conversion was successful
         if os.path.exists(output_path) and os.path.getsize(output_path) > 0:
-            print(f"✓ Success: {os.path.basename(wav_file)} → {os.path.basename(output_path)}")
+            print(
+                f"✓ Success: {os.path.basename(wav_file)} → {os.path.basename(output_path)}"
+            )
             return True, output_path
         else:
             print(f"✗ Failed: {os.path.basename(wav_file)} - Output file problem")
@@ -116,10 +118,15 @@ def delete_wav_files(wav_files_to_delete):
         print(f"  ... and {len(wav_files_to_delete) - 5} more files")
 
     # Get final confirmation
-    response = input(
-        f"\nAre you sure you want to delete these {len(wav_files_to_delete)} WAV files? (y/n): ").strip().lower()
+    response = (
+        input(
+            f"\nAre you sure you want to delete these {len(wav_files_to_delete)} WAV files? (y/n): "
+        )
+        .strip()
+        .lower()
+    )
 
-    if response not in ['y', 'yes']:
+    if response not in ["y", "yes"]:
         print("Deletion cancelled.")
         return 0
 
@@ -175,7 +182,7 @@ def main():
     print(f"\nReady to convert {len(wav_files)} WAV files to MP3.")
     response = input("Proceed? (y/n): ").strip().lower()
 
-    if response not in ['y', 'yes']:
+    if response not in ["y", "yes"]:
         print("Conversion cancelled.")
         return
 
@@ -197,8 +204,10 @@ def main():
             # Only add to deletion list if this was a new conversion (not skipped)
             if mp3_path and os.path.exists(mp3_path):
                 # Check if MP3 was just created (not pre-existing)
-                if not os.path.exists(mp3_path) or os.path.getmtime(mp3_path) > os.path.getmtime(
-                        wav_file) - 10:  # 10 second buffer
+                if (
+                    not os.path.exists(mp3_path)
+                    or os.path.getmtime(mp3_path) > os.path.getmtime(wav_file) - 10
+                ):  # 10 second buffer
                     successfully_converted_files.append(wav_file)
         elif result is False:
             failed += 1
@@ -219,10 +228,15 @@ def main():
     # Ask about deleting old WAV files
     if successful > 0:
         print(f"\nConversion completed successfully for {successful} files.")
-        response = input(
-            "Do you want to delete the original WAV files that were successfully converted? (y/n): ").strip().lower()
+        response = (
+            input(
+                "Do you want to delete the original WAV files that were successfully converted? (y/n): "
+            )
+            .strip()
+            .lower()
+        )
 
-        if response in ['y', 'yes']:
+        if response in ["y", "yes"]:
             deleted_count = delete_wav_files(successfully_converted_files)
             print(f"\nFinal summary:")
             print(f"Files converted: {successful}")
@@ -230,7 +244,9 @@ def main():
         else:
             print("WAV files were not deleted.")
     else:
-        print("\nNo files were successfully converted, so no WAV files will be deleted.")
+        print(
+            "\nNo files were successfully converted, so no WAV files will be deleted."
+        )
 
     input("\nPress Enter to exit...")
 
