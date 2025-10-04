@@ -24,6 +24,8 @@ REPOS = [
     "Website-Images-Tanks",
     "Website-Images-Maps",
     "Website-Images-News",
+    "Website-Images-Guides",
+    "Website-Images-Blogs",
     "Website-Images-Gallery",
     "Website-Images-Tournaments",
     "Database-Tools",
