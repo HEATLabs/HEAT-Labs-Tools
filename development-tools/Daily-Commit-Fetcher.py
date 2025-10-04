@@ -16,6 +16,7 @@ if not GITHUB_TOKEN:
 GITHUB_API_URL = "https://api.github.com"
 ORG_NAME = "HEATLabs"
 REPOS = [
+    ".github",
     "heatlabs.github.io",
     "Website-Configs",
     "Website-Images",
