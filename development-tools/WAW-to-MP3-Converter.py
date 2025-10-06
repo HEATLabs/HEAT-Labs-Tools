@@ -7,7 +7,7 @@ from pydub import AudioSegment
 FFMPEG_PATH = "ffmpeg"
 
 # Root directory
-ROOT_DIRECTORY = "../../Sound-Bank/sounds"
+ROOT_DIRECTORY = "../../HEAT-Labs-Sounds/sounds"
 
 # MP3 quality settings
 MP3_BITRATE = "192k"  # "128k", "256k", "320k"
