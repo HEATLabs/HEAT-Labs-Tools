@@ -16,12 +16,13 @@ CDN_REGEX = re.compile(
 # Repository mapping for cleaner names
 REPO_MAPPING = {
     TARGET_DIR: "heatlabs.github.io",
-    "../../Database-Files": "Database-Files",
+    "../../HEAT-Labs-Database": "HEAT-Labs-Database",
     "../../HEAT-Labs-Configs": "HEAT-Labs-Configs",
-    "../../Website-Changelog": "Website-Changelog",
-    "../../Website-Status": "Website-Status",
-    "../../Website-Statistics": "Website-Statistics",
-    "../../Project-CW-Configurator": "Project-CW-Configurator",
+    "../../HEAT-Labs-Changelog": "HEAT-Labs-Changelog",
+    "../../HEAT-Labs-Status": "HEAT-Labs-Status",
+    "../../HEAT-Labs-Discord": "HEAT-Labs-Discord",
+    "../../HEAT-Labs-Statistics": "HEAT-Labs-Statistics",
+    "../../HEAT-Labs-Configurator": "HEAT-Labs-Configurator",
 }
 
 
