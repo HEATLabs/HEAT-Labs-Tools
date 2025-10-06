@@ -7,8 +7,8 @@ from datetime import datetime, timezone
 
 # Configuration
 TARGET_DIR = "../../heatlabs.github.io"
-ADDITIONAL_DIRS = ["../../Database-Files", "../../Website-Configs"]
-JSON_FILENAME = "../../Website-Configs/jsdelivr-data.json"
+ADDITIONAL_DIRS = ["../../Database-Files", "../../HEAT-Labs-Configs"]
+JSON_FILENAME = "../../HEAT-Labs-Configs/jsdelivr-data.json"
 CDN_REGEX = re.compile(
     r'https://cdn\.jsdelivr\.net/gh/[\w\-]+/[\w\-]+@[\w\-]+/[^"\'\s)]+'
 )
@@ -17,7 +17,7 @@ CDN_REGEX = re.compile(
 REPO_MAPPING = {
     TARGET_DIR: "heatlabs.github.io",
     "../../Database-Files": "Database-Files",
-    "../../Website-Configs": "Website-Configs",
+    "../../HEAT-Labs-Configs": "HEAT-Labs-Configs",
     "../../Website-Changelog": "Website-Changelog",
     "../../Website-Status": "Website-Status",
     "../../Website-Statistics": "Website-Statistics",
@@ -239,7 +239,7 @@ def main():
         "All repositories",
         "heatlabs.github.io",
         "Database-Files",
-        "Website-Configs",
+        "HEAT-Labs-Configs",
         "Don't purge anything",
     ]
     purge_choice = get_user_choice("What would you like to purge?", repo_options)
@@ -249,7 +249,7 @@ def main():
         return
 
     # Filter URLs based on choice
-    repo_map = ["all", "heatlabs.github.io", "Database-Files", "Website-Configs"]
+    repo_map = ["all", "heatlabs.github.io", "Database-Files", "HEAT-Labs-Configs"]
     selected_repo = repo_map[purge_choice]
 
     urls_to_purge = filter_urls_by_repo(existing_urls_data, selected_repo)
