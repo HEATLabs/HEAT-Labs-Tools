@@ -17,6 +17,27 @@ def calculate_correct_version_numbers(changelog):
     cumulative_changes = 0
     corrected_updates = []
 
+    # Version transition configuration
+    VERSION_TRANSITIONS = [
+        {
+            "from_version": "0.0.000",
+            "major_version": 0
+         },
+        {
+            "from_version": "0.9.000",
+            "major_version": 1,
+        },
+        {
+            "from_version": "1.9.000",
+            "major_version": 2,
+        },
+    ]
+
+    # Sort transitions by version for processing
+    VERSION_TRANSITIONS.sort(
+        key=lambda x: [int(n) for n in x["from_version"].split(".")]
+    )
+
     for idx, update in enumerate(updates_chronological):
         # Count each type of change separately
         additions = len(update.get("added", []))
@@ -28,11 +49,67 @@ def calculate_correct_version_numbers(changelog):
         total_changes = additions + changes + fixes + removals
         cumulative_changes += total_changes
 
-        # Calculate version numbers with middle number incrementing every 1000
-        middle_number = (cumulative_changes - 1) // 1000
-        last_number = (cumulative_changes - 1) % 1000
+        # Determine major version based on transitions
+        current_major_version = 0
+        current_middle_version = 0
+        current_minor_version = 0
 
-        correct_version = f"0.{middle_number}.{last_number:03d}"
+        # Calculate what the version would be without transitions
+        temp_middle = (cumulative_changes - 1) // 1000
+        temp_minor = (cumulative_changes - 1) % 1000
+        temp_version = f"0.{temp_middle}.{temp_minor:03d}"
+
+        # Find the appropriate major version based on transitions
+        for transition in reversed(VERSION_TRANSITIONS):
+            transition_parts = [int(n) for n in transition["from_version"].split(".")]
+            current_parts = [int(n) for n in temp_version.split(".")]
+
+            # Compare versions: major.middle.minor
+            if (
+                current_parts[0] > transition_parts[0]
+                or (
+                    current_parts[0] == transition_parts[0]
+                    and current_parts[1] > transition_parts[1]
+                )
+                or (
+                    current_parts[0] == transition_parts[0]
+                    and current_parts[1] == transition_parts[1]
+                    and current_parts[2] >= transition_parts[2]
+                )
+            ):
+                current_major_version = transition["major_version"]
+                break
+
+        # Calculate final version numbers
+        base_transition = None
+        for transition in VERSION_TRANSITIONS:
+            if transition["major_version"] == current_major_version:
+                base_transition = transition
+                break
+
+        if base_transition:
+            # Calculate offset from the transition point
+            transition_parts = [
+                int(n) for n in base_transition["from_version"].split(".")
+            ]
+            transition_cumulative = (
+                (transition_parts[1] * 1000) + transition_parts[2] + 1
+            )
+
+            if cumulative_changes >= transition_cumulative:
+                offset = cumulative_changes - transition_cumulative
+                current_middle_version = offset // 1000
+                current_minor_version = offset % 1000
+            else:
+                # This shouldn't happen with proper configuration, but fallback
+                current_middle_version = (cumulative_changes - 1) // 1000
+                current_minor_version = (cumulative_changes - 1) % 1000
+        else:
+            # Fallback if no transition found
+            current_middle_version = (cumulative_changes - 1) // 1000
+            current_minor_version = (cumulative_changes - 1) % 1000
+
+        correct_version = f"{current_major_version}.{current_middle_version}.{current_minor_version:03d}"
 
         corrected_update = update.copy()
         corrected_update["version"] = correct_version
@@ -51,14 +128,16 @@ def calculate_correct_version_numbers(changelog):
     corrected_updates = corrected_updates[::-1]  # Newest first
     corrected_changelog = changelog.copy()
     corrected_changelog["updates"] = corrected_updates
-    return corrected_changelog
+    return corrected_changelog, VERSION_TRANSITIONS
 
 
 def verify_and_correct_changelog(file_path):
     with open(file_path, "r") as f:
         changelog = json.load(f)
 
-    corrected_changelog = calculate_correct_version_numbers(changelog)
+    corrected_changelog, VERSION_TRANSITIONS = calculate_correct_version_numbers(
+        changelog
+    )
 
     version_issues = False
     author_issues = False
