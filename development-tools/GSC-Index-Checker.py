@@ -137,9 +137,9 @@ class HEATLabsIndexingChecker:
 
             # Check for exact match or variations
             heatlabs_variations = [
-                "https://heatlabs.github.io/",
-                "https://heatlabs.github.io",
-                "sc-domain:heatlabs.github.io",
+                "https://heatlabs.net/",
+                "https://heatlabs.net",
+                "sc-domain:heatlabs.net",
             ]
 
             for variation in heatlabs_variations:
@@ -150,7 +150,7 @@ class HEATLabsIndexingChecker:
 
             print("HEAT Labs GitHub Pages not found in verified properties!")
             print(
-                "Please verify https://heatlabs.github.io in Google Search Console first."
+                "Please verify https://heatlabs.net in Google Search Console first."
             )
             return False
 
@@ -211,7 +211,7 @@ class HEATLabsIndexingChecker:
                     page_url = row["keys"][0]
 
                     # Only include HEAT Labs URLs
-                    if page_url.startswith("https://heatlabs.github.io"):
+                    if page_url.startswith("https://heatlabs.net"):
                         page_data = {
                             "url": page_url,
                             "status": "indexed_and_served",
@@ -274,7 +274,7 @@ class HEATLabsIndexingChecker:
     # Inspect specific HEAT Labs URLs for detailed indexing information
     def inspect_heatlabs_url(self, inspect_url: str) -> Dict[str, Any]:
         # Ensure the URL is a HEAT Labs URL
-        if not inspect_url.startswith("https://heatlabs.github.io"):
+        if not inspect_url.startswith("https://heatlabs.net"):
             return {
                 "url": inspect_url,
                 "error": "URL is not a HEAT Labs GitHub Pages URL",
@@ -347,7 +347,7 @@ class HEATLabsIndexingChecker:
         if specific_urls:
             inspected_urls = []
             for url in specific_urls:
-                if url.startswith("https://heatlabs.github.io"):
+                if url.startswith("https://heatlabs.net"):
                     print(f"  Inspecting: {url}")
                     inspection = self.inspect_heatlabs_url(url)
                     inspected_urls.append(inspection)
