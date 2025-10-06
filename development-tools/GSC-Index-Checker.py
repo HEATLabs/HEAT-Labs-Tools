@@ -316,7 +316,7 @@ class HEATLabsIndexingChecker:
     def run_heatlabs_check(
         self,
         specific_urls: List[str] = None,
-        output_file: str = "../../Website-Configs/gsc-index.json",
+        output_file: str = "../../HEAT-Labs-Configs/gsc-index.json",
         all_time: bool = True,
     ) -> None:
         print("Starting authentication...")
@@ -451,7 +451,7 @@ def main():
     # Run the HEAT Labs check
     checker.run_heatlabs_check(
         specific_urls=specific_urls,
-        output_file="../../Website-Configs/gsc-index.json",
+        output_file="../../HEAT-Labs-Configs/gsc-index.json",
         all_time=all_time,
     )
 
