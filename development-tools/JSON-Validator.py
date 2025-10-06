@@ -425,7 +425,7 @@ def validate_json_files(base_path: str):
                 ):
                     valid = validate_tournament_file(file_path)
 
-                elif "../../Website-Configs/" in file_path:
+                elif "../../HEAT-Labs-Configs/" in file_path:
                     if file == "banner.json":
                         valid = validate_banner(file_path)
                     elif file == "changelog.json":
@@ -461,7 +461,7 @@ if __name__ == "__main__":
     base_paths = [
         "../../Database-Files/tanks/",
         "../../Database-Files/tournaments/",
-        "../../Website-Configs/",
+        "../../HEAT-Labs-Configs/",
     ]
 
     all_valid = True
