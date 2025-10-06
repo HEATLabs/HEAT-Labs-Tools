@@ -2,7 +2,7 @@ from pathlib import Path
 import subprocess
 import sys
 
-VIDEOS_DIR = r"../../Website-Images/tankopedia/videos"
+VIDEOS_DIR = r"../../HEAT-Labs-Images/tankopedia/videos"
 
 OUTPUT_SUBFOLDER = "thumbnails"
 EXT_IN = ".webm"

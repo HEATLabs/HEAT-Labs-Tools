@@ -6,7 +6,7 @@ from pathlib import Path
 import concurrent.futures
 
 # Configuration
-BASE_IMAGE_DIR = "../../Website-Images/"
+BASE_IMAGE_DIR = "../../HEAT-Labs-Images/"
 EXCLUDED_DIRS = {
     "android",
     "apple",
