@@ -75,7 +75,7 @@ def generate_sitemap():
 
     # Process home page separately
     home_url_data = {
-        "loc": "https://heatlabs.github.io",
+        "loc": "https://heatlabs.net",
         "depth": -1,
         "priority": "1.0",
         "lastmod": current_date,
@@ -109,11 +109,11 @@ def generate_sitemap():
         # Build the URL
         if depth == 0:
             # File is in root directory
-            url_loc = f"https://heatlabs.github.io/{html_file.name}"
+            url_loc = f"https://heatlabs.net/{html_file.name}"
         else:
             # File is in a subdirectory
             url_path = "/".join(relative_path.parts)
-            url_loc = f"https://heatlabs.github.io/{url_path}"
+            url_loc = f"https://heatlabs.net/{url_path}"
 
         # Store URL data for sorting
         url_data.append(
