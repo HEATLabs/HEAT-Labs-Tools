@@ -215,5 +215,5 @@ def verify_and_correct_changelog(file_path):
 
 
 if __name__ == "__main__":
-    file_path = Path("../../Website-Configs/changelog.json")
+    file_path = Path("../../HEAT-Labs-Configs/changelog.json")
     verify_and_correct_changelog(file_path)
