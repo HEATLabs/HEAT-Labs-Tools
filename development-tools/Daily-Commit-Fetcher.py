@@ -132,7 +132,7 @@ def main():
 
     daily_log = gather_commits(all_commits)
 
-    with open("../../Website-Configs/daily_commits.json", "w", encoding="utf-8") as f:
+    with open("../../HEAT-Labs-Configs/daily_commits.json", "w", encoding="utf-8") as f:
         json.dump(daily_log, f, indent=2, ensure_ascii=False)
 
     print("✅ Daily commit log saved to daily_commits.json")
