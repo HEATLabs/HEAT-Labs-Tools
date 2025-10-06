@@ -419,7 +419,7 @@ def generate_html_content(html_files, input_dir):
               <h2 class="mb-1">Join the Others</h2>
               <p class="text-lg mb-1 mt-5">If you haven't already joined the Discord, now's probably the time. Just… don't mention you found this page. They'll know.</p>
               <div class="flex justify-center mt-6">
-                <a href="https://discord.com/invite/caEFCA9ScF" class="special-cta-button">
+                <a href="https://discord.heatlabs.net" class="special-cta-button">
                   <i class="fab fa-discord mr-2"></i> Join Our Discord </a>
               </div>
             </div>
@@ -458,7 +458,7 @@ def generate_html_content(html_files, input_dir):
               <p class="text-gray-400">Your go-to resource for Project CW statistics and gameplay information.</p>
             </div>
             <div class="flex space-x-4 text-xl">
-              <a href="https://discord.com/invite/caEFCA9ScF" class="social-icon">
+              <a href="https://discord.heatlabs.net" class="social-icon">
                 <i class="fab fa-discord"></i>
               </a>
               <a href="https://x.com/HEATLabs" class="social-icon">
