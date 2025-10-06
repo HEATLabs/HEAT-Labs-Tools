@@ -27,7 +27,12 @@ def calculate_correct_version_numbers(changelog):
         # Sum all changes for version number calculation
         total_changes = additions + changes + fixes + removals
         cumulative_changes += total_changes
-        correct_version = "0.0.{:04d}".format(cumulative_changes)
+
+        # Calculate version numbers with middle number incrementing every 1000
+        middle_number = (cumulative_changes - 1) // 1000
+        last_number = (cumulative_changes - 1) % 1000
+
+        correct_version = f"0.{middle_number}.{last_number:03d}"
 
         corrected_update = update.copy()
         corrected_update["version"] = correct_version
