@@ -10,7 +10,7 @@ WEBSITE_DIR = "../../heatlabs.github.io"
 IMAGES_DIR = "../../HEATLabs-Views-API/trackers"
 BASE_PIXEL_NAME = "pcwstats-tracker-pixel.png"
 BASE_CDN_URL = "https://views.heatlabs.net/api/track"
-TRACKING_JSON_FILE = "../../Website-Configs/tracking-pixel.json"
+TRACKING_JSON_FILE = "../../HEAT-Labs-Configs/tracking-pixel.json"
 
 
 def get_page_name_from_title(title):
