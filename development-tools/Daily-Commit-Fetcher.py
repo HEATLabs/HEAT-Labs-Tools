@@ -18,7 +18,6 @@ ORG_NAME = "HEATLabs"
 REPOS = [
     ".github",
     "heatlabs.github.io",
-    "Website-Configs",
     "Website-Images",
     "Website-Images-Essentials",
     "Website-Images-Tanks",
@@ -29,18 +28,20 @@ REPOS = [
     "Website-Images-Blogs",
     "Website-Images-Gallery",
     "Website-Images-Tournaments",
-    "Database-Tools",
-    "Database-Files",
-    "Sound-Bank",
-    "Tank-Models",
-    "Website-Changelog",
-    "Website-Statistics",
-    "Website-Status",
-    "HEATLabs-Configurator",
+    "HEAT-Labs-Configs",
+    "HEAT-Labs-Tools",
+    "HEAT-Labs-Database",
+    "HEAT-Labs-Sounds",
+    "HEAT-Labs-Models",
+    "HEAT-Labs-Changelog",
+    "HEAT-Labs-Statistics",
+    "HEAT-Labs-Status",
+    "HEAT-Labs-Discord",
+    "HEAT-Labs-Configurator",
 ]
 
 EXTRA_REPOS = [
-    {"owner": "ThatSINEWAVE", "repo": "HEATLabs-Views-API"},
+    {"owner": "ThatSINEWAVE", "repo": "HEAT-Labs-Views-API"},
 ]
 
 
