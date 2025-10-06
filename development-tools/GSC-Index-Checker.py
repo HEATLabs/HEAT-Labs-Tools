@@ -21,7 +21,7 @@ except ImportError:
 SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
 
 # Target website - HEATLabs GitHub Pages
-TARGET_SITE = "https://heatlabs.github.io/"
+TARGET_SITE = "https://heatlabs.net/"
 
 
 # Initialize the indexing status checker with credentials
