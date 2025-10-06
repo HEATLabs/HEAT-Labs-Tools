@@ -10,7 +10,7 @@ from datetime import datetime
 TARGET_DIRECTORY = "../../"
 
 # path to the JSON file
-JSON_FILE_PATH = "../../Website-Configs/home-stats.json"
+JSON_FILE_PATH = "../../HEAT-Labs-Configs/home-stats.json"
 
 # path to the TXT files directory
 TXT_OUTPUT_DIR = "statistics"
