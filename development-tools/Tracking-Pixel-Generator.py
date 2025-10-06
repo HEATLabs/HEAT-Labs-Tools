@@ -9,7 +9,7 @@ from datetime import datetime
 WEBSITE_DIR = "../../heatlabs.github.io"
 IMAGES_DIR = "../../HEATLabs-Views-API/trackers"
 BASE_PIXEL_NAME = "pcwstats-tracker-pixel.png"
-BASE_CDN_URL = "https://heatlabs-pixel-api.vercel.app/api/track"
+BASE_CDN_URL = "https://views.heatlabs.net/api/track"
 TRACKING_JSON_FILE = "../../Website-Configs/tracking-pixel.json"
 
 
