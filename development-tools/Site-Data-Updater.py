@@ -7,7 +7,8 @@ from pathlib import Path
 def update_humans_txt_files():
     # humans.txt files
     humans_txt_paths = [
-        Path("../../heatlabs.github.io/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Website/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Website-Development/site-data/humans.txt"),
         Path("../../HEAT-Labs-Statistics/site-data/humans.txt"),
         Path("../../HEAT-Labs-Changelog/site-data/humans.txt"),
         Path("../../HEAT-Labs-Status/site-data/humans.txt"),
