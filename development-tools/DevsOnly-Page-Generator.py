@@ -28,7 +28,7 @@ def generate_html_content(html_files, input_dir):
 
   Save yourself the trouble and:
   Check us out on GitHub: https://github.com/HEATLabs
-  Slide into our Discord: https://discord.gg/caEFCA9ScF
+  Slide into our Discord: https://discord.gg/KRYEw9aGZT
 
   Seriously, we *want* you to see the code. Talk to us, we’re cool.
   Unless you're using regex to parse HTML... then we have *questions*.
@@ -45,14 +45,14 @@ def generate_html_content(html_files, input_dir):
     <title>Devs Only - HEATLabs</title>
     <!-- Primary Meta Tags -->
     <meta name="title" content="HEAT Labs - Devs Only">
-    <meta name="description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
+    <meta name="description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for World of Tanks: HEAT community contributors.">
     <meta name="author" content="HEAT Labs Team">
     <meta name="copyright" content="© 2025 HEAT Labs by SINEWAVE Development. All rights reserved.">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
     <meta name="language" content="English">
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://heatlabs.github.io/easter-eggs/devsonly.html">
+    <link rel="canonical" href="https://heatlabs.net/easter-eggs/devsonly">
     <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" href="../site-data/sitemap.xml">
     <!-- Theme Checker -->
@@ -79,6 +79,8 @@ def generate_html_content(html_files, input_dir):
     <link rel="stylesheet" href="../assets/css/libraries/font-awesome/all.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/misc.css">
+    <link rel="stylesheet" href="../assets/css/modules/wip-modal.css">
+    <link rel="stylesheet" href="../assets/css/easter-eggs/radio.css">
     <link rel="stylesheet" href="../assets/css/pages/devsonly.css">
     <link rel="stylesheet" href="../assets/css/modules/settings.css">
     <link rel="stylesheet" href="../assets/css/modules/header.css">
@@ -125,22 +127,22 @@ def generate_html_content(html_files, input_dir):
     <meta name="apple-mobile-web-app-status-bar-style" content="#141312">
     <!-- Open Graph Meta Tags (for social media sharing, mainly Facebook) -->
     <meta property="og:title" content="HEAT Labs - Devs Only">
-    <meta property="og:description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
-    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/HEATLabs/HEAT-Labs-Images@main/social-share/heatlabs.png">
-    <meta property="og:url" content="https://heatlabs.github.io/easter-eggs/devsonly.html">
+    <meta property="og:description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for World of Tanks: HEAT community contributors.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/HEATLabs/HEAT-Labs-Images/refs/heads/main/social-share/HEATLabs.png">
+    <meta property="og:url" content="https://heatlabs.net/easter-eggs/devsonly">
     <meta property="og:type" content="website">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="HEATLabs">
+    <meta property="og:site_name" content="HEAT Labs">
     <meta property="og:locale" content="en_US">
     <!-- Twitter Card Meta Tags (for better sharing on Twitter) -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@HEATLabs">
-    <meta name="twitter:creator" content="@HEATLabs">
+    <meta name="twitter:site" content="@HEAT_Labs">
+    <meta name="twitter:creator" content="@HEAT_Labs">
     <meta name="twitter:title" content="HEAT Labs - Devs Only">
-    <meta name="twitter:description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for Project CW community contributors.">
-    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/HEATLabs/HEAT-Labs-Images@main/social-share/heatlabs.png">
-    <meta name="twitter:image:alt" content="HEAT Labs - Your one-stop solution for comprehensive statistics insights and guides for Project CW">
+    <meta name="twitter:description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for World of Tanks: HEAT community contributors.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/HEATLabs/HEAT-Labs-Images/refs/heads/main/social-share/HEATLabs.png">
+    <meta name="twitter:image:alt" content="HEAT Labs - Your one-stop solution for comprehensive statistics insights and guides for World of Tanks: HEAT">
   </head>
   <body>
     <!-- Custom Privacy-Focused Tracking Pixel -->
@@ -159,97 +161,97 @@ def generate_html_content(html_files, input_dir):
       <nav class="flex-grow">
         <ul class="space-y-2">
           <li>
-            <a href="../index.html" class="sidebar-link active">
+            <a href="../" class="sidebar-link active">
               <i class="fas fa-wrench"></i>
               <span>Why Are You Here?</span>
             </a>
           </li>
           <li>
-            <a href="../tanks.html" class="sidebar-link">
+            <a href="../tanks" class="sidebar-link">
               <i class="fas fa-shield-alt"></i>
               <span>Tank Statistics</span>
             </a>
           </li>
           <li>
-            <a href="../players.html" class="sidebar-link wip">
+            <a href="../players" class="sidebar-link wip">
               <i class="fas fa-user"></i>
               <span>Player Statistics</span>
             </a>
           </li>
           <li>
-            <a href="../maps.html" class="sidebar-link">
+            <a href="../maps" class="sidebar-link">
               <i class="fas fa-map"></i>
               <span>Map Knowledge</span>
             </a>
           </li>
           <li>
-            <a href="../guides.html" class="sidebar-link">
+            <a href="../guides" class="sidebar-link">
               <i class="fas fa-book-open"></i>
               <span>Community Guides</span>
             </a>
           </li>
           <li>
-            <a href="../strategy-planner.html" class="sidebar-link wip">
+            <a href="../strategy-planner" class="sidebar-link wip">
               <i class="fas fa-chess"></i>
               <span>Strategy Planner</span>
             </a>
           </li>
           <li>
-            <a href="../builds.html" class="sidebar-link">
+            <a href="../builds" class="sidebar-link">
               <i class="fas fa-wrench"></i>
               <span>Common Builds</span>
             </a>
           </li>
           <li>
-            <a href="../playground.html" class="sidebar-link">
+            <a href="../playground" class="sidebar-link">
               <i class="fa-solid fa-gamepad"></i>
               <span>Playground</span>
             </a>
           </li>
           <li>
-            <a href="../news.html" class="sidebar-link">
+            <a href="../news" class="sidebar-link">
               <i class="fas fa-newspaper"></i>
               <span>Game News</span>
             </a>
           </li>
           <li>
-            <a href="../asset-gallery.html" class="sidebar-link">
+            <a href="../asset-gallery" class="sidebar-link">
               <i class="fas fa-database"></i>
               <span>Asset Gallery</span>
             </a>
           </li>
           <li>
-            <a href="../bug-hunting.html" class="sidebar-link">
+            <a href="../bug-hunting" class="sidebar-link">
               <i class="fas fa-bug"></i>
               <span>Bug Hunting</span>
             </a>
           </li>
           <li>
-            <a href="../tournaments.html" class="sidebar-link">
+            <a href="../tournaments" class="sidebar-link">
               <i class="fas fa-trophy"></i>
               <span>Tournaments</span>
             </a>
           </li>
           <li>
-            <a href="../blog.html" class="sidebar-link">
+            <a href="../blog" class="sidebar-link">
               <i class="fas fa-blog"></i>
               <span>Official Blog</span>
             </a>
           </li>
           <li>
-            <a href="../legal.html" class="sidebar-link">
+            <a href="../legal" class="sidebar-link">
               <i class="fas fa-balance-scale"></i>
               <span>Project Policies</span>
             </a>
           </li>
           <li>
-            <a href="../resources/about-us.html" class="sidebar-link">
+            <a href="../resources/about-us" class="sidebar-link">
               <i class="fas fa-info-circle"></i>
               <span>About the Project</span>
             </a>
           </li>
           <li>
-            <a href="../resources/credits.html" class="sidebar-link">
+            <a href="../resources/credits" class="sidebar-link">
               <i class="fas fa-users"></i>
               <span>Community Credits</span>
             </a>
@@ -270,11 +272,11 @@ def generate_html_content(html_files, input_dir):
                 <span></span>
               </button>
               <div class="brand-logo-container">
-                <a href="../index.html" class="brand-logo">
+                <a href="../" class="brand-logo">
                   <img src="https://cdn.jsdelivr.net/gh/HEATLabs/HEAT-Labs-Images@main/logo/logo.webp" alt="HEAT Labs Logo" class="brand-logo-img">
                   <span>HEAT Labs</span>
                 </a>
-                <a href="../Website-Changelog" class="beta-tag">Loading</a>
+                <a href="..//changelog.heatlabs.net" class="beta-tag">Loading</a>
               </div>
             </div>
             <div class="navbar-actions">
@@ -284,13 +286,13 @@ def generate_html_content(html_files, input_dir):
               <button id="openSettings" class="settings-button">
                   <i class="fas fa-cog"></i>
               </button>
-              <a href="https://heatlabs.github.io/Website-Status" class="system-status">
+              <a href="//status.heatlabs.net" class="system-status">
                 <i class="fa-solid fa-server"></i>
               </a>
-              <a href="https://heatlabs.github.io/Website-Statistics" class="system-status">
+              <a href="//statistics.heatlabs.net" class="system-status">
                 <i class="fa-solid fa-chart-column"></i>
               </a>
-              <a href="https://heatlabs.github.io/Website-Changelog" class="system-status">
+              <a href="//changelog.heatlabs.net" class="system-status">
                 <i class="fa-solid fa-clipboard-list"></i>
               </a>
             </div>
@@ -359,23 +361,23 @@ def generate_html_content(html_files, input_dir):
              <div class="dev-card">
                 <div class="dev-info">
                     <h3>changelog</h3>
-                    <a href="https://heatlabs.github.io/Website-Changelog" class="btn-accent btn-dev">
+                    <a href="//changelog.heatlabs.net" class="btn-accent btn-dev">
                         <i class=""></i>Go to Page </a>
                 </div>
              </div>
-             <!-- Page Card changelog -->
+             <!-- Page Card statistics -->
              <div class="dev-card">
                 <div class="dev-info">
                     <h3>website-statistics</h3>
-                    <a href="https://heatlabs.github.io/Website-Statistics" class="btn-accent btn-dev">
+                    <a href="//statistics.heatlabs.net" class="btn-accent btn-dev">
                         <i class=""></i>Go to Page </a>
                 </div>
              </div>
-             <!-- Page Card changelog -->
+             <!-- Page Card status -->
              <div class="dev-card">
                 <div class="dev-info">
                     <h3>system-status</h3>
-                    <a href="https://heatlabs.github.io/Website-Status/" class="btn-accent btn-dev">
+                    <a href="//status.heatlabs.net" class="btn-accent btn-dev">
                         <i class=""></i>Go to Page </a>
                 </div>
              </div>
@@ -410,7 +412,7 @@ def generate_html_content(html_files, input_dir):
               <h2 class="mb-1">Go on then</h2>
               <p class="text-lg mb-1 mt-5">Since you're here, might as well make yourself useful. Fix a typo. Add a secret. Break something. We won't stop you.</p>
               <div class="flex justify-center mt-6">
-                <a href="../resources/contact-us.html" class="special-cta-button">
+                <a href="../resources/contact-us" class="special-cta-button">
                   <i class="fas fa-edit mr-2"></i> Improve This Page </a>
               </div>
             </div>
@@ -455,20 +457,23 @@ def generate_html_content(html_files, input_dir):
           <div class="footer-brand flex flex-col items-center text-center">
             <div>
               <h3 class="text-2xl font-semibold">HEAT Labs</h3>
-              <p class="text-gray-400">Your go-to resource for Project CW statistics and gameplay information.</p>
+              <p class="text-gray-400">Your go-to resource for World of Tanks: HEAT statistics and gameplay information.</p>
             </div>
             <div class="flex space-x-4 text-xl">
-              <a href="https://discord.heatlabs.net" class="social-icon">
+              <a href="https://discord.heatlabs.net" class="social-icon" title="Official Discord">
                 <i class="fab fa-discord"></i>
               </a>
-              <a href="https://x.com/HEATLabs" class="social-icon">
+              <a href="https://x.com/HEAT_Labs" class="social-icon" title="Official X">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="https://github.com/HEATLabs" class="social-icon">
+              <a href="https://github.com/HEATLabs" class="social-icon" title="Official GitHub">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="https://www.youtube.com/@HEATLabs" class="social-icon">
+              <a href="https://www.youtube.com/@HEATLabs-Official" class="social-icon" title="Official YouTube">
                 <i class="fab fa-youtube"></i>
+              </a>
+              <a href="https://next.nexusmods.com/profile/HEATLabs" class="social-icon" title="Official Nexus Mods">
+                <i class="fas fa-gamepad"></i>
               </a>
             </div>
           </div>
@@ -478,13 +483,13 @@ def generate_html_content(html_files, input_dir):
               <h3 class="text-lg font-semibold mb-2">Tools</h3>
               <ul class="footer-links text-gray-400">
                 <li>
-                  <a href="../maps.html">Map Knowledge</a>
+                  <a href="../maps">Map Knowledge</a>
                 </li>
                 <li>
-                  <a href="../tanks.html">Tank Statistics</a>
+                  <a href="../tanks">Tank Statistics</a>
                 </li>
                 <li>
-                  <a href="../asset-gallery.html">Asset Gallery</a>
+                  <a href="../asset-gallery">Asset Gallery</a>
                 </li>
               </ul>
             </div>
@@ -492,10 +497,10 @@ def generate_html_content(html_files, input_dir):
               <h3 class="text-lg font-semibold mb-2">Community</h3>
               <ul class="footer-links text-gray-400">
                 <li>
-                  <a href="../guides.html">Community Guides</a>
+                  <a href="../guides">Community Guides</a>
                 </li>
                 <li>
-                  <a href="../builds.html">Common Builds</a>
+                  <a href="../builds">Common Builds</a>
                 </li>
                 <li>
                   <a href="#">devs</a>
@@ -506,13 +511,13 @@ def generate_html_content(html_files, input_dir):
               <h3 class="text-lg font-semibold mb-2">HEAT Labs</h3>
               <ul class="footer-links text-gray-400">
                 <li>
-                  <a href="../resources/about-us.html">About the Project</a>
+                  <a href="../resources/about-us">About the Project</a>
                 </li>
                 <li>
-                  <a href="../blog.html">Official Blog</a>
+                  <a href="../blog">Official Blog</a>
                 </li>
                 <li>
-                  <a href="../news.html">Game News</a>
+                  <a href="../news">Game News</a>
                 </li>
               </ul>
             </div>
@@ -520,13 +525,13 @@ def generate_html_content(html_files, input_dir):
               <h3 class="text-lg font-semibold mb-2">Credits</h3>
               <ul class="footer-links text-gray-400">
                 <li>
-                  <a href="../resources/credits.html">Community Credits</a>
+                  <a href="../resources/credits">Community Credits</a>
                 </li>
                 <li>
-                  <a href="../resources/support-us.html">Support the Project</a>
+                  <a href="../resources/support-us">Support the Project</a>
                 </li>
                 <li>
-                  <a href="../resources/contact-us.html">Contact Us</a>
+                  <a href="../resources/contact-us">Contact Us</a>
                 </li>
               </ul>
             </div>
@@ -534,13 +539,13 @@ def generate_html_content(html_files, input_dir):
               <h3 class="text-lg font-semibold mb-2">Legal</h3>
               <ul class="footer-links text-gray-400">
                 <li>
-                  <a href="../legal/terms-of-service.html">Terms of Service</a>
+                  <a href="../legal/terms-of-service">Terms of Service</a>
                 </li>
                 <li>
-                  <a href="../legal/project-license.html">Project License</a>
+                  <a href="../legal/project-license">Project License</a>
                 </li>
                 <li>
-                  <a href="../legal/privacy-policy.html">Privacy Policy</a>
+                  <a href="../legal/privacy-policy">Privacy Policy</a>
                 </li>
               </ul>
             </div>
@@ -549,14 +554,14 @@ def generate_html_content(html_files, input_dir):
           <div class="text-center">
             <h3 class="text-lg font-semibold mb-1">Contact</h3>
             <p class="text-gray-400 mb-2">Have suggestions, found a bug or want to help?</p>
-            <a href="../resources/contact-us.html" class="btn-accent mt-4">
+            <a href="../resources/contact-us" class="btn-accent mt-4">
               <i class="fas fa-envelope mr-2"></i>Send Feedback </a>
-            <a href="../resources/get-involved.html" class="btn-accent mt-4">
+            <a href="../resources/get-involved" class="btn-accent mt-4">
               <i class="fas fa-users mr-2"></i>Get Involved </a>
           </div>
           <!-- Bottom Disclaimer -->
           <div class="text-center text-sm text-gray-500 space-y-1 border-t border-gray-700 pt-1">
-            <p> HEAT Labs is a community-made project and is not associated with, endorsed by, or affiliated with <a href="https://projectcw.dev" class="disclaimer-link">Project CW</a> or <a href="https://www.wargaming.net" class="disclaimer-link">Wargaming.net</a>.</p>
+            <p> HEAT Labs is a community-made project and is not associated with, endorsed by, or affiliated with <a href="https://wotheat.com" class="disclaimer-link">World of Tanks: HEAT</a> or <a href="https://www.wargaming.net" class="disclaimer-link">Wargaming.net</a>.</p>
             <p>&copy; 2025 HEAT Labs by SINEWAVE Development. All rights reserved.</p>
           </div>
         </div>
@@ -564,6 +569,9 @@ def generate_html_content(html_files, input_dir):
     </div>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/misc.js"></script>
+    <script src="../assets/js/modules/wip-modal.js"></script>
+    <script src="../assets/js/easter-eggs/go-to.js"></script>
+    <script src="../assets/js/easter-eggs/radio.js"></script>
     <script src="../assets/js/modules/image-protection.js"></script>
     <script src="../assets/js/modules/waves.js"></script>
     <script src="../assets/js/modules/sidebar.js"></script>
@@ -575,6 +583,7 @@ def generate_html_content(html_files, input_dir):
     <script src="../assets/js/modules/global-hero.js"></script>
     <script src="../assets/js/modules/banner.js"></script>
     <script src="../assets/js/modules/settings.js"></script>
+    <script src="../assets/js/modules/fix-localhost-urls.js"></script>
   </body>
 </html>"""
 
