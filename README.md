@@ -1,6 +1,6 @@
 <div align="center">
 
-# HEAT Labs - Database Tools
+# HEAT Labs - Tools
 
 <img src="https://raw.githubusercontent.com/HEATLabs/HEAT-Labs-Images/refs/heads/main/social-share/HEATLabs.png" alt="HEAT Labs Banner"/>
 
