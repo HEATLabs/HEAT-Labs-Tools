@@ -37,8 +37,7 @@ REPOS = [
     "HEAT-Labs-Statistics",
     "HEAT-Labs-Status",
     "HEAT-Labs-Tools",
-    "HEAT-Labs-Website",
-    "heatlabs.github.io"
+    "HEAT-Labs-Website"
 ]
 
 EXTRA_REPOS = [
