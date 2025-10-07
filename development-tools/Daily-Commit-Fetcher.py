@@ -37,7 +37,8 @@ REPOS = [
     "HEAT-Labs-Desktop",
     "HEAT-Labs-Status",
     "HEAT-Labs-Tools",
-    "HEAT-Labs-Website"
+    "HEAT-Labs-Website",
+    "HEAT-Labs-Website-Development"
 ]
 
 EXTRA_REPOS = [
