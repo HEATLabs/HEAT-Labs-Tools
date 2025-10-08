@@ -13,6 +13,7 @@ def update_humans_txt_files():
         Path("../../HEAT-Labs-Changelog/site-data/humans.txt"),
         Path("../../HEAT-Labs-Status/site-data/humans.txt"),
         Path("../../HEAT-Labs-Discord/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Socials/site-data/humans.txt"),
     ]
 
     # Get current date in the required format
