@@ -101,6 +101,9 @@ def generate_html_content(html_files, input_dir):
         }
       })();
     </script>
+    <!-- External CDN connections -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://raw.githubusercontent.com">
     <!-- Main stylesheets -->
     <link rel="stylesheet" href="../assets/css/libraries/tailwind.css">
     <link rel="stylesheet" href="../assets/css/libraries/font-awesome/all.css">
