@@ -142,6 +142,10 @@ def generate_html_content(html_files, input_dir):
     <link rel="yandex-tableau-widget" href="../site-data/yandex-browser-manifest.json">
     <!-- Theme Support Declaration -->
     <meta name="color-scheme" content="light dark">
+    <!-- Disable all automatic formatting detection -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
     <!-- Web Manifest -->
     <link rel="manifest" href="../site-data/site.manifest">
     <!-- Windows-specific tiles (for pinned sites in Windows Start menu) -->
