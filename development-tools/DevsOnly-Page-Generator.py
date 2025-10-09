@@ -51,6 +51,8 @@ def generate_html_content(html_files, input_dir):
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
     <meta name="language" content="English">
+    <!-- Keywords -->
+    <meta name="keywords" content="world of tanks heat, tank database, heat labs, armor profiles, tank comparison, map information, tank statistics, community guides, wot heat, game news">
     <!-- Website Schema -->
     <script type="application/ld+json">
     {
