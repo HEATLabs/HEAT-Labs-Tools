@@ -120,7 +120,7 @@ def generate_html_content(html_files, input_dir):
     <!-- Safari-specific meta tags -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="HEATLabs">
+    <meta name="apple-mobile-web-app-title" content="HEAT Labs">
     <!-- Browser UI color -->
     <meta name="theme-color" content="#141312">
     <meta name="msapplication-navbutton-color" content="#141312">
@@ -336,6 +336,12 @@ def generate_html_content(html_files, input_dir):
         rel_path = rel_path.replace('\\', '/')
 
         # Extract filename without extension
+        if rel_path.endswith('.html'):
+            rel_path_no_ext = rel_path[:-5]  # Remove the last 5 characters
+        else:
+            rel_path_no_ext = rel_path
+
+        # Extract filename without extension for display
         filename = os.path.splitext(os.path.basename(rel_path))[0]
         
         # Add the card to the content with the correct class
@@ -344,7 +350,7 @@ def generate_html_content(html_files, input_dir):
                 <div class="dev-card">
                     <div class="dev-info">
                         <h3>{filename}</h3>
-                        <a href="../{rel_path}" class="btn-accent btn-dev">
+                        <a href="../{rel_path_no_ext}" class="btn-accent btn-dev">
                             <i class=""></i>Go to Page </a>
                     </div>
                 </div>"""
@@ -429,7 +435,7 @@ def generate_html_content(html_files, input_dir):
             <!-- Second column -->
             <div class="text-center">
               <h2 class="mb-1">Join the Others</h2>
-              <p class="text-lg mb-1 mt-5">If you haven't already joined the Discord, now's probably the time. Just… don't mention you found this page. They'll know.</p>
+              <p class="text-lg mb-1 mt-5">If you haven't already joined the Discord, now's probably the time. Just... don't mention you found this page. They'll know.</p>
               <div class="flex justify-center mt-6">
                 <a href="https://discord.heatlabs.net" class="special-cta-button">
                   <i class="fab fa-discord mr-2"></i> Join Our Discord </a>
