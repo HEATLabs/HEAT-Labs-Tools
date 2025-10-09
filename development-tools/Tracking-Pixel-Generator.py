@@ -6,8 +6,8 @@ import re
 from datetime import datetime
 
 # Configuration
-WEBSITE_DIR = "../../heatlabs.github.io"
-IMAGES_DIR = "../../HEATLabs-Views-API/trackers"
+WEBSITE_DIR = "../../HEAT-Labs-Website"
+IMAGES_DIR = "../../HEAT-Labs-Views-API/trackers"
 BASE_PIXEL_NAME = "pcwstats-tracker-pixel.png"
 BASE_CDN_URL = "https://views.heatlabs.net/api/track"
 TRACKING_JSON_FILE = "../../HEAT-Labs-Configs/tracking-pixel.json"
