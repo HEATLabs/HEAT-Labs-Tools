@@ -42,7 +42,7 @@ def generate_html_content(html_files, input_dir):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Page title displayed in the browser tab -->
-    <title>Devs Only - HEATLabs</title>
+    <title>Devs Only - HEAT Labs</title>
     <!-- Primary Meta Tags -->
     <meta name="title" content="HEAT Labs - Devs Only">
     <meta name="description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for World of Tanks: HEAT community contributors.">
@@ -146,7 +146,7 @@ def generate_html_content(html_files, input_dir):
   </head>
   <body>
     <!-- Custom Privacy-Focused Tracking Pixel -->
-    <img src="https://views.heatlabs.net/api/track/heatlabs-tracker-pixel-devsonly.png" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="devsonly">
+    <img src="https://views.heatlabs.net/api/track/pcwstats-tracker-pixel-devsonly.png" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="devsonly">
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <!-- Sidebar -->
@@ -188,12 +188,6 @@ def generate_html_content(html_files, input_dir):
             <a href="../guides" class="sidebar-link">
               <i class="fas fa-book-open"></i>
               <span>Community Guides</span>
-            </a>
-          </li>
-          <li>
-            <a href="../strategy-planner" class="sidebar-link wip">
-              <i class="fas fa-chess"></i>
-              <span>Strategy Planner</span>
             </a>
           </li>
           <li>
@@ -378,6 +372,22 @@ def generate_html_content(html_files, input_dir):
                 <div class="dev-info">
                     <h3>system-status</h3>
                     <a href="//status.heatlabs.net" class="btn-accent btn-dev">
+                        <i class=""></i>Go to Page </a>
+                </div>
+             </div>
+             <!-- Page Card discord -->
+             <div class="dev-card">
+                <div class="dev-info">
+                    <h3>discord</h3>
+                    <a href="//discord.heatlabs.net" class="btn-accent btn-dev">
+                        <i class=""></i>Go to Page </a>
+                </div>
+             </div>
+             <!-- Page Card social -->
+             <div class="dev-card">
+                <div class="dev-info">
+                    <h3>socials</h3>
+                    <a href="//social.heatlabs.net" class="btn-accent btn-dev">
                         <i class=""></i>Go to Page </a>
                 </div>
              </div>
