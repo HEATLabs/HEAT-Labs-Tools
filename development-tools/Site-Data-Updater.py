@@ -55,8 +55,37 @@ def update_humans_txt_files():
 
 def generate_sitemap():
     # Define paths
-    base_dir = Path("../../heatlabs.github.io")
+    base_dir = Path("../../HEAT-Labs-Website")
     sitemap_path = base_dir / "site-data" / "sitemap.xml"
+
+    # Define files to exclude from sitemap
+    not_include = [
+        "placeholder_post.html",
+        "maintenance.html",
+        "game-data.html",
+        "404.html",
+        "tournament-maintenance.html",
+        "test-model-viewer.html",
+        "placeholder-tank.html",
+        "placeholder-post.html",
+        "guide-category-placeholder.html",
+        "all-guides-placeholder.html",
+        "placeholder-news.html",
+        "placeholder-map.html",
+        "placeholder-general-guide.html",
+        "placeholder-map-guide.html",
+        "placeholder-tank-guide.html",
+        "maxwell.html",
+        "bored-developers.html",
+        "devsonly.html",
+        "hungry-devs.html",
+        "placeholder-bug-hunt.html",
+        "feature-showcase-template.html",
+        "meet-the-team-template.html",
+        "placeholder-blog-post.html",
+        "placeholder-announcement.html",
+        "placeholder-agent.html",
+    ]
 
     # Check if base directory exists
     if not base_dir.exists():
@@ -91,6 +120,11 @@ def generate_sitemap():
         if "sitemap.xml" in str(html_file):
             continue
 
+        # Skip files in the not_include list
+        if html_file.name in not_include:
+            print(f"Skipping excluded file: {html_file.name}")
+            continue
+
         # Calculate the relative path from base directory
         relative_path = html_file.relative_to(base_dir)
 
@@ -112,10 +146,14 @@ def generate_sitemap():
         # Build the URL
         if depth == 0:
             # File is in root directory
-            url_loc = f"https://heatlabs.net/{html_file.name}"
+            url_loc = f"https://heatlabs.net/{html_file.stem}"
         else:
             # File is in a subdirectory
-            url_path = "/".join(relative_path.parts)
+            path_parts = list(relative_path.parts)
+            # Remove .html from the filename
+            filename_without_ext = Path(path_parts[-1]).stem
+            path_parts[-1] = filename_without_ext
+            url_path = "/".join(path_parts)
             url_loc = f"https://heatlabs.net/{url_path}"
 
         # Store URL data for sorting
@@ -168,6 +206,10 @@ def generate_sitemap():
         f.write("</urlset>")
 
     print(f"Found {len(html_files)} HTML files")
+    excluded_count = len(not_include)
+    included_count = len(url_data) - 1  # Subtract 1 for the home page
+    print(f"Excluded {excluded_count} files from sitemap")
+    print(f"Included {included_count} files in sitemap")
     print("URLs sorted by depth and alphabetically in sitemap.xml")
     print(f"Sitemap successfully updated at {sitemap_path}")
 
