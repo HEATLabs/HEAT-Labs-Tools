@@ -37,7 +37,7 @@ def process_directory(directory):
 
 if __name__ == "__main__":
     # Path to site repository
-    target_directory = "../../heatlabs.github.io"
+    target_directory = "../../HEAT-Labs-Website"
 
     if os.path.exists(target_directory):
         print(f"Processing directory: {target_directory}")
