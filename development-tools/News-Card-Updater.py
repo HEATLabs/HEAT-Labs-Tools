@@ -108,9 +108,9 @@ def update_news_dates(news_html_path, news_dir):
 
 if __name__ == "__main__":
     # Path to news.html
-    news_html_path = '../../heatlabs.github.io/news.html'
+    news_html_path = '../../HEAT-Labs-Website/news.html'
 
     # Path to news directory
-    news_dir = '../../heatlabs.github.io/news'
+    news_dir = '../../HEAT-Labs-Website/news'
 
     update_news_dates(news_html_path, news_dir)
