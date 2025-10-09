@@ -3,18 +3,18 @@ import re
 
 # Directories to scan
 directories = [
-    "../../heatlabs.github.io",  # current directory
-    "../../heatlabs.github.io/tournaments",
-    "../../heatlabs.github.io/news",
-    "../../heatlabs.github.io/guides",
-    "../../heatlabs.github.io/legal",
-    "../../heatlabs.github.io/guides/general-guides",
-    "../../heatlabs.github.io/guides/map-guides",
-    "../../heatlabs.github.io/guides/tank-guides",
-    "../../heatlabs.github.io/bug-hunting",
-    "../../heatlabs.github.io/blog",
-    "../../heatlabs.github.io/announcements",
-    "../../heatlabs.github.io/placeholder-tables",
+    "../../HEAT-Labs-Website",  # current directory
+    "../../HEAT-Labs-Website/tournaments",
+    "../../HEAT-Labs-Website/news",
+    "../../HEAT-Labs-Website/guides",
+    "../../HEAT-Labs-Website/legal",
+    "../../HEAT-Labs-Website/guides/general-guides",
+    "../../HEAT-Labs-Website/guides/map-guides",
+    "../../HEAT-Labs-Website/guides/tank-guides",
+    "../../HEAT-Labs-Website/bug-hunting",
+    "../../HEAT-Labs-Website/blog",
+    "../../HEAT-Labs-Website/announcements",
+    "../../HEAT-Labs-Website/placeholder-tables",
 ]
 
 
