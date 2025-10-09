@@ -403,7 +403,7 @@ def validate_json_files(base_path: str):
                 total_files += 1
 
                 # Determine which validation function to use based on file name and path
-                if "tanks/" in file_path and "../../Database-Files/tanks/" in file_path:
+                if "tanks/" in file_path and "../../HEAT-Labs-Database/tanks/" in file_path:
                     tank_folder = os.path.basename(os.path.dirname(file_path))
 
                     if file == "agents.json":
@@ -459,8 +459,8 @@ def validate_json_files(base_path: str):
 if __name__ == "__main__":
     # Define the base paths to scan
     base_paths = [
-        "../../Database-Files/tanks/",
-        "../../Database-Files/tournaments/",
+        "../../HEAT-Labs-Database/tanks/",
+        "../../HEAT-Labs-Database/tournaments/",
         "../../HEAT-Labs-Configs/",
     ]
 
