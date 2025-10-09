@@ -6,8 +6,8 @@ import time
 from datetime import datetime, timezone
 
 # Configuration
-TARGET_DIR = "../../heatlabs.github.io"
-ADDITIONAL_DIRS = ["../../Database-Files", "../../HEAT-Labs-Configs"]
+TARGET_DIR = "../../HEAT-Labs-Website"
+ADDITIONAL_DIRS = ["../../HEAT-Labs-Database", "../../HEAT-Labs-Configs"]
 JSON_FILENAME = "../../HEAT-Labs-Configs/jsdelivr-data.json"
 CDN_REGEX = re.compile(
     r'https://cdn\.jsdelivr\.net/gh/[\w\-]+/[\w\-]+@[\w\-]+/[^"\'\s)]+'
