@@ -63,6 +63,7 @@ def generate_html_content(html_files, input_dir):
       "logo": "https://raw.githubusercontent.com/HEATLabs/HEAT-Labs-Images/refs/heads/main/logo/logo.webp",
       "sameAs": [
         "https://changelog.heatlabs.net",
+        "https://bot.heatlabs.net",
         "https://statistics.heatlabs.net",
         "https://status.heatlabs.net",
         "https://social.heatlabs.net",
