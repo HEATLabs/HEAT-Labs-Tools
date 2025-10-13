@@ -114,6 +114,7 @@ def generate_html_content(html_files, input_dir):
     <link rel="stylesheet" href="../assets/css/easter-eggs/radio.css">
     <link rel="stylesheet" href="../assets/css/pages/devsonly.css">
     <link rel="stylesheet" href="../assets/css/modules/settings.css">
+    <link rel="stylesheet" href="../assets/css/modules/context-menu.css">
     <link rel="stylesheet" href="../assets/css/modules/header.css">
     <link rel="stylesheet" href="../assets/css/modules/footer.css">
     <link rel="stylesheet" href="../assets/css/modules/sidebar.css">
@@ -639,6 +640,7 @@ def generate_html_content(html_files, input_dir):
     <script src="../assets/js/modules/global-hero.js"></script>
     <script src="../assets/js/modules/banner.js"></script>
     <script src="../assets/js/modules/settings.js"></script>
+    <script src="../assets/js/modules/context-menu.js"></script>
     <script src="../assets/js/modules/fix-localhost-urls.js"></script>
   </body>
 </html>"""
