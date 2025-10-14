@@ -438,6 +438,22 @@ def generate_html_content(html_files, input_dir):
                         <i class=""></i>Go to Page </a>
                 </div>
              </div>
+             <!-- Page Card bot -->
+             <div class="dev-card">
+                <div class="dev-info">
+                    <h3>bot</h3>
+                    <a href="//bot.heatlabs.net" class="btn-accent btn-dev">
+                        <i class=""></i>Go to Page </a>
+                </div>
+             </div>
+             <!-- Page Card views -->
+             <div class="dev-card">
+                <div class="dev-info">
+                    <h3>views</h3>
+                    <a href="//views.heatlabs.net" class="btn-accent btn-dev">
+                        <i class=""></i>Go to Page </a>
+                </div>
+             </div>
           </div>
           <!-- Pagination -->
           <div class="pagination-container">
