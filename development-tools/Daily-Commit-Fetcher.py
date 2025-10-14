@@ -35,6 +35,7 @@ REPOS = [
     "HEAT-Labs-Images-Tournaments",
     "HEAT-Labs-Models",
     "HEAT-Labs-Sounds",
+    "HEAT-Labs-Static",
     "HEAT-Labs-Statistics",
     "HEAT-Labs-Desktop",
     "HEAT-Labs-Status",
