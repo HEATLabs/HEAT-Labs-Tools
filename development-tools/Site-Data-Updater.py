@@ -58,7 +58,7 @@ def update_humans_txt_files():
 def generate_sitemap():
     # Define paths
     base_dir = Path("../../HEAT-Labs-Website")
-    sitemap_path = base_dir / "site-data" / "sitemap.xml"
+    sitemap_path = Path("../../HEAT-Labs-Static/site-data-static/main/sitemap.xml")
 
     # Define files to exclude from sitemap
     not_include = [
