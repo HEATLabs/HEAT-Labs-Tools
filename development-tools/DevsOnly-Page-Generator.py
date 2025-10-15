@@ -60,7 +60,7 @@ def generate_html_content(html_files, input_dir):
       "@type": "Organization",
       "name": "HEAT Labs",
       "url": "https://heatlabs.net",
-      "logo": "https://raw.githubusercontent.com/HEATLabs/HEAT-Labs-Images/refs/heads/main/logo/logo.webp",
+      "logo": "https://cdn5.heatlabs.net/logo/logo.webp",
       "sameAs": [
         "https://changelog.heatlabs.net",
         "https://bot.heatlabs.net",
@@ -91,7 +91,7 @@ def generate_html_content(html_files, input_dir):
         "name": "HEAT Labs",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://raw.githubusercontent.com/HEATLabs/HEAT-Labs-Images/refs/heads/main/logo/logo.webp"
+          "url": "https://cdn5.heatlabs.net/logo/logo.webp"
         }
       }
     }
@@ -185,7 +185,7 @@ def generate_html_content(html_files, input_dir):
     <!-- Open Graph Meta Tags (for social media sharing, mainly Facebook) -->
     <meta property="og:title" content="HEAT Labs - Devs Only">
     <meta property="og:description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for World of Tanks: HEAT community contributors.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/HEATLabs/HEAT-Labs-Images/refs/heads/main/social-share/HEATLabs.png">
+    <meta property="og:image" content="https://cdn5.heatlabs.net/social-share/HEATLabs.png">
     <meta property="og:image:alt" content="Your one-stop solution for comprehensive statistics insights and guides for World of Tanks: HEAT">
     <meta property="og:url" content="https://heatlabs.net/easter-eggs/devsonly">
     <meta property="og:type" content="website">
@@ -199,7 +199,7 @@ def generate_html_content(html_files, input_dir):
     <meta name="twitter:creator" content="@HEAT_Labs">
     <meta name="twitter:title" content="HEAT Labs - Devs Only">
     <meta name="twitter:description" content="HEAT Labs developer tools and project management dashboard. Internal resources and progress tracking for World of Tanks: HEAT community contributors.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/HEATLabs/HEAT-Labs-Images/refs/heads/main/social-share/HEATLabs.png">
+    <meta name="twitter:image" content="https://cdn5.heatlabs.net/social-share/HEATLabs.png">
     <meta name="twitter:image:alt" content="HEAT Labs - Your one-stop solution for comprehensive statistics insights and guides for World of Tanks: HEAT">
   </head>
   <body>
