@@ -56,28 +56,24 @@ def convert_xlsx_to_json():
 
     # Count each status
     stats["google_index_data"] = {
-        "not_needed": gsc_statuses.count("NOT NEEDED"),
         "pending": gsc_statuses.count("PENDING"),
         "not_indexed": gsc_statuses.count("NOT INDEXED"),
         "indexed": gsc_statuses.count("INDEXED"),
     }
 
     stats["google_api_status"] = {
-        "not_needed": g_api_statuses.count("NOT NEEDED"),
         "pending": g_api_statuses.count("PENDING"),
         "not_indexed": g_api_statuses.count("NOT INDEXED"),
         "indexed": g_api_statuses.count("INDEXED"),
     }
 
     stats["https_page_status"] = {
-        "not_needed": https_statuses.count("NOT NEEDED"),
         "unknown": https_statuses.count("UNKNOWN"),
         "not_https": https_statuses.count("NOT HTTPS"),
         "https": https_statuses.count("HTTPS"),
     }
 
     stats["breadcrumb_status"] = {
-        "not_needed": breadcrumb_statuses.count("NOT NEEDED"),
         "unknown": breadcrumb_statuses.count("UNKNOWN"),
         "invalid": breadcrumb_statuses.count("INVALID"),
         "valid": breadcrumb_statuses.count("VALID"),
