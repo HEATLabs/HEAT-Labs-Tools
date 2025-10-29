@@ -24,6 +24,7 @@ REPOS = [
     "HEAT-Labs-Discord",
     "HEAT-Labs-Discord-Bot",
     "HEAT-Labs-Socials",
+    "HEAT-Labs-Videos",
     "HEAT-Labs-Images",
     "HEAT-Labs-Images-Blogs",
     "HEAT-Labs-Images-Features",
