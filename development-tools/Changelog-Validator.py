@@ -117,7 +117,7 @@ def calculate_correct_version_numbers(changelog):
         update_number = idx + 1
         pretty_date = format_date_long(update["date"])
 
-        corrected_update["title"] = f"HEAT Labs - Update Number #{update_number}"
+        corrected_update["title"] = f"Update Number #{update_number}"
         corrected_update["description"] = (
             f"Full patch notes for Update v{correct_version} "
             f"(#{update_number}), detailing all changes made on {pretty_date}."
