@@ -258,6 +258,12 @@ def generate_html_content(html_files, input_dir):
             </a>
           </li>
           <li>
+            <a href="//bot.heatlabs.net" class="sidebar-link">
+              <i class="fa-solid fa-robot"></i>
+              <span>Discord App</span>
+            </a>
+          </li>
+          <li>
             <a href="../news" class="sidebar-link">
               <i class="fas fa-newspaper"></i>
               <span>Game News</span>
