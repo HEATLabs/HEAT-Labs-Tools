@@ -77,6 +77,7 @@ def generate_sitemap():
 
     # Define files to exclude from sitemap
     not_include = [
+        "index.html",
         "placeholder_post.html",
         "maintenance.html",
         "game-data.html",
