@@ -7,15 +7,30 @@ from pathlib import Path
 def update_humans_txt_files():
     # humans.txt files
     humans_txt_paths = [
-        Path("../../HEAT-Labs-Static/site-data-static/main/humans.txt"),
-        Path("../../HEAT-Labs-Static/site-data-static//humans.txt"),
-        Path("../../HEAT-Labs-Static/site-data-static/statistics/humans.txt"),
-        Path("../../HEAT-Labs-Static/site-data-static/changelog/humans.txt"),
-        Path("../../HEAT-Labs-Static/site-data-static/status/humans.txt"),
-        Path("../../HEAT-Labs-Static/site-data-static/discord-redirect/humans.txt"),
-        Path("../../HEAT-Labs-Static/site-data-static/discord-bot/humans.txt"),
-        Path("../../HEAT-Labs-Static/site-data-static/views/humans.txt"),
-        Path("../../HEAT-Labs-Static/site-data-static/socials/humans.txt"),
+        Path("../../HEAT-Labs-Changelog/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Configs/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Database/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Discord/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Discord-Bot/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Images/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Images-Blogs/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Images-Features/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Images-Gallery/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Images-Guides/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Images-Maps/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Images-News/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Images-Tanks/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Images-Tournaments/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Models/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Socials/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Sounds/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Static/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Statistics/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Status/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Videos/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Views-API/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Website/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Website-Development/site-data/humans.txt"),
     ]
 
     # Get current date in the required format
@@ -58,7 +73,7 @@ def update_humans_txt_files():
 def generate_sitemap():
     # Define paths
     base_dir = Path("../../HEAT-Labs-Website")
-    sitemap_path = Path("../../HEAT-Labs-Static/site-data-static/main/sitemap.xml")
+    sitemap_path = Path("../../HEAT-Labs-Website/site-data/sitemap.xml")
 
     # Define files to exclude from sitemap
     not_include = [
