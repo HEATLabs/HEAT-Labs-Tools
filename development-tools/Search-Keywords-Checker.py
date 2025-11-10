@@ -12,6 +12,9 @@ def find_html_files(root_dir):
                 rel_path = os.path.relpath(os.path.join(root, file), root_dir)
                 # Normalize path separators to forward slashes
                 rel_path = rel_path.replace('\\', '/')
+                # Remove .html extension for comparison with indexed paths
+                if rel_path.endswith('.html'):
+                    rel_path = rel_path[:-5]
                 html_files.add(rel_path)
     return html_files
 
@@ -41,7 +44,7 @@ def find_missing_pages(root_dir, json_file):
     missing_files = html_files - indexed_paths
 
     # Filter out common files that dont need to be indexed
-    common_files = {'404.html', 'index.html'}
+    common_files = {'404', 'index'}
 
     # Return sorted list of missing files, excluding common files
     return sorted(missing_files - common_files)
