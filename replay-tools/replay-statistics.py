@@ -173,7 +173,7 @@ def analyze_replay_data(filename):
 
     # Team size distribution
     size_distribution = Counter(team_sizes)
-    print(f"\nTeam Size Distribution:")
+    print(f"\nPlayers Per Match Distribution:")
     for size, count in sorted(size_distribution.items()):
         percentage = (count / total_matches) * 100
         print(f"  {size} players: {count} matches ({percentage:.1f}%)")
