@@ -1,7 +1,182 @@
 {
-  "total_files": 138,
-  "processed_files": 138,
+  "total_files": 277,
+  "processed_files": 277,
   "results": {
+    "01_beirut_conquest_2025_02_21_16_29_26_461f73f7.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "8749236#40466",
+        "BiggestMeta#73156",
+        "Blackjack0716#56104",
+        "CoolestKern#16673",
+        "GefreiterLuftwaffle#73093",
+        "GruntKillerT90A#61235",
+        "PablotuxGR#76327",
+        "PigeonPie2#99679",
+        "Player_5398653604#18633",
+        "Sasquatch_QC#48306",
+        "Thomas1110111#85665",
+        "Wendigo_Qc#54067",
+        "Windsurfa#84692",
+        "dedfish1#50994",
+        "lin_the_starbeast#70384",
+        "thehobostrangle#83327",
+        "thepha#89704"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_02_21_17_08_16_94344850.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Flybdmario#97803",
+        "Huubai#28566",
+        "KonaofGermany33#48845",
+        "MrWarGod#19921",
+        "Pigeon_Pie#90166",
+        "Player_4230383329#44708",
+        "Raviol_Warrior#49062",
+        "SadBoy2012#31527",
+        "Sasquatch_QC#48306",
+        "TootJay#94709",
+        "fodder137_2#90789",
+        "griner777#32535"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_02_22_02_17_12_6037b312.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "4SPEKT#54465",
+        "Blixelo#55676",
+        "Calisota#56187",
+        "EscobaB52#45113",
+        "Nate_mignot#23022",
+        "Pulsar_BTM#59722",
+        "RillxVG#98719",
+        "Robawsome_08#34186",
+        "Slow_Foot#25793",
+        "_Prorock__1#59099",
+        "grzesiek80#26598",
+        "mustafass664#25968",
+        "strashni#75927",
+        "willcutemaster1001#19542"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_02_22_02_50_43_4630d85d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Calisota#56187",
+        "Dedolinho#48963",
+        "GeorgeDroyd_#25192",
+        "IAmEdWards_#42789",
+        "IrresIE#95793",
+        "Kampfapfel_NikalusCH#62991",
+        "Mett7#64146",
+        "Nate_mignot#23022",
+        "Necrophago#43314",
+        "RillxVG#98719",
+        "Saveliy_X_1_1#59085",
+        "__IamPunisher__#99867"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_02_22_14_44_36_2117f819.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "ArgonTrash#43147",
+        "AzuosCruz#46374",
+        "BalMolag#97656",
+        "Caronte35#18948",
+        "FabriX18#13740",
+        "Havertzz#40529",
+        "MunK_#57567",
+        "Pigeon_Pie#90166",
+        "Pits058#94744",
+        "Player_4639776618#69208",
+        "Player_6704838952#53584",
+        "RabbitMonkey#76761",
+        "Radium_Bullet#45275",
+        "RodRuins#90607",
+        "SaikouTrolls#11129",
+        "Skynet_747#28314",
+        "TRIIGGERICHM1A1#90152",
+        "redmanfaer#35223",
+        "sgtjayz#79407",
+        "trialsnorth#96382"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
     "01_beirut_conquest_2025_02_22_21_42_23_dd31c18c.replay": {
       "match_details": [
         {
@@ -32,6 +207,85 @@
         "tomg72#44778",
         "wook71#28671",
         "yipyup2311#57189"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_02_23_12_11_37_5bcafe2d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Black_Death_KDE#98986",
+        "Carla#72574",
+        "Hilberdan#73989",
+        "JosephRowland#45314",
+        "Kiffin#46668",
+        "Location#10807",
+        "Mighty_Masher#82809",
+        "MrTactician91#76355",
+        "OakheaD#29133",
+        "Pigeon_Pie#90166",
+        "Player_4927438719#22063",
+        "Player_6250831937#80023",
+        "ScorgeOfGod1969#38058",
+        "assassin401k#53318",
+        "jakingit#28698",
+        "kmsdhuk#83545",
+        "panzze#38744",
+        "proforte#85301",
+        "spitfira#51799"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_02_23_16_37_39_6c15c34e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Boogeestro#96291",
+        "Dremith#18353",
+        "IAmJadedEx#72799",
+        "Madhouse311#87646",
+        "Mary#16958",
+        "MegaTealy#35440",
+        "Molly#89669",
+        "Moncler#64301",
+        "Morse#71308",
+        "N7Hellkite#85301",
+        "NicknDavid#61543",
+        "Pigeon_Pie#90166",
+        "Player_5896461747#28503",
+        "Terabyt552#81850",
+        "alextorf#42496",
+        "freekmn15#68186",
+        "gamerboat#91720",
+        "megadestroyer51_2018#86876",
+        "pvtkrout#34348",
+        "sgtd0ra#45016"
       ],
       "map_info": {
         "map": "01_beirut",
@@ -102,6 +356,43 @@
         "mary30#43685",
         "randall15#55203",
         "sarah12#88208"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_02_24_00_14_03_25002ce6.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Angel1997_iron#89410",
+        "Bowman#87612",
+        "Erica1988#66460",
+        "Garcia#14506",
+        "PigeonPie2#99679",
+        "Richard#87387",
+        "Storedwall#45443",
+        "Thomas_Jimenez#94341",
+        "Velez83#67711",
+        "Xnofus_black#80387",
+        "christopher59#90072",
+        "kim17#85674",
+        "melissa39#47593",
+        "nancy62#62087",
+        "smithlisa#98619",
+        "stephenwallace#22596",
+        "yhenderson#20246"
       ],
       "map_info": {
         "map": "01_beirut",
@@ -220,6 +511,73 @@
         "mode": "conquest"
       }
     },
+    "01_beirut_conquest_2025_02_25_22_01_37_d5f57275.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "ARogueSeagull#67668",
+        "BLKMGK#54648",
+        "Epik_Kobold#51414",
+        "Kryptic337#58589",
+        "PapeadorDeNoobs#63482",
+        "Pawdad#21034",
+        "PigeonPie2#99679",
+        "Player_8283374773#72827",
+        "PsychoPhobic#58337",
+        "SageWolfZenith#29273",
+        "TFVNH#48047",
+        "VioletN#98895",
+        "____Risen____#15952",
+        "grennn#95633",
+        "hannibal_org#49153",
+        "xXxTheGeneralxXx#78574"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_02_26_00_27_01_6197ebb1.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Elkin_Gp#51281",
+        "M203_REDNECK#53136",
+        "PapeadorDeNoobs#63482",
+        "Player_5166901743#99259",
+        "Player_7149605999#56783",
+        "Player_7620681781#69005",
+        "RabbitMonkey#76761",
+        "WhiteWyrm#76194",
+        "_bell2#24254",
+        "cicerothejester1#68816",
+        "marko_store_ninja#59723"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
     "01_beirut_conquest_2025_02_26_00_28_16_5ca00bc2.replay": {
       "match_details": [
         {
@@ -249,6 +607,83 @@
         "VERMILION_TEA#15350",
         "XenoIndustries#31814",
         "chisel_shins#27698"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_02_26_21_50_53_3e530768.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AbhnerHenrique#89970",
+        "CryoNote#49594",
+        "I3oogie#64196",
+        "Mactravish#78791",
+        "Noodleten#79995",
+        "Nulltrent#30673",
+        "Pastruken#21076",
+        "Pigeon_Pie#90166",
+        "Player_1469267047#59590",
+        "Player_4281404135#93477",
+        "Snipessss#71056",
+        "TEN_MILLION_LIVES#32633",
+        "WARMARSHALL92#92707",
+        "kampfjager#23645",
+        "knightcypher#63209",
+        "luizpbg#59597",
+        "pjcrovi#15714",
+        "termneitor512#43371"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_02_26_23_55_54_58101684.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AdolfHitlier#61368",
+        "Alexi_Destiny#40851",
+        "BiggerThanB#50672",
+        "Boogeestro#96291",
+        "Burns6#92650",
+        "Cynthia#35603",
+        "Emmyson120#53801",
+        "George_Toscano#70496",
+        "Got_No_Skill#16540",
+        "Panzer_Slasher125#27278",
+        "Pigeon_Pie#90166",
+        "Player_5824305079#85021",
+        "Player_8837529008#57252",
+        "RogueKnight223#14027",
+        "TankCommanderCam#64007",
+        "abs77000#61739",
+        "dieseldragger#20915",
+        "havenceday61#98776",
+        "rougesailor#57021"
       ],
       "map_info": {
         "map": "01_beirut",
@@ -326,6 +761,42 @@
         "mode": "conquest"
       }
     },
+    "01_beirut_conquest_2025_02_27_14_21_55_4f8a2898.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Choi#33728",
+        "Dean2024#25282",
+        "Harbinger_Of_Defeat#79722",
+        "Kngkllr463#84769",
+        "Pigeon_Pie#90166",
+        "Shawn1976#99652",
+        "Viniciusdejesusclaro#62985",
+        "Whitney#68013",
+        "WildHuntCoven#33949",
+        "chase06#69722",
+        "marilyn31#84533",
+        "michael456#24156",
+        "paul12#44826",
+        "shunter#84610",
+        "unelson#18650",
+        "uroberts#88924"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
     "01_beirut_conquest_2025_02_28_02_13_35_3d5a8c90.replay": {
       "match_details": [
         {
@@ -358,6 +829,72 @@
         "kiara82#37676",
         "theship123_sniper#33816",
         "zadeo_#24996"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_03_01_11_12_46_6781fcd1.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Cvira#32416",
+        "GorillaWhit#69243",
+        "Gutierrez6#75121",
+        "Janet#29557",
+        "Katrina1972#67147",
+        "Mendez1986#95483",
+        "Octonautt#55677",
+        "Pigeon_Pie#90166",
+        "SNAKE_EYES_2111#44778",
+        "Sospao919#77867",
+        "TagWarrior#41166",
+        "brucemueller#93324",
+        "elizabeth40#89094",
+        "mrobinson#84989",
+        "qholt#66054",
+        "vinciu#99630"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_conquest_2025_03_01_19_56_38_f2767c57.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AmyArmstrong6#32632",
+        "Duffy26#15895",
+        "GU1#947",
+        "James8#54457",
+        "Jhoelito_1#11346",
+        "Johnson#56312",
+        "Player_3707245205#58393",
+        "Player_7700972173#69523",
+        "morganeric#65677",
+        "vanessa97#61460"
       ],
       "map_info": {
         "map": "01_beirut",
@@ -439,6 +976,66 @@
         "mode": "conquest"
       }
     },
+    "01_beirut_conquest_2025_03_02_23_03_06_a68ec0ca.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AP_Jesus#35013",
+        "Allen19#66410",
+        "Bruzor#59058",
+        "Jose#74536",
+        "KellyEstrada5#78274",
+        "Pigeon_Pie#90166",
+        "Reed2003#38732",
+        "SizzelBoi#51561",
+        "TheGrouchyGamer#97278",
+        "Thunder_Moon#16134",
+        "WanaBepro#36826",
+        "Zarrin#43014",
+        "brian63#84856",
+        "idrisbailey#46164",
+        "pagericky#27667"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "conquest"
+      }
+    },
+    "01_beirut_ct2_2025_02_21_23_22_52_635f28ea.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Destroy_Mix#50517",
+        "W00Dl#30105",
+        "antitank99#48985",
+        "dema_GG_UA#40087",
+        "vadi_1_4#65350"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "ct2"
+      }
+    },
     "01_beirut_ct2_2025_02_23_16_12_39_e770721e.replay": {
       "match_details": [
         {
@@ -496,6 +1093,58 @@
         "mode": "domination"
       }
     },
+    "01_beirut_domination_2025_02_23_19_46_18_fb03d5f8.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Klastour#70328",
+        "Nageek32#56083",
+        "Player_8211233608#59968",
+        "WardenFisher#16631",
+        "Waylon112#75697"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "domination"
+      }
+    },
+    "01_beirut_domination_2025_02_26_11_12_02_af424592.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AllanGG01#38597",
+        "Bowman#86995",
+        "Butler1993#36228",
+        "RAaA#586",
+        "Tamara#70732",
+        "aarondunn#33939",
+        "traceyscott#15519"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "domination"
+      }
+    },
     "01_beirut_domination_2025_02_27_07_36_18_fefd46c2.replay": {
       "match_details": [
         {
@@ -527,6 +1176,34 @@
         "mode": "domination"
       }
     },
+    "01_beirut_domination_2025_02_28_23_40_37_c7b724a1.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Anthony2024#96954",
+        "Arkanor#84041",
+        "Colliant_2022#78266",
+        "John_Clark_iron#75081",
+        "Pigeon_Pie#90166",
+        "Player_3568363922#69824",
+        "Player_8216910021#16883",
+        "wilhelmcorp#56986"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "domination"
+      }
+    },
     "01_beirut_domination_2025_03_02_17_49_49_6e73f234.replay": {
       "match_details": [],
       "game_version": {
@@ -545,6 +1222,74 @@
         "liunatasha#11732",
         "moniquewhitehead#95253",
         "wperez#24893"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "domination"
+      }
+    },
+    "01_beirut_domination_2025_03_02_17_49_55_9653cee0.replay": {
+      "match_details": [],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Battousai#37099",
+        "folster54#68683",
+        "moniquewhitehead#95253"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "domination"
+      }
+    },
+    "01_beirut_domination_2025_03_02_18_00_10_21f8cf81.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Jacob_Zante#39276",
+        "Pigeon_Pie#90166",
+        "Zach_Collins_1#85287",
+        "jefferyramsey#25603",
+        "wperez#24893"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "domination"
+      }
+    },
+    "01_beirut_domination_2025_03_03_00_21_42_b257db72.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Ann#30359",
+        "Cleverx3#53731",
+        "Courtney#84718",
+        "Player_9598472842#63832",
+        "johnbartlett#84282",
+        "sara76#76290",
+        "travis81#77761"
       ],
       "map_info": {
         "map": "01_beirut",
@@ -578,6 +1323,123 @@
       "map_info": {
         "map": "01_beirut_killconfirm",
         "mode": "02"
+      }
+    },
+    "01_beirut_killconfirm_02_2025_02_22_20_08_53_fb9723b1.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Atirrador112#46430",
+        "Pigeon_Pie#90166",
+        "Player_4639776618#69208",
+        "Player_6235427105#74437",
+        "Stu_C15#96865",
+        "Thazz#77965",
+        "WatHadHapandWas#90663",
+        "patri809_1#25087",
+        "rougesailor#57021"
+      ],
+      "map_info": {
+        "map": "01_beirut_killconfirm",
+        "mode": "02"
+      }
+    },
+    "01_beirut_killconfirm_02_2025_02_26_21_42_31_60ba6049.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Dufies#12690",
+        "Munt_Games2#51925",
+        "Pigeon_Pie#90166",
+        "Player_0253871741#39262",
+        "Puddle_Maker#53164",
+        "Squts#94758",
+        "naneweer#69180",
+        "reaperofpower#40858",
+        "xX_Leroy_Jenkins_Xx#27327"
+      ],
+      "map_info": {
+        "map": "01_beirut_killconfirm",
+        "mode": "02"
+      }
+    },
+    "01_beirut_killconfirm_2025_02_21_17_19_20_9a4a720b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Ale_Cambraia#59555",
+        "Antonio_meza6512#91419",
+        "Pigeon_Pie#90166",
+        "Player_0537932098#76054",
+        "Player_2903439340#71588",
+        "SadBoy2012#31527",
+        "TootJay#94709",
+        "_Your__Nightmare#56811",
+        "grey_fox_2739#36168"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "killconfirm"
+      }
+    },
+    "01_beirut_killconfirm_2025_02_22_14_12_32_e7223d75.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Pigeon_Pie#90166",
+        "Player_8340969369#61557",
+        "Player_9160527435#38471",
+        "SRQFlyer#78700",
+        "Somtrak507#49636",
+        "TRIIGGERICHM1A1#90152",
+        "VovkaPartyMaker_1#32626",
+        "gringacuenta114#93967",
+        "jaraldoe#92434",
+        "yuecirno#77146"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "killconfirm"
       }
     },
     "01_beirut_killconfirm_2025_02_22_21_07_56_778d0c2e.replay": {
@@ -629,6 +1491,62 @@
         "alfather#67794",
         "jessica91#26381",
         "patrick76#75812"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "killconfirm"
+      }
+    },
+    "01_beirut_killconfirm_2025_02_26_02_11_56_845718bb.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AiKonnn1#34613",
+        "Awakaze#22860",
+        "Calisota#56187",
+        "InazumaRaiden#40577",
+        "MAD_MAX_SW9#75906",
+        "Player_0701515427#55151",
+        "kaitokid187#20340",
+        "mr_robotkill3r413#22930",
+        "pablonski#80575"
+      ],
+      "map_info": {
+        "map": "01_beirut",
+        "mode": "killconfirm"
+      }
+    },
+    "01_beirut_killconfirm_2025_03_01_23_29_03_4744e698.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Joe6482#65498",
+        "PigeonPie2#99679",
+        "craig41#12743",
+        "fuentesmallory#74097",
+        "petersonlisa#45016",
+        "rachelgallagher#53369",
+        "schneiderterrence#95742"
       ],
       "map_info": {
         "map": "01_beirut",
@@ -836,6 +1754,40 @@
         "mode": "conquest"
       }
     },
+    "02_vietnam_conquest_2025_02_24_11_28_39_6e314a18.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Amaury_lomeli#51617",
+        "GH0STavo#54816",
+        "Isha#71595",
+        "Janice#73412",
+        "Kathleen#82132",
+        "Lori2014#55837",
+        "PigeonPie2#99679",
+        "Player_2616419523#24744",
+        "Player_4959083179#41936",
+        "Player_4971122734#96795",
+        "Player_8391088770#30995",
+        "Riggimortis#50812",
+        "cosmic_creator#75249",
+        "facucu36#33858"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "conquest"
+      }
+    },
     "02_vietnam_conquest_2025_02_25_23_59_42_12f9ecb7.replay": {
       "match_details": [
         {
@@ -897,6 +1849,70 @@
         "bluechair#80912",
         "cobralegs#92238",
         "djpabz23#48649"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "conquest"
+      }
+    },
+    "02_vietnam_conquest_2025_02_26_00_18_55_5101c6a0.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "George_Toscano#70496",
+        "HelenKellersFart#66289",
+        "MrTactician91#76355",
+        "Nukes_for_Kids#80569",
+        "Pigeon_Pie#90166",
+        "Player_0080733293#25066",
+        "Player_1510884828#77433",
+        "RabbitMonkey#76761",
+        "RogueKnight223#14027",
+        "bluechair#80912",
+        "cobralegs#92238",
+        "djpabz23#48649",
+        "spartasam#41040"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "conquest"
+      }
+    },
+    "02_vietnam_conquest_2025_02_26_23_47_48_9e482c33.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Alexi_Destiny#40851",
+        "Antonio_meza6512#91419",
+        "FreeFall_Actual#96529",
+        "HITMAN2807#90243",
+        "HelenKellersFart#66289",
+        "HellzDragon#35496",
+        "Player_0151155816#87751",
+        "Sulfiric#24079",
+        "Vapor_Rounds#25766",
+        "iMrJelly#62341",
+        "rolley_1#45821"
       ],
       "map_info": {
         "map": "02_vietnam",
@@ -1042,6 +2058,43 @@
         "mode": "conquest"
       }
     },
+    "02_vietnam_conquest_2025_02_27_23_20_49_79b411c0.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Angelica#27256",
+        "BrettGarner#93402",
+        "Hartman#20978",
+        "Heart#27005",
+        "KatherineOneal2012#10972",
+        "Pigeon_Pie#90166",
+        "Ramos1989#61740",
+        "brittanyhoffman#23349",
+        "desireejackson#82289",
+        "hstewart#47082",
+        "kylemorris#96052",
+        "lvaughn#90571",
+        "reedkimberly#12393",
+        "swansonsarah#19093",
+        "ubrown#14926",
+        "uedwards#80650",
+        "vanderson#82236"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "conquest"
+      }
+    },
     "02_vietnam_conquest_2025_02_28_01_41_29_35f9f245.replay": {
       "match_details": [
         {
@@ -1137,6 +2190,39 @@
         "lomticks#65770",
         "rinatik1485#12647",
         "voxstrym#11422"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "conquest"
+      }
+    },
+    "02_vietnam_conquest_2025_03_01_13_55_28_c0255ea5.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Amanda#73352",
+        "Ferai147#74122",
+        "Jennifer_Howe7#61781",
+        "MashiNAred#16182",
+        "Pamela_Parker58#42057",
+        "Player_5108352322#35650",
+        "TagWarrior#41166",
+        "ginganinja_destroyer#84125",
+        "mcook#89793",
+        "pvtPetard#54697",
+        "runehouse#66499",
+        "ursodead#93575",
+        "williammcclain#60967"
       ],
       "map_info": {
         "map": "02_vietnam",
@@ -1287,6 +2373,39 @@
         "mode": "conquest"
       }
     },
+    "02_vietnam_conquest_2025_03_02_19_23_44_5c7e71b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Brenda#40547",
+        "Cleverx3#53731",
+        "IMABANANA2017#58015",
+        "Klastour#70328",
+        "KoRnboy#66618",
+        "MrLouisXVIII#35713",
+        "Pigeon_Pie#90166",
+        "Player_5734694441#12270",
+        "Player_9598472842#63832",
+        "William_Owens#59082",
+        "boom_tony#72750",
+        "nickworld#48705",
+        "robert09#24479"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "conquest"
+      }
+    },
     "02_vietnam_ct2_2025_02_21_20_14_20_ff40e24d.replay": {
       "match_details": [
         {
@@ -1307,6 +2426,58 @@
         "Moncler#64301",
         "Studipity#34978",
         "_Rad1um#88514",
+        "esmatty#20817"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "ct2"
+      }
+    },
+    "02_vietnam_ct2_2025_02_21_22_13_37_d86b62b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Calisota#56187",
+        "IAmEdWards_#42789",
+        "W00Dl#30105",
+        "antitank99#48985",
+        "dema_GG_UA#40087",
+        "esmatty#20817",
+        "vadi_1_4#65350"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "ct2"
+      }
+    },
+    "02_vietnam_ct2_2025_02_21_22_28_52_aba4bd3d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Calisota#56187",
+        "Destroy_Mix#50517",
+        "FutureSniper#30483",
+        "IAmEdWards_#42789",
         "esmatty#20817"
       ],
       "map_info": {
@@ -1344,6 +2515,124 @@
         "mode": "ct2"
       }
     },
+    "02_vietnam_domination_2025_02_25_21_42_12_a8765b3c.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Abics#40011",
+        "Blarrabee_bl#16302",
+        "Deucaliok#56944",
+        "KebabWonderland#73709",
+        "Pigeon_Pie#90166",
+        "TheSnake69#69404",
+        "WanaBepro#36826",
+        "estroye#65540"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "domination"
+      }
+    },
+    "02_vietnam_domination_2025_02_28_23_14_34_6b66efe9.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "BigBearBoski#14713",
+        "DeathofNames_2016#71735",
+        "Player_0051849207#41537",
+        "Player_6005511703#20719",
+        "Player_7149605999#56783",
+        "StopTheNewWorldOrder#83327",
+        "Zarrin#43014",
+        "hannibal_org#49153"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "domination"
+      }
+    },
+    "02_vietnam_domination_2025_03_01_21_12_30_faf71c39.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Hrley103#96788",
+        "Pigeon_Pie#90166",
+        "Player_2406753946#54410",
+        "Puddle_Maker#53164",
+        "Try_Again#18080",
+        "Tusty_Wrangler#99651",
+        "ginganinja_destroyer#84125",
+        "lil_gunner_boy42#89116",
+        "randomasian#87443",
+        "xX_Leroy_Jenkins_Xx#27327"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "domination"
+      }
+    },
+    "02_vietnam_domination_2025_03_01_22_31_18_5e229237.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "710gamingTV#63209",
+        "AWCREW#44512",
+        "Boogeestro#96291",
+        "GMSchwartz#36119",
+        "Heart#27005",
+        "HellzDragon#35496",
+        "Oh_No_Melon#88472",
+        "Pigeon_Pie#90166",
+        "SnoofyTheSeal#85056",
+        "Superhonky78#84762",
+        "_Selenium_#23211",
+        "mcackay#50168"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "domination"
+      }
+    },
     "02_vietnam_domination_2025_03_02_15_15_25_922c0402.replay": {
       "match_details": [
         {
@@ -1376,6 +2665,91 @@
         "mode": "domination"
       }
     },
+    "02_vietnam_killconfirm_2025_02_25_16_04_49_de600bb0.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "DG_Darkness#92427",
+        "DeathwishTE#70944",
+        "PigeonPie2#99679",
+        "Player_0253871741#39262",
+        "Player_9158581778#53906",
+        "knightcypher#63209",
+        "vitorgame_j#75501",
+        "vw220#50749",
+        "zibos#43406"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "killconfirm"
+      }
+    },
+    "02_vietnam_killconfirm_2025_02_27_17_56_49_f5c9bb4a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "GhostOfOnixa#12830",
+        "ParAvance#17009",
+        "Player_1970561363#49461",
+        "Player_4971122734#96795",
+        "Player_5579763581#72134",
+        "SRQFlyer#78700",
+        "TKSLucas66#53997",
+        "mokethis#30421"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "killconfirm"
+      }
+    },
+    "02_vietnam_killconfirm_2025_02_27_18_05_52_999ed8ab.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Pigeon_Pie#90166",
+        "Player_0253871741#39262",
+        "Player_4947870006#17079",
+        "Player_7034118353#92147",
+        "chivalryknight#39465",
+        "iRockk#97628",
+        "ipodnerd209#67654",
+        "mokethis#30421"
+      ],
+      "map_info": {
+        "map": "02_vietnam",
+        "mode": "killconfirm"
+      }
+    },
     "02_vietnam_killconfirm_2025_03_02_16_13_42_fe0dd2e7.replay": {
       "match_details": [
         {
@@ -1404,6 +2778,140 @@
       "map_info": {
         "map": "02_vietnam",
         "mode": "killconfirm"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_21_16_53_52_79bbf518.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Alex_Fletcher1#83251",
+        "Beverly#35413",
+        "Flybdmario#97803",
+        "Gregory#79533",
+        "LaurenBrown1994#69311",
+        "Pigeon_Pie#90166",
+        "Player_1221436352#58029",
+        "Player_4639776618#69208",
+        "Smith#31568",
+        "amy40#56724",
+        "galactic0407#40179",
+        "phatlewt#30106",
+        "udavis#86098",
+        "y2k29#20138"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_22_01_01_27_bd0dfca3.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AlexiElf#39205",
+        "Calisota#56187",
+        "D3gman#19514",
+        "FLATRON730#82752",
+        "GXViper3672#56789",
+        "GeorgeDroyd_#25192",
+        "Haarhus_60#26206",
+        "IAmEdWards_#42789",
+        "Kraken00322#90242",
+        "MinituxMan#96997",
+        "MrAfterz#84348",
+        "Player_6664410023#50083",
+        "Vger#12906"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_22_01_24_17_992417df.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Calisota#56187",
+        "Demoniaak8#35103",
+        "Gregonator_65#31925",
+        "IAmEdWards_#42789",
+        "IgOr2335#78517",
+        "KoooTella#29048",
+        "KuroRyuuji#40010",
+        "Lenkakaka#13732",
+        "Player_8835950137#13081",
+        "Player_9735102616#37343",
+        "cristraian#73463",
+        "fishbread248#27858",
+        "topik_stalnoj#15181",
+        "vonstien01#12808"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_22_16_49_46_9b9d72dc.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Crymaria#25255",
+        "Kevskipops#76040",
+        "Loctalis_2015#86603",
+        "Lord_Commander_Solar#61557",
+        "Maddog_IC#87695",
+        "MortyMan5#85819",
+        "MrTactician91#76355",
+        "PigeonPie2#99679",
+        "Player_1627797911#70566",
+        "Player_4459995978#93498",
+        "Player_5570700860#12753",
+        "jimmyk58#23085",
+        "modern_xp_gaming#92105"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
       }
     },
     "03_sunstroke_conquest_2025_02_23_13_33_02_7bbe743.replay": {
@@ -1554,6 +3062,77 @@
         "mode": "conquest"
       }
     },
+    "03_sunstroke_conquest_2025_02_24_10_58_54_881e7f8e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Chapman#50567",
+        "Edward_Walker#75414",
+        "Glx_M20#46913",
+        "Gutierrez98#46976",
+        "Jacobson#91270",
+        "PigeonPie2#99679",
+        "Player_9984563552#34740",
+        "RoseTea#99798",
+        "Snubby13#10751",
+        "Tsurupettan#67913",
+        "VitaminDe#34950",
+        "diana95#58177",
+        "minset7274#44190",
+        "xCQ#941"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_24_13_05_23_25c73806.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Fabro_20XX#66254",
+        "GeneralAlciel#79687",
+        "Hoffman29#65759",
+        "INATIVERBR#36903",
+        "Jackson2016#89821",
+        "KimberlyChandler25#47394",
+        "Mark#27912",
+        "PigeonPie2#99679",
+        "Player_3430497767#26508",
+        "Player_6073892741#59786",
+        "Player_9984563552#34740",
+        "VovkaPartyMaker_1#32626",
+        "christopher79#84905",
+        "emercado#97222",
+        "mary13#61834",
+        "reesedylan#82923",
+        "zibos#43406"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
+      }
+    },
     "03_sunstroke_conquest_2025_02_25_01_32_18_fdc8028.replay": {
       "match_details": [
         {
@@ -1659,6 +3238,76 @@
         "mode": "conquest"
       }
     },
+    "03_sunstroke_conquest_2025_02_25_12_47_02_47ceacc8.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Antonio#29532",
+        "DHB#586",
+        "JTLouco#77461",
+        "Jones2021#62292",
+        "K0N#54480",
+        "Legendary911#16694",
+        "PigeonPie2#99679",
+        "Player_5490294719#41117",
+        "Player_7833780155#79330",
+        "Santufraile#22644",
+        "TheOnlyMarley#37225",
+        "ToxicGuat#26529",
+        "WildHuntCoven#33949",
+        "Zeemah#67360",
+        "charles43#45596",
+        "iwebb#77674",
+        "qbrown#59097"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_25_12_59_05_a254032f.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Amy2025#79819",
+        "Devastation_of_War#97271",
+        "Nuclear__Warfare#70223",
+        "Player_0747868025#25353",
+        "Player_5490294719#41117",
+        "RoseTea#99798",
+        "Tauntonian#37757",
+        "Tyler#97808",
+        "XPLOID_1#39164",
+        "danielwalsh#25667",
+        "hawk_fighter_5#46178",
+        "kimberlyshort#42359",
+        "theghost687#35272"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
+      }
+    },
     "03_sunstroke_conquest_2025_02_25_23_34_11_6df3759e.replay": {
       "match_details": [
         {
@@ -1729,6 +3378,40 @@
         "kylejoseph#85075",
         "nancypowers#80295",
         "williamkim#53197"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
+      }
+    },
+    "03_sunstroke_conquest_2025_02_26_19_36_20_9c210cad.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Alexandersalem8#83467",
+        "BipBopBen#56650",
+        "CPT_MetalsFJ#11171",
+        "EduDotta#76166",
+        "Ellis28659#69684",
+        "Fede_Averastudis#45443",
+        "JTLouco#77461",
+        "MadCanadian#84769",
+        "Pigeon_Pie#90166",
+        "Player_2699301027#11556",
+        "Player_4994719681#27768",
+        "Player_7284486839#95192",
+        "bigdaddybones30#26193",
+        "thamaster05#95570"
       ],
       "map_info": {
         "map": "03_sunstroke",
@@ -2104,6 +3787,132 @@
         "mode": "conquest"
       }
     },
+    "03_sunstroke_conquest_2025_03_02_18_06_43_9157a7d6.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Fox1974#49016",
+        "Jenna#39477",
+        "Jennifer#59122",
+        "Keith79#65051",
+        "Mary#90432",
+        "Sarah#68387",
+        "dinonugget2879#31870",
+        "harrymahoney#73337",
+        "julie34#74370",
+        "ldavis#82091",
+        "rmullen#88560",
+        "rodriguezmichael#24469",
+        "sandrachen#27375",
+        "vanessa50#81449"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
+      }
+    },
+    "03_sunstroke_conquest_2025_03_02_23_34_10_5c827c8d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Fuller74#72103",
+        "GLORY1520#60514",
+        "Howell1996#85953",
+        "Lowe#54882",
+        "QOC#586",
+        "Sarah2#41478",
+        "Sphinxy#53920",
+        "Weber#47820",
+        "William#84355",
+        "mariaelliott#61317"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
+      }
+    },
+    "03_sunstroke_conquest_2025_03_03_00_27_16_5260a38c.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Charles2015#14571",
+        "Erin#31163",
+        "Jeffrey16#90434",
+        "Lavaboss90#13817",
+        "Pigeon_Pie#90166",
+        "Player_1356003330#48852",
+        "Player_2522723202#10597",
+        "Player_4281404135#93477",
+        "Player_5166901743#99259",
+        "Player_8006488132#12690",
+        "Player_9465145510#68669",
+        "chelseamercado#55083",
+        "randomasian#87443",
+        "ruggarc#25934",
+        "sailor634057#66408",
+        "stewartsarah#57398"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "conquest"
+      }
+    },
+    "03_sunstroke_ct2_2025_02_21_23_13_04_9819904.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Destroy_Mix#50517",
+        "FutureSniper#30483",
+        "IAmEdWards_#42789",
+        "W00Dl#30105",
+        "_Androni_#96171",
+        "dema_GG_UA#40087"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "ct2"
+      }
+    },
     "03_sunstroke_ct2_2025_02_22_14_56_58_cd668838.replay": {
       "match_details": [
         {
@@ -2132,6 +3941,404 @@
       "map_info": {
         "map": "03_sunstroke",
         "mode": "ct2"
+      }
+    },
+    "03_sunstroke_killconfirm_2025_02_22_20_22_15_dc1a05fa.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "D3borian#72050",
+        "Jose_Gonzalez6#34606",
+        "Pigeon_Pie#90166",
+        "Player_1221436352#58029",
+        "Trashman383#51414",
+        "natalie57#34082",
+        "patri809_1#25087",
+        "tank_ripper_4#80212",
+        "y2k29#20138"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "killconfirm"
+      }
+    },
+    "03_sunstroke_killconfirm_2025_02_23_16_17_39_d001f71f.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Almighty_Bob#33900",
+        "Daikinly#16988",
+        "Maddog_IC#87695",
+        "Pigeon_Pie#90166",
+        "cromeguard224#63706",
+        "feltoid#73653",
+        "panzze#38744"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "killconfirm"
+      }
+    },
+    "03_sunstroke_killconfirm_2025_02_23_19_53_26_47da422f.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Cthulhu42#14034",
+        "Player_1400214498#13929",
+        "VictorKB44#82053",
+        "WifeAgro#12046",
+        "bigdaddybones30#26193",
+        "dodgech442#35342"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "killconfirm"
+      }
+    },
+    "03_sunstroke_killconfirm_2025_02_24_11_18_24_c42ea86e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Boogeestro#96291",
+        "Harris1980#55465",
+        "Nicholas85#58340",
+        "PigeonPie2#99679",
+        "Player_2616419523#24744",
+        "Player_4971122734#96795",
+        "Player_9984563552#34740",
+        "RoseTea#99798",
+        "Tsurupettan#67913",
+        "facucu36#33858"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "killconfirm"
+      }
+    },
+    "03_sunstroke_killconfirm_2025_02_25_21_52_02_ac15a62e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Alpha1Niner#13488",
+        "Cesao500#58617",
+        "Epik_Kobold#51414",
+        "InB4_Death#54165",
+        "PsychoPhobic#58337",
+        "UdFGd#586",
+        "xXxTheGeneralxXx#78574"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "killconfirm"
+      }
+    },
+    "03_sunstroke_killconfirm_2025_02_26_15_16_07_dea678a8.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Bladerunnerxx#45177",
+        "Cassiael#74619",
+        "DracoFury42#54830",
+        "HoneySyrup27#57805",
+        "HotHamSanwich#20292",
+        "LemonBar21#61536",
+        "Luckyshot_br#27852",
+        "Lumpy2002#22287",
+        "Player_2699301027#11556"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "killconfirm"
+      }
+    },
+    "03_sunstroke_killconfirm_2025_02_28_17_04_00_341217b7.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Blacksheep212#23470",
+        "Lauren#36938",
+        "Pigeon_Pie#90166",
+        "Powell2013#37875",
+        "beardalex#63457",
+        "kathycruz#43827",
+        "yura2021#42461"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "killconfirm"
+      }
+    },
+    "03_sunstroke_killconfirm_2025_03_01_23_17_23_7ed0618.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Brian_Moses50#95379",
+        "Danzan1#27306",
+        "Joe6482#65498",
+        "Player_6255311479#90964",
+        "Robert9#67638",
+        "adam28#38272",
+        "marymccarthy#25991"
+      ],
+      "map_info": {
+        "map": "03_sunstroke",
+        "mode": "killconfirm"
+      }
+    },
+    "04_nordoko_conquest_2025_02_21_16_42_23_b27295ef.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Akula__#39122",
+        "BiggestMeta#73156",
+        "CoolestKern#16673",
+        "Hunter1123#96137",
+        "Lead_Magnet_#10527",
+        "PablotuxGR#76327",
+        "Pigeon_Pie#90166",
+        "Player_1221436352#58029",
+        "Player_2511284748#61564",
+        "Player_5570700860#12753",
+        "Player_7350143052#82487",
+        "YeetrPum#59233",
+        "_Your__Nightmare#56811",
+        "destroyer2235#79673",
+        "pluNged_chapa#16876",
+        "sniperbr#20061"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
+      }
+    },
+    "04_nordoko_conquest_2025_02_22_01_40_18_2afa09c8.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "BaklavaHD#55242",
+        "Calisota#56187",
+        "Chugaiister#49187",
+        "DealinWithGaming#90326",
+        "Dr1se#86266",
+        "GeorgeDroyd_#25192",
+        "Ju5154#78503",
+        "Killer_Fler#85300",
+        "Leonardo_Sestini#86742",
+        "MiedzyrzeckiHusarz#48417",
+        "Oni_97#58560",
+        "OrkOs7#26703",
+        "Player_6664410023#50083",
+        "___LEGIT___#61269",
+        "drache99000#35411",
+        "valik18120#59687"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
+      }
+    },
+    "04_nordoko_conquest_2025_02_22_02_01_03_be10c12.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "123456789gt#30357",
+        "Brennicke#51406",
+        "DealinWithGaming#90326",
+        "Demoniaak8#35103",
+        "GeorgeDroyd_#25192",
+        "Gneckes#78405",
+        "Nat5u_R1P#48683",
+        "ObiWanShenobl#96465",
+        "Player_7690633002#79252",
+        "Sebastian__02#56460",
+        "SlightlyAbsurd#41200",
+        "antena7#48284",
+        "broock89XD#58238",
+        "piskorandreas#28159"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
+      }
+    },
+    "04_nordoko_conquest_2025_02_22_02_32_56_c330ed13.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "1_NEBRO_1#57412",
+        "Calisota#56187",
+        "FenixStylez#23168",
+        "GeorgeDroyd_#25192",
+        "Girlpool#95856",
+        "IAmEdWards_#42789",
+        "JSpro_YT#62522",
+        "Kaczucha007#98558",
+        "KnackKnick#15363",
+        "Kostihv#21138",
+        "LEXOGRAF_2023#19052",
+        "Nekros_#66785",
+        "SequeiraFighter#75080",
+        "dadson4200#58994"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
+      }
+    },
+    "04_nordoko_conquest_2025_02_22_14_33_26_5f17fbd5.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "APEIBR#93750",
+        "JtHManiac#98377",
+        "Pigeon_Pie#90166",
+        "Pits058#94744",
+        "Player_1100807898#96487",
+        "RabbitMonkey#76761",
+        "Radium_Bullet#45275",
+        "SaikouTrolls#11129",
+        "Tactpro_1#22413",
+        "TwinkieMaster#32213",
+        "XMETALRTX#93694",
+        "Xcution_1#68669",
+        "aDeathMetalFan#77342",
+        "crossbredmedal745#71350",
+        "lordstun#32185",
+        "noxere#97271"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
       }
     },
     "04_nordoko_conquest_2025_02_22_20_53_40_6c2a83be.replay": {
@@ -2174,6 +4381,115 @@
         "mode": "conquest"
       }
     },
+    "04_nordoko_conquest_2025_02_23_13_48_30_69435149.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Alastorius08#16274",
+        "Chewy_Granola_Bar#92973",
+        "CopeCageEnjoyer#77629",
+        "Dinogamer_481#10618",
+        "Dzielak#62488",
+        "Elixir44#93148",
+        "HellTheAssassin#44099",
+        "Light_Dragon_2#76362",
+        "PigeonPie2#99679",
+        "Player_3721194850#43357",
+        "Player_9162775803#45527",
+        "Ritrodan#70888",
+        "SrTocinoBFJ#92070",
+        "TenetInfante#47508",
+        "Tyler_Martin_TM#17632",
+        "Uncle_Storm#23799",
+        "beaurnado#79932",
+        "cdanie11180203#17135",
+        "killjoy9758#58491",
+        "sgtjayz#79407"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
+      }
+    },
+    "04_nordoko_conquest_2025_02_23_16_08_13_741e07f3.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "ACEDooley#93372",
+        "Almighty_Bob#33900",
+        "Daikinly#16988",
+        "IWillAvengeYou#46031",
+        "Ilderby#95500",
+        "Larenz#99329",
+        "Player_1183111794#11668",
+        "Player_9162775803#45527",
+        "Tastyhoneybuns#45723",
+        "Terabyt552#81850",
+        "ni_kotho#47151"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
+      }
+    },
+    "04_nordoko_conquest_2025_02_23_16_26_14_4d18e4d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Bcohowler#74731",
+        "BloodyZombies#40235",
+        "Chieftain1223#67766",
+        "Cruiser_NachiKai#66744",
+        "Dremith#18353",
+        "EmbassyBomber#28006",
+        "Lotec66#20964",
+        "MegaTealy#35440",
+        "Moncler#64301",
+        "Nemarus#33291",
+        "Pigeon_Pie#90166",
+        "Player_4000413359#35965",
+        "Player_5398653604#18633",
+        "X1LE#25318",
+        "actkilla#93694",
+        "jaysandman#59170",
+        "jtyellin#82347",
+        "uallnvme#25710"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
+      }
+    },
     "04_nordoko_conquest_2025_02_23_21_44_24_d560112c.replay": {
       "match_details": [
         {
@@ -2206,6 +4522,40 @@
         "enigmalegend#85385",
         "rockerdude12#88654",
         "tokokan#29028"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
+      }
+    },
+    "04_nordoko_conquest_2025_02_23_23_43_12_703a66f3.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AlphabetSoup1#29714",
+        "Amber#55427",
+        "AnexxWarrior13#84734",
+        "Chuchi52#19620",
+        "Dezmud#58554",
+        "Habifo#23736",
+        "JimmyLech#41369",
+        "Player_0407640658#16672",
+        "david51#12362",
+        "eduar2077#20502",
+        "kellybeth#35203",
+        "kornelsby#75522",
+        "nguyendaniel#85968",
+        "nmendez#70481"
       ],
       "map_info": {
         "map": "04_nordoko",
@@ -2347,6 +4697,77 @@
         "megan41#72739",
         "scott10#61976",
         "stacy90#99511"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
+      }
+    },
+    "04_nordoko_conquest_2025_02_25_15_32_40_cb7f248d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "ArcSigma_45#58057",
+        "BigBearBoski#14713",
+        "Cesao500#58617",
+        "Devastation_of_War#97271",
+        "DystopiaGuy#63895",
+        "GefreiterLuftwaffle#73093",
+        "Pigeon_Pie#90166",
+        "Player_3781956904#65687",
+        "Player_8052432685#22350",
+        "Wendigo_Qc#54067",
+        "conrad_tank#65757",
+        "eric_beaulieu#62264",
+        "firefoxrj#64420",
+        "knightcypher#63209"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
+      }
+    },
+    "04_nordoko_conquest_2025_02_25_15_54_15_9181f509.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "BigNic_360#80723",
+        "DG_Darkness#92427",
+        "DIEGOSANTOSZIK#49286",
+        "DucksOnQuack14#81430",
+        "PigeonPie2#99679",
+        "Player_0253871741#39262",
+        "Player_3781956904#65687",
+        "Player_6682557587#73814",
+        "Player_9158581778#53906",
+        "Sherman_T_Potter#80072",
+        "TheyCallMeDad#31275",
+        "WifeAgro#12046",
+        "conrad_tank#65757",
+        "firefoxrj#64420",
+        "knightcypher#63209",
+        "vitorgame_j#75501",
+        "xXBRUTALZORDXx#16470"
       ],
       "map_info": {
         "map": "04_nordoko",
@@ -2714,6 +5135,135 @@
         "mode": "conquest"
       }
     },
+    "04_nordoko_conquest_2025_03_02_23_23_00_3bfe5150.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AP_Jesus#35013",
+        "Burnett1#10382",
+        "Colliant_2022#78266",
+        "Hazard112#47018",
+        "Kendra_Mcintosh#24516",
+        "Pigeon_Pie#90166",
+        "Rambosito#12963",
+        "SizzelBoi#51561",
+        "Taylor2019#48609",
+        "TheGrouchyGamer#97278",
+        "Thunder_Moon#16134",
+        "TurtlePixel#69579",
+        "UnforgivenShado#13894",
+        "aleamici#51428",
+        "mauri117#40186"
+      ],
+      "map_info": {
+        "map": "04_nordoko",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_21_22_02_38_ac766bdd.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Dakili#47795",
+        "Eric_Stacy#91706",
+        "KeouaApolo#73163",
+        "Leaque_#66912",
+        "OakheaD#29133",
+        "Strategic_Daddy#77293",
+        "Trilogyreaper#94506",
+        "imtheboss123#78784",
+        "kaseyjones9000#23057",
+        "opslon#23554",
+        "villadiego206#45380"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_21_22_33_13_5ca6536f.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "BL00DSH0T4TW#56888",
+        "Bombreezey#85959",
+        "DestroyerPlayer_iron#29000",
+        "EchoLogical#44302",
+        "PablotuxGR#76327",
+        "Pigeon_Pie#90166",
+        "Player_2318683068#11178",
+        "Radium_Bullet#45275",
+        "RareGreer#46612",
+        "SouthStar62#62614",
+        "Strategic_Daddy#77293",
+        "Vadestar#55978",
+        "matval152#66625"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_22_01_13_56_f5a153a9.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AlexiElf#39205",
+        "Babbedeggl#73008",
+        "Demoniaak8#35103",
+        "GXViper3672#56789",
+        "IAmEdWards_#42789",
+        "Player_5057193301#70075",
+        "Random_Comrade#46534",
+        "SILVER_0109#69739",
+        "XDarkillerX#87981",
+        "Zeeero2008_1#42838"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
     "05_friendshipdam_conquest_2025_02_22_13_32_00_f398764c.replay": {
       "match_details": [
         {
@@ -2751,6 +5301,39 @@
         "mode": "conquest"
       }
     },
+    "05_friendshipdam_conquest_2025_02_22_16_59_08_584414b6.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AstuteCake#65624",
+        "InfectedTrash#52219",
+        "Kryptic337#58589",
+        "Loctalis_2015#86603",
+        "Maddog_IC#87695",
+        "Madhouse311#87646",
+        "N7Hellkite#85301",
+        "PigeonPie2#99679",
+        "iJESTER0422#44351",
+        "jaraldoe#92434",
+        "jediel4321#77188",
+        "sabaga89#96347",
+        "spartasam#41040"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
     "05_friendshipdam_conquest_2025_02_23_20_34_09_52b28f0b.replay": {
       "match_details": [
         {
@@ -2776,6 +5359,38 @@
         "travis27#30339",
         "tylerpark#84616",
         "xX_Leroy_Jenkins_Xx#27327"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_24_13_18_19_5d2c9dba.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "ArticW0lf#61676",
+        "Boogeestro#96291",
+        "Jeffrey61#90581",
+        "Noodleten#79995",
+        "Player_3620463610#96018",
+        "Player_9984563552#34740",
+        "Samantha#65760",
+        "Trashman383#51414",
+        "babybackribs#33718",
+        "jbennett#44959",
+        "pvtPetard#54697",
+        "zibos#43406"
       ],
       "map_info": {
         "map": "05_friendshipdam",
@@ -2847,6 +5462,66 @@
         "mode": "conquest"
       }
     },
+    "05_friendshipdam_conquest_2025_02_25_17_29_07_7ba7c01e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "A66hawks14#84811",
+        "David1992#78474",
+        "Gto486#11220",
+        "MadarasDemon312405#25997",
+        "Pigeon_Pie#90166",
+        "Player_0307632741#82032",
+        "Player_5166901743#99259",
+        "Player_8247302275#31212",
+        "Velcroix#18836",
+        "XxGuardian_of_HellxX#25017",
+        "asoix#31324",
+        "masonjasmine#20931"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_25_17_39_13_3354aae2.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "PR0Chicken#90698",
+        "Runnin_ThunderWD84#26452",
+        "XxGuardian_of_HellxX#25017",
+        "Zeemah#67360",
+        "battlegirl_destroyer#19991",
+        "ian75#77217",
+        "theo01237#17156",
+        "tracy62#33714"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
     "05_friendshipdam_conquest_2025_02_25_23_23_24_7f19c666.replay": {
       "match_details": [
         {
@@ -2877,6 +5552,64 @@
         "matthew17#77716",
         "olsonpaul#33989",
         "wbrandt#41409"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_26_00_46_37_a36e7210.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Battousai#37099",
+        "Elkin_Gp#51281",
+        "End_Zone#24912",
+        "Gary_Hampton1999#56656",
+        "Kaitlyn#39077",
+        "PapeadorDeNoobs#63482",
+        "Pigeon_Pie#90166",
+        "RabbitMonkey#76761",
+        "Ritrodan#70888",
+        "cshaw#69671",
+        "johnny84#84104",
+        "voncrow#87499"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_26_15_36_45_e40b1ac7.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Drangedragon#68949",
+        "EnochIssac6#89403",
+        "Perez#53339",
+        "Player_7353405393#71679",
+        "Player_9850681093#29973",
+        "indy1s#39759"
       ],
       "map_info": {
         "map": "05_friendshipdam",
@@ -2980,6 +5713,40 @@
         "mode": "conquest"
       }
     },
+    "05_friendshipdam_conquest_2025_02_27_11_54_18_521b664d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Blitztank52#27810",
+        "Chewy_Granola_Bar#92973",
+        "DG_Darkness#92427",
+        "EsteNoEsEze#25871",
+        "Huynh2001#17784",
+        "MaryThompson3#33934",
+        "Player_2464186111#18227",
+        "RRtrax#94667",
+        "Robert#70151",
+        "YFKWQ#50882",
+        "chrishoward#39223",
+        "cmathes000#72288",
+        "ommnomnom#32920",
+        "watsonchristopher#26392"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
     "05_friendshipdam_conquest_2025_02_27_14_23_57_922c5f0e.replay": {
       "match_details": [
         {
@@ -3008,6 +5775,38 @@
         "monstercracker#41425",
         "mrtslk#13494",
         "project_cw_stream_1#66701"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_conquest_2025_02_28_00_27_35_35ddaf85.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Buchanan7#51068",
+        "ELBARCOTACTICO#67479",
+        "Keith#43726",
+        "Madison1999#26555",
+        "Maverick1776#60521",
+        "boosbob1#94121",
+        "herreradavid#59711",
+        "kbailey#61278",
+        "reedlaurie#14818",
+        "rougesailor#57021",
+        "stephanie12#71508",
+        "tony40#33259"
       ],
       "map_info": {
         "map": "05_friendshipdam",
@@ -3108,6 +5907,72 @@
         "mode": "conquest"
       }
     },
+    "05_friendshipdam_conquest_2025_02_28_23_55_00_85803a98.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Brian_Wolf#56804",
+        "Cassidy6#90646",
+        "Kelly8#31435",
+        "Nancy#47388",
+        "Pigeon_Pie#90166",
+        "Player_2534318811#62243",
+        "Puddle_Maker#53164",
+        "SHARKGHOST115#75249",
+        "Sherry1976#98694",
+        "TheHiddenBananaaa#44442",
+        "Tiffany#71712",
+        "X2009#86547",
+        "peterjefferson#99615",
+        "xX_Leroy_Jenkins_Xx#27327"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_conquest_2025_03_01_00_04_42_ab54576a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Henry86#42276",
+        "Jennifer#65171",
+        "Lisa42#74195",
+        "Player_0561804725#10107",
+        "Pongajim#79638",
+        "PropagandaPenguin#76726",
+        "Vapor_Rounds#25766",
+        "WormwaffleII_2016#15112",
+        "X2009#86547",
+        "erika30#17831",
+        "gkiller005#56125",
+        "maxhavoch#57917"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
     "05_friendshipdam_conquest_2025_03_01_08_56_53_8175205c.replay": {
       "match_details": [
         {
@@ -3175,6 +6040,34 @@
         "murphynicholas#16328",
         "ndavis#41354",
         "wcalderon#67837"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_conquest_2025_03_01_13_44_49_54675cca.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AcidAbuser#87114",
+        "UdIal#586",
+        "amber82#45663",
+        "bradley71#21740",
+        "icraig#10927",
+        "johnsonmichael#59945",
+        "mreid#40916",
+        "ursodead#93575"
       ],
       "map_info": {
         "map": "05_friendshipdam",
@@ -3315,6 +6208,189 @@
         "mode": "conquest"
       }
     },
+    "05_friendshipdam_conquest_2025_03_02_17_30_46_42c3a648.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Anderson_Davi_B#81444",
+        "Blitztank52#27810",
+        "Bohort#51561",
+        "Boogeestro#96291",
+        "Dabey666#59142",
+        "Habifo#23736",
+        "Hornet730#42293",
+        "Jacob_Zante#39276",
+        "LinearNoThreshold#28181",
+        "Player_2699301027#11556",
+        "Player_8373913926#57237",
+        "Rambosito#12963",
+        "_VEN0M#30463",
+        "sam69390#52275"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_conquest_2025_03_02_23_12_08_3c8d42cb.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Angelofwar115#75963",
+        "BDC__Pablito#56475",
+        "CottonCork#64322",
+        "DarkImage13#22651",
+        "Graham#58731",
+        "Pigeon_Pie#90166",
+        "Player_7227414898#55376",
+        "Player_8052432685#22350",
+        "Shelby#91821",
+        "Thunder_Moon#16134",
+        "Tmart44444#68186",
+        "Wendigo_Qc#54067",
+        "digger52#36651",
+        "kap4546b#29791",
+        "lhiggins#11097"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "conquest"
+      }
+    },
+    "05_friendshipdam_domination_2025_02_22_00_25_07_ce4d282a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AllanGG01#38597",
+        "Carlos_Neto_winner#29049",
+        "CraZ_Raptor#27922",
+        "Justin_Ng#62026",
+        "Pigeon_Pie#90166",
+        "Player_4230383329#44708",
+        "TrashPander#40473",
+        "babybackribs#33718",
+        "jnnh22356#66835"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "domination"
+      }
+    },
+    "05_friendshipdam_domination_2025_02_22_00_35_41_774e2a3.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "BattleDoge#59660",
+        "Cheesecakex5#90362",
+        "Pigeon_Pie#90166",
+        "Player_6443120437#51932",
+        "R5Bc#586",
+        "VitaminDe#34950",
+        "lilpoyo#42888"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "domination"
+      }
+    },
+    "05_friendshipdam_domination_2025_02_23_12_22_40_e805aa00.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "NightLong096#32010",
+        "Pigeon_Pie#90166",
+        "Player_0344548796#82109",
+        "ScurvieGenie#15910",
+        "TootJay#94709",
+        "aleamici#51428",
+        "jmatt1009#41775",
+        "uallnvme#25710",
+        "zeuzdevil#27817"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "domination"
+      }
+    },
+    "05_friendshipdam_domination_2025_02_26_11_22_51_cbd5bac1.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Deucaliok#56944",
+        "Erik#19531",
+        "Jennifer9#19616",
+        "Parks2010#72986",
+        "Pigeon_Pie#90166",
+        "Sospao919#77867",
+        "ZxGgarant#90635",
+        "carlosgarcia#23253",
+        "plee#95350"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "domination"
+      }
+    },
     "05_friendshipdam_domination_2025_02_27_04_46_40_429e189d.replay": {
       "match_details": [
         {
@@ -3373,6 +6449,62 @@
       "map_info": {
         "map": "05_friendshipdam",
         "mode": "domination"
+      }
+    },
+    "05_friendshipdam_domination_2025_03_01_15_17_27_2417dff9.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "MagyAF#69431",
+        "Player_3069878657#13088",
+        "Stahlbaron#82871",
+        "johndmacklean#43762",
+        "maxmous40#51994"
+      ],
+      "map_info": {
+        "map": "05_friendshipdam",
+        "mode": "domination"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_21_22_14_08_caa21ce1.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Devin_Snider#68844",
+        "HangEnBrain#46346",
+        "HunterLink19#78805",
+        "IronBaron32#91573",
+        "J_WALK#97523",
+        "Longbotton#24961",
+        "Pigeon_Pie#90166",
+        "Player_4441562426#30414",
+        "Wrexzer#33732",
+        "bjmstewart#39885",
+        "ever569#77685"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "conquest"
       }
     },
     "06_aircraft_carrier_conquest_2025_02_23_13_11_34_bcd981d0.replay": {
@@ -3543,6 +6675,39 @@
         "slopyuploads#93302",
         "wallerdonald#11118",
         "webbmadeline#33013"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "conquest"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_25_14_03_09_4c714506.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Beasley#27232",
+        "CuchoGrim#48908",
+        "HeavyMetalJukes#35286",
+        "Johnson#46331",
+        "Karsh#22119",
+        "Pigeon_Pie#90166",
+        "Player_5884454148#73583",
+        "WhaleWaifu#84230",
+        "William#70816",
+        "browncraig#85039",
+        "martinmaria#67377",
+        "paulmcgrath#44374",
+        "rchapman#31878"
       ],
       "map_info": {
         "map": "06_aircraft_carrier",
@@ -3736,6 +6901,179 @@
         "mode": "conquest"
       }
     },
+    "06_aircraft_carrier_conquest_2025_02_27_18_22_27_5fc9f68d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AllanGG01#38597",
+        "Bruticus65#47277",
+        "Darthpineapple0#51694",
+        "HelenKellersFart#66289",
+        "Holas_Tar#81689",
+        "Player_4238183789#56202",
+        "ReferredJarl489#57805",
+        "Softhandz#43728",
+        "US_TROOPER#11388",
+        "__Shockwave#93953",
+        "ganthon#10366"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "conquest"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_27_19_16_41_749e71d6.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Critical_Mach#97313",
+        "Megan1991#17129",
+        "Pigeon_Pie#90166",
+        "Player_0083779864#10212",
+        "Player_0638544297#36609",
+        "Player_2323719237#87093",
+        "Player_2859655591#27796",
+        "Player_6073892741#59786",
+        "Polecat_#94961",
+        "Tactical_AoE#34467",
+        "ZxGgarant#90635",
+        "courtney39#89533",
+        "ewilson#82552",
+        "hdjake4#70531",
+        "imwntr#99014",
+        "oelliott#70956"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "conquest"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_27_23_09_50_f2d4f87a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "81LL5DR1NK#73443",
+        "Boogeestro#96291",
+        "Cole1970#85800",
+        "GTXPROTOTYPE#83642",
+        "Ikillfrogs#12991",
+        "MichealFoo#12004",
+        "NYKOX#24961",
+        "Pilot_Paul_#58652",
+        "Player_4193908682#85931",
+        "ROSA_NEGRA_steel#20642",
+        "WARMARSHALL92#92707"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "conquest"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_02_28_17_15_14_c7c2115a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "BadChad1#12956",
+        "Bailey#30370",
+        "Epik_Kobold#51414",
+        "Erin1991#99436",
+        "Madayo1337#88633",
+        "MasterWindu7912#76152",
+        "Pigeon_Pie#90166",
+        "Player_0813878394#40172",
+        "Player_0856764052#48040",
+        "Player_1696532544#70881",
+        "Player_4489227687#26865",
+        "ZerotheHero75#89270",
+        "firefoxrj#64420",
+        "gkiller005#56125",
+        "gwendolyn51#83266",
+        "hansenmark#30090"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "conquest"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_03_01_10_57_29_69a85354.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Daniel#62017",
+        "DeathWing_iron#30358",
+        "Esparza1981#14637",
+        "Harbinger_Of_Defeat#79722",
+        "Julia#81115",
+        "LEGEND_OF_LEGENDS#62012",
+        "Paul38#94260",
+        "Phillips2000#36699",
+        "Pigeon_Pie#90166",
+        "Player_9905318068#23330",
+        "Robin42#10076",
+        "Waylon112#75697",
+        "Zeemah#67360",
+        "cantubrandon#19029",
+        "kathryn39#52822",
+        "matthewporter#60095",
+        "ohio4life#36826",
+        "theo01237#17156",
+        "xfreeman#59101"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "conquest"
+      }
+    },
     "06_aircraft_carrier_conquest_2025_03_01_18_23_06_3e04f95e.replay": {
       "match_details": [
         {
@@ -3768,6 +7106,44 @@
         "imtosIow#76488",
         "jf_chileno#89753",
         "texsjeeper#63629"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "conquest"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_03_01_20_04_59_1604ce06.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "81LL5DR1NK#73443",
+        "Austin#86595",
+        "Butler4#30719",
+        "Donovan2018#63354",
+        "EmanGran#75466",
+        "JamesChambers#28430",
+        "JefferyDonaldson9#30633",
+        "Kathryn#70948",
+        "Pigeon_Pie#90166",
+        "Player_9586673578#42678",
+        "RDShark#67213",
+        "Tekk_know#43763",
+        "bakerdavid#80293",
+        "deth1981#77951",
+        "dolphus333_mota#37785",
+        "esmatty_uk#85980",
+        "george_is_a_droyd99#16218",
+        "jacob32#82846"
       ],
       "map_info": {
         "map": "06_aircraft_carrier",
@@ -3884,6 +7260,77 @@
         "mode": "conquest"
       }
     },
+    "06_aircraft_carrier_conquest_2025_03_01_22_41_29_b879bcd2.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AWCREW#44512",
+        "Black_Death_KDE#98986",
+        "Boogeestro#96291",
+        "GMSchwartz#36119",
+        "HANY666#15252",
+        "Jack#76343",
+        "KillaBeezz#24737",
+        "Mothetanker#81185",
+        "Player_4735725960#19165",
+        "RUX#422",
+        "SGT_Encripted#42181",
+        "SGT_Kinzinger#39290",
+        "Shawn_Godin_2023#73968",
+        "Simmons1982#94410",
+        "Superhonky78#84762",
+        "_Selenium_#23211",
+        "generalmars7#46115",
+        "papa_strat#30974",
+        "xdarkcurex#90068"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "conquest"
+      }
+    },
+    "06_aircraft_carrier_conquest_2025_03_01_22_55_33_d2d191aa.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Christensen2013#30359",
+        "GLORY1520#60514",
+        "HANY666#15252",
+        "Melissa#63901",
+        "Pigeon_Pie#90166",
+        "Player_0723536728#37106",
+        "Shawn_Godin_2023#73968",
+        "That1Asian_1#64623",
+        "Wheezy45#54739",
+        "crystalwoods#40295",
+        "davwarg1#51890",
+        "jf_chileno#89753"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "conquest"
+      }
+    },
     "06_aircraft_carrier_domination_2025_02_22_13_19_20_fc68869.replay": {
       "match_details": [
         {
@@ -3907,6 +7354,63 @@
         "destroyer2235#79673",
         "dolphus333_mota#37785",
         "jefegorgory#90516"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "domination"
+      }
+    },
+    "06_aircraft_carrier_domination_2025_02_23_12_01_55_dde811dd.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Colon#37111",
+        "Cummings9#72488",
+        "Floyd#40545",
+        "Jeremy_Stevenson11#62598",
+        "John60#54015",
+        "Pigeon_Pie#90166",
+        "Renee89#97852",
+        "UGKaC#586",
+        "atkinscynthia#92361",
+        "joshua58#72518",
+        "riverasarah#57711",
+        "spitfira#51799"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "domination"
+      }
+    },
+    "06_aircraft_carrier_domination_2025_02_23_16_00_57_6d63cbe7.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Cross3208TTV#35223",
+        "Denisisisis#17702",
+        "Phrash#74927",
+        "Soundstrike#60458",
+        "ni_kotho#47151"
       ],
       "map_info": {
         "map": "06_aircraft_carrier",
@@ -3966,6 +7470,35 @@
         "Walsh#85433",
         "john32#85824",
         "twolfe#13418"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "domination"
+      }
+    },
+    "06_aircraft_carrier_domination_2025_02_25_15_44_44_4b3d168.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "ChaosXMythical#67395",
+        "LeTacodile#24471",
+        "Pigeon_Pie#90166",
+        "Player_2464186111#18227",
+        "Player_3781956904#65687",
+        "Player_8052432685#22350",
+        "Skynet_747#28314",
+        "US_TROOPER#11388",
+        "arkino73#61620"
       ],
       "map_info": {
         "map": "06_aircraft_carrier",
@@ -4034,6 +7567,93 @@
         "mode": "domination"
       }
     },
+    "06_aircraft_carrier_domination_2025_03_01_23_08_13_f6c27351.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Mothetanker#81185",
+        "Nulltrent#30673",
+        "OhioShape#31562",
+        "Pastruken#21076",
+        "Pentika667#73170",
+        "Pigeon_Pie#90166",
+        "Player_6255311479#90964",
+        "christopheribarra#12156",
+        "khines#14023",
+        "oopiy#46927",
+        "preditor42#73870"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "domination"
+      }
+    },
+    "06_aircraft_carrier_domination_2025_03_02_17_40_42_b75dde9d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Balistikz#82501",
+        "Boogeestro#96291",
+        "Dulivan#59569",
+        "LinearNoThreshold#28181",
+        "Pigeon_Pie#90166",
+        "loboloco2021#48145",
+        "marcushileman1#54536"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "domination"
+      }
+    },
+    "06_aircraft_carrier_killconfirm_2025_02_21_22_44_20_90aebf7e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Calisota#56187",
+        "Ho3rNcHeNn#12997",
+        "Katze09#65833",
+        "Machin_Fo#77369",
+        "NevaderStranger#51742",
+        "Player_1955198629#29944",
+        "Player_4812886391#53996",
+        "Player_6231445095#46268",
+        "matoss007#25513"
+      ],
+      "map_info": {
+        "map": "06_aircraft_carrier",
+        "mode": "killconfirm"
+      }
+    },
     "06_aircraft_carrier_killconfirm_2025_02_24_04_54_36_3c2b516c.replay": {
       "match_details": [
         {
@@ -4091,6 +7711,73 @@
       "map_info": {
         "map": "06_aircraft_carrier",
         "mode": "killconfirm"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_21_16_18_49_9b28bb1e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AlphaStrikerIV#61669",
+        "Dontpanic210#77657",
+        "GefreiterLuftwaffle#73093",
+        "KonoDioDAAAAAA#52541",
+        "MrGankzz#37939",
+        "PablotuxGR#76327",
+        "Player_8842989117#46696",
+        "PumpkinKing1984#76530",
+        "RodRuins#90607",
+        "Shaked0wn#71385",
+        "TuffyTheWolf#87982",
+        "minipollino#27124",
+        "ninedollarsoff#39822"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "conquest"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_22_00_46_24_2d07d04b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "BolesnyWzwod#74457",
+        "Bzdi4#69907",
+        "Calisota#56187",
+        "Maxblokc_PL#47430",
+        "Player_6306149185#31757",
+        "Player_7690633002#79252",
+        "RebaMAN#47871",
+        "SharkOver#53576",
+        "Super_Jk#73015",
+        "_Astrae#17547",
+        "raph234#88310",
+        "torsten2009#82976",
+        "valik18120#59687",
+        "xxStradivarixx#18212"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "conquest"
       }
     },
     "07_projectphoenix_conquest_2025_02_22_12_50_08_397b6848.replay": {
@@ -4236,6 +7923,41 @@
         "mode": "conquest"
       }
     },
+    "07_projectphoenix_conquest_2025_02_23_23_59_49_44c216b8.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "BigBearBoski#14713",
+        "Cheryl#45619",
+        "Ethan8406#30288",
+        "JenniferCarter2000#56277",
+        "PigeonPie2#99679",
+        "Player_7561274889#43497",
+        "RastaDundee#97740",
+        "SlimMoist#90579",
+        "_StarFire_#70657",
+        "jacksonjackie#11314",
+        "jdaniels#12520",
+        "jeffrey90#62566",
+        "kimberly15#48447",
+        "tankguy25#79820",
+        "witchkiller227#88220"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "conquest"
+      }
+    },
     "07_projectphoenix_conquest_2025_02_24_01_23_09_cf18240b.replay": {
       "match_details": [
         {
@@ -4309,6 +8031,131 @@
         "mode": "conquest"
       }
     },
+    "07_projectphoenix_conquest_2025_02_24_11_08_04_7fbb954b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Alienhackware_1#71007",
+        "Christopher2003#82214",
+        "Glx_M20#46913",
+        "KeithBentley#68086",
+        "PigeonPie2#99679",
+        "Player_2616419523#24744",
+        "Player_9984563552#34740",
+        "RoseTea#99798",
+        "Sarah#57737",
+        "Tsurupettan#67913",
+        "cdanie11180203#17135",
+        "facucu36#33858"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "conquest"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_25_13_54_37_222ef0cd.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Bear520_Corbin#55306",
+        "BigBearBoski#14713",
+        "DR_DEADCLAW_Qc#77391",
+        "FORGE9unsc705#22224",
+        "Gutierrez#10678",
+        "Pigeon_Pie#90166",
+        "Rachel#27888",
+        "bergcynthia#83238",
+        "carrolltimothy#67891",
+        "chief2025_2015#88031",
+        "edward91#62814",
+        "felicia91#36409",
+        "johnrichardson#52723",
+        "leejessica#54251",
+        "mwilson#31608"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "conquest"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_25_17_19_49_14b93275.replay": {
+      "match_details": [],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Arc_Angel_Dante#62544",
+        "CPT_MetalsFJ#11171",
+        "Elpulpopaul#77825",
+        "Gregory#49316",
+        "Gto486#11220",
+        "HandsomePancake#80520",
+        "Olsen#65222",
+        "PigeonPie2#99679",
+        "RA1NBOW_DASH#88486",
+        "Tactpro_1#22413",
+        "jonathanwatson#28945",
+        "nbraun#52410"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "conquest"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_25_17_22_56_7724612b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "A66hawks14#84811",
+        "CPT_MetalsFJ#11171",
+        "Dezmud#58554",
+        "Gregory#49316",
+        "HandsomePancake#80520",
+        "Hazz4dxx965____#94359",
+        "Olsen#65222",
+        "PigeonPie2#99679",
+        "RA1NBOW_DASH#88486",
+        "Tactpro_1#22413",
+        "chelonis#50938",
+        "jonathanwatson#28945",
+        "nbraun#52410"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "conquest"
+      }
+    },
     "07_projectphoenix_conquest_2025_02_26_05_48_31_bd5898fb.replay": {
       "match_details": [
         {
@@ -4373,6 +8220,41 @@
         "robinsongilbert#66377",
         "russoallison#38417",
         "tinajones#30250"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "conquest"
+      }
+    },
+    "07_projectphoenix_conquest_2025_02_26_19_20_58_e6ea97df.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "CPT_MetalsFJ#11171",
+        "Deborah#56568",
+        "Morgan2008#48957",
+        "Pigeon_Pie#90166",
+        "Player_1233690019#46822",
+        "Player_5734694441#12270",
+        "SlayathePlaya#87856",
+        "VicodinHoliday#80765",
+        "arkino73#61620",
+        "bradsimon#56700",
+        "chapmanlaura#37665",
+        "chisel_shins#27698",
+        "henrique0001#70160",
+        "thepha#89704",
+        "victorialopez#54329"
       ],
       "map_info": {
         "map": "07_projectphoenix",
@@ -4523,6 +8405,43 @@
         "mode": "conquest"
       }
     },
+    "07_projectphoenix_conquest_2025_03_01_13_33_34_355bbf3d.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "ADogByte_2016#20978",
+        "Allen#66095",
+        "Blackburn#49494",
+        "Boogeestro#96291",
+        "Don_DaddyO#28209",
+        "Duncan2011#45552",
+        "Lindsay_Baldwin#68720",
+        "PigeonPie2#99679",
+        "SHADOW_343_UwU#29854",
+        "Serrano#53252",
+        "Susan#57536",
+        "Tusty_Wrangler#99651",
+        "burkelisa#47071",
+        "ellisgregory#24295",
+        "justinbriggs#58896",
+        "mlong#67044",
+        "renee68#31394"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "conquest"
+      }
+    },
     "07_projectphoenix_conquest_2025_03_01_19_43_35_e962754f.replay": {
       "match_details": [
         {
@@ -4595,6 +8514,238 @@
       "map_info": {
         "map": "07_projectphoenix",
         "mode": "conquest"
+      }
+    },
+    "07_projectphoenix_conquest_2025_03_02_18_17_03_240b8414.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Balistikz#82501",
+        "Jason1999#17431",
+        "Jill#63762",
+        "Killer_441#46353",
+        "Pigeon_Pie#90166",
+        "SRQFlyer#78700",
+        "deadlywarrior9#89109",
+        "dylanmacias#27291",
+        "johnsonangel#63258",
+        "marcushileman1#54536",
+        "nelsonashley#36148",
+        "pclayton#80456"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "conquest"
+      }
+    },
+    "07_projectphoenix_conquest_2025_03_02_19_36_02_eed1bb28.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Anturion#82543",
+        "Atirrador112#46430",
+        "Cargoth#96704",
+        "Dyffoz#41677",
+        "Habifo#23736",
+        "IHTRON05#52023",
+        "IMABANANA2017#58015",
+        "KoRnboy#66618",
+        "Pigeon_Pie#90166",
+        "Player_8373913926#57237",
+        "Waylon112#75697",
+        "bhosz_312#13453",
+        "damitbabe#79491",
+        "mauri117#40186",
+        "sniper_324#69684"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "conquest"
+      }
+    },
+    "07_projectphoenix_domination_2025_02_21_22_59_55_3ca1c8b.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "COFFEEK44#81030",
+        "CreekCZ#45225",
+        "IKc#586",
+        "_Black_Dragon_007#30945",
+        "adrigamerx7#47066",
+        "anihilacjaterror#46534",
+        "ghost2063_1#50104",
+        "schnubbelo#90921"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "domination"
+      }
+    },
+    "07_projectphoenix_domination_2025_02_23_11_53_21_f29bb904.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "GoldenSaber_1#52898",
+        "OakheaD#29133",
+        "Pigeon_Pie#90166",
+        "Player_5896461747#28503",
+        "ScurvieGenie#15910",
+        "TootJay#94709",
+        "flushthefetus#40970",
+        "flynbob#36098",
+        "kmsdhuk#83545"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "domination"
+      }
+    },
+    "07_projectphoenix_domination_2025_02_23_23_52_25_e7e06a1a.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Cylcloid#54886",
+        "FORGE9unsc705#22224",
+        "Player_7561274889#43497",
+        "SpartnX#55894",
+        "XPLOID_1#39164",
+        "autism69#82949",
+        "xDiMSuMx#67080"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "domination"
+      }
+    },
+    "07_projectphoenix_domination_2025_02_26_00_36_46_2fd1ee57.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "End_Zone#24912",
+        "Fallen_Zealot#27306",
+        "PapeadorDeNoobs#63482",
+        "RabbitMonkey#76761",
+        "Ritrodan#70888",
+        "SafeArcane#65897"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "domination"
+      }
+    },
+    "07_projectphoenix_domination_2025_02_26_15_26_16_d2d2de7e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Admiral_YiSunSin#31100",
+        "BiggerThanB#50672",
+        "DracoFury42#54830",
+        "FakeyC#63769",
+        "PablotuxGR#76327",
+        "PigeonPie2#99679",
+        "ScurvieGenie#15910",
+        "Zombie95662#23505"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "domination"
+      }
+    },
+    "07_projectphoenix_domination_2025_03_01_00_23_25_19472cca.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Brady_Slaton#55243",
+        "Critical_Mach#97313",
+        "Pigeon_Pie#90166",
+        "Polecat_#94961",
+        "RandomBanditGuy#97754",
+        "Tactical_AoE#34467",
+        "imwntr#99014"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "domination"
       }
     },
     "07_projectphoenix_domination_2025_03_01_21_43_57_97aef796.replay": {
@@ -4684,6 +8835,61 @@
         "mode": "domination"
       }
     },
+    "07_projectphoenix_killconfirm_2025_02_21_22_21_12_9f8a3a31.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Element115_Jr#86183",
+        "GRUMPY__reaper#58967",
+        "HunterLink19#78805",
+        "Krookz#49440",
+        "PablotuxGR#76327",
+        "Wrexzer#33732",
+        "texsjeeper#63629"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "killconfirm"
+      }
+    },
+    "07_projectphoenix_killconfirm_2025_02_21_22_45_59_72dde27e.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Alastorius08#16274",
+        "AngelGT_winner#12018",
+        "EchoLogical#44302",
+        "GruntKillerT90A#61235",
+        "Player_4459995978#93498",
+        "breakdemon1#26683",
+        "omarpty#74654",
+        "soulstriker_1#73317"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "killconfirm"
+      }
+    },
     "07_projectphoenix_killconfirm_2025_02_22_21_30_16_fbad0e9a.replay": {
       "match_details": [
         {
@@ -4738,6 +8944,165 @@
       "map_info": {
         "map": "07_projectphoenix",
         "mode": "killconfirm"
+      }
+    },
+    "07_projectphoenix_killconfirm_2025_02_25_13_11_17_e17ebeb0.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "FLAUTADOCE#13488",
+        "JTLouco#77461",
+        "PigeonPie2#99679",
+        "RoseTea#99798",
+        "XPLOID_1#39164",
+        "angeldeluz3000#53934",
+        "beaumarin00#34628"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "killconfirm"
+      }
+    },
+    "07_projectphoenix_killconfirm_2025_02_25_21_27_16_54479e79.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "KebabWonderland#73709",
+        "Pigeon_Pie#90166",
+        "Puddle_Maker#53164",
+        "SNIPER_Y#37834",
+        "Thazz#77965",
+        "Try_Again#18080",
+        "WhiteK2500HD#26417",
+        "jmatt1009#41775",
+        "spinachCult#82445",
+        "xX_Leroy_Jenkins_Xx#27327"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "killconfirm"
+      }
+    },
+    "07_projectphoenix_killconfirm_2025_02_26_11_38_06_421e71cb.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "Erin7#66199",
+        "Pigeon_Pie#90166",
+        "Player_6500999401#14517",
+        "ShannonMorgan1987#55289",
+        "bethany83#71181",
+        "ericwilliams#17715",
+        "francisco35#96461",
+        "gabe0222#15182",
+        "thedotio20#47396"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "killconfirm"
+      }
+    },
+    "07_projectphoenix_killconfirm_2025_02_28_00_40_43_30ced5a1.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Loose"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "DeathofNames_2016#71735",
+        "Dozer969#44477",
+        "Glx_M20#46913",
+        "IIROCAPII#66940",
+        "Maverick1776#60521",
+        "Player_6286632427#87247"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "killconfirm"
+      }
+    },
+    "07_projectphoenix_killconfirm_2025_03_01_00_12_58_88571e00.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [
+        "AdmiralCronawrs#13348",
+        "BoostedOutlaw#59002",
+        "EnochIssac6#89403",
+        "Pigeon_Pie#90166",
+        "PropagandaPenguin#76726",
+        "SciFiCajun#45261",
+        "SpicerX#18430",
+        "TomiTheBombi#97607"
+      ],
+      "map_info": {
+        "map": "07_projectphoenix",
+        "mode": "killconfirm"
+      }
+    },
+    "07_projectphoenix_pve_ftue_2025_02_23_18_33_10_73c25084.replay": {
+      "match_details": [
+        {
+          "details": {
+            "__type__": "cw::BattleResultReplayEvent_ver1",
+            "m_endGameType": "Win"
+          }
+        }
+      ],
+      "game_version": {
+        "build": "Release",
+        "branch": "prod/m10-Alpha2"
+      },
+      "players": [],
+      "map_info": {
+        "map": "07_projectphoenix_pve",
+        "mode": "ftue"
       }
     }
   }
