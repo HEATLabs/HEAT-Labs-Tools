@@ -5,8 +5,8 @@ import re
 from tqdm import tqdm
 
 # CONFIGURATION
-REPLAYS_FOLDER = "replays"
-OUTPUT_FILENAME = "all_replays_output.json"
+REPLAYS_FOLDER = "../../HEAT-Labs-Database/replays"
+OUTPUT_FILENAME = "../../HEAT-Labs-Configs/replays_output.json"
 
 # Player name pattern
 PLAYER_REGEX = re.compile(rb"\b[\w]{3,20}#[0-9]{3,6}\b")

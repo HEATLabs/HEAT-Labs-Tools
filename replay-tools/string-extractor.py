@@ -1,6 +1,6 @@
 import re
 
-FILENAME = "1.replay"
+FILENAME = "../../HEAT-Labs-Database/replays/1.replay"
 OUTPUT_FILENAME = FILENAME + "_strings.txt"
 
 

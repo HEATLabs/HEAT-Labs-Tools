@@ -1,6 +1,6 @@
 import re
 
-FILENAME = "2.replay"
+FILENAME = "../../HEAT-Labs-Database/replays/1.replay"
 OUTPUT_FILENAME = FILENAME + "_players.txt"
 
 PLAYER_REGEX = re.compile(rb'\b[\w]{3,20}#[0-9]{3,6}\b')

@@ -291,7 +291,7 @@ def analyze_replay_data(filename):
 
 
 if __name__ == "__main__":
-    filename = "all_replays_output.json"
+    filename = "../../HEAT-Labs-Configs/replays_output.json"
     try:
         analysis_results = analyze_replay_data(filename)
         print("\n=== ANALYSIS COMPLETE ===")
