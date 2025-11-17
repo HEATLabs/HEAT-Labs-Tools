@@ -565,9 +565,6 @@ def generate_html_content(html_files, input_dir):
               <a href="https://www.youtube.com/@HEATLabs-Official" class="social-icon" title="Official YouTube">
                 <i class="fab fa-youtube"></i>
               </a>
-              <a href="https://next.nexusmods.com/profile/HEATLabs" class="social-icon" title="Official Nexus Mods">
-                <i class="fas fa-gamepad"></i>
-              </a>
             </div>
           </div>
           <!-- Middle Row -->
