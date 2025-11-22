@@ -276,12 +276,6 @@ def generate_html_content(html_files, input_dir):
             </a>
           </li>
           <li>
-            <a href="../bug-hunting" class="sidebar-link">
-              <i class="fas fa-bug"></i>
-              <span>Bug Hunting</span>
-            </a>
-          </li>
-          <li>
             <a href="../tournaments" class="sidebar-link">
               <i class="fas fa-trophy"></i>
               <span>Tournaments</span>
