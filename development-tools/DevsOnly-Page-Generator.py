@@ -71,7 +71,8 @@ def generate_html_content(html_files, input_dir):
         "https://x.com/HEAT_Labs",
         "https://github.com/HEATLabs",
         "https://www.youtube.com/@HEATLabs-Official",
-        "https://www.tiktok.com/@heatlabs_official"
+        "https://www.tiktok.com/@heatlabs_official",
+        "https://www.twitch.tv/HEATLabs"
       ],
       "contactPoint": [{
         "@type": "ContactPoint",
