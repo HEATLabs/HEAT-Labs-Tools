@@ -462,6 +462,14 @@ def generate_html_content(html_files, input_dir):
                         <i class=""></i>Go to Page </a>
                 </div>
              </div>
+             <!-- Page Card mods -->
+             <div class="dev-card">
+                <div class="dev-info">
+                    <h3>bot</h3>
+                    <a href="//mods.heatlabs.net" class="btn-accent btn-dev">
+                        <i class=""></i>Go to Page </a>
+                </div>
+             </div>
              <!-- Page Card views -->
              <div class="dev-card">
                 <div class="dev-info">
