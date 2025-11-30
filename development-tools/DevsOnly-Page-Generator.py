@@ -327,7 +327,7 @@ def generate_html_content(html_files, input_dir):
                   <img src="https://cdn5.heatlabs.net/logo/logo.webp" alt="HEAT Labs Logo" class="brand-logo-img">
                   <span>HEAT Labs</span>
                 </a>
-                <a href="..//changelog.heatlabs.net" class="beta-tag">Loading</a>
+                <a href="//changelog.heatlabs.net" class="beta-tag">Loading</a>
               </div>
             </div>
             <div class="navbar-actions">
