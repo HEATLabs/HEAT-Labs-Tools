@@ -16,7 +16,7 @@ EXCLUDED_DIRS = {
     "miscellaneous",
 }
 METADATA_KEY = "Source"
-METADATA_TEXT = "Image from HEAT Labs - https://heatlabs.github.io"
+METADATA_TEXT = "Image from HEAT Labs - https://heatlabs.net"
 
 
 def has_correct_metadata(filepath: Path) -> bool:
