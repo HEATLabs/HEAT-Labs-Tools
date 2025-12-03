@@ -1572,8 +1572,8 @@ class UnifiedHEATLabsTool:
 
     def display_menu(self):
         os.system("cls" if os.name == "nt" else "clear")
-        print("HEAT LABS UNIFIED TOOL")
-        print("\nAvailable Tools:\n")
+        print("DevOps General Runner")
+        print("Available Tools:")
 
         for key, (name, _) in self.tools.items():
             print(f"{key}. {name}")
