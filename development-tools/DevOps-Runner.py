@@ -454,9 +454,7 @@ class ProjectStatisticsCounter:
             return False
 
     def run(self):
-        print("\n" + "=" * 60)
         print("RUNNING PROJECT STATISTICS COUNTER")
-        print("=" * 60)
 
         (
             directory_stats,
@@ -746,9 +744,7 @@ class GSCIndexChecker:
         return indexing_data
 
     def run(self, specific_urls=None, all_time=True):
-        print("\n" + "=" * 60)
         print("RUNNING GSC INDEX CHECKER")
-        print("=" * 60)
 
         if not GOOGLE_API_AVAILABLE:
             print("Google API libraries not available. Cannot run GSC Index Checker.")
@@ -1014,9 +1010,7 @@ class SiteDataUpdater:
         return included_count
 
     def run(self):
-        print("\n" + "=" * 60)
         print("RUNNING SITE DATA UPDATER")
-        print("=" * 60)
 
         print("1. Generating sitemap...")
         sitemap_count = self.generate_sitemap()
@@ -1072,9 +1066,7 @@ class SearchKeywordsChecker:
         return sorted(missing_files - common_files)
 
     def run(self):
-        print("\n" + "=" * 60)
         print("RUNNING SEARCH KEYWORDS CHECKER")
-        print("=" * 60)
 
         if not os.path.exists(self.root_directory):
             print(f"Error: Directory '{self.root_directory}' not found.")
@@ -1316,9 +1308,7 @@ class GSCProcessor:
             print(f"Error saving JSON file: {e}")
 
     def run(self):
-        print("\n" + "=" * 60)
         print("RUNNING GSC PROCESSOR")
-        print("=" * 60)
 
         if not os.path.exists(self.input_folder):
             print(f"Input folder does not exist: {self.input_folder}")
@@ -1446,9 +1436,7 @@ class DailyCommitFetcher:
         return dict(sorted(daily_commits.items(), reverse=True))
 
     def run(self):
-        print("\n" + "=" * 60)
         print("RUNNING DAILY COMMIT FETCHER")
-        print("=" * 60)
 
         if not REQUESTS_AVAILABLE:
             print("Requests library not available. Cannot run Daily Commit Fetcher.")
@@ -1615,9 +1603,7 @@ class ChangelogValidator:
         return corrected_changelog, VERSION_TRANSITIONS
 
     def run(self):
-        print("\n" + "=" * 60)
         print("RUNNING CHANGELOG VALIDATOR")
-        print("=" * 60)
 
         if not os.path.exists(self.changelog_path):
             print(f"Error: Changelog file not found at {self.changelog_path}")
@@ -1718,9 +1704,7 @@ class PageDataUpdater:
         self.json_path = json_path or DEFAULT_PAGE_DATA_JSON
 
     def run(self):
-        print("\n" + "=" * 60)
         print("RUNNING PAGE DATA UPDATER")
-        print("=" * 60)
 
         if not os.path.exists(self.xlsx_path):
             print(f"Error: Excel file not found at {self.xlsx_path}")
@@ -1855,9 +1839,7 @@ class UnifiedHEATLabsTool:
 
     def display_menu(self):
         os.system("cls" if os.name == "nt" else "clear")
-        print("\n" + "=" * 60)
         print("HEAT LABS UNIFIED TOOL")
-        print("=" * 60)
         print("\nAvailable Tools:\n")
 
         for key, (name, _) in self.tools.items():
@@ -1898,9 +1880,7 @@ class UnifiedHEATLabsTool:
         return tool.run()
 
     def run_all_tools(self):
-        print("\n" + "=" * 60)
         print("RUNNING ALL TOOLS")
-        print("=" * 60)
 
         tools_to_run = [
             ("Project Statistics Counter", self.run_statistics_counter),
@@ -1922,9 +1902,7 @@ class UnifiedHEATLabsTool:
                 print(f"Error running {name}: {e}")
                 continue
 
-        print("\n" + "=" * 60)
         print("ALL TOOLS COMPLETED")
-        print("=" * 60)
         input("\nPress Enter to return to main menu...")
         return True
 
@@ -1976,7 +1954,6 @@ def main():
         if choice in tool.tools:
             tool_name, tool_func = tool.tools[choice]
             print(f"\nRunning: {tool_name}")
-            print("=" * 60)
             if choice == "0":
                 tool.quit_tool()
             else:
