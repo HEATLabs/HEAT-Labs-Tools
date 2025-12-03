@@ -811,13 +811,12 @@ class MediaProcessingToolkit:
                 print(f"Error running {name}: {e}")
                 continue
 
-        print("\n" + "=" * 60)
         print("ALL MEDIA PROCESSING TOOLS COMPLETED")
         input("\nPress Enter to return to main menu...")
         return True
 
     def quit_tool(self):
-        print("\nThank you for using Media Processing Toolkit!")
+        print("\nThank you for using Media Processing Suite!")
         self.running = False
         return False
 

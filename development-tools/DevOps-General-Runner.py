@@ -1630,7 +1630,7 @@ class UnifiedHEATLabsTool:
         return True
 
     def quit_tool(self):
-        print("\nThank you for using HEAT Labs Unified Tool!")
+        print("\nThank you for using DevOps General Runner!")
         self.running = False
         return False
 
