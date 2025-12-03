@@ -826,272 +826,7 @@ class GSCIndexChecker:
         return True
 
 
-# SITE DATA UPDATER (Tool 3)
-class SiteDataUpdater:
-    def __init__(self):
-        self.humans_txt_paths = [
-            Path("../../HEAT-Labs-Changelog/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Configs/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Database/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Discord/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Discord-Bot/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Images/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Images-Blogs/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Images-Features/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Images-Gallery/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Images-Guides/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Images-Maps/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Images-News/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Images-Tanks/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Images-Tournaments/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Models/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Mods/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Archives/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Socials/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Sounds/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Static/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Statistics/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Status/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Videos/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Views-API/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Website/site-data/humans.txt"),
-            Path("../../HEAT-Labs-Website-Development/site-data/humans.txt"),
-        ]
-
-    def update_humans_txt_files(self):
-        current_date = datetime.now().strftime("%Y/%m/%d")
-        updated_count = 0
-
-        for humans_txt_path in self.humans_txt_paths:
-            if not humans_txt_path.exists():
-                print(f"Warning: {humans_txt_path} does not exist, skipping...")
-                continue
-
-            with open(humans_txt_path, "r", encoding="utf-8") as f:
-                content = f.read()
-
-            old_content = content
-            content = content.replace(
-                "Last update: 2025/10/06", f"Last update: {current_date}"
-            )
-
-            if content == old_content:
-                import re
-
-                pattern = r"Last update: \d{4}/\d{2}/\d{2}"
-                content = re.sub(pattern, f"Last update: {current_date}", content)
-
-            with open(humans_txt_path, "w", encoding="utf-8") as f:
-                f.write(content)
-
-            print(f"Updated: {humans_txt_path}")
-            updated_count += 1
-
-        return updated_count
-
-    def generate_sitemap(self):
-        base_dir = Path("../../HEAT-Labs-Website")
-        sitemap_path = Path("../../HEAT-Labs-Website/site-data/sitemap.xml")
-
-        not_include = [
-            "index.html",
-            "placeholder_post.html",
-            "maintenance.html",
-            "game-data.html",
-            "404.html",
-            "tournament-maintenance.html",
-            "test-model-viewer.html",
-            "placeholder-tank.html",
-            "placeholder-post.html",
-            "guide-category-placeholder.html",
-            "all-guides-placeholder.html",
-            "placeholder-news.html",
-            "placeholder-map.html",
-            "placeholder-general-guide.html",
-            "placeholder-map-guide.html",
-            "placeholder-tank-guide.html",
-            "maxwell.html",
-            "bored-developers.html",
-            "devsonly.html",
-            "hungry-devs.html",
-            "placeholder-bug-hunt.html",
-            "feature-showcase-template.html",
-            "meet-the-team-template.html",
-            "placeholder-blog-post.html",
-            "placeholder-announcement.html",
-            "placeholder-agent.html",
-        ]
-
-        if not base_dir.exists():
-            print(f"Error: Directory {base_dir} does not exist!")
-            return 0
-
-        current_date = datetime.now().strftime("%Y-%m-%d")
-        html_files = list(base_dir.rglob("*.html"))
-        url_data = []
-
-        home_url_data = {
-            "loc": "https://heatlabs.net",
-            "depth": -1,
-            "priority": "1.0",
-            "lastmod": current_date,
-            "changefreq": "weekly",
-        }
-        url_data.append(home_url_data)
-
-        for html_file in html_files:
-            if "sitemap.xml" in str(html_file):
-                continue
-
-            if html_file.name in not_include:
-                print(f"Skipping excluded file: {html_file.name}")
-                continue
-
-            relative_path = html_file.relative_to(base_dir)
-            depth = len(relative_path.parts) - 1
-
-            if depth == 0:
-                priority = "0.8"
-            elif depth == 1:
-                priority = "0.6"
-            elif depth == 2:
-                priority = "0.4"
-            else:
-                priority = "0.2"
-
-            if depth == 0:
-                url_loc = f"https://heatlabs.net/{html_file.stem}"
-            else:
-                path_parts = list(relative_path.parts)
-                filename_without_ext = Path(path_parts[-1]).stem
-                path_parts[-1] = filename_without_ext
-                url_path = "/".join(path_parts)
-                url_loc = f"https://heatlabs.net/{url_path}"
-
-            url_data.append(
-                {
-                    "loc": url_loc,
-                    "depth": depth,
-                    "priority": priority,
-                    "lastmod": current_date,
-                    "changefreq": "weekly",
-                    "sort_key": str(relative_path).lower(),
-                }
-            )
-
-        url_data.sort(
-            key=lambda x: (x["depth"], x["sort_key"] if "sort_key" in x else "")
-        )
-
-        sitemap_path.parent.mkdir(parents=True, exist_ok=True)
-
-        with open(sitemap_path, "w", encoding="utf-8") as f:
-            f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-            f.write('<urlset\n\txmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-
-            for url_item in url_data:
-                f.write("\t<url>\n")
-                f.write(f"\t\t<loc>{url_item['loc']}</loc>\n")
-                f.write(f"\t\t<lastmod>{url_item['lastmod']}</lastmod>\n")
-                f.write(f"\t\t<changefreq>{url_item['changefreq']}</changefreq>\n")
-                f.write(f"\t\t<priority>{url_item['priority']}</priority>\n")
-                f.write("\t</url>\n")
-
-            f.write("</urlset>")
-
-        print(f"Found {len(html_files)} HTML files")
-        excluded_count = len(not_include)
-        included_count = len(url_data) - 1
-        print(f"Excluded {excluded_count} files from sitemap")
-        print(f"Included {included_count} files in sitemap")
-        print("URLs sorted by depth and alphabetically in sitemap.xml")
-        print(f"Sitemap successfully updated at {sitemap_path}")
-
-        return included_count
-
-    def run(self):
-        print("RUNNING SITE DATA UPDATER")
-
-        print("1. Generating sitemap...")
-        sitemap_count = self.generate_sitemap()
-
-        print("\n2. Updating humans.txt files...")
-        humans_count = self.update_humans_txt_files()
-
-        print(f"\nSUMMARY:")
-        print(f"- Updated sitemap with {sitemap_count} URLs")
-        print(f"- Updated {humans_count} humans.txt files")
-
-        input("\nPress Enter to return to main menu...")
-        return True
-
-
-# SEARCH KEYWORDS CHECKER (Tool 4)
-class SearchKeywordsChecker:
-    def __init__(self, root_dir=None, json_file=None):
-        self.root_directory = root_dir or "../../HEAT-Labs-Website"
-        self.json_file_path = json_file or DEFAULT_SEARCH_KEYWORDS
-
-    def find_html_files(self):
-        html_files = set()
-        for root, dirs, files in os.walk(self.root_directory):
-            for file in files:
-                if file.endswith(".html"):
-                    rel_path = os.path.relpath(
-                        os.path.join(root, file), self.root_directory
-                    )
-                    rel_path = rel_path.replace("\\", "/")
-                    if rel_path.endswith(".html"):
-                        rel_path = rel_path[:-5]
-                    html_files.add(rel_path)
-        return html_files
-
-    def load_json_index(self):
-        with open(self.json_file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-
-        indexed_paths = set()
-        for entry in data:
-            parsed = urlparse(entry["path"])
-            path = parsed.path.lstrip("/")
-            indexed_paths.add(path)
-
-        return indexed_paths
-
-    def find_missing_pages(self):
-        html_files = self.find_html_files()
-        indexed_paths = self.load_json_index()
-        missing_files = html_files - indexed_paths
-        common_files = {"404", "index"}
-        return sorted(missing_files - common_files)
-
-    def run(self):
-        print("RUNNING SEARCH KEYWORDS CHECKER")
-
-        if not os.path.exists(self.root_directory):
-            print(f"Error: Directory '{self.root_directory}' not found.")
-            input("\nPress Enter to return to main menu...")
-            return True
-        elif not os.path.exists(self.json_file_path):
-            print(f"Error: JSON file '{self.json_file_path}' not found.")
-            input("\nPress Enter to return to main menu...")
-            return True
-
-        missing = self.find_missing_pages()
-
-        if missing:
-            print("The following HTML files are not in the search index:")
-            for file in missing:
-                print(f"- {file}")
-            print(f"\nTotal missing files: {len(missing)}")
-        else:
-            print("All HTML files are indexed in the search-keywords.json file.")
-
-        input("\nPress Enter to return to main menu...")
-        return True
-
-
-# GSC PROCESSOR (Tool 5)
+# GSC PROCESSOR (Tool 3)
 class GSCProcessor:
     def __init__(self, input_folder=None, output_path=None):
         self.input_folder = input_folder or DEFAULT_GSC_EXPORT_DIR
@@ -1320,7 +1055,7 @@ class GSCProcessor:
         return True
 
 
-# DAILY COMMIT FETCHER (Tool 6)
+# DAILY COMMIT FETCHER (Tool 4)
 class DailyCommitFetcher:
     def __init__(self, output_file=None):
         self.output_file = output_file or DEFAULT_DAILY_COMMITS
@@ -1491,7 +1226,7 @@ class DailyCommitFetcher:
         return True
 
 
-# CHANGELOG VALIDATOR (Tool 7)
+# CHANGELOG VALIDATOR (Tool 5)
 class ChangelogValidator:
     def __init__(self, changelog_path=None):
         self.changelog_path = changelog_path or DEFAULT_CHANGELOG_PATH
@@ -1697,7 +1432,7 @@ class ChangelogValidator:
         return True
 
 
-# PAGE DATA UPDATER (Tool 8)
+# PAGE DATA UPDATER (Tool 6)
 class PageDataUpdater:
     def __init__(self, xlsx_path=None, json_path=None):
         self.xlsx_path = xlsx_path or DEFAULT_PAGE_DATA_XLSX
@@ -1825,13 +1560,11 @@ class UnifiedHEATLabsTool:
         self.tools = {
             "1": ("Project Statistics Counter", self.run_statistics_counter),
             "2": ("GSC Index Checker", self.run_gsc_checker),
-            "3": ("Site Data Updater", self.run_site_updater),
-            "4": ("Search Keywords Checker", self.run_search_checker),
-            "5": ("GSC Processor", self.run_gsc_processor),
-            "6": ("Daily Commit Fetcher", self.run_commit_fetcher),
-            "7": ("Changelog Validator", self.run_changelog_validator),
-            "8": ("Page Data Updater", self.run_page_updater),
-            "9": ("Run All Tools", self.run_all_tools),
+            "3": ("GSC Processor", self.run_gsc_processor),
+            "4": ("Daily Commit Fetcher", self.run_commit_fetcher),
+            "5": ("Changelog Validator", self.run_changelog_validator),
+            "6": ("Page Data Updater", self.run_page_updater),
+            "7": ("Run All Tools", self.run_all_tools),
             "0": ("Quit", self.quit_tool),
         }
 
@@ -1853,14 +1586,6 @@ class UnifiedHEATLabsTool:
 
     def run_gsc_checker(self):
         tool = GSCIndexChecker()
-        return tool.run()
-
-    def run_site_updater(self):
-        tool = SiteDataUpdater()
-        return tool.run()
-
-    def run_search_checker(self):
-        tool = SearchKeywordsChecker()
         return tool.run()
 
     def run_gsc_processor(self):
@@ -1885,8 +1610,6 @@ class UnifiedHEATLabsTool:
         tools_to_run = [
             ("Project Statistics Counter", self.run_statistics_counter),
             ("GSC Index Checker", self.run_gsc_checker),
-            ("Site Data Updater", self.run_site_updater),
-            ("Search Keywords Checker", self.run_search_checker),
             ("GSC Processor", self.run_gsc_processor),
             ("Daily Commit Fetcher", self.run_commit_fetcher),
             ("Changelog Validator", self.run_changelog_validator),
@@ -1915,7 +1638,7 @@ class UnifiedHEATLabsTool:
         while self.running:
             self.display_menu()
 
-            choice = input("\nSelect an option (0-9): ").strip()
+            choice = input("\nSelect an option (0-7): ").strip()
 
             if choice in self.tools:
                 tool_name, tool_func = self.tools[choice]
@@ -1926,20 +1649,20 @@ class UnifiedHEATLabsTool:
                 tool_func()
             else:
                 print(f"\nInvalid option: {choice}")
-                print("Please select a valid option (0-9).")
+                print("Please select a valid option (0-7).")
                 input("\nPress Enter to continue...")
 
 
 # MAIN EXECUTION
 def parse_arguments():
     parser = argparse.ArgumentParser(
-        description="HEAT Labs Unified Tool - Integrates all 8 tools into one application"
+        description="HEAT Labs Unified Tool - Integrates all 6 tools into one application"
     )
     parser.add_argument(
         "--tool",
         type=int,
-        choices=range(0, 10),
-        help="Directly run a specific tool (0-9, where 0=Quit, 9=All Tools)",
+        choices=range(0, 8),
+        help="Directly run a specific tool (0-7, where 0=Quit, 7=All Tools)",
     )
     return parser.parse_args()
 
@@ -1958,7 +1681,7 @@ def main():
                 tool.quit_tool()
             else:
                 tool_func()
-                if choice != "9":  # Don't show menu after running single tool
+                if choice != "7":  # Don't show menu after running single tool
                     print("\nTool execution completed.")
         else:
             print(f"Invalid tool number: {args.tool}")
