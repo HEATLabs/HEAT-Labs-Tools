@@ -575,6 +575,9 @@ def generate_html_content(html_files, input_dir):
               <a href="https://www.twitch.tv/HEATLabs" class="social-icon" title="Official Twitch">
                 <i class="fab fa-twitch"></i>
               </a>
+              <a href="https://www.reddit.com/r/HEATLabs" class="social-icon" title="Official Subreddit">
+                <i class="fab fa-reddit"></i>
+              </a>
             </div>
           </div>
           <!-- Middle Row -->
