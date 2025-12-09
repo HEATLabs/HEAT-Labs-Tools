@@ -12,6 +12,7 @@ def update_humans_txt_files():
         Path("../../HEAT-Labs-Database/site-data/humans.txt"),
         Path("../../HEAT-Labs-Discord/site-data/humans.txt"),
         Path("../../HEAT-Labs-Discord-Bot/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Mobile-App/site-data/humans.txt"),
         Path("../../HEAT-Labs-Images/site-data/humans.txt"),
         Path("../../HEAT-Labs-Images-Blogs/site-data/humans.txt"),
         Path("../../HEAT-Labs-Images-Features/site-data/humans.txt"),
