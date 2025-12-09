@@ -1074,6 +1074,7 @@ class DailyCommitFetcher:
             "HEAT-Labs-Socials",
             "HEAT-Labs-Videos",
             "HEAT-Labs-Brand-Kit",
+            "HEAT-Labs-Mobile-App",
             "HEAT-Labs-Images",
             "HEAT-Labs-Images-Blogs",
             "HEAT-Labs-Images-Features",
