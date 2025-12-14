@@ -22,6 +22,7 @@ def update_humans_txt_files():
         Path("../../HEAT-Labs-Images-News/site-data/humans.txt"),
         Path("../../HEAT-Labs-Images-Tanks/site-data/humans.txt"),
         Path("../../HEAT-Labs-Images-Tournaments/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Games/site-data/humans.txt"),
         Path("../../HEAT-Labs-Models/site-data/humans.txt"),
         Path("../../HEAT-Labs-Mods/site-data/humans.txt"),
         Path("../../HEAT-Labs-Archives/site-data/humans.txt"),
