@@ -249,7 +249,7 @@ def rename_and_update_sounds(sounds_json_path, sounds_folder_path):
                     "soundID": sound_id,
                     "soundType": folder_name,
                     "soundSource": sound_source,
-                    "soundFile": f"https://cdn.jsdelivr.net/gh/HEATLabs/Sound-Bank@main/sounds/{github_path}",
+                    "soundFile": f"https://cdn3.heatlabs.net/sounds/{github_path}",
                     "soundName": f"{folder_name} - Sound {i}",
                     "soundDescription": f"Sound file from {folder_name} directory",
                 }
