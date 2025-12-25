@@ -1087,6 +1087,7 @@ class DailyCommitFetcher:
             "HEAT-Labs-Games",
             "HEAT-Labs-Models",
             "HEAT-Labs-Mods",
+            "HEAT-Labs-Store",
             "HEAT-Labs-Archives",
             "HEAT-Labs-Sounds",
             "HEAT-Labs-Static",
