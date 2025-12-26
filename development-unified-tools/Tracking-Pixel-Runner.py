@@ -308,7 +308,7 @@ class TrackingPixelGenerator:
 
                 # Skip if pixel already exists in HTML
                 with open(html_file, "r", encoding="utf-8") as file:
-                    if "pcwstats-tracking-pixel" in file.read():
+                    if "heatlabs-tracking-pixel" in file.read():
                         skipped_files.append(str(html_file))
                         print("  ⚠ Already has tracking pixel - skipping")
                         continue

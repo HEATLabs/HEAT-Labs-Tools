@@ -166,7 +166,7 @@ def process_html_files():
 
             # Skip if pixel already exists in HTML (even if not in our JSON)
             with open(html_file, "r", encoding="utf-8") as file:
-                if "pcwstats-tracking-pixel" in file.read():
+                if "heatlabs-tracking-pixel" in file.read():
                     skipped_files.append(str(html_file))
                     continue
 
