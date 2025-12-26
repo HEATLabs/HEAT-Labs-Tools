@@ -53,7 +53,7 @@ def add_tracking_pixel_to_html(html_file_path, pixel_url, page_identifier):
             return True
 
         pixel_comment = "<!-- Custom Privacy-Focused Tracking Pixel -->"
-        pixel_img = f'<img src="{pixel_url}" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="{page_identifier}">'
+        pixel_img = f'<img src="{pixel_url}" alt="HEAT Labs Tracking View Counter" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="{page_identifier}">'
         pixel_block = f"{pixel_comment}\n    {pixel_img}"
 
         body_open_pattern = r"(<body[^>]*>)(\s*)"

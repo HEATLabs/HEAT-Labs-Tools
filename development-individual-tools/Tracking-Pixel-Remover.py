@@ -6,7 +6,7 @@ def remove_tracking_pixel(file_path):
     # Tracking pixel pattern
     tracking_pixel_pattern = re.compile(
         r"<!-- JsDelivr-based Tracking Pixel -->\s*"
-        r'<img src="https://cdn\.jsdelivr\.net/gh/HEATLabs/HEAT-Labs-Images@refs/heads/main/trackers/pcwstats-tracker-pixel-[a-zA-Z0-9-]+\.png" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="[a-zA-Z0-9-]+">\s*',
+        r'<img src="https://cdn\.jsdelivr\.net/gh/HEATLabs/HEAT-Labs-Images@refs/heads/main/trackers/pcwstats-tracker-pixel-[a-zA-Z0-9-]+\.png" alt="HEAT Labs Tracking View Counter" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="[a-zA-Z0-9-]+">\s*',
         re.IGNORECASE,
     )
 

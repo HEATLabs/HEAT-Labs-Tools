@@ -203,7 +203,7 @@ def generate_html_content(html_files, input_dir):
   </head>
   <body>
     <!-- Custom Privacy-Focused Tracking Pixel -->
-    <img src="https://views.heatlabs.net/api/track/pcwstats-tracker-pixel-devsonly.png" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="devsonly">
+    <img src="https://views.heatlabs.net/api/track/pcwstats-tracker-pixel-devsonly.png" alt="HEAT Labs Tracking View Counter" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="devsonly">
     <!-- Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     <!-- Sidebar -->

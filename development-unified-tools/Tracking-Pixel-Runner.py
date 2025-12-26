@@ -25,14 +25,14 @@ class TrackingPixelRemover:
         # Tracking pixel pattern (same as original)
         tracking_pixel_pattern = re.compile(
             r"<!-- JsDelivr-based Tracking Pixel -->\s*"
-            r'<img src="https://cdn\.jsdelivr\.net/gh/HEATLabs/HEAT-Labs-Images@refs/heads/main/trackers/pcwstats-tracker-pixel-[a-zA-Z0-9-]+\.png" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="[a-zA-Z0-9-]+">\s*',
+            r'<img src="https://cdn\.jsdelivr\.net/gh/HEATLabs/HEAT-Labs-Images@refs/heads/main/trackers/pcwstats-tracker-pixel-[a-zA-Z0-9-]+\.png" alt="HEAT Labs Tracking View Counter" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="[a-zA-Z0-9-]+">\s*',
             re.IGNORECASE,
         )
 
         # Also try to match the newer pattern from the generator
         tracking_pixel_pattern_alt = re.compile(
             r"<!-- Custom Privacy-Focused Tracking Pixel -->\s*"
-            r'<img src="https://views\.heatlabs\.net/api/track/pcwstats-tracker-pixel-[a-zA-Z0-9-]+\.png" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="[a-zA-Z0-9-]+">\s*',
+            r'<img src="https://views\.heatlabs\.net/api/track/pcwstats-tracker-pixel-[a-zA-Z0-9-]+\.png" alt="HEAT Labs Tracking View Counter" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="[a-zA-Z0-9-]+">\s*',
             re.IGNORECASE,
         )
 
@@ -174,7 +174,7 @@ class TrackingPixelGenerator:
                 return True  # Already has a pixel
 
             pixel_comment = "<!-- Custom Privacy-Focused Tracking Pixel -->"
-            pixel_img = f'<img src="{pixel_url}" alt="" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="{page_identifier}">'
+            pixel_img = f'<img src="{pixel_url}" alt="HEAT Labs Tracking View Counter" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="{page_identifier}">'
             pixel_block = f"{pixel_comment}\n    {pixel_img}"
 
             body_open_pattern = r"(<body[^>]*>)(\s*)"
