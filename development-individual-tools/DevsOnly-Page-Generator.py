@@ -588,6 +588,9 @@ def generate_html_content(html_files, input_dir):
               <a href="https://www.reddit.com/r/HEATLabs" class="social-icon" title="Official Subreddit">
                 <i class="fab fa-reddit"></i>
               </a>
+              <a href="https://steamcommunity.com/groups/heatlabs" class="social-icon" title="Official Steam Group">
+                <i class="fab fa-steam"></i>
+              </a>
               <a href="https://ko-fi.com/heatlabs" class="social-icon" title="Support on Ko-Fi">
                 <i class="fas fa-coffee"></i>
               </a>
