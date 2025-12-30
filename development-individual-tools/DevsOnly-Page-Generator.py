@@ -579,6 +579,9 @@ def generate_html_content(html_files, input_dir):
               <a href="https://www.tiktok.com/@heatlabs_official" class="social-icon" title="Official TikTok">
                 <i class="fab fa-tiktok"></i>
               </a>
+              <a href="https://www.instagram.com/heatlabs_official" class="social-icon" title="Official Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
               <a href="https://www.twitch.tv/HEATLabs" class="social-icon" title="Official Twitch">
                 <i class="fab fa-twitch"></i>
               </a>
