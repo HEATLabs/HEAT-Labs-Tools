@@ -38,3 +38,4 @@ development-tools/ffmpeg/ffplay.exe
 development-tools/ffmpeg/ffprobe.exe
 development-individual-tools/token.json
 development-unified-tools/token.json
+/chart-tools/output/
