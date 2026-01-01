@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 
 # Configs
 EXCEL_FOLDER = "../../HEAT-Labs-Configs/cf-export"
@@ -56,63 +56,105 @@ class DataAggregator:
         return datetime(year, month_num, day_num)
 
     def read_csv_files(self) -> pd.DataFrame:
-        data_frames = []
+        unique_visitors_path = self.excel_folder / "unique_visitors.csv"
+        if not unique_visitors_path.exists():
+            raise FileNotFoundError(
+                f"unique_visitors.csv not found in {self.excel_folder}"
+            )
+
+        # Read unique visitors with dates
+        df_visitors = pd.read_csv(unique_visitors_path)
+        df_visitors.rename(
+            columns={"timestamp": "date", "value": "unique_visitors"}, inplace=True
+        )
+
+        # Parse dates from unique_visitors
+        df_visitors["datetime"] = df_visitors["date"].apply(self.parse_date)
+        df_visitors = df_visitors.sort_values("datetime")
+        df_visitors["date_iso"] = df_visitors["datetime"].dt.strftime("%Y-%m-%d")
+
+        # Create base dataframe with dates from unique_visitors
+        base_df = df_visitors[
+            ["date", "date_iso", "datetime", "unique_visitors"]
+        ].copy()
 
         # Read total_data_served.csv
         total_data_path = self.excel_folder / "total_data_served.csv"
         if total_data_path.exists():
             df_total_data = pd.read_csv(total_data_path)
-            df_total_data["date"] = [f"{i + 1} DEC" for i in range(len(df_total_data))]
+            df_total_data["date"] = df_visitors["date"].values[: len(df_total_data)]
             df_total_data.rename(columns={"value": "total_data_served"}, inplace=True)
-            data_frames.append(df_total_data)
+
+            # Merge with base dataframe
+            base_df = pd.merge(
+                base_df,
+                df_total_data[["date", "total_data_served"]],
+                on="date",
+                how="left",
+            )
 
         # Read total_requests.csv
         total_requests_path = self.excel_folder / "total_requests.csv"
         if total_requests_path.exists():
             df_requests = pd.read_csv(total_requests_path)
-            df_requests["date"] = [f"{i + 1} DEC" for i in range(len(df_requests))]
+            df_requests["date"] = df_visitors["date"].values[: len(df_requests)]
             df_requests.rename(columns={"value": "total_requests"}, inplace=True)
-            data_frames.append(df_requests)
 
-        # Read unique_visitors.csv
-        unique_visitors_path = self.excel_folder / "unique_visitors.csv"
-        if unique_visitors_path.exists():
-            df_visitors = pd.read_csv(unique_visitors_path)
-            df_visitors.rename(
-                columns={"timestamp": "date", "value": "unique_visitors"}, inplace=True
+            # Merge with base dataframe
+            base_df = pd.merge(
+                base_df, df_requests[["date", "total_requests"]], on="date", how="left"
             )
-            data_frames.append(df_visitors)
 
         # Read data_cached.csv
         data_cached_path = self.excel_folder / "data_cached.csv"
         if data_cached_path.exists():
             df_cached = pd.read_csv(data_cached_path)
-            df_cached["date"] = [f"{i + 1} DEC" for i in range(len(df_cached))]
+            df_cached["date"] = df_visitors["date"].values[: len(df_cached)]
             df_cached.rename(columns={"value": "data_cached"}, inplace=True)
-            data_frames.append(df_cached)
 
-        # Merge all DataFrames on date
-        if not data_frames:
-            raise FileNotFoundError(f"No CSV files found in {self.excel_folder}")
+            # Merge with base dataframe
+            base_df = pd.merge(
+                base_df, df_cached[["date", "data_cached"]], on="date", how="left"
+            )
 
-        merged_df = data_frames[0]
-        for df in data_frames[1:]:
-            merged_df = pd.merge(merged_df, df, on="date", how="outer")
+        # Fill NaN values with 0 for numerical columns
+        numerical_cols = [
+            "total_data_served",
+            "total_requests",
+            "data_cached",
+            "unique_visitors",
+        ]
+        for col in numerical_cols:
+            if col in base_df.columns:
+                base_df[col] = base_df[col].fillna(0).astype(int)
 
-        # Parse dates and sort
-        merged_df["datetime"] = merged_df["date"].apply(self.parse_date)
-        merged_df = merged_df.sort_values("datetime")
-
-        # Format date for JSON output
-        merged_df["date_iso"] = merged_df["datetime"].dt.strftime("%Y-%m-%d")
-
-        return merged_df
+        return base_df
 
     def load_existing_json(self) -> Dict[str, Any]:
+        if not self.json_path.exists():
+            initial_data = {
+                "metadata": {
+                    "last_updated": datetime.now().isoformat(),
+                    "total_days": 0,
+                },
+                "daily_data": [],
+                "totals": {
+                    "all_time": {
+                        "data_served_gb": 0,
+                        "data_cached_gb": 0,
+                        "total_requests": 0,
+                        "total_visitors": 0,
+                    },
+                    "monthly": {},
+                },
+            }
+            self.save_json(initial_data)
+            return initial_data
+
         with open(self.json_path, "r") as f:
             return json.load(f)
 
-    def get_latest_date_in_json(self, json_data: Dict[str, Any]) -> datetime:
+    def get_latest_date_in_json(self, json_data: Dict[str, Any]) -> Optional[datetime]:
         if not json_data.get("daily_data"):
             return None
 
@@ -215,11 +257,18 @@ class DataAggregator:
             metadata["last_updated"] = datetime.now().isoformat()
             metadata["total_days"] = len(all_records)
 
+            if all_records:
+                metadata["date_range"] = {
+                    "start": all_records[0]["date_iso"],
+                    "end": all_records[-1]["date_iso"],
+                }
             return {"metadata": metadata, "daily_data": all_records, "totals": totals}
         else:
+            existing_data["metadata"]["last_updated"] = datetime.now().isoformat()
             return existing_data
 
     def save_json(self, data: Dict[str, Any]) -> None:
+        self.json_path.parent.mkdir(parents=True, exist_ok=True)
         with open(self.json_path, "w") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
@@ -251,6 +300,8 @@ class DataAggregator:
 
         except Exception as e:
             print(f"Error processing data: {e}")
+            import traceback
+            traceback.print_exc()
             return existing_data
 
 
