@@ -682,7 +682,7 @@ def generate_html_content(html_files, input_dir):
                   <a href="https://uptimerobot.com/?red=heatlabs">UptimeRobot</a>
                 </li>
                 <li>
-                  <a href="#">Coming Soon</a>
+                  <a href="https://www.printful.com/printing-services/a/HEATLabs">Printful</a>
                 </li>
               </ul>
             </div>
