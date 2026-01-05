@@ -68,11 +68,18 @@ def generate_html_content(html_files, input_dir):
         "https://status.heatlabs.net",
         "https://social.heatlabs.net",
         "https://discord.heatlabs.net",
+        "https://app.heatlabs.net",
+        "https://mods.heatlabs.net",
+        "https://games.heatlabs.net",
+        "https://dev.heatlabs.net",
         "https://x.com/HEAT_Labs",
         "https://github.com/HEATLabs",
         "https://www.youtube.com/@HEATLabs-Official",
         "https://www.tiktok.com/@heatlabs_official",
-        "https://www.twitch.tv/HEATLabs"
+        "https://www.twitch.tv/HEATLabs",
+        "https://www.instagram.com/heatlabs_official",
+        "https://buymeacoffee.com/heatlabs",
+        "https://ko-fi.com/heatlabs"
       ],
       "contactPoint": [{
         "@type": "ContactPoint",
