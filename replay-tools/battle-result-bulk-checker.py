@@ -5,7 +5,7 @@ import re
 from tqdm import tqdm
 
 # CONFIGURATION
-REPLAYS_FOLDER = "../../HEAT-Labs-Database/replays"
+REPLAYS_FOLDER = "../../HEAT-Labs-Replays/replays"
 OUTPUT_FILENAME = "../../HEAT-Labs-Configs/replays_output.json"
 
 # Player name pattern
