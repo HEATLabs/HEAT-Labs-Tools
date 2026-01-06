@@ -71,7 +71,7 @@ def update_achievements_file(achievements_data, output_path):
 
 def main():
     OUTPUT_PATH = (
-        Path(__file__).parent / "../../HEAT-Labs-Database/game-data/achievements.json"
+        Path(__file__).parent / "../../HEAT-Labs-Database/game-data/steam_achievements.json"
     )
 
     try:
