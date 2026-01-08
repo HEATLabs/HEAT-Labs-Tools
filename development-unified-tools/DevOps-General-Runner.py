@@ -245,10 +245,13 @@ BINARY_SIGNATURES = [
 
 # PROJECT STATISTICS COUNTER (Tool 1)
 class ProjectStatisticsCounter:
-    def __init__(self, target_dir=None, json_path=None, txt_dir=None):
+    def __init__(
+        self, target_dir=None, json_path=None, txt_dir=None, cf_data_path=None
+    ):
         self.target_directory = target_dir or DEFAULT_TARGET_DIRECTORY
         self.json_file_path = json_path or DEFAULT_JSON_FILE_PATH
         self.txt_output_dir = txt_dir or DEFAULT_TXT_OUTPUT_DIR
+        self.cf_data_path = cf_data_path or "../../HEAT-Labs-Configs/cf-data.json"
 
     def is_binary(self, file_path, sample_size=8192):
         try:
@@ -304,6 +307,51 @@ class ProjectStatisticsCounter:
 
     def bytes_to_gb(self, bytes_size):
         return bytes_size / (1024**3)
+
+    # Read Cloudflare data
+    def read_cloudflare_data(self):
+        try:
+            if os.path.exists(self.cf_data_path):
+                with open(self.cf_data_path, "r", encoding="utf-8") as f:
+                    cf_data = json.load(f)
+
+                # Extract totals from cf-data.json
+                totals = cf_data.get("totals", {})
+                all_time = totals.get("all_time", {})
+
+                data_served = all_time.get("data_served_gb", 0)
+                data_cached = all_time.get("data_cached_gb", 0)
+                total_requests = all_time.get("total_requests", 0)
+                total_visitors = all_time.get("total_visitors", 0)
+
+                print(f"Read Cloudflare data from {self.cf_data_path}")
+                print(f"  Data Served: {data_served} GB")
+                print(f"  Data Cached: {data_cached} GB")
+                print(f"  Total Requests: {self.format_number(total_requests)}")
+                print(f"  Total Visitors: {self.format_number(total_visitors)}")
+
+                return {
+                    "dataServed": data_served,
+                    "dataCached": data_cached,
+                    "totalRequests": total_requests,
+                    "totalVisitors": total_visitors,
+                }
+            else:
+                print(f"Warning: Cloudflare data file not found at {self.cf_data_path}")
+                return {
+                    "dataServed": 0,
+                    "dataCached": 0,
+                    "totalRequests": 0,
+                    "totalVisitors": 0,
+                }
+        except Exception as e:
+            print(f"Error reading Cloudflare data: {e}")
+            return {
+                "dataServed": 0,
+                "dataCached": 0,
+                "totalRequests": 0,
+                "totalVisitors": 0,
+            }
 
     def analyze_directory(self):
         dir_stats = defaultdict(lambda: {"files": 0, "lines": 0, "chars": 0, "size": 0})
@@ -422,10 +470,14 @@ class ProjectStatisticsCounter:
         self, lines_of_code, files_count, folders_count, total_size_gb
     ):
         try:
+            # Read Cloudflare data
+            cf_data = self.read_cloudflare_data()
+
             if os.path.exists(self.json_file_path):
                 with open(self.json_file_path, "r", encoding="utf-8") as f:
                     data = json.load(f)
             else:
+                # Create new structure if file doesn't exist
                 data = {
                     "creationDate": datetime.now().strftime("%B %d, %Y %H:%M:%S"),
                     "coffeePerDay": 0,
@@ -436,13 +488,24 @@ class ProjectStatisticsCounter:
                         "filesCount": 0,
                         "foldersCount": 0,
                         "totalSizeGB": 0,
+                        "dataServed": 0,
+                        "dataCached": 0,
+                        "totalRequests": 0,
+                        "totalVisitors": 0,
                     },
                 }
 
+            # Update the statistics
             data["stats"]["linesOfCode"] = lines_of_code
             data["stats"]["filesCount"] = files_count
             data["stats"]["foldersCount"] = folders_count
             data["stats"]["totalSizeGB"] = round(total_size_gb, 2)
+
+            # Update Cloudflare data
+            data["stats"]["dataServed"] = cf_data["dataServed"]
+            data["stats"]["dataCached"] = cf_data["dataCached"]
+            data["stats"]["totalRequests"] = cf_data["totalRequests"]
+            data["stats"]["totalVisitors"] = cf_data["totalVisitors"]
 
             with open(self.json_file_path, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2)

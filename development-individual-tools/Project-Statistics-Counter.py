@@ -12,6 +12,9 @@ TARGET_DIRECTORY = "../../"
 # path to the JSON file
 JSON_FILE_PATH = "../../HEAT-Labs-Configs/home-stats.json"
 
+# path to the CF data JSON file
+CF_DATA_JSON_PATH = "../../HEAT-Labs-Configs/cf-data.json"
+
 # path to the TXT files directory
 TXT_OUTPUT_DIR = "statistics"
 
@@ -272,6 +275,52 @@ def bytes_to_gb(bytes_size):
     return bytes_size / (1024**3)
 
 
+# Read Cloudflare data
+def read_cloudflare_data(cf_data_path=CF_DATA_JSON_PATH):
+    try:
+        if os.path.exists(cf_data_path):
+            with open(cf_data_path, "r", encoding="utf-8") as f:
+                cf_data = json.load(f)
+
+            # Extract totals from cf-data.json
+            totals = cf_data.get("totals", {})
+            all_time = totals.get("all_time", {})
+
+            data_served = all_time.get("data_served_gb", 0)
+            data_cached = all_time.get("data_cached_gb", 0)
+            total_requests = all_time.get("total_requests", 0)
+            total_visitors = all_time.get("total_visitors", 0)
+
+            print(f"Read Cloudflare data from {cf_data_path}")
+            print(f"  Data Served: {data_served} GB")
+            print(f"  Data Cached: {data_cached} GB")
+            print(f"  Total Requests: {format_number(total_requests)}")
+            print(f"  Total Visitors: {format_number(total_visitors)}")
+
+            return {
+                "dataServed": data_served,
+                "dataCached": data_cached,
+                "totalRequests": total_requests,
+                "totalVisitors": total_visitors,
+            }
+        else:
+            print(f"Warning: Cloudflare data file not found at {cf_data_path}")
+            return {
+                "dataServed": 0,
+                "dataCached": 0,
+                "totalRequests": 0,
+                "totalVisitors": 0,
+            }
+    except Exception as e:
+        print(f"Error reading Cloudflare data: {e}")
+        return {
+            "dataServed": 0,
+            "dataCached": 0,
+            "totalRequests": 0,
+            "totalVisitors": 0,
+        }
+
+
 # Analyze files in the specified directory and return statistics.
 def analyze_directory(target_dir):
     dir_stats = defaultdict(lambda: {"files": 0, "lines": 0, "chars": 0, "size": 0})
@@ -405,9 +454,17 @@ def save_statistics_to_file(stats_output, txt_output_dir=TXT_OUTPUT_DIR):
 
 # Update the JSON file
 def update_json_file(
-    json_path, lines_of_code, files_count, folders_count, total_size_gb
+    json_path,
+    lines_of_code,
+    files_count,
+    folders_count,
+    total_size_gb,
+    cf_data_path=CF_DATA_JSON_PATH,
 ):
     try:
+        # Read Cloudflare data
+        cf_data = read_cloudflare_data(cf_data_path)
+
         # Try to read existing JSON file
         if os.path.exists(json_path):
             with open(json_path, "r", encoding="utf-8") as f:
@@ -424,6 +481,10 @@ def update_json_file(
                     "filesCount": 0,
                     "foldersCount": 0,
                     "totalSizeGB": 0,
+                    "dataServed": 0,
+                    "dataCached": 0,
+                    "totalRequests": 0,
+                    "totalVisitors": 0,
                 },
             }
 
@@ -432,6 +493,12 @@ def update_json_file(
         data["stats"]["filesCount"] = files_count
         data["stats"]["foldersCount"] = folders_count
         data["stats"]["totalSizeGB"] = round(total_size_gb, 2)
+
+        # Update Cloudflare data
+        data["stats"]["dataServed"] = cf_data["dataServed"]
+        data["stats"]["dataCached"] = cf_data["dataCached"]
+        data["stats"]["totalRequests"] = cf_data["totalRequests"]
+        data["stats"]["totalVisitors"] = cf_data["totalVisitors"]
 
         # Write back to the JSON file
         with open(json_path, "w", encoding="utf-8") as f:
@@ -571,6 +638,12 @@ def parse_arguments():
         dest="txt_dir",
         help="TXT output directory (default: configured TXT path)",
     )
+    parser.add_argument(
+        "-cf",
+        "--cf-data",
+        dest="cf_data",
+        help="Cloudflare data JSON file path (default: cf-data.json)",
+    )
     return parser.parse_args()
 
 
@@ -582,6 +655,7 @@ if __name__ == "__main__":
         target_directory = args.dir if args.dir else TARGET_DIRECTORY
         json_file_path = args.json if args.json else JSON_FILE_PATH
         txt_output_dir = args.txt_dir if args.txt_dir else TXT_OUTPUT_DIR
+        cf_data_path = args.cf_data if args.cf_data else CF_DATA_JSON_PATH
 
         (
             directory_stats,
