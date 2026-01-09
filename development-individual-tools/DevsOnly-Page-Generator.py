@@ -257,7 +257,7 @@ def generate_html_content(html_files, input_dir):
             </a>
           </li>
           <li>
-            <a href="../builds" class="sidebar-link">
+            <a href="../builds" class="sidebar-link deny-mobile">
               <i class="fas fa-wrench"></i>
               <span>Common Builds</span>
             </a>
