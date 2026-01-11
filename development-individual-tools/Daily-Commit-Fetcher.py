@@ -39,6 +39,7 @@ REPOS = [
     "HEAT-Labs-Steam-Assets",
     "HEAT-Labs-Replays",
     "HEAT-Labs-Games",
+    "HEAT-Labs-Tank-Game",
     "HEAT-Labs-Models",
     "HEAT-Labs-Mods",
     "HEAT-Labs-Store-Assets",

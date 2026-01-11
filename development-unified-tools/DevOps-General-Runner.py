@@ -1149,6 +1149,7 @@ class DailyCommitFetcher:
             "HEAT-Labs-Images-Tournaments",
             "HEAT-Labs-Steam-Assets",
             "HEAT-Labs-Games",
+            "HEAT-Labs-Tank-Game",
             "HEAT-Labs-Replays",
             "HEAT-Labs-Models",
             "HEAT-Labs-Mods",
