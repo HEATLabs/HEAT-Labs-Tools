@@ -3,10 +3,30 @@ import json
 import os
 from time import sleep
 
+# Region configuration
+REGIONS = {
+    "EU": "worldoftanks.eu",
+    "NA": "worldoftanks.com",
+    "ASIA": "worldoftanks.asia",
+    "ALL": ["worldoftanks.eu", "worldoftanks.com", "worldoftanks.asia"],
+}
+
+# Domain to region name mapping
+DOMAIN_TO_REGION_NAME = {
+    "worldoftanks.eu": "EU",
+    "worldoftanks.com": "NA",
+    "worldoftanks.asia": "ASIA",
+}
+
+
+# Get region name from domain
+def get_region_name(domain):
+    return DOMAIN_TO_REGION_NAME.get(domain, domain.replace("worldoftanks.", ""))
+
 
 # Search for all accounts matching search query
-def search_accounts(username):
-    url = "https://worldoftanks.eu/en/community/accounts/search/"
+def search_accounts(username, domain):
+    url = f"https://{domain}/en/community/accounts/search/"
     headers = {
         "X-Requested-With": "XMLHttpRequest",
         "Accept": "application/json",
@@ -17,7 +37,10 @@ def search_accounts(username):
     name_gt = ""
     page = 1
 
-    print(f"Searching for accounts with username containing: '{username}'")
+    region_name = get_region_name(domain)
+    print(
+        f"Searching on {region_name} region for accounts with username containing: '{username}'"
+    )
 
     while True:
         params = {"name": username, "name_gt": name_gt}
@@ -28,6 +51,11 @@ def search_accounts(username):
             data = response.json()
 
             accounts = data.get("response", [])
+
+            # Add region information
+            for account in accounts:
+                account["region"] = region_name
+
             all_accounts.extend(accounts)
 
             print(f"Page {page}: Found {len(accounts)} accounts")
@@ -43,17 +71,34 @@ def search_accounts(username):
                 break
 
         except requests.exceptions.RequestException as e:
-            print(f"Error fetching page {page}: {e}")
+            print(f"Error fetching page {page} from {region_name} region: {e}")
             break
         except json.JSONDecodeError as e:
-            print(f"Error parsing JSON on page {page}: {e}")
+            print(f"Error parsing JSON on page {page} from {region_name} region: {e}")
             break
 
     return all_accounts
 
 
+# Search in all regions
+def search_all_regions(username):
+    all_accounts = []
+
+    print(f"\nSearching in ALL regions for: '{username}'")
+
+    for domain in REGIONS["ALL"]:
+        region_name = get_region_name(domain)
+        print(f"\nSearching on: {region_name} region")
+        region_accounts = search_accounts(username, domain)
+        all_accounts.extend(region_accounts)
+        print(f"  Total found on {region_name} region: {len(region_accounts)}")
+        sleep(1)  # Delay between regions
+
+    return all_accounts
+
+
 # Save accounts to JSON
-def save_to_json(accounts, username):
+def save_to_json(accounts, username, region_choice):
     # Create search-results folder
     folder_name = "search-results"
     if not os.path.exists(folder_name):
@@ -64,7 +109,22 @@ def save_to_json(accounts, username):
     import datetime
 
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"{folder_name}/{username}_{timestamp}.json"
+
+    # Create region identifier for filename
+    if region_choice == "ALL":
+        region_id = "all_regions"
+    else:
+        region_id = region_choice.lower()
+
+    filename = f"{folder_name}/{username}_{region_id}_{timestamp}.json"
+
+    # Group results by region for summary
+    accounts_by_region = {}
+    for acc in accounts:
+        region = acc.get("region", "unknown")
+        if region not in accounts_by_region:
+            accounts_by_region[region] = 0
+        accounts_by_region[region] += 1
 
     # Create a structured result dictionary
     result = {
@@ -72,6 +132,8 @@ def save_to_json(accounts, username):
             "total_accounts": len(accounts),
             "unique_accounts": len(set(acc["account_id"] for acc in accounts)),
             "search_query": username,
+            "search_region": region_choice,
+            "accounts_by_region": accounts_by_region,
             "search_timestamp": datetime.datetime.now().isoformat(),
         },
         "accounts": accounts,
@@ -84,40 +146,76 @@ def save_to_json(accounts, username):
 
 
 # Display summary
-def display_summary(accounts):
+def display_summary(accounts, region_choice):
     if not accounts:
         print("\nNo accounts found!")
         return
 
     print("\nSEARCH RESULTS SUMMARY")
+    print(f"Region searched: {region_choice}")
     print(f"Total accounts found: {len(accounts)}")
     print(f"Unique accounts: {len(set(acc['account_id'] for acc in accounts))}")
+
+    # Show breakdown by region
+    if region_choice == "ALL" or region_choice == "all":
+        print("\nBreakdown by region:")
+        regions_count = {}
+        for acc in accounts:
+            region = acc.get("region", "unknown")
+            if region not in regions_count:
+                regions_count[region] = 0
+            regions_count[region] += 1
+
+        for region, count in regions_count.items():
+            print(f"- {region}: {count} accounts")
 
 
 def main():
     print("Wargaming Account Search Tool")
 
     while True:
-        # Get username to search for
-        username = input("\nEnter username to search for (or 'quit' to exit): ").strip()
+        # Get region choice
+        print("\nSelect region to search in:")
+        print("1. EU (Europe)")
+        print("2. NA (North America)")
+        print("3. ASIA (Asia)")
+        print("4. ALL (Search all regions)")
+        print("5. Quit")
 
-        if username.lower() == "quit":
+        region_choice = input("\nEnter choice (1-5): ").strip()
+
+        if region_choice == "5":
             print("Exiting...")
             break
+
+        region_map = {"1": "EU", "2": "NA", "3": "ASIA", "4": "ALL"}
+
+        if region_choice not in region_map:
+            print("Error: Invalid choice! Please enter 1, 2, 3, 4, or 5.")
+            continue
+
+        selected_region = region_map[region_choice]
+
+        # Get username to search for
+        username = input("\nEnter username to search for: ").strip()
 
         if not username:
             print("Error: Username cannot be empty!")
             continue
 
         # Search for accounts
-        accounts = search_accounts(username)
+        if selected_region == "ALL":
+            accounts = search_all_regions(username)
+        else:
+            domain = REGIONS[selected_region]
+            accounts = search_accounts(username, domain)
 
         if accounts:
             # Display summary
-            display_summary(accounts)
+            display_summary(accounts, selected_region)
 
             # Save to JSON
-            filename = save_to_json(accounts, username)
+            filename = save_to_json(accounts, username, selected_region)
             print(f"Results saved to: {filename}")
         else:
             print("\nNo accounts found matching your search.")
