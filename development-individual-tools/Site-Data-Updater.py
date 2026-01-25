@@ -24,6 +24,7 @@ def update_humans_txt_files():
         Path("../../HEAT-Labs-Images-Tournaments/site-data/humans.txt"),
         Path("../../HEAT-Labs-Games/site-data/humans.txt"),
         Path("../../HEAT-Labs-Tank-Game/site-data/humans.txt"),
+        Path("../../HEAT-Labs-Steam-Assets/site-data/humans.txt"),
         Path("../../HEAT-Labs-Models/site-data/humans.txt"),
         Path("../../HEAT-Labs-Mods/site-data/humans.txt"),
         Path("../../HEAT-Labs-Archives/site-data/humans.txt"),
