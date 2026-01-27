@@ -350,9 +350,9 @@ def generate_html_content(html_files, input_dir):
               <a href="//changelog.heatlabs.net" class="system-status">
                 <i class="fa-solid fa-clipboard-list"></i>
               </a>
-              <a href="#" class="system-status wip">
+              <button id="openLogin" class="login-button wip">
                 <i class="fa-solid fa-circle-user"></i>
-              </a>
+              </button>
             </div>
           </div>
         </div>
