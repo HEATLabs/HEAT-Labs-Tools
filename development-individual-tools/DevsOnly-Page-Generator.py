@@ -9,10 +9,10 @@ def find_html_files(directory):
     html_files = []
     for root, _, files in os.walk(directory):
         for file in files:
-            if file.lower().endswith('.html'):
+            if file.lower().endswith(".html"):
                 full_path = os.path.join(root, file)
                 # Skip the devsonly_OG.html file itself (what I rename it to when checking if it updated correctly)
-                if os.path.basename(full_path).lower() != 'devsonly_OG.html':
+                if os.path.basename(full_path).lower() != "devsonly_OG.html":
                     html_files.append(full_path)
     return sorted(html_files)
 
@@ -397,17 +397,17 @@ def generate_html_content(html_files, input_dir):
         rel_path = os.path.relpath(file_path, input_dir)
 
         # Convert to forward slashes for web compatibility
-        rel_path = rel_path.replace('\\', '/')
+        rel_path = rel_path.replace("\\", "/")
 
         # Extract filename without extension
-        if rel_path.endswith('.html'):
+        if rel_path.endswith(".html"):
             rel_path_no_ext = rel_path[:-5]  # Remove the last 5 characters
         else:
             rel_path_no_ext = rel_path
 
         # Extract filename without extension for display
         filename = os.path.splitext(os.path.basename(rel_path))[0]
-        
+
         # Add the card to the content with the correct class
         content += f"""
                 <!-- Page Card {filename} -->
@@ -751,44 +751,52 @@ def main():
     """Main function to execute the script"""
     print("HEAT Labs Devs Only HTML File Generator")
     print("---------------------------\n")
-    
+
     # Get current directory as base directory
     base_dir = os.getcwd()
-    
+
     # Get input directory (default to current directory)
-    input_dir = input(f"Enter the directory to search for HTML files [{base_dir}]: ").strip()
+    input_dir = input(
+        f"Enter the directory to search for HTML files [{base_dir}]: "
+    ).strip()
     if not input_dir:
         input_dir = base_dir
-    
+
     while not os.path.isdir(input_dir):
         print(f"Error: '{input_dir}' is not a valid directory")
-        input_dir = input(f"Enter the directory to search for HTML files [{base_dir}]: ").strip()
+        input_dir = input(
+            f"Enter the directory to search for HTML files [{base_dir}]: "
+        ).strip()
         if not input_dir:
             input_dir = base_dir
-    
+
     # Find HTML files
     print("\nSearching for HTML files...")
     html_files = find_html_files(input_dir)
     print(f"Found {len(html_files)} HTML files")
-    
+
     # Get output directory (default to current directory)
-    output_dir = input(f"\nEnter the output directory for devsonly.html [{base_dir}]: ").strip()
+    output_dir = input(
+        f"\nEnter the output directory for devsonly.html [{base_dir}]: "
+    ).strip()
     if not output_dir:
         output_dir = base_dir
-    
+
     while not os.path.isdir(output_dir):
         print(f"Error: '{output_dir}' is not a valid directory")
-        output_dir = input(f"Enter the output directory for devsonly.html [{base_dir}]: ").strip()
+        output_dir = input(
+            f"Enter the output directory for devsonly.html [{base_dir}]: "
+        ).strip()
         if not output_dir:
             output_dir = base_dir
-    
+
     # Generate and save the HTML file
-    output_path = os.path.join(output_dir, 'devsonly.html')
+    output_path = os.path.join(output_dir, "devsonly.html")
     html_content = generate_html_content(html_files, input_dir)
-    
-    with open(output_path, 'w', encoding='utf-8') as f:
+
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(html_content)
-    
+
     print(f"\nSuccessfully generated {output_path}")
 
 

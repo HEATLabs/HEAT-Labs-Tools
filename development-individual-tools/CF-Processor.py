@@ -301,6 +301,7 @@ class DataAggregator:
         except Exception as e:
             print(f"Error processing data: {e}")
             import traceback
+
             traceback.print_exc()
             return existing_data
 

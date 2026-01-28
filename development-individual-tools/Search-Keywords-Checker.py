@@ -7,27 +7,27 @@ def find_html_files(root_dir):
     html_files = set()
     for root, dirs, files in os.walk(root_dir):
         for file in files:
-            if file.endswith('.html'):
+            if file.endswith(".html"):
                 # Get relative path from the root directory
                 rel_path = os.path.relpath(os.path.join(root, file), root_dir)
                 # Normalize path separators to forward slashes
-                rel_path = rel_path.replace('\\', '/')
+                rel_path = rel_path.replace("\\", "/")
                 # Remove .html extension for comparison with indexed paths
-                if rel_path.endswith('.html'):
+                if rel_path.endswith(".html"):
                     rel_path = rel_path[:-5]
                 html_files.add(rel_path)
     return html_files
 
 
 def load_json_index(json_file):
-    with open(json_file, 'r', encoding='utf-8') as f:
+    with open(json_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     indexed_paths = set()
     for entry in data:
         # Extract the path part from the URL
-        parsed = urlparse(entry['path'])
-        path = parsed.path.lstrip('/')
+        parsed = urlparse(entry["path"])
+        path = parsed.path.lstrip("/")
         indexed_paths.add(path)
 
     return indexed_paths
@@ -44,7 +44,7 @@ def find_missing_pages(root_dir, json_file):
     missing_files = html_files - indexed_paths
 
     # Filter out common files that dont need to be indexed
-    common_files = {'404', 'index'}
+    common_files = {"404", "index"}
 
     # Return sorted list of missing files, excluding common files
     return sorted(missing_files - common_files)
@@ -52,8 +52,8 @@ def find_missing_pages(root_dir, json_file):
 
 if __name__ == "__main__":
     # Set directory and JSON file paths
-    root_directory = '../../HEAT-Labs-Website'
-    json_file_path = '../../HEAT-Labs-Configs/search-keywords.json'
+    root_directory = "../../HEAT-Labs-Website"
+    json_file_path = "../../HEAT-Labs-Configs/search-keywords.json"
 
     if not os.path.exists(root_directory):
         print(f"Error: Directory '{root_directory}' not found.")

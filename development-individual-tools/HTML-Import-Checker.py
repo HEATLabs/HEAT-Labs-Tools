@@ -6,7 +6,7 @@ def find_html_files(root_dir):
     html_files = []
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for filename in filenames:
-            if filename.lower().endswith('.html'):
+            if filename.lower().endswith(".html"):
                 html_files.append(os.path.join(dirpath, filename))
     return html_files
 
@@ -44,14 +44,16 @@ def remove_duplicate_links_and_scripts(content):
         else:
             unique_scripts[src] = (start, end)
 
-    all_to_remove = sorted(css_to_remove + scripts_to_remove, key=lambda x: x[0], reverse=True)
+    all_to_remove = sorted(
+        css_to_remove + scripts_to_remove, key=lambda x: x[0], reverse=True
+    )
 
     for start, end in all_to_remove:
         before = content[:start]
         after = content[end:]
 
-        before_end_newline = before.endswith('\n') if before else False
-        after_start_newline = after.startswith('\n') if after else False
+        before_end_newline = before.endswith("\n") if before else False
+        after_start_newline = after.startswith("\n") if after else False
 
         if before_end_newline and after_start_newline:
             after = after[1:]
@@ -62,14 +64,14 @@ def remove_duplicate_links_and_scripts(content):
 
 
 def process_html_file(file_path):
-    with open(file_path, 'r', encoding='utf-8') as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         content = file.read()
 
     original_content = content
     content = remove_duplicate_links_and_scripts(content)
 
     if content != original_content:
-        with open(file_path, 'w', encoding='utf-8') as file:
+        with open(file_path, "w", encoding="utf-8") as file:
             file.write(content)
         return True
 

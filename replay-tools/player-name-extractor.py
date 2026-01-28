@@ -3,7 +3,7 @@ import re
 FILENAME = "../../HEAT-Labs-Replays/replays/1.replay"
 OUTPUT_FILENAME = FILENAME + "_players.txt"
 
-PLAYER_REGEX = re.compile(rb'\b[\w]{3,20}#[0-9]{3,6}\b')
+PLAYER_REGEX = re.compile(rb"\b[\w]{3,20}#[0-9]{3,6}\b")
 
 
 def extract_player_names(file_path):

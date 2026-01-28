@@ -25,14 +25,14 @@ def format_date_for_span(date_obj):
 # Extract date from an article file using regex
 def extract_date_from_article(article_path):
     try:
-        with open(article_path, 'r', encoding='utf-8') as f:
+        with open(article_path, "r", encoding="utf-8") as f:
             content = f.read()
 
         # Look for the calendar icon followed by date (multiple patterns(i hate regex))
         date_patterns = [
             r'<i class="far fa-calendar-alt mr-1"></i>([A-Za-z]+\s+\d{1,2},\s+\d{4})\s*</span>',
             r'<i class="fa-solid fa-calendar-alt"></i>([A-Za-z]+\s+\d{1,2},\s+\d{4})\s*</span>',
-            r'<i class="far fa-calendar-alt"></i>([A-Za-z]+\s+\d{1,2},\s+\d{4})\s*</span>'
+            r'<i class="far fa-calendar-alt"></i>([A-Za-z]+\s+\d{1,2},\s+\d{4})\s*</span>',
         ]
 
         for pattern in date_patterns:
@@ -48,7 +48,7 @@ def extract_date_from_article(article_path):
 # Update news.html with correct dates (finally)
 def update_news_dates(news_html_path, news_dir):
     # Read the news.html file
-    with open(news_html_path, 'r', encoding='utf-8') as f:
+    with open(news_html_path, "r", encoding="utf-8") as f:
         content = f.read()
 
     # Find all news cards and their hrefs (flexible pattern)
@@ -91,16 +91,20 @@ def update_news_dates(news_html_path, news_dir):
 
         # Update the date in the span
         span_pattern = r'(<i class="fa-solid fa-calendar"></i>)\s*([A-Za-z]+\s+\d{1,2},\s+\d{4})\s*(</span>)'
-        span_match = re.search(span_pattern, content[match.end():], re.DOTALL)
+        span_match = re.search(span_pattern, content[match.end() :], re.DOTALL)
 
         if span_match:
             span_pos = match.end() + span_match.start(2)
             new_span_date = format_date_for_span(date_obj)
-            content = content[:span_pos] + new_span_date + content[span_pos + len(span_match.group(2)):]
+            content = (
+                content[:span_pos]
+                + new_span_date
+                + content[span_pos + len(span_match.group(2)) :]
+            )
             updated_count += 1
 
     # Write back to the file
-    with open(news_html_path, 'w', encoding='utf-8') as f:
+    with open(news_html_path, "w", encoding="utf-8") as f:
         f.write(content)
 
     print(f"Successfully updated {updated_count} news cards in {news_html_path}")
@@ -108,9 +112,9 @@ def update_news_dates(news_html_path, news_dir):
 
 if __name__ == "__main__":
     # Path to news.html
-    news_html_path = '../../HEAT-Labs-Website/news.html'
+    news_html_path = "../../HEAT-Labs-Website/news.html"
 
     # Path to news directory
-    news_dir = '../../HEAT-Labs-Website/news'
+    news_dir = "../../HEAT-Labs-Website/news"
 
     update_news_dates(news_html_path, news_dir)

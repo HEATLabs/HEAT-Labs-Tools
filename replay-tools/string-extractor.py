@@ -5,7 +5,7 @@ OUTPUT_FILENAME = FILENAME + "_strings.txt"
 
 
 MIN_LENGTH = 4
-STRING_REGEX = re.compile(rb'[\x20-\x7E]{' + str(MIN_LENGTH).encode() + rb',}')
+STRING_REGEX = re.compile(rb"[\x20-\x7E]{" + str(MIN_LENGTH).encode() + rb",}")
 
 
 def extract_strings(file_path):

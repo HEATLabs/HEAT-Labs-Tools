@@ -19,10 +19,7 @@ def calculate_correct_version_numbers(changelog):
 
     # Version transition configuration
     VERSION_TRANSITIONS = [
-        {
-            "from_version": "0.0.000",
-            "major_version": 0
-         },
+        {"from_version": "0.0.000", "major_version": 0},
         {
             "from_version": "0.9.000",
             "major_version": 1,

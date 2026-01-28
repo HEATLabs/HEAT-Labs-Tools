@@ -149,9 +149,7 @@ class HEATLabsIndexingChecker:
                     return True
 
             print("HEAT Labs GitHub Pages not found in verified properties!")
-            print(
-                "Please verify https://heatlabs.net in Google Search Console first."
-            )
+            print("Please verify https://heatlabs.net in Google Search Console first.")
             return False
 
         except HttpError as e:
