@@ -9,7 +9,7 @@ def main():
     script_dir = Path(__file__).parent.absolute()
 
     # Image folder path
-    image_folder = script_dir / "../../HEAT-Labs-Images/miscellaneous/meme"
+    image_folder = script_dir / "../../HEAT-Labs-Images/memes"
     image_folder = image_folder.resolve()
 
     # JSON file path
@@ -76,7 +76,7 @@ def main():
         new_entry = {
             "name": nice_name,
             "author": "HEAT Labs Team",
-            "path": f"https://cdn5.heatlabs.net/miscellaneous/meme/{filename}",
+            "path": f"https://cdn5.heatlabs.net/memes/{filename}",
         }
 
         existing_data.append(new_entry)
