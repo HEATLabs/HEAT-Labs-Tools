@@ -725,6 +725,7 @@ def generate_html_content(html_files, input_dir):
     <script src="https://cdn0.heatlabs.net/js-static/modules/wip-modal.js"></script>
     <script src="https://cdn0.heatlabs.net/js-static/modules/halloween.js"></script>
     <script src="https://cdn0.heatlabs.net/js-static/modules/christmas.js"></script>
+    <script src="https://cdn0.heatlabs.net/js-static/modules/valentines-day.js"></script>
     <script src="https://cdn0.heatlabs.net/js-static/easter-eggs/go-to.js"></script>
     <script src="https://cdn0.heatlabs.net/js-static/easter-eggs/radio.js"></script>
     <script src="https://cdn0.heatlabs.net/js-static/modules/image-protection.js"></script>
