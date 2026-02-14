@@ -9,7 +9,7 @@ import xml.etree.ElementTree as ET
 
 # Game codes display names
 game_codes = {
-    "CW.WW.PRODUCTION": {
+    "HEAT.WW.PRODUCTION": {
         "cdn": "https://wgus-eu.wargaming.net",
         "display_name": "World of Tanks: HEAT",
     }
@@ -53,7 +53,7 @@ def parse_build_date(version_str):
 
 async def get_metadata(game_id, cdnUrl):
     # Determine protocol version based on CDN
-    protocol_version = "7.6" if "lesta" in cdnUrl else "7.7"
+    protocol_version = "7.6" if "lesta" in cdnUrl else "7.9"
     url = f"{cdnUrl}/api/v1/metadata/?guid={game_id}&chain_id=unknown&protocol_version={protocol_version}"
     print(f"Fetching metadata: {url}")
 
