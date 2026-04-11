@@ -12,7 +12,15 @@ game_codes = {
     "HEAT.WW.PRODUCTION": {
         "cdn": "https://wgus-eu.wargaming.net",
         "display_name": "World of Tanks: HEAT",
-    }
+    },
+    "CW.LTDEMO.PRODUCTION": {
+        "cdn": "https://wgus-eu.wargaming.net",
+        "display_name": "World of Tanks: HEAT",
+    },
+    "CW.WW.PRODUCTION": {
+        "cdn": "https://wgus-eu.wargaming.net",
+        "display_name": "World of Tanks: HEAT",
+    },
 }
 
 OUTPUT_JSON_FILE = "../../HEAT-Labs-Configs/game_builds.json"
