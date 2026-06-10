@@ -23,6 +23,28 @@ def load_csv_data(csv_filepath):
             tank_names = [name.strip() for name in row[1:] if name.strip()]
             break
 
+    # Find the AMMO TYPE rows to get shell types
+    main_ammo_types = {}
+    secondary_ammo_types = {}
+    for i, line in enumerate(lines):
+        row = next(csv.reader([line]))
+        if not row:
+            continue
+
+        if row[0] == 'MAIN AMMO TYPE':
+            for idx, tank_name in enumerate(tank_names):
+                if idx + 1 < len(row):
+                    value = row[idx + 1].strip()
+                    if value and value != '-' and value != '':
+                        main_ammo_types[tank_name] = value
+
+        if row[0] == 'SECONDARY AMMO TYPE':
+            for idx, tank_name in enumerate(tank_names):
+                if idx + 1 < len(row):
+                    value = row[idx + 1].strip()
+                    if value and value != '-' and value != '':
+                        secondary_ammo_types[tank_name] = value
+
     # parse all subsequent rows for stat data
     for i, line in enumerate(lines):
         row = next(csv.reader([line]))
@@ -49,6 +71,17 @@ def load_csv_data(csv_filepath):
                             tanks_data[tank_name][stat_name] = int(value)
                     except ValueError:
                         tanks_data[tank_name][stat_name] = value
+
+    # Add shell types to tanks_data
+    for tank_name in tank_names:
+        if tank_name not in tanks_data:
+            tanks_data[tank_name] = {}
+
+        if tank_name in main_ammo_types:
+            tanks_data[tank_name]['MAIN SHELL TYPE'] = main_ammo_types[tank_name]
+
+        if tank_name in secondary_ammo_types:
+            tanks_data[tank_name]['SECONDARY SHELL TYPE'] = secondary_ammo_types[tank_name]
 
     return tanks_data
 
@@ -150,8 +183,16 @@ def update_tank_json(tank_folder_path, tank_data, selected_sections):
         if section in tank_json[tank_key]:
             # For each stat in the CSV data
             for stat_name, stat_value in tank_data.items():
+                # Handle shell types specially
+                if stat_name in ['MAIN SHELL TYPE', 'SECONDARY SHELL TYPE']:
+                    if stat_name in tank_json[tank_key][section]:
+                        old_value = tank_json[tank_key][section][stat_name]
+                        if old_value != stat_value:
+                            tank_json[tank_key][section][stat_name] = stat_value
+                            print(f"    Updated {section}.{stat_name}: {old_value} → {stat_value}")
+                            updated_count += 1
                 # Check if this stat belongs to the current section
-                if stat_name in tank_json[tank_key][section]:
+                elif stat_name in tank_json[tank_key][section]:
                     # Update the value
                     old_value = tank_json[tank_key][section][stat_name]
 
@@ -213,7 +254,7 @@ def main():
     if tanks_data:
         first_tank = list(tanks_data.keys())[0]
         print(f"\nSample data from {first_tank}:")
-        sample_stats = list(tanks_data[first_tank].items())[:5]
+        sample_stats = list(tanks_data[first_tank].items())[:7]
         for stat, value in sample_stats:
             print(f"  {stat}: {value}")
 
