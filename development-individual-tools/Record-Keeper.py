@@ -77,10 +77,8 @@ def display_menu():
     print("4. Add Total Assists record")
     print("5. Add Total Damage Caused record")
     print("6. Add Total Damage Blocked record")
-    print("7. Add Total Currency record")
-    print("8. Add Total Tech Coins record")
-    print("9. View all records")
-    print("10. Exit")
+    print("7. View all records")
+    print("8. Exit")
 
 
 def view_records(records):
@@ -116,27 +114,25 @@ def main():
         3: "Total Deaths",
         4: "Total Assists",
         5: "Total Damage Caused",
-        6: "Total Damage Blocked",
-        7: "Total Currency",
-        8: "Total Tech Coins"
+        6: "Total Damage Blocked"
     }
 
     while True:
         display_menu()
 
         try:
-            choice = input("\nEnter your choice (1-10): ").strip()
+            choice = input("\nEnter your choice (1-8): ").strip()
 
-            if choice == '10':
+            if choice == '8':
                 print("Thank you for using Player Records System!")
                 print(f"Total entries saved: {len(records)}")
                 break
 
-            elif choice == '9':
+            elif choice == '7':
                 view_records(records)
                 continue
 
-            elif choice in ['1', '2', '3', '4', '5', '6', '7', '8']:
+            elif choice in ['1', '2', '3', '4', '5', '6']:
                 choice_num = int(choice)
                 record_type = record_categories[choice_num]
 
@@ -157,7 +153,7 @@ def main():
                 print("\nReturning to main menu...")
 
             else:
-                print("\n[ Invalid choice! Please enter a number between 1 and 10 ]")
+                print("\n[ Invalid choice! Please enter a number between 1 and 8 ]")
 
         except KeyboardInterrupt:
             print("\n\n[ Operation cancelled by user ]")
