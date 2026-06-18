@@ -247,7 +247,7 @@ def generate_html_content(html_files, input_dir):
           </li>
           <li>
             <a href="../players" class="sidebar-link wip">
-              <i class="fas fa-user"></i>
+              <i class="fas fa-users"></i>
               <span>Player Statistics</span>
             </a>
           </li>
