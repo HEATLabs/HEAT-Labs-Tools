@@ -240,6 +240,12 @@ def generate_html_content(html_files, input_dir):
             </a>
           </li>
           <li>
+            <a href="../agents" class="sidebar-link wip">
+              <i class="fas fa-user-gear"></i>
+              <span>Agent Insights</span>
+            </a>
+          </li>
+          <li>
             <a href="../players" class="sidebar-link wip">
               <i class="fas fa-user"></i>
               <span>Player Statistics</span>
