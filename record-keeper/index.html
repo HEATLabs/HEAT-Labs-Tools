@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEAT Labs Record Keeper</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://views.heatlabs.net https://cdn5.heatlabs.net;">
+  </head>
+  <body>
+    <!-- Tracking Pixel -->
+    <img src="https://views.heatlabs.net/api/track/record-keeper-app.png" alt="HEAT Labs Tracking View Counter" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" class="heatlabs-tracking-pixel" data-page="record-keeper-app">
+    <!-- Custom Title Bar -->
+    <div class="title-bar">
+      <div class="title-bar-left">
+        <img class="title-bar-icon" src="https://cdn5.heatlabs.net/logo/logo.webp" alt="HEATLabs">
+        <span class="title-bar-title">HEAT Labs Record Keeper - v1.0.0</span>
+      </div>
+      <div class="title-bar-controls">
+        <button class="title-bar-button minimize-btn" id="minimizeBtn">
+          <svg width="12" height="12" viewBox="0 0 12 12">
+            <rect x="1" y="5" width="10" height="1" fill="currentColor" />
+          </svg>
+        </button>
+        <button class="title-bar-button maximize-btn" id="maximizeBtn">
+          <svg width="12" height="12" viewBox="0 0 12 12">
+            <path d="M1 1h10v10H1z" fill="none" stroke="currentColor" />
+          </svg>
+        </button>
+        <button class="title-bar-button close-btn" id="closeBtn">
+          <svg width="12" height="12" viewBox="0 0 12 12">
+            <path d="M1 1l10 10M1 11L11 1" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+      <div class="splash-content">
+        <img id="splash-logo" class="splash-logo" src="https://cdn5.heatlabs.net/logo/logo.webp" alt="HEATLabs Logo">
+        <div class="splash-text">
+          <h1>HEAT Labs Record Keeper</h1>
+          <p>Player Record Management System</p>
+          <p>Created by the HEAT Labs Team</p>
+        </div>
+      </div>
+    </div>
+    <!-- Main Application -->
+    <div id="main-app" class="main-app">
+      <div id="config-content" class="config-content">
+        <!-- Path Bar -->
+        <div class="path-bar">
+          <div class="path-row">
+            <div class="path-field">
+              <label>JSON FILE</label>
+              <div class="path-input-wrapper">
+                <input type="text" id="jsonPathInput" class="path-input" readonly placeholder="Select JSON file...">
+                <button id="browseJsonBtn" class="btn-small">…</button>
+              </div>
+            </div>
+            <div class="path-field">
+              <label>SCREENSHOTS FOLDER</label>
+              <div class="path-input-wrapper">
+                <input type="text" id="screenshotsPathInput" class="path-input" readonly placeholder="Select screenshots folder...">
+                <button id="browseFolderBtn" class="btn-small">…</button>
+              </div>
+            </div>
+            <button id="scanBtn" class="btn-primary scan-btn">SCAN</button>
+          </div>
+        </div>
+        <!-- Main Body -->
+        <div class="main-body">
+          <!-- List Panel -->
+          <div class="list-panel">
+            <div class="list-header">
+              <span class="list-title">SCREENSHOTS</span>
+              <div class="count-badges" id="countBadges">
+                <span class="count-badge logged">✓ <span class="count-number" id="loggedCount">0</span>
+                </span>
+                <span class="count-badge partial">⚡ <span class="count-number" id="partialCount">0</span>
+                </span>
+                <span class="count-badge not_logged">✗ <span class="count-number" id="notLoggedCount">0</span>
+                </span>
+              </div>
+            </div>
+            <div class="filter-bar">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="logged">LOGGED</button>
+              <button class="filter-btn" data-filter="not_logged">NOT LOGGED</button>
+              <button class="filter-btn" data-filter="partial">PARTIAL</button>
+            </div>
+            <div class="list-container" id="listContainer">
+              <div id="listFrame" class="list-frame">
+                <!-- Screenshots will be rendered here -->
+              </div>
+            </div>
+          </div>
+          <!-- Divider -->
+          <div class="divider"></div>
+          <!-- Detail Panel -->
+          <div class="detail-panel">
+            <div id="emptyState" class="empty-state">
+              <p>Select a screenshot from the list <br>to review and confirm its data. </p>
+            </div>
+            <div id="detailContent" class="detail-content" style="display:none;">
+              <div class="detail-header">
+                <span class="detail-title" id="detailTitle">Player - screenshot.png</span>
+                <span class="detail-badge" id="detailBadge">CONQUEST</span>
+                <div class="detail-nav">
+                  <button id="prevBtn" class="nav-btn">◀</button>
+                  <button id="nextBtn" class="nav-btn">▶</button>
+                </div>
+              </div>
+              <div class="detail-body">
+                <div class="detail-left">
+                  <div class="image-container">
+                    <img id="previewImage" class="preview-image" alt="Screenshot preview">
+                  </div>
+                  <div class="status-message" id="statusMessage"></div>
+                </div>
+                <div class="detail-right">
+                  <div class="fields-container" id="fieldsContainer">
+                    <!-- Dynamic fields will be rendered here -->
+                  </div>
+                  <div class="save-bar">
+                    <button id="confirmSaveBtn" class="btn-success">✓ CONFIRM & SAVE</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Custom Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+      <div class="modal-content">
+        <h3 id="modalTitle">Confirm Action</h3>
+        <p id="modalMessage">Are you sure you want to proceed?</p>
+        <div class="modal-actions">
+          <button id="modalCancel" class="btn-secondary">Cancel</button>
+          <button id="modalConfirm" class="btn-danger">Confirm</button>
+        </div>
+      </div>
+    </div>
+    <script src="renderer.js"></script>
+  </body>
+</html>
