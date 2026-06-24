@@ -41,3 +41,5 @@ development-unified-tools/token.json
 /chart-tools/output/
 /development-individual-tools/search-results
 /development-individual-tools/test-tools
+/record-keeper/node_modules
+/record-keeper/.idea
