@@ -5,6 +5,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 from pathlib import Path
 from PIL import Image, ImageTk
+from datetime import datetime, timezone
 
 JSON_PATH = r"../../HEAT-Labs-Configs/player-records.json"
 SCREENSHOTS_FOLDER = r"../../HEAT-Labs-Images-Features/player-records"
@@ -693,11 +694,29 @@ class HeatRecordKeeper(tk.Tk):
         base = "https://cdn6.heatlabs.net/player-records"
         return f"{base}/{s['mode']}/{s['filename']}"
 
+    def _update_last_updated(self, mode_key):
+        """Update the last_updated timestamp for a specific mode"""
+        # Get current UTC time in ISO format
+        now_utc = datetime.now(timezone.utc)
+        timestamp = now_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        # Ensure the ROOT and last_updated structure exists
+        records = self.records_data.setdefault("records", {})
+        root = records.setdefault("ROOT", {})
+        last_updated = root.setdefault("last_updated", {})
+
+        # Update the timestamp for this mode
+        last_updated[mode_key] = timestamp
+
+        # Also update a general "last_updated" field if it exists
+        root["last_updated"] = last_updated
+
     def _confirm_and_save(self):
         if self.current_idx < 0:
             return
 
         s = self.screenshots[self.current_idx]
+        mode_key = s["mode"]
 
         record = {}
         for key, var in self.field_vars.items():
@@ -715,11 +734,9 @@ class HeatRecordKeeper(tk.Tk):
         record["mode"] = MODE_LABELS[s["mode"]]
         record["proof"] = self._build_proof_url(s)
 
-        mode_key = s["mode"]
-        player = s["player"]
         rec_block = self.records_data.setdefault("records", {})
         mode_block = rec_block.setdefault(mode_key, {})
-        player_list = mode_block.setdefault(player, [])
+        player_list = mode_block.setdefault(s["player"], [])
 
         proof = record["proof"]
         updated = False
@@ -730,6 +747,9 @@ class HeatRecordKeeper(tk.Tk):
                 break
         if not updated:
             player_list.append(record)
+
+        # Update the last_updated timestamp for this mode
+        self._update_last_updated(mode_key)
 
         try:
             save_json(self.json_path.get(), self.records_data)
@@ -756,7 +776,9 @@ class HeatRecordKeeper(tk.Tk):
 
         self._refresh_list()
 
-        self.status_lbl.config(text=f"Saved record for {player} ({mode_key})")
+        # Get the timestamp we just set for display
+        timestamp = self.records_data["records"]["ROOT"]["last_updated"].get(mode_key, "Unknown")
+        self.status_lbl.config(text=f"Saved record for {s['player']} ({mode_key}) - Last updated: {timestamp}")
         self.status_msg.config(
             text=f"Record saved! {empty_count} empty fields. {'Updated' if updated else 'Added new entry'}.")
 
