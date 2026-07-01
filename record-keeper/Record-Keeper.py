@@ -110,7 +110,7 @@ def get_complete_records(data):
                     value = rec.get(field)
                     if value in [None, "", 0, "0"]:
                         empty_count += 1
-                if empty_count <= 2:  # Allow up to 2 empty fields
+                if empty_count <= 3:  # Allow up to 3 empty fields
                     p = rec.get("proof", "")
                     if p:
                         complete.add(Path(p).name)
