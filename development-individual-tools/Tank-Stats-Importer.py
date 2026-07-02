@@ -135,6 +135,8 @@ def map_tank_name_to_folder(tank_name):
         'M1E1': 'm1e1',
         'FV 4030/X': 'fv4030x',
         'Leopard 1A6A1': 'leopard-1a6a1',
+        'Leopard 2FK': 'leopard-2fk',
+        'Leopard 2K ST': 'leopard-2k-st',
         'AMX-10 RC': 'amx-10-rc',
         'M3A1 Bradley': 'm3a1-bradley',
         'Marder 1A3': 'marder-1a3'
