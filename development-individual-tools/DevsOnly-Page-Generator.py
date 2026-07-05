@@ -270,6 +270,12 @@ def generate_html_content(html_files, input_dir):
             </a>
           </li>
           <li>
+            <a href="//mods.heatlabs.net" class="sidebar-link">
+              <i class="fas fa-toolbox"></i>
+              <span>Game Mods</span>
+            </a>
+          </li>
+          <li>
             <a href="../playground" class="sidebar-link">
               <i class="fa-solid fa-gamepad"></i>
               <span>Playground</span>
