@@ -37,7 +37,6 @@ REPOS = [
     "HEAT-Labs-Images-Tanks",
     "HEAT-Labs-Images-Tournaments",
     "HEAT-Labs-Steam-Assets",
-    "HEAT-Labs-Replays",
     "HEAT-Labs-Games",
     "HEAT-Labs-Tank-Game",
     "HEAT-Labs-Models",
@@ -49,6 +48,8 @@ REPOS = [
     "HEAT-Labs-Statistics",
     "HEAT-Labs-Desktop",
     "HEAT-Labs-Status",
+    "HEAT-Labs-Stream-Tools",
+    "HEAT-Labs-WGC-API-Emulator",
     "HEAT-Labs-Tools",
     "HEAT-Labs-Website",
     "HEAT-Labs-Website-Development"
