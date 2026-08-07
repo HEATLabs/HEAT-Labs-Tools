@@ -13,7 +13,7 @@
   "author": "HEAT Labs Team",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^41.1.1",
+    "electron": "^41.10.3",
     "electron-builder": "^26.15.3"
   },
   "dependencies": {
