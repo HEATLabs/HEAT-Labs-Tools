@@ -20,47 +20,83 @@ def convert_png_to_webp(input_path, output_path, quality=85):
         return False
 
 
-def find_png_files(root_dir):
-    png_files = []
+def convert_dds_to_webp(input_path, output_path, quality=85):
+    try:
+        with Image.open(input_path) as img:
+            # If the image has multiple frames/layers, get the first one
+            if hasattr(img, "n_frames") and img.n_frames > 1:
+                # For DDS with mipmaps, we want the first frame
+                img.seek(0)
 
-    # Walk through all directories and subdirectories
+            # Convert to RGB if needed (WebP handles transparency)
+            if img.mode in ("RGBA", "LA"):
+                img.save(output_path, "WebP", quality=quality, lossless=False)
+            elif img.mode == "P":
+                # Convert palette-based images to RGB
+                img = img.convert("RGB")
+                img.save(output_path, "WebP", quality=quality)
+            else:
+                img.save(output_path, "WebP", quality=quality)
+
+        print(f"✓ Converted: {input_path} → {output_path}")
+        return True
+    except Exception as e:
+        print(f"✗ Error converting {input_path}: {str(e)}")
+        return False
+
+
+def find_image_files(root_dir, extensions):
+    """Find all image files with given extensions recursively."""
+    image_files = []
+    extensions_lower = [ext.lower() for ext in extensions]
+
     for root, dirs, files in os.walk(root_dir):
-        # Find PNG files in current directory
         for file in files:
-            if file.lower().endswith(".png"):
-                png_files.append(os.path.join(root, file))
+            file_lower = file.lower()
+            for ext in extensions_lower:
+                if file_lower.endswith(ext):
+                    image_files.append(os.path.join(root, file))
+                    break
 
-    return png_files
+    return image_files
 
 
 def main():
     # Get current directory
     current_dir = os.getcwd()
-    print(f"Looking for PNG files in: {current_dir} (including subdirectories)")
+    print(f"Looking for image files in: {current_dir} (including subdirectories)")
 
-    # Find all PNG files recursively
-    png_files = find_png_files(current_dir)
+    # Define supported extensions
+    supported_extensions = [".png", ".dds"]
 
-    if not png_files:
-        print("No PNG files found in the current directory or subdirectories.")
+    # Find all image files recursively
+    image_files = find_image_files(current_dir, supported_extensions)
+
+    if not image_files:
+        print("No PNG or DDS files found in the current directory or subdirectories.")
         return
 
-    print(f"Found {len(png_files)} PNG file(s) to convert:")
-    for png_file in png_files:
-        # Show relative path for cleaner output
-        rel_path = os.path.relpath(png_file, current_dir)
-        print(f"  - {rel_path}")
+    print(f"Found {len(image_files)} image file(s) to convert:")
+
+    # Separate files by extension for reporting
+    png_files = [f for f in image_files if f.lower().endswith(".png")]
+    dds_files = [f for f in image_files if f.lower().endswith(".dds")]
+
+    if png_files:
+        print(f"  PNG files: {len(png_files)}")
+    if dds_files:
+        print(f"  DDS files: {len(dds_files)}")
 
     print()  # Empty line for better readability
 
-    # Convert each PNG file
+    # Convert each image file
     converted_count = 0
     failed_count = 0
     skipped_count = 0
 
-    for png_file in png_files:
-        # Create output filename (replace .png with .webp)
-        base_name = os.path.splitext(png_file)[0]
+    for image_file in image_files:
+        # Create output filename (replace extension with .webp)
+        base_name = os.path.splitext(image_file)[0]
         webp_file = f"{base_name}.webp"
 
         # Skip if WebP file already exists
@@ -70,8 +106,20 @@ def main():
             skipped_count += 1
             continue
 
-        # Convert the file
-        if convert_png_to_webp(png_file, webp_file):
+        # Determine conversion function based on file extension
+        rel_path = os.path.relpath(image_file, current_dir)
+        print(f"Converting: {rel_path}")
+
+        if image_file.lower().endswith(".png"):
+            success = convert_png_to_webp(image_file, webp_file)
+        elif image_file.lower().endswith(".dds"):
+            success = convert_dds_to_webp(image_file, webp_file)
+        else:
+            print(f"⚠ Unsupported format: {image_file}")
+            failed_count += 1
+            continue
+
+        if success:
             converted_count += 1
         else:
             failed_count += 1
