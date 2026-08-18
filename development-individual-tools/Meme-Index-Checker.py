@@ -39,7 +39,7 @@ def main():
         print("No existing JSON file found. Creating new one.")
 
     # Get all image files from folder
-    image_extensions = {".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".svg"}
+    image_extensions = {".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".svg", ".mov", ".mp4"}
     image_files = []
 
     for file in image_folder.iterdir():
