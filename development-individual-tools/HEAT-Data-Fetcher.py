@@ -226,6 +226,7 @@ def main():
                 "slug": article_url,  # Full URL like in news.json
                 "type": "official-guide",  # Mark as official guide
                 "type_name": "Official Guide",
+                "sections": "PLACEHOLDER",
                 "date": datetime.strptime(article.get("date", ""), "%Y-%m-%d").strftime("%m-%d-%Y") if article.get(
                     "date") else "",
                 "raw_date": full_date,
