@@ -80,7 +80,7 @@ def parse_answer_block(answer_text):
 
     for m in matches:
         speaker_raw = m.group(1).strip()
-        content = strip_md(m.group(2))
+        content = m.group(2).strip()  # Don't strip_md yet, we need to check for notes inside content
 
         speaker_lower = speaker_raw.lower()
         if any(hint in speaker_lower for hint in NOTE_NAME_HINTS):
@@ -99,7 +99,28 @@ def parse_answer_block(answer_text):
             if note_text:
                 notes.append(note_text)
         elif content:
-            responses.append({"speaker": speaker_raw, "text": content})
+            # Check if this content contains a standalone note pattern
+            note_match = re.search(
+                r"(?:^|\n)[ \t]*(?:Note from OP|OP Note|OP:|Note:)\s*[:]?\s*\n(.*)",
+                content,
+                re.DOTALL | re.IGNORECASE
+            )
+            if note_match:
+                # This is a note embedded in the response text
+                note_text = strip_md(note_match.group(1))
+                if note_text:
+                    notes.append(note_text)
+                # Remove the note from the content
+                content = re.sub(
+                    r"(?:^|\n)[ \t]*(?:Note from OP|OP Note|OP:|Note:)\s*[:]?\s*\n.*",
+                    "",
+                    content,
+                    flags=re.DOTALL | re.IGNORECASE
+                ).strip()
+                if content:
+                    responses.append({"speaker": speaker_raw, "text": strip_md(content)})
+            else:
+                responses.append({"speaker": speaker_raw, "text": strip_md(content)})
 
     return responses, notes
 
@@ -141,6 +162,25 @@ def _parse_single_entry(number, block):
 
     answer_text = block[q_match.end():]
     answers, notes = parse_answer_block(answer_text)
+
+    # Check if there's any remaining text that's a standalone note
+    remaining_text = answer_text
+
+    # Remove all speaker-tag content from the remaining text to find standalone notes
+    for match in SPEAKER_LINE_RE.finditer(answer_text):
+        remaining_text = remaining_text.replace(match.group(0), "")
+
+    # Now check for standalone notes in the remaining text
+    if remaining_text.strip():
+        note_match = re.search(
+            r"(?:^|\n)[ \t]*(?:Note from OP|OP Note|OP:|Note:)\s*[:]?\s*\n(.*?)(?=\n\d+\.\s*\nQ:|$)",
+            remaining_text,
+            re.DOTALL | re.IGNORECASE
+        )
+        if note_match:
+            note_text = strip_md(note_match.group(1))
+            if note_text and note_text not in notes:
+                notes.append(note_text)
 
     return {
         "number": number,
