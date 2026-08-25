@@ -30,9 +30,9 @@ C_LOGGED_TEXT = "#5c9eff"
 C_NOT_LOGGED_BADGE = "#3a1a1a"
 C_NOT_LOGGED_TEXT = "#ff5c5c"
 
-MODES = ["conquest", "control", "hardpoint", "kill-confirmed"]
+MODES = ["conquest", "control", "hardpoint", "kill-confirmed", "plant-defuse"]
 MODE_LABELS = {"conquest": "Conquest", "control": "Control", "hardpoint": "Hardpoint",
-               "kill-confirmed": "Kill Confirmed"}
+               "kill-confirmed": "Kill Confirmed", "plant-defuse": "Plant & Defuse"}
 
 
 def parse_filename(filename):
@@ -46,6 +46,10 @@ def parse_filename(filename):
 
 def is_kill_confirmed_mode(mode_folder):
     return mode_folder == "kill-confirmed"
+
+
+def is_plant_defuse_mode(mode_folder):
+    return mode_folder == "plant-defuse"
 
 
 def load_json(path):
@@ -64,11 +68,9 @@ def get_known_proofs(data):
         if not isinstance(mode_data, dict):
             continue
         for records in mode_data.values():
-            # Check if records is a list before iterating
             if not isinstance(records, list):
                 continue
             for rec in records:
-                # Check if rec is a dictionary before calling .get()
                 if isinstance(rec, dict):
                     p = rec.get("proof", "")
                     if p:
@@ -78,7 +80,7 @@ def get_known_proofs(data):
 
 def count_empty_fields(record):
     """Count how many required fields are empty in a record"""
-    required_fields = ["captures", "destroyed", "deaths", "assists", "damage_caused", "damage_blocked",
+    required_fields = ["plants", "defuses", "destroyed", "deaths", "assists", "damage_caused",
                        "credits", "tech", "intel", "XP", "agent", "vehicle", "outcome", "map"]
 
     empty_count = 0
@@ -90,9 +92,9 @@ def count_empty_fields(record):
 
 
 def get_complete_records(data):
-    """Get set of fully logged records (allow up to 2 empty fields)"""
+    """Get set of fully logged records (allow up to 3 empty fields)"""
     complete = set()
-    required_fields = ["captures", "destroyed", "deaths", "assists", "damage_caused", "damage_blocked",
+    required_fields = ["plants", "defuses", "destroyed", "deaths", "assists", "damage_caused",
                        "credits", "tech", "intel", "XP", "agent", "vehicle", "outcome", "map"]
 
     for mode_data in data.get("records", {}).values():
@@ -104,7 +106,6 @@ def get_complete_records(data):
             for rec in records:
                 if not isinstance(rec, dict):
                     continue
-                # Check if record has at most 2 empty fields
                 empty_count = 0
                 for field in required_fields:
                     value = rec.get(field)
@@ -118,9 +119,9 @@ def get_complete_records(data):
 
 
 def get_partial_records(data, complete_proofs):
-    """Get set of records that exist but are not complete (more than 2 empty fields)"""
+    """Get set of records that exist but are not complete (more than 3 empty fields)"""
     partial = set()
-    required_fields = ["captures", "destroyed", "deaths", "assists", "damage_caused", "damage_blocked",
+    required_fields = ["plants", "defuses", "destroyed", "deaths", "assists", "damage_caused",
                        "credits", "tech", "intel", "XP", "agent", "vehicle", "outcome", "map"]
 
     for mode_data in data.get("records", {}).values():
@@ -140,7 +141,6 @@ def get_partial_records(data, complete_proofs):
                 if proof_name in complete_proofs:
                     continue
 
-                # Check if record has any data (at least one field filled)
                 has_data = False
                 for field in required_fields:
                     value = rec.get(field)
@@ -165,15 +165,14 @@ def scan_screenshots(folder, known_proofs, complete_proofs, partial_proofs):
                 continue
             player, _ = parse_filename(f.name)
 
-            # Determine status
             if f.name in complete_proofs:
-                status = "logged"  # Complete with <=2 empty fields
+                status = "logged"
             elif f.name in partial_proofs:
-                status = "partial"  # Exists but incomplete (>2 empty fields)
+                status = "partial"
             elif f.name in known_proofs:
-                status = "partial"  # Known but not in complete or partial sets
+                status = "partial"
             else:
-                status = "not_logged"  # Not in JSON at all
+                status = "not_logged"
 
             results.append({
                 "mode": mode,
@@ -472,7 +471,6 @@ class HeatRecordKeeper(tk.Tk):
         partial = get_partial_records(self.records_data, complete)
         self.screenshots = scan_screenshots(fp, known, complete, partial)
 
-        # Count statuses
         logged_count = sum(1 for s in self.screenshots if s["status"] == "logged")
         partial_count = sum(1 for s in self.screenshots if s["status"] == "partial")
         not_logged_count = sum(1 for s in self.screenshots if s["status"] == "not_logged")
@@ -502,7 +500,6 @@ class HeatRecordKeeper(tk.Tk):
     def _make_list_item(self, list_pos, real_idx, s):
         status = s["status"]
 
-        # Determine card colors based on status
         if status == "logged":
             card_bg = C_LOGGED_BADGE
             text_color = C_LOGGED_TEXT
@@ -515,7 +512,7 @@ class HeatRecordKeeper(tk.Tk):
             status_text = "PARTIAL"
             status_bg = C_DONE_BADGE
             status_fg = C_DONE_TEXT
-        else:  # not_logged
+        else:
             card_bg = C_NEW_BADGE
             text_color = C_NEW_TEXT
             status_text = "NOT LOGGED"
@@ -526,7 +523,8 @@ class HeatRecordKeeper(tk.Tk):
         card.pack(fill="x", padx=0, pady=1)
         card.columnconfigure(1, weight=1)
 
-        mode_colors = {"conquest": "#f59e0b", "control": "#0077ff", "hardpoint": "#ef4444", "kill-confirmed": "#a855f7"}
+        mode_colors = {"conquest": "#f59e0b", "control": "#0077ff", "hardpoint": "#ef4444",
+                       "kill-confirmed": "#a855f7", "plant-defuse": "#00e5c8"}
         dot_color = mode_colors.get(s["mode"], C_ACCENT)
         dot = tk.Frame(card, bg=dot_color, width=4)
         dot.grid(row=0, column=0, rowspan=2, sticky="ns", padx=(0, 8))
@@ -582,7 +580,6 @@ class HeatRecordKeeper(tk.Tk):
         self._build_fields(s, existing_record)
 
         if existing_record:
-            # Check how many empty fields
             empty_count = count_empty_fields(existing_record)
             if s["status"] == "logged":
                 self.status_msg.config(
@@ -616,6 +613,7 @@ class HeatRecordKeeper(tk.Tk):
         self.field_vars.clear()
 
         is_kc = is_kill_confirmed_mode(s["mode"])
+        is_pd = is_plant_defuse_mode(s["mode"])
 
         if is_kc:
             stat_fields = [
@@ -626,6 +624,15 @@ class HeatRecordKeeper(tk.Tk):
                 ("assists", "Assists"),
                 ("damage_caused", "Damage Caused"),
                 ("damage_blocked", "Damage Blocked"),
+            ]
+        elif is_pd:
+            stat_fields = [
+                ("plants", "Plants"),
+                ("defuses", "Defuses"),
+                ("destroyed", "Destroyed"),
+                ("deaths", "Deaths"),
+                ("assists", "Assists"),
+                ("damage_caused", "Damage Caused"),
             ]
         else:
             stat_fields = [
@@ -695,20 +702,14 @@ class HeatRecordKeeper(tk.Tk):
         return f"{base}/{s['mode']}/{s['filename']}"
 
     def _update_last_updated(self, mode_key):
-        """Update the last_updated timestamp for a specific mode"""
-        # Get current UTC time in ISO format
         now_utc = datetime.now(timezone.utc)
         timestamp = now_utc.strftime("%Y-%m-%dT%H:%M:%SZ")
 
-        # Ensure the ROOT and last_updated structure exists
         records = self.records_data.setdefault("records", {})
         root = records.setdefault("ROOT", {})
         last_updated = root.setdefault("last_updated", {})
 
-        # Update the timestamp for this mode
         last_updated[mode_key] = timestamp
-
-        # Also update a general "last_updated" field if it exists
         root["last_updated"] = last_updated
 
     def _confirm_and_save(self):
@@ -723,13 +724,14 @@ class HeatRecordKeeper(tk.Tk):
             raw = var.get().strip()
             try:
                 if key in ["credits", "tech", "intel", "XP", "captures", "confirms", "denies", "destroyed", "deaths",
-                           "assists", "damage_caused", "damage_blocked"]:
+                           "assists", "damage_caused", "damage_blocked", "plants", "defuses"]:
                     record[key] = int(re.sub(r"[^\d]", "", raw)) if raw else 0
                 else:
                     record[key] = raw
             except Exception:
                 record[key] = 0 if key in ["credits", "tech", "intel", "XP", "captures", "confirms", "denies",
-                                           "destroyed", "deaths", "assists", "damage_caused", "damage_blocked"] else raw
+                                           "destroyed", "deaths", "assists", "damage_caused", "damage_blocked",
+                                           "plants", "defuses"] else raw
 
         record["mode"] = MODE_LABELS[s["mode"]]
         record["proof"] = self._build_proof_url(s)
@@ -748,7 +750,6 @@ class HeatRecordKeeper(tk.Tk):
         if not updated:
             player_list.append(record)
 
-        # Update the last_updated timestamp for this mode
         self._update_last_updated(mode_key)
 
         try:
@@ -757,8 +758,7 @@ class HeatRecordKeeper(tk.Tk):
             messagebox.showerror("Save Error", str(e))
             return
 
-        # Update the status based on completeness (allow up to 2 empty fields)
-        required_fields = ["captures", "destroyed", "deaths", "assists", "damage_caused", "damage_blocked",
+        required_fields = ["plants", "defuses", "destroyed", "deaths", "assists", "damage_caused",
                            "credits", "tech", "intel", "XP", "agent", "vehicle", "outcome", "map"]
 
         empty_count = 0
@@ -767,7 +767,7 @@ class HeatRecordKeeper(tk.Tk):
             if value in [None, "", 0, "0"]:
                 empty_count += 1
 
-        if empty_count <= 2:
+        if empty_count <= 3:
             self.screenshots[self.current_idx]["status"] = "logged"
         elif empty_count < len(required_fields):
             self.screenshots[self.current_idx]["status"] = "partial"
@@ -776,7 +776,6 @@ class HeatRecordKeeper(tk.Tk):
 
         self._refresh_list()
 
-        # Get the timestamp we just set for display
         timestamp = self.records_data["records"]["ROOT"]["last_updated"].get(mode_key, "Unknown")
         self.status_lbl.config(text=f"Saved record for {s['player']} ({mode_key}) - Last updated: {timestamp}")
         self.status_msg.config(
@@ -784,10 +783,8 @@ class HeatRecordKeeper(tk.Tk):
 
         self._build_fields(s, record)
 
-        # Auto-navigate to next non-logged item
         next_indices = [i for i, sc in enumerate(self.screenshots) if sc["status"] != "logged"]
         if next_indices and self.current_idx < len(self.screenshots) - 1:
-            # Find next item after current
             for idx in next_indices:
                 if idx > self.current_idx:
                     self.after(600, lambda: self._select_screenshot(idx))
