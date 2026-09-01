@@ -712,12 +712,22 @@ class HeatRecordKeeper(tk.Tk):
         last_updated[mode_key] = timestamp
         root["last_updated"] = last_updated
 
+    def _get_disqualified_players(self):
+        """Get the set of disqualified player names from the removals section"""
+        records = self.records_data.get("records", {})
+        root = records.get("ROOT", {})
+        removals = root.get("removals", {})
+        return set(removals.keys())
+
     def _confirm_and_save(self):
         if self.current_idx < 0:
             return
 
         s = self.screenshots[self.current_idx]
         mode_key = s["mode"]
+
+        # Get list of disqualified players
+        disqualified_players = self._get_disqualified_players()
 
         record = {}
         for key, var in self.field_vars.items():
@@ -735,6 +745,9 @@ class HeatRecordKeeper(tk.Tk):
 
         record["mode"] = MODE_LABELS[s["mode"]]
         record["proof"] = self._build_proof_url(s)
+
+        # Set disqualified flag based on player name
+        record["disqualified"] = s["player"] in disqualified_players
 
         rec_block = self.records_data.setdefault("records", {})
         mode_block = rec_block.setdefault(mode_key, {})
@@ -777,9 +790,10 @@ class HeatRecordKeeper(tk.Tk):
         self._refresh_list()
 
         timestamp = self.records_data["records"]["ROOT"]["last_updated"].get(mode_key, "Unknown")
-        self.status_lbl.config(text=f"Saved record for {s['player']} ({mode_key}) - Last updated: {timestamp}")
+        status_text = "DISQUALIFIED" if record["disqualified"] else "Active"
+        self.status_lbl.config(text=f"Saved record for {s['player']} ({mode_key}) - {status_text} - Last updated: {timestamp}")
         self.status_msg.config(
-            text=f"Record saved! {empty_count} empty fields. {'Updated' if updated else 'Added new entry'}.")
+            text=f"Record saved! {empty_count} empty fields. {'Updated' if updated else 'Added new entry'}. Status: {status_text}")
 
         self._build_fields(s, record)
 
