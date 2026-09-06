@@ -101,7 +101,7 @@ def parse_answer_block(answer_text):
         elif content:
             # Check if this content contains a standalone note pattern
             note_match = re.search(
-                r"(?:^|\n)[ \t]*(?:Note from OP|OP Note|OP:|Note:)\s*[:]?\s*\n(.*)",
+                r"(?:^|\n)[ \t]*(?:Note from OP|OP Note|OP:|Note:)\s*[:]?\s*(.*?)(?=$|(?:\n[ \t]*\*{0,2}\([^)]+\)\*{0,2}))",
                 content,
                 re.DOTALL | re.IGNORECASE
             )
