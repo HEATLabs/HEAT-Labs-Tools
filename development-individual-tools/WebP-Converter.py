@@ -3,39 +3,23 @@ from PIL import Image
 import glob
 
 
-def convert_png_to_webp(input_path, output_path, quality=85):
+def convert_image_to_webp(input_path, output_path, quality=85):
     try:
         with Image.open(input_path) as img:
-            # Convert RGBA to RGB if necessary (WebP handles transparency)
-            if img.mode in ("RGBA", "LA"):
-                # Keep transparency for WebP
-                img.save(output_path, "WebP", quality=quality, lossless=False)
-            else:
-                img.save(output_path, "WebP", quality=quality)
-
-        print(f"✓ Converted: {input_path} → {output_path}")
-        return True
-    except Exception as e:
-        print(f"✗ Error converting {input_path}: {str(e)}")
-        return False
-
-
-def convert_dds_to_webp(input_path, output_path, quality=85):
-    try:
-        with Image.open(input_path) as img:
-            # If the image has multiple frames/layers, get the first one
+            # Handle multi-frame images (like DDS with mipmaps)
             if hasattr(img, "n_frames") and img.n_frames > 1:
-                # For DDS with mipmaps, we want the first frame
                 img.seek(0)
 
-            # Convert to RGB if needed (WebP handles transparency)
+            # Handle different image modes
             if img.mode in ("RGBA", "LA"):
+                # Keep transparency for WebP
                 img.save(output_path, "WebP", quality=quality, lossless=False)
             elif img.mode == "P":
                 # Convert palette-based images to RGB
                 img = img.convert("RGB")
                 img.save(output_path, "WebP", quality=quality)
             else:
+                # RGB, L, etc. - save directly
                 img.save(output_path, "WebP", quality=quality)
 
         print(f"✓ Converted: {input_path} → {output_path}")
@@ -67,23 +51,26 @@ def main():
     print(f"Looking for image files in: {current_dir} (including subdirectories)")
 
     # Define supported extensions
-    supported_extensions = [".png", ".dds"]
+    supported_extensions = [".png", ".jpg", ".jpeg", ".dds"]
 
     # Find all image files recursively
     image_files = find_image_files(current_dir, supported_extensions)
 
     if not image_files:
-        print("No PNG or DDS files found in the current directory or subdirectories.")
+        print("No PNG, JPG, JPEG, or DDS files found in the current directory or subdirectories.")
         return
 
     print(f"Found {len(image_files)} image file(s) to convert:")
 
     # Separate files by extension for reporting
-    png_files = [f for f in image_files if f.lower().endswith(".png")]
+    png_files = [f for f in image_files if f.lower().endswith((".png"))]
+    jpg_files = [f for f in image_files if f.lower().endswith((".jpg", ".jpeg"))]
     dds_files = [f for f in image_files if f.lower().endswith(".dds")]
 
     if png_files:
         print(f"  PNG files: {len(png_files)}")
+    if jpg_files:
+        print(f"  JPG/JPEG files: {len(jpg_files)}")
     if dds_files:
         print(f"  DDS files: {len(dds_files)}")
 
@@ -106,18 +93,11 @@ def main():
             skipped_count += 1
             continue
 
-        # Determine conversion function based on file extension
+        # Convert using the unified function
         rel_path = os.path.relpath(image_file, current_dir)
         print(f"Converting: {rel_path}")
 
-        if image_file.lower().endswith(".png"):
-            success = convert_png_to_webp(image_file, webp_file)
-        elif image_file.lower().endswith(".dds"):
-            success = convert_dds_to_webp(image_file, webp_file)
-        else:
-            print(f"⚠ Unsupported format: {image_file}")
-            failed_count += 1
-            continue
+        success = convert_image_to_webp(image_file, webp_file)
 
         if success:
             converted_count += 1
