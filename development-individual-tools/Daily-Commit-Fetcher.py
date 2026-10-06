@@ -44,6 +44,8 @@ REPOS = [
     "HEAT-Labs-Models-Development",
     "HEAT-Labs-Stat-Tracker",
     "HEAT-Labs-Stat-Tracker-Development",
+    "HEAT-Labs-Replay-Manager",
+    "HEAT-Labs-Replay-Manager-Development",
     "HEAT-Labs-Mods",
     "HEAT-Labs-Internal-Tools",
     "HEAT-Labs-Internal-Assets",
