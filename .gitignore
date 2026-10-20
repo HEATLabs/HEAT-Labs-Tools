@@ -43,3 +43,5 @@ development-unified-tools/token.json
 /development-individual-tools/test-tools
 /record-keeper/node_modules
 /record-keeper/.idea
+/development-individual-tools/modules
+development-individual-tools/.soundbank_state.json
