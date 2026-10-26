@@ -7,6 +7,59 @@ from pathlib import Path
 CSV_FILE_PATH = "../../HEAT-Labs-Database/importer-sheet/detailed_stat_sheet.csv"
 TANKS_BASE_DIR = "../../HEAT-Labs-Database/tanks"
 
+# Rows in the CSV that are structural (not stats)
+SECTION_HEADERS = {
+    'FIREPOWER', 'MOBILITY', 'SURVIVABILITY', 'RECON', 'UTILITY'
+}
+SKIP_ROWS = {
+    'AGENT NAME', 'TANK NAME',
+    'MAIN AMMO TYPE', 'SECONDARY AMMO TYPE',
+    'MAIN SHELL TYPE', 'SECONDARY SHELL TYPE',
+}
+
+
+def is_range_string(value):
+    if not isinstance(value, str):
+        return False
+    # must contain a '-' and both sides must be numeric
+    parts = value.split('-')
+    if len(parts) != 2:
+        return False
+    left, right = parts[0].strip(), parts[1].strip()
+    try:
+        float(left)
+        float(right)
+        return True
+    except ValueError:
+        return False
+
+
+def normalize_range_string(value):
+    """Collapse whitespace in a range string: '50 - 400' -> '50-400'."""
+    parts = value.split('-')
+    left, right = parts[0].strip(), parts[1].strip()
+    return f"{left}-{right}"
+
+# Convert a CSV cell string into the appropriate Python type.
+def parse_cell_value(raw_value):
+    if raw_value is None:
+        return None
+    value = raw_value.strip()
+    if value == '' or value == '-':
+        return None
+
+    # Range value, e.g. "50-150" -> keep as string "50-150"
+    if is_range_string(value):
+        return normalize_range_string(value)
+
+    # Plain numeric value
+    try:
+        if '.' in value:
+            return float(value)
+        return int(value)
+    except ValueError:
+        return value
+
 
 def load_csv_data(csv_filepath):
     tanks_data = {}
@@ -17,16 +70,19 @@ def load_csv_data(csv_filepath):
 
     # Find the TANK NAME row (it's the second row in CSV)
     tank_names = []
-    for i, line in enumerate(lines):
+    for line in lines:
         if 'TANK NAME' in line:
             row = next(csv.reader([line]))
             tank_names = [name.strip() for name in row[1:] if name.strip()]
             break
 
+    if not tank_names:
+        raise RuntimeError("Could not find 'TANK NAME' header row in CSV")
+
     # Find the AMMO TYPE rows to get shell types
     main_ammo_types = {}
     secondary_ammo_types = {}
-    for i, line in enumerate(lines):
+    for line in lines:
         row = next(csv.reader([line]))
         if not row:
             continue
@@ -45,38 +101,31 @@ def load_csv_data(csv_filepath):
                     if value and value != '-' and value != '':
                         secondary_ammo_types[tank_name] = value
 
-    # parse all subsequent rows for stat data
-    for i, line in enumerate(lines):
+    # Parse stat rows (skip structural rows)
+    for line in lines:
         row = next(csv.reader([line]))
-        if not row or not row[0] or row[0] == 'AGENT NAME' or row[0] == 'TANK NAME':
+        if not row or not row[0]:
             continue
 
         stat_name = row[0].strip()
-        if not stat_name or stat_name == '-' or stat_name == '':
+
+        # Skip structural / header rows
+        if stat_name in SKIP_ROWS or stat_name in SECTION_HEADERS:
+            continue
+        if stat_name == '-' or stat_name == '':
             continue
 
         # For each tank, assign the value
         for idx, tank_name in enumerate(tank_names):
             if idx + 1 < len(row):
-                value = row[idx + 1].strip()
-                if value and value != '-' and value != '':
-                    if tank_name not in tanks_data:
-                        tanks_data[tank_name] = {}
-
-                    # Convert to appropriate number type if possible
-                    try:
-                        if '.' in value:
-                            tanks_data[tank_name][stat_name] = float(value)
-                        else:
-                            tanks_data[tank_name][stat_name] = int(value)
-                    except ValueError:
-                        tanks_data[tank_name][stat_name] = value
+                parsed = parse_cell_value(row[idx + 1])
+                if parsed is None:
+                    continue
+                tanks_data.setdefault(tank_name, {})[stat_name] = parsed
 
     # Add shell types to tanks_data
     for tank_name in tank_names:
-        if tank_name not in tanks_data:
-            tanks_data[tank_name] = {}
-
+        tanks_data.setdefault(tank_name, {})
         if tank_name in main_ammo_types:
             tanks_data[tank_name]['MAIN SHELL TYPE'] = main_ammo_types[tank_name]
 
@@ -159,6 +208,41 @@ def map_tank_name_to_folder(tank_name):
     return folder_name
 
 
+def values_equal(a, b):
+    """Compare two values, treating int 5 and float 5.0 as equal."""
+    if isinstance(a, (int, float)) and not isinstance(a, bool) \
+            and isinstance(b, (int, float)) and not isinstance(b, bool):
+        return a == b
+    return a == b
+
+
+def coerce_to_match(old_value, new_value):
+    # Existing JSON value is a range string -> store as range string
+    if is_range_string(old_value):
+        if is_range_string(new_value):
+            return normalize_range_string(new_value)
+        if isinstance(new_value, (int, float)) and not isinstance(new_value, bool):
+            return str(new_value)
+        return new_value
+
+    # Existing JSON value is numeric -> coerce new value to number
+    if isinstance(old_value, (int, float)) and not isinstance(old_value, bool):
+        if isinstance(new_value, (int, float)) and not isinstance(new_value, bool):
+            return new_value
+        try:
+            return float(new_value) if '.' in str(new_value) else int(new_value)
+        except (ValueError, TypeError):
+            return new_value
+
+    # Existing JSON value is a plain string -> coerce numbers to string
+    if isinstance(old_value, str):
+        if isinstance(new_value, (int, float)) and not isinstance(new_value, bool):
+            return str(new_value)
+        return new_value
+
+    return new_value
+
+
 def update_tank_json(tank_folder_path, tank_data, selected_sections):
     stock_json_path = tank_folder_path / 'stock.json'
 
@@ -185,35 +269,32 @@ def update_tank_json(tank_folder_path, tank_data, selected_sections):
     # Update each selected section
     updated_count = 0
     for section in selected_sections:
-        if section in tank_json[tank_key]:
-            # For each stat in the CSV data
-            for stat_name, stat_value in tank_data.items():
-                # Handle shell types specially
-                if stat_name in ['MAIN SHELL TYPE', 'SECONDARY SHELL TYPE']:
-                    if stat_name in tank_json[tank_key][section]:
-                        old_value = tank_json[tank_key][section][stat_name]
-                        if old_value != stat_value:
-                            tank_json[tank_key][section][stat_name] = stat_value
-                            print(f"    Updated {section}.{stat_name}: {old_value} → {stat_value}")
-                            updated_count += 1
-                # Check if this stat belongs to the current section
-                elif stat_name in tank_json[tank_key][section]:
-                    # Update the value
-                    old_value = tank_json[tank_key][section][stat_name]
+        if section not in tank_json[tank_key]:
+            print(f"  ⚠ Section '{section}' not found in {tank_key} JSON")
+            continue
 
-                    # Convert stat_value to the same type as old_value if possible
-                    if isinstance(old_value, (int, float)):
-                        try:
-                            stat_value = float(stat_value) if '.' in str(stat_value) else int(stat_value)
-                        except:
-                            pass
+        section_obj = tank_json[tank_key][section]
 
-                    if old_value != stat_value:
-                        tank_json[tank_key][section][stat_name] = stat_value
+        for stat_name, stat_value in tank_data.items():
+            # Shell types can live in any section in your JSON — check all
+            if stat_name in ('MAIN SHELL TYPE', 'SECONDARY SHELL TYPE'):
+                if stat_name in section_obj:
+                    old_value = section_obj[stat_name]
+                    if not values_equal(old_value, stat_value):
+                        section_obj[stat_name] = stat_value
                         print(f"    Updated {section}.{stat_name}: {old_value} → {stat_value}")
                         updated_count += 1
-        else:
-            print(f"  ⚠ Section '{section}' not found in {tank_key} JSON")
+                continue
+
+            # Normal stat: only update if it exists in this section
+            if stat_name in section_obj:
+                old_value = section_obj[stat_name]
+                new_value = coerce_to_match(old_value, stat_value)
+
+                if not values_equal(old_value, new_value):
+                    section_obj[stat_name] = new_value
+                    print(f"    Updated {section}.{stat_name}: {old_value} → {new_value}")
+                    updated_count += 1
 
     if updated_count > 0:
         # Save the updated JSON
